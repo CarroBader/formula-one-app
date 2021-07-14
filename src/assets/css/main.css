@@ -1,0 +1,321 @@
+.default-background-center {
+	background-color: #121212;
+	text-align: center;
+	margin-bottom: 5em;
+}
+
+/* Font and size */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Orbitron', 'sans-serif';
+	color: #fff;
+}
+
+html {
+	font-size: 100%;
+	background-color: #121212;
+}
+
+p {
+	font-size: 1rem;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-size: 2.4rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h4 {
+	font-size: 1.4rem;
+}
+
+/* Table */
+
+th {
+	font-family: 'Orbitron', 'sans-serif';
+}
+
+td {
+	font-family: 'Orbitron', 'sans-serif';
+}
+
+tr {
+	border-bottom: 1px solid #fff;
+}
+
+/* Colors */
+.red-text {
+	color: #ff1616 !important;
+}
+
+/* MEDIA */
+
+/* X-Small devices (landscape phones, 544px and up) */
+@media (min-width: 0px) {
+	/* Header, Footer, BotNav */
+	.nav-title {
+		font-size: 2rem;
+	}
+
+	.nav-logo {
+		height: 2em;
+	}
+
+	.navbar-nav {
+		flex-direction: row;
+	}
+
+	.nav-link {
+		margin: 0 0.5em;
+	}
+
+	footer {
+		display: none;
+	}
+
+	.navbar-toggler {
+		display: none;
+	}
+
+	.footer-nav {
+		display: block;
+	}
+
+	.navbar {
+		justify-content: center;
+	}
+
+	.circuit-img {
+    height: 10em !important;
+	}
+
+	h1 {
+		font-size: 1.5em;
+	}
+
+	.race-name {
+		font-size: 1em;
+	}
+
+	.align-title {
+		text-align: left;
+	}
+
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 1em !important;
+	}
+}
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+	/* Header, Footer, BotNav*/
+	.nav-title {
+		font-size: 2.5rem;
+	}
+
+	.nav-logo {
+		height: 2.5em;
+	}
+
+	.navbar-nav {
+		flex-direction: row;
+	}
+
+	.nav-link {
+		margin: 0 0.5em;
+	}
+
+	footer {
+		display: block;
+	}
+
+	.navbar-toggler {
+		display: block;
+	}
+
+	.footer-nav {
+		display: none !important;
+	}
+
+	.navbar {
+		justify-content: space-between !important;
+	}
+
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 4em !important;
+	}
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+	/* Header, Footer, BotNav*/
+	.nav-title {
+		font-size: 2rem;
+	}
+
+	.nav-link {
+		font-size: 1.5em;
+	}
+
+	.nav-logo {
+		height: 2.5em;
+	}
+
+	.navbar-toggler {
+		display: none;
+	}
+
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 1em !important;
+	}
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	/* Header, Footer, BotNav*/
+	.nav-title {
+		font-size: 2.5rem;
+	}
+
+	.nav-link {
+		font-size: 1.5em;
+	}
+
+	.nav-logo {
+		height: 3em;
+	}
+
+	.circuit-img {
+    height: 15em !important;
+	}
+
+	h1 {
+		font-size: 2em;
+	}
+
+	.race-name {
+		font-size: 1.1em;
+	}
+
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 1em !important;
+	}
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	/* Header, Footer, BotNav*/
+	.nav-title {
+		font-size: 3rem;
+	}
+
+	.nav-logo {
+		height: 3em;
+	}
+
+	.circuit-img {
+    height: 20em !important;
+	}
+
+	h1 {
+		font-size: 2.4em;
+	}
+
+	.race-name {
+		font-size: 1.5em;
+	}
+
+	.align-title {
+		text-align: end;
+	}
+
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 1em !important;
+	}
+}
+
+/* @media (min-width: 64em) {
+    html {
+        font-size: 112.5%;
+    }
+}
+
+h2 {
+    margin-bottom: 0.6rem;
+}
+
+h4 {
+    margin-bottom: 0.2rem;
+    margin-top: 1.8rem;
+    line-height: 1.4;
+}
+
+h4:first-of-type {
+    margin-top: 0.6rem;
+}
+
+p {
+    margin-top: 0.2rem;
+    line-height: 1.4;
+} */
+
+/* Driver and Team Colors */
+
+.mclaren {
+	color: #E0610E !important;
+}
+
+.red-bull {
+	color: #4166C6 !important;
+}
+
+.mercedes {
+	color: #00D2BE !important;
+}
+
+.alpha-romeo {
+	color: #900000 !important;
+}
+
+.alpha-tauri {
+	color: #2B4562 !important;
+}
+
+.haas {
+	color: #FFFFFF !important;
+}
+
+.alpine {
+	color: #0090FF !important;
+}
+
+.ferrari {
+	color: #DC0000 !important;
+}
+
+.williams {
+	color: #005AFF !important;
+}
+
+.aston-martin {
+	color: #006F62 !important;
+}
