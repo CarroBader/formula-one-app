@@ -5,12 +5,14 @@
 ### Production
 **File:** `.env`
 
-    PORT=<port>
-    HOST=<host>
+    PORT=?<port>
+    HOST=?<host>
     NODE_ENV=production
 
 **Execute:**
+
 `npm run build`
+
 `npm run start`
 
 ## Dev
@@ -21,4 +23,5 @@
     NODE_ENV=dev
 
 **Execute:**
+
 `npm run serve`
