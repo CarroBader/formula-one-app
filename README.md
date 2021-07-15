@@ -1,27 +1,42 @@
 # f1-app
 ## Link: [Formula One](https://forumula-one.herokuapp.com/home)
 
+## Install
+**Execute:**
+```
+npm install
+```
+
 ## Usage
 ### Production
 **File:** `.env`
-
-    PORT=?<port>
-    HOST=?<host>
-    NODE_ENV=production
-
+```
+PORT=?<port>
+HOST=?<host>
+NODE_ENV=production
+```
 **Execute:**
-
-`npm run build`
-
-`npm run start`
+```
+npm run build
+npm run start
+```
 
 ## Dev
 **File:** `.env`
 
-    PORT=?<port>
-    HOST=?<host>
-    NODE_ENV=dev
+```
+PORT=?<port>
+HOST=?<host>
+NODE_ENV=dev
+```
 
 **Execute:**
+```
+npm run serve
+```
 
-`npm run serve`
+## Tools
+**Execute:**
+```
+npm run lint
+```
