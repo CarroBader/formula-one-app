@@ -1,29 +1,52 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
 import Standings from '../views/Standings.vue'
 import Map from '../views/Map.vue'
+import UpcomingRace from '../views/UpcomingRace.vue'
+import NextRace from '../views/UpcomingRace/NextRace.vue'
+import LastRace from '../views/UpcomingRace/LastRace.vue'
+import Qualification from '../views/UpcomingRace/Qualification.vue'
+import Practice from '../views/UpcomingRace/Practice.vue'
 
 Vue.use(VueRouter)
 
-{/* <font-awesome-icon :icon="['fas', 'home']" />
-<font-awesome-icon :icon="['fas', 'table']" />
-<font-awesome-icon :icon="['fas', 'screwdriver']" />
-<font-awesome-icon :icon="['fas', 'globe-europe']" /> */}
-
 const routes = [
   {
-    path: '/',
-    redirect: {
-      name: 'Home',
-    },
-  },
-  {
-    path: '/home',
-    name: 'Home',
+    path: '/race/pre',
+    name: 'British Grand Prix',
     icon: 'home',
-    component: Home
+    component: UpcomingRace,
+    children: [
+      {
+        path: '/race/last',
+        name: 'Last',
+        component: LastRace
+      },
+      {
+        path: '/race/pre',
+        name: 'Pre',
+        component: NextRace
+      },
+      {
+        path: '/race/practice',
+        name: 'Practice',
+        component: Practice
+      },
+      {
+        path: '/race/qualification',
+        name: 'Qualification',
+        component: Qualification
+      },
+         
+    ]
   },
+  // {
+  //   path: '/home',
+  //   name: 'Home',
+  //   icon: 'home',
+  //   component: Home
+  // },
   {
     path: '/standings',
     name: 'Standings',

@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import Header from './components/Header'
-import Footer from './components/Footer'
-import BotNav from './components/BotNav'
+import Header from './components/General/Header'
+import Footer from './components/General/Footer'
+import BotNav from './components/General/BotNav'
 
 export default {
   name: 'App',

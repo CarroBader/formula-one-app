@@ -142,11 +142,11 @@ td {
   border: 1px solid #fff;
 }
 
-#first,
+/* #first,
 #second,
 #third {
   display: inline-block;
-}
+} */
 
 .leadersDiv {
   display: flex;

@@ -42,8 +42,8 @@
 // import ComingRaces from '../components/ComingRaces.vue'
 import axios from 'axios'
 import { baseUrl } from '../vars'
-import NextRace from '../components/NextRace.vue'
-import LastRace from '../components/LastRace.vue'
+import NextRace from './UpcomingRace/NextRace.vue'
+import LastRace from './UpcomingRace/LastRace.vue'
 import Leaders from '../components/Leaders.vue'
 import NextRaceQuali from '../components/NextRaceQuali.vue'
 

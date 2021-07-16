@@ -1,7 +1,7 @@
 export default {
   methods: {
     convertTime(timeToConvert) {
-      let hour = Number(timeToConvert.time.slice(0,2))
+      let hour = Number(timeToConvert.slice(0,2))
       let ending = ":00:00"
       let newHour
 
