@@ -41,12 +41,6 @@ const routes = [
          
     ]
   },
-  // {
-  //   path: '/home',
-  //   name: 'Home',
-  //   icon: 'home',
-  //   component: Home
-  // },
   {
     path: '/standings',
     name: 'Standings',
