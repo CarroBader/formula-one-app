@@ -1,8 +1,8 @@
 <template>
   <b-container class="default-background-center">
-    <div>
+    <!-- <div>
       <h1 class="align-title circuit-name"> {{ this.nextRaceTrackName }}</h1>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col">
         <NextRaceTrackInfo 

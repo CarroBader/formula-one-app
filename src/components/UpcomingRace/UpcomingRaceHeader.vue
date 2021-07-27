@@ -32,7 +32,7 @@ export default {
 <style scoped>
 .navbar {
   background-color: #ff1616;
-  border-bottom: 1px solid white;
+  /* border-bottom: 1px solid white; */
   z-index: 10000;
 }
 
@@ -41,6 +41,8 @@ export default {
   text-decoration: none;
   font-size: 1.2em;
   text-shadow: 2px 2px #000;
+  padding: 0px;
+  margin: 3px;
 }
 </style>
 

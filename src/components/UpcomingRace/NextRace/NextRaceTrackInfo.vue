@@ -1,29 +1,31 @@
 <template>
   <div
     class="next-race-track-info">
-    <h1 class="red-text align-title next-gp-text"> Next GP:</h1>
-    <h1 class="align-title" style="margin-left:2em"> {{ nextRace.raceName }}</h1>
-    <img :src="getCircuitImage()"
-    :alt='`${nextRace.Circuit.circuitName}`'
-    class="circuit-img"/>
-    <table>
-      <tr>
-        <th>Track:</th>
-        <td>{{ nextRace.Circuit.circuitName }}</td>
-      </tr>
-      <tr>
-        <th>Location:</th>
-        <td>{{ nextRace.Circuit.Location.locality }}, {{ nextRace.Circuit.Location.country }}</td>
-      </tr>
-      <tr>
-        <th>Date:</th>
-        <td>{{ nextRace.date }}</td>
-      </tr>
-      <tr>
-        <th>Time:</th>
-        <td>{{ nextRace.time }}</td>
-      </tr>
-    </table>
+    <b-card>
+      <h1 class="red-text align-title next-gp-title"> Next GP:</h1>
+      <h1 class="align-title" style="margin-left:2em"> {{ nextRace.raceName }}</h1>
+      <img :src="getCircuitImage()"
+      :alt='`${nextRace.Circuit.circuitName}`'
+      class="circuit-img"/>
+      <table>
+        <tr>
+          <th>Track:</th>
+          <td>{{ nextRace.Circuit.circuitName }}</td>
+        </tr>
+        <tr>
+          <th>Location:</th>
+          <td>{{ nextRace.Circuit.Location.locality }}, {{ nextRace.Circuit.Location.country }}</td>
+        </tr>
+        <tr>
+          <th>Date:</th>
+          <td>{{ nextRace.date }}</td>
+        </tr>
+        <tr>
+          <th>Time:</th>
+          <td>{{ nextRace.time }}</td>
+        </tr>
+      </table>
+    </b-card>
   </div>
 </template>
 
@@ -83,7 +85,7 @@ tr:nth-child(odd) {
 	color: #ff1616;
 }
 
-.next-gp-text {
+.next-gp-title {
   font-size: 1.8em;
 }
 

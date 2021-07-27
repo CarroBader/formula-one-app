@@ -49,7 +49,8 @@ export default {
 .nav-link {
   font-family: 'Orbitron', 'sans-serif';
   text-decoration: none;
-  text-shadow: 2px 2px #000;
+  text-shadow: 1.5px 1.5px #000;
+  padding: 0px 0px;
 }
 
 .navbar-brand {

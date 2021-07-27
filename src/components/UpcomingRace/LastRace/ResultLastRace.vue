@@ -2,52 +2,55 @@
   <div
     v-if="dataLoaded"
     class="result-last-race-div">
-    <h1 class="red-text align-title"> Last GP:</h1>
-    <h1 class="align-title" style="margin-left:2em"> {{ lastRace.raceName }}</h1>
-    <table>
-    <tr>
-        <th>Position</th>
-        <th></th>
-        <th>Name</th>
-        <th>Nationality</th>
-        <th>Car</th>
-        <th>Points</th>
-        <th></th>
-    </tr>
-      <tbody         
-        v-for="race, i in lastRace.Results"
-        :key="race[i]">
+    <b-card>
+      <h1 class="red-text align-title last-gp-title"> Last GP:</h1>
+      <h1 class="align-title" style="margin-left:2em"> {{ lastRace.raceName }}</h1>
+      <table>
       <tr>
-        <td>{{ race.position }}</td>
-        <td>
-          <img :src="getArrowImage(race.grid, race.position)"
-          :alt='`${race.Driver.nationality}`'
-          :class="getArrowClass(race.grid, race.position)"
-          />
-          <span class="positionDifference">{{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}</span>
-        </td>
-        <td>{{ race.Driver.givenName }} {{ race.Driver.familyName }}</td>
-        <td>
-          <img :src="getFlagImage(race.Driver.nationality)"
-          :alt='`${race.Driver.nationality}`'
-          class="country-flag-img"/>
-        </td>
-        <td>{{ race.Constructor.name }}</td>
-        <td>{{ race.points }}</td>
-        <td v-if="fastestLap(race.FastestLap)">
-          <img src="../../../assets/img/icons/fastest_lap.png"
-          class="fastestLap" 
-          />
-        </td>
+          <th>Position</th>
+          <th></th>
+          <th>Name</th>
+          <th>Nationality</th>
+          <th>Car</th>
+          <th>Points</th>
+          <th></th>
       </tr>
-      </tbody>
-    </table>
+        <tbody         
+          v-for="race, i in lastRace.Results"
+          :key="race[i]">
+        <tr>
+          <td>{{ race.position }}</td>
+          <td>
+            <img :src="getArrowImage(race.grid, race.position)"
+            :alt='`${race.Driver.nationality}`'
+            :class="getArrowClass(race.grid, race.position)"
+            />
+            <span class="positionDifference">{{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}</span>
+          </td>
+          <td>{{ race.Driver.givenName }} {{ race.Driver.familyName }}</td>
+          <td>
+            <img :src="getFlagImage(race.Driver.nationality)"
+            :alt='`${race.Driver.nationality}`'
+            class="country-flag-img"/>
+          </td>
+          <td :class="getColor(race.Constructor.constructorId)">{{ race.Constructor.name }}</td>
+          <td>{{ race.points }}</td>
+          <td v-if="fastestLap(race.FastestLap)">
+            <img src="../../../assets/img/icons/fastest_lap.png"
+            class="fastestLap" 
+            />
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </b-card>
   </div>
 </template>
 
 <script>
 import apiCallsMixin from '../../../mixins/apiCallsMixin'
 import getFlagMixin from '../../../mixins/getFlagMixin'
+import getColorMixin from '../../../mixins/getColorMixin'
 
 export default {
   name: 'LastRace',
@@ -87,7 +90,7 @@ export default {
       return fastestLap != undefined && fastestLap.rank == "1" ? true : false
     }
   },
-  mixins: [apiCallsMixin, getFlagMixin]
+  mixins: [apiCallsMixin, getFlagMixin, getColorMixin]
 }
 </script>
 
@@ -108,6 +111,10 @@ td {
 
 .align-title {
   text-align: initial;
+}
+
+.last-gp-title {
+  font-size: 1.8em;
 }
 
 .positionDifference {

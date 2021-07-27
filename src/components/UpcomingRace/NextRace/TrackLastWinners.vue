@@ -1,20 +1,22 @@
 <template>
   <div
     class="track-last-winners">
-    <h1 class="red-text align-title lastest-winner-text"> Lastest winners:</h1>
-    <div class="winners-div-outer">
-      <div class="winners-div">
-        <div class="winners-inner">
-          <div         
-            v-for="winners, i in this.latestWinners"
-            :key="winners[i]"
-            class="winners-para-div">
-            <p class="red-text winners-p year-para">{{ winners.season }}</p>
-            <p class="winners-p" >{{ winners.winner }}</p>
+    <b-card>
+      <h1 class="red-text align-title lastest-winner-text"> Lastest winners:</h1>
+      <div class="winners-div-outer">
+        <div class="winners-div">
+          <div class="winners-inner">
+            <div         
+              v-for="winners, i in this.latestWinners"
+              :key="winners[i]"
+              class="winners-para-div">
+              <p class="red-text winners-p year-para">{{ winners.season }}</p>
+              <p class="winners-p" >{{ winners.winner }}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </b-card>
   </div>
 </template>
 

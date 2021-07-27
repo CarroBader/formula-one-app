@@ -8,37 +8,42 @@ import NextRace from '../views/UpcomingRace/NextRace.vue'
 import LastRace from '../views/UpcomingRace/LastRace.vue'
 import Qualification from '../views/UpcomingRace/Qualification.vue'
 import Practice from '../views/UpcomingRace/Practice.vue'
+import Race from '../views/UpcomingRace/Race.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/race/pre',
-    name: 'British Grand Prix',
+    path: '/grand-prix/',
+    name: 'Hungarian Grand Prix',
     icon: 'home',
     component: UpcomingRace,
     children: [
       {
-        path: '/race/last',
+        path: '/grand-prix/last',
         name: 'Last',
         component: LastRace
       },
       {
-        path: '/race/pre',
+        path: '/grand-prix/pre',
         name: 'Pre',
         component: NextRace
       },
       {
-        path: '/race/practice',
+        path: '/grand-prix/practice',
         name: 'Practice',
         component: Practice
       },
       {
-        path: '/race/qualification',
+        path: '/grand-prix/qualification',
         name: 'Qualification',
         component: Qualification
       },
-         
+      {
+        path: '/grand-prix/race',
+        name: 'Race',
+        component: Race
+      },
     ]
   },
   {
