@@ -5,7 +5,7 @@ const https = require('https')
 const request = require('request');
 const cors = require("cors");
 var corsOptions = {
-	origin: 'https://formula-one.herokuapp.com',
+	origin: ['https://formula-one-light.herokuapp.com', 'http://localhost:3000', 'http://formula-one-light.herokuapp.com'],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 app.use(cors(corsOptions));

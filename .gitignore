@@ -77,3 +77,6 @@ typings/
 
 # Dist
 dist/
+
+# Env
+.env
