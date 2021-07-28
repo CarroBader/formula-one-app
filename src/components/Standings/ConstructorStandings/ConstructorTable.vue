@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h1>Teams</h1>
-    <div class="leadersDiv">
+  <div
+    v-if="dataLoaded">
+    <div class="leaders-div">
       <div
         v-for="topConstructors, i in constructorStandings.slice(0,3)"
         :key="topConstructors[i]"
-        :id="leadersDiv[i]"
+        class="leader-div"
       >
         <img 
           :src='getConstructersPhoto(topConstructors.Constructor.constructorId)'
@@ -32,7 +32,7 @@
         <th>Points</th>
     </tr>
       <tbody         
-        v-for="constructor, i in constructorStandings.slice(3,20)"
+        v-for="constructor, i in constructorStandings.slice(3,10)"
         :key="constructor[i]"
       >
       <tr>
@@ -53,34 +53,33 @@
 </template>
 
 <script>
-import getColorMixin from '../mixins/getColorMixin'
-import getFlagMixin from '../mixins/getFlagMixin'
-
-var leadersDiv = ["first", "second", "third"]
+import getColorMixin from '../../../mixins/getColorMixin'
+import getFlagMixin from '../../../mixins/getFlagMixin'
+import apiCallsMixin from '../../../mixins/apiCallsMixin'
 
 export default {
-  name: 'ConstructorStandings',
-  props: {
-    constructorStandings: Array
-  },
+  name: 'ConstructorTable',
   data () {
-  return {
-    leadersDiv: leadersDiv
+    return {
+      constructorStandings: null,
+      dataLoaded: false
     }
   },
-  mounted() {
-    console.log("ConstructorStandings", this.constructorStandings)
+  async mounted() {
+    let responseConstructorStandings = await this.getConstructorStandings()
+    this.constructorStandings = responseConstructorStandings.standingsConstructor
+    this.dataLoaded = responseConstructorStandings.dataLoaded
   },
   methods: {
     getFlagImage(nationality) {
       let countryFlag = this.getFlag(nationality)
-      return require(`../assets/img/flags/${countryFlag}.png`)
+      return require(`../../../assets/img/flags/${countryFlag}.png`)
     },
     getConstructersPhoto(constructor) {
-      return require(`../assets/img/constructers/${constructor}.png`)
+      return require(`../../../assets/img/constructers/${constructor}.png`)
     }
   },
-  mixins: [getColorMixin, getFlagMixin]
+  mixins: [apiCallsMixin, getColorMixin, getFlagMixin]
 }
 </script>
 
@@ -142,13 +141,12 @@ td {
   border: 1px solid #fff;
 }
 
-/* #first,
-#second,
-#third {
-  display: inline-block;
-} */
+.leader-div {
+  flex: 1;
+  margin: 0 0.5em;
+}
 
-.leadersDiv {
+.leaders-div {
   display: flex;
   justify-content: space-between;
   margin: 2em 0;
@@ -158,3 +156,4 @@ td {
   margin-bottom: 0.3em;
 }
 </style>
+

@@ -100,6 +100,34 @@ export default {
      } catch(e) {
        console.error(e)
      }     
+    },
+    async getDriverStandings() {
+      try {
+        const response = await axios.get(`${baseUrl}current/driverStandings.json`)
+        this.driverStandings = response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings 
+
+        return {
+          standingsDriver: this.driverStandings,
+          dataLoaded: true
+        }
+
+      } catch(e) {
+        console.error(e)
+      } 
+    },
+    async getConstructorStandings() {
+      try {
+        const response = await axios.get(`${baseUrl}current/constructorStandings.json`)
+        this.constructorStandings = response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings 
+
+        return {
+          standingsConstructor: this.constructorStandings,
+          dataLoaded: true
+        }
+
+      } catch(e) {
+        console.error(e)
+      } 
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Drivers</h1>
+  <div
+    v-if="dataLoaded">
     <div class="leaders-div">
       <div
         v-for="topDrivers, i in driverStandings.slice(0,3)"
@@ -59,31 +59,34 @@
 </template>
 
 <script>
-import getColorMixin from '../mixins/getColorMixin'
-import getFlagMixin from '../mixins/getFlagMixin'
+import getColorMixin from '../../../mixins/getColorMixin'
+import getFlagMixin from '../../../mixins/getFlagMixin'
+import apiCallsMixin from '../../../mixins/apiCallsMixin'
 
 export default {
-  name: 'DriverStandings',
-  props: {
-    driverStandings: Array
-  },
+  name: 'DriverTable',
   data () {
-  return {
+    return {
+      driverStandings: null,
+      dataLoaded: false
     }
   },
-  mounted() {
-    console.log("driverStandings", this.driverStandings)
+  async mounted() {
+    let responseDriverStandings = await this.getDriverStandings()
+
+    this.driverStandings = responseDriverStandings.standingsDriver
+    this.dataLoaded = responseDriverStandings.dataLoaded
   },
   methods: {
     getFlagImage(nationality) {
       let countryFlag = this.getFlag(nationality)
-      return require(`../assets/img/flags/${countryFlag}.png`)
+      return require(`../../../assets/img/flags/${countryFlag}.png`)
     },
     getDriverPhoto(driver) {
-      return require(`../assets/img/drivers/${driver}.png`)
+      return require(`../../../assets/img/drivers/${driver}.png`)
     }
   },
-  mixins: [getColorMixin, getFlagMixin]
+  mixins: [apiCallsMixin, getColorMixin, getFlagMixin]
 }
 </script>
 
@@ -167,4 +170,3 @@ td {
   margin: 0 0.5em;
 }
 </style>
-

@@ -9,6 +9,8 @@ import LastRace from '../views/UpcomingRace/LastRace.vue'
 import Qualification from '../views/UpcomingRace/Qualification.vue'
 import Practice from '../views/UpcomingRace/Practice.vue'
 import Race from '../views/UpcomingRace/Race.vue'
+import DriverStandings from '../views/Standings/DriverStandings.vue'
+import ConstructorStandings from '../views/Standings/ConstructionStandings.vue'
 
 Vue.use(VueRouter)
 
@@ -47,10 +49,22 @@ const routes = [
     ]
   },
   {
-    path: '/standings',
+    path: '/standings/',
     name: 'Standings',
     icon: 'table',
-    component: Standings
+    component: Standings,
+    children: [
+      {
+        path: '/standings/driver-standings',
+        name: 'Drive',
+        component: DriverStandings
+      },
+      {
+        path: '/standings/constructor-standings',
+        name: 'Constructor',
+        component: ConstructorStandings
+      },
+    ]
   },
   {
     path: '/map',
