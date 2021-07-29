@@ -37,14 +37,16 @@ npm run serve
 
 ## Tools
 **Execute:**
-```
-npm run lint
-```
+
+To list all linting errors in js or vue files: ```npm run lint```
+
+To auto fix linting errors in js or vue files: ```npm run lint:fix```
+
 If you get an npm ```ERR! code ELIFECYCLE``` error when running the linting command it is because eslint exits with a non zero status code if linting errors are found.
 
-**Eslint**
+**VsCode**
 
 For VsCode install the eslint plugin: https://github.com/microsoft/vscode-eslint
 
-This will enable auto fixes on save.
+This will enable auto fixes on save using the .vscode/settings.json file.
 
