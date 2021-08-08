@@ -3,7 +3,7 @@
     <b-navbar toggleable="md">
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <b-collapse id="nav-collapse" class="items-far-right" is-nav>
+      <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
               <router-link 
                   v-for="route in routes" 
@@ -20,10 +20,10 @@
 
 <script>
 export default {
-  name: 'UpcomingRaceHeader',
+  name: 'StandingsNav',
   data() {
     return {
-      routes: this.$router.options.routes[0].children
+      routes: this.$router.options.routes[1].children
     }
   }
 }
@@ -31,8 +31,8 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #232323;
   /* background-color: #ff1616; */
+  background-color: #232323;
   /* border-bottom: 1px solid white; */
   z-index: 10000;
 }
