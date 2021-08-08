@@ -1,17 +1,17 @@
 <template>
-  <b-container class="default-background-center">
-    <UpcomingRaceHeader />
-    <router-view />
+  <b-container class="view-container">
+    <UpcomingRaceNav />
+    <router-view /> 
   </b-container>
 </template>     
 
 <script>
-import UpcomingRaceHeader from '../components/UpcomingRace/UpcomingRaceHeader.vue'
+import UpcomingRaceNav from '../components/UpcomingRace/UpcomingRaceNav'
 
 export default {
   name: 'UpcomingRace',
   components: {
-    UpcomingRaceHeader
+    UpcomingRaceNav
   }
 }
 </script>

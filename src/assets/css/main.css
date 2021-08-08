@@ -1,12 +1,16 @@
 .default-background-center {
 	background-color: #121212;
 	text-align: center;
-	margin-bottom: 5em;
+	overflow: auto;
 }
 
 .card {
-	background-color: #121212;
+	background-color: #161616;
 	box-shadow: rgb(0 0 0 / 35%) 0px 3px 9px;
+}
+
+.view-container {
+	padding: 0;
 }
 
 /* Font and size */
@@ -43,6 +47,13 @@ h4 {
 	font-size: 1.4rem;
 }
 
+/* NavBar */
+
+.nav-link {
+	color: #fff !important;
+}
+
+
 /* Table */
 
 th {
@@ -65,8 +76,7 @@ tbody:last-child {
 
 .router-link-active {
 	/* text-decoration: underline !important; */
-	border-bottom: 1px solid #121212;
-	border-right: 1px solid #121212;
+	color: #00d2be !important;
 	/* border: 2px solid #000; */
 	/* background-color: #121212; */
 }
@@ -78,77 +88,21 @@ tbody:last-child {
 
 /* MEDIA */
 
-/* X-Small devices (landscape phones, 544px and up) */
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+/* X-Small devices (0px and up) */
 @media (min-width: 0px) {
-	/* Header, Footer, BotNav */
-	.nav-title {
-		font-size: 2rem;
-	}
 
-	.nav-logo {
-		height: 2em;
-	}
-
-	.navbar-nav {
-		flex-direction: row;
-	}
-
-	.nav-link {
-		margin: 0 0.5em;
-	}
-
-	footer {
-		display: none;
-	}
-
-	.navbar-toggler {
-		display: none;
-	}
-
-	.footer-nav {
-		display: block;
-	}
-
-	.navbar {
-		justify-content: center;
+	/* NavBars */
+	.nav-title-top {
+		font-size: 1.7rem;
 		padding: 0;
 	}
 
-	.circuit-img {
-    height: 10em !important;
+	.nav-logo-top {
+		height: 2em;
 	}
 
-	h1 {
-		font-size: 1.5em;
-	}
-
-	.race-name {
-		font-size: 1em;
-	}
-
-	.align-title {
-		text-align: left;
-	}
-
-	.leaflet-touch 
-	.leaflet-control-layers, 
-	.leaflet-touch .leaflet-bar {
-		margin-top: 1em !important;
-	}
-}
-
-/* Small devices (landscape phones, 544px and up) */
-@media (min-width: 544px) {
-	/* Header, Footer, BotNav*/
-	.nav-title {
-		font-size: 2.5rem;
-	}
-
-	.nav-logo {
-		height: 2.5em;
-	}
-
-	.navbar-nav {
+	.navbar-nav-upcoming {
 		flex-direction: row;
 	}
 
@@ -156,151 +110,171 @@ tbody:last-child {
 		margin: 0 0.5em;
 	}
 
-	.navbar-light .navbar-nav .nav-link {
-    color: #fff !important;
-	}		
-
-	footer {
-		display: block;
-	}
-
-	.navbar-toggler {
-		display: block;
-	}
-
-	.footer-nav {
-		display: none !important;
-	}
-
 	.navbar {
-		justify-content: space-between !important;
-	}
-
-	.leaflet-touch 
-	.leaflet-control-layers, 
-	.leaflet-touch .leaflet-bar {
-		margin-top: 4em !important;
-	}
-}
- 
-/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {
-	/* Header, Footer, BotNav*/
-	.nav-title {
-		font-size: 2rem;
-	}
-
-	.nav-link {
-		font-size: 1.5em;
-	}
-
-	.nav-logo {
-		height: 2.5em;
+		justify-content: space-evenly;
+		padding: 0;
 	}
 
 	.navbar-toggler {
 		display: none;
 	}
 
-	.leaflet-touch 
-	.leaflet-control-layers, 
-	.leaflet-touch .leaflet-bar {
-		margin-top: 1em !important;
-	}
-}
- 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-	/* Header, Footer, BotNav*/
-	.nav-title {
-		font-size: 2.5rem;
+	/* Footer */
+
+	.footer-nav {
+		display: block;
 	}
 
-	.nav-link {
+	footer {
+		display: none;
+	}
+
+	/* Text */
+
+	.first-headline {
 		font-size: 1.5em;
 	}
 
-	.nav-logo {
-		height: 3em;
-	}
-
-	.circuit-img {
-    height: 15em !important;
-	}
-
-	h1 {
+	.second-heafline {
 		font-size: 2em;
 	}
 
-	.race-name {
+	.nav-link-upcoming {
+		font-size: 0.8em;
+	}
+}
+
+	/* ---------------------------------------------------------------------------------------------------------------------------- */
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+
+	/* NavBars */
+
+  .nav-title-top {
+    font-size: 2rem;
+  }
+
+  .nav-logo-top {
+    height: 2.3em;
+  }
+
+	.navbar-nav-top {
+		flex-direction: column;
+	}
+
+  .navbar-nav-upcoming {
+    flex-direction: row;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+	.navbar-toggler {
+    display: block;
+  }
+
+  /* Footer */
+
+  .footer-nav {
+    display: none !important;
+  }
+
+  footer {
+    display: block;
+  }
+
+	/* Text */
+
+	.nav-link-top {
+		font-size: 1em;
+	}
+
+	.nav-link-upcoming {
+		font-size: 1em;
+	}
+
+  /* Map */ 
+
+  .leaflet-touch 
+  .leaflet-control-layers, 
+  .leaflet-touch .leaflet-bar {
+    margin-top: 4em !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+
+	/* NavBars */
+  .nav-title-top {
+    font-size: 2.1rem;
+  }
+
+  .nav-logo-top {
+    height: 2.4em;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+	/* Text */
+	.nav-link-top {
 		font-size: 1.1em;
 	}
 
-	.leaflet-touch 
-	.leaflet-control-layers, 
-	.leaflet-touch .leaflet-bar {
-		margin-top: 1em !important;
+	.nav-link-upcoming {
+		font-size: 1.1em;
 	}
+
+	/* Map */
+  .leaflet-touch 
+  .leaflet-control-layers, 
+  .leaflet-touch .leaflet-bar {
+    margin-top: 1em !important;
+  }
 }
- 
+
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+	/* Map */
+  .leaflet-touch 
+  .leaflet-control-layers, 
+  .leaflet-touch .leaflet-bar {
+    margin-top: 1em !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	/* Header, Footer, BotNav*/
-	.nav-title {
-		font-size: 3rem;
+
+	/* NavBars */
+  .nav-title-top {
+    font-size: 2.3rem;
+  }
+
+	/* Text */
+
+	.nav-link-top {
+		font-size: 1.2em;
 	}
 
-	.nav-logo {
-		height: 3em;
+	.nav-link-upcoming {
+		font-size: 1.2em;
 	}
 
-	.circuit-img {
-    height: 20em !important;
-	}
-
-	h1 {
-		font-size: 2.4em;
-	}
-
-	.race-name {
-		font-size: 1.5em;
-	}
-
-	.align-title {
-		text-align: end;
-	}
-
-	.leaflet-touch 
-	.leaflet-control-layers, 
-	.leaflet-touch .leaflet-bar {
-		margin-top: 1em !important;
-	}
+	/* Map */
+  .leaflet-touch 
+  .leaflet-control-layers, 
+  .leaflet-touch .leaflet-bar {
+    margin-top: 1em !important;
+  }
 }
-
-/* @media (min-width: 64em) {
-    html {
-        font-size: 112.5%;
-    }
-}
-
-h2 {
-    margin-bottom: 0.6rem;
-}
-
-h4 {
-    margin-bottom: 0.2rem;
-    margin-top: 1.8rem;
-    line-height: 1.4;
-}
-
-h4:first-of-type {
-    margin-top: 0.6rem;
-}
-
-p {
-    margin-top: 0.2rem;
-    line-height: 1.4;
-} */
 
 /* Driver and Team Colors */
 

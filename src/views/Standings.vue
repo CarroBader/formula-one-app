@@ -1,17 +1,17 @@
 <template>
   <b-container class="default-background-center">
-    <StandingsHeader />
+    <StandingsNav />
     <router-view />
   </b-container>
 </template>     
 
 <script>
-import StandingsHeader from '../components/Standings/StandingsHeader.vue'
+import StandingsNav from '../components/Standings/StandingsNav'
 
 export default {
   name: 'Standings',
   components: {
-    StandingsHeader
+    StandingsNav
   }
 }
 </script>

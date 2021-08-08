@@ -6,7 +6,6 @@
             :to="route.path"
             class="bot-nav-link">
             <div class="text-icon">
-                {{route.name}}
                 <font-awesome-icon 
                 :icon="['fas', route.icon]"/>
             </div>
@@ -36,6 +35,7 @@ export default {
     height: auto;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 3em;
 }
 
 .bot-nav-link {

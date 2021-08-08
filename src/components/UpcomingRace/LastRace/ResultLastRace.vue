@@ -3,8 +3,8 @@
     v-if="dataLoaded"
     class="result-last-race-div">
     <b-card>
-      <h1 class="red-text align-title last-gp-title"> Last GP:</h1>
-      <h1 class="align-title" style="margin-left:2em"> {{ lastRace.raceName }}</h1>
+      <h1 class="red-text align-title last-gp-title first-headline"> Last GP:</h1>
+      <h1 class="align-title second-healine" style="margin-left:2em"> {{ lastRace.raceName }}</h1>
       <table>
       <tr>
           <th>Position</th>
@@ -109,13 +109,17 @@ td {
   color: #fff;
 }
 
-.align-title {
-  text-align: initial;
-}
+/* .card-body {
+  padding: 0 0;
+} */
 
-.last-gp-title {
+/* .align-title {
+  text-align: initial;
+} */
+
+/* .last-gp-title {
   font-size: 1.8em;
-}
+} */
 
 .positionDifference {
   font-size: 0.9em;
