@@ -1,6 +1,6 @@
 <template>
   <div class="default-background-center">
-    <Header />
+    <top-nav />
     <router-view/>
     <Footer />
     <BotNav />
@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import Header from './components/General/Header'
+import TopNav from './components/General/TopNav'
 import Footer from './components/General/Footer'
 import BotNav from './components/General/BotNav'
 
 export default {
   name: 'App',
   components: {
-    Header,
+    TopNav,
     Footer,
     BotNav
   }

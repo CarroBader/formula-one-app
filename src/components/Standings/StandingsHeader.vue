@@ -31,7 +31,8 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #ff1616;
+  /* background-color: #ff1616; */
+  background-color: #232323;
   /* border-bottom: 1px solid white; */
   z-index: 10000;
 }

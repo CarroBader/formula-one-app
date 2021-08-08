@@ -109,6 +109,10 @@ td {
   color: #fff;
 }
 
+/* .card-body {
+  padding: 0 0;
+} */
+
 .align-title {
   text-align: initial;
 }

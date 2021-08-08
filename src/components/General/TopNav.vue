@@ -1,6 +1,6 @@
 <template>
-<div>
-  <b-navbar toggleable="md">
+<div class="">
+  <b-navbar class="hej" toggleable="md">
     <img src="../../assets/logo.png" class="nav-logo" alt="F1 logo">
     <b-navbar-brand class="nav-title">Formula One</b-navbar-brand>
 
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'Header',
+  name: 'TopNav',
   data() {
     return {
       routes: this.$router.options.routes
@@ -34,16 +34,16 @@ export default {
 
 <style scoped>
 .navbar {
-    background-color: #ff1616;
-    border-bottom: 1px solid #fff;
-    /* margin-bottom: 2em; */
-    z-index: 10000;
+  background-color: #ff1616;
+  border-bottom: 1px solid #fff;
+  /* margin-bottom: 2em; */
+  z-index: 10000;
 }
 
 .nav-title {
-    font-family: 'Orbitron', 'sans-serif';
-    color: #fff !important;
-    text-shadow: 2px 2px #000;
+  font-family: 'Orbitron', 'sans-serif';
+  color: #fff !important;
+  text-shadow: 2px 2px #000;
 }
 
 .nav-link {
@@ -58,11 +58,18 @@ export default {
 }
 
 .nav-logo {
-        margin: 0 0.5em;
+  margin: 0 0.5em;
 }
 
 .items-far-right {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
+
+/* .hej {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: auto;
+} */
 </style>
 
