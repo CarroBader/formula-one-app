@@ -53,17 +53,26 @@ h4 {
 	color: #fff !important;
 }
 
+.router-link-active {
+	/* text-decoration: underline !important; */
+	color: #00d2be !important;
+	/* border: 2px solid #000; */
+	/* background-color: #121212; */
+}
+
 
 /* Table */
 
 th {
 	font-family: 'Orbitron', 'sans-serif';
 	border-bottom: 1px solid #fff;
+	color: #fff;
 }
 
 td {
 	font-family: 'Orbitron', 'sans-serif';
-	padding: 0 1em;
+	/* padding: 0 1em; */
+	color: #fff;
 }
 
 tbody {
@@ -72,13 +81,6 @@ tbody {
 
 tbody:last-child {
   border: none;
-}
-
-.router-link-active {
-	/* text-decoration: underline !important; */
-	color: #00d2be !important;
-	/* border: 2px solid #000; */
-	/* background-color: #121212; */
 }
 
 /* Colors */
@@ -120,7 +122,6 @@ tbody:last-child {
 	}
 
 	/* Footer */
-
 	.footer-nav {
 		display: block;
 	}
@@ -130,17 +131,46 @@ tbody:last-child {
 	}
 
 	/* Text */
-
 	.first-headline {
-		font-size: 1.5em;
+		font-size: 1.3em;
+		text-align: initial;
 	}
 
-	.second-heafline {
-		font-size: 2em;
+	.second-headline {
+		font-size: 1.5em;
+		margin-bottom: 1em;
 	}
 
 	.nav-link-upcoming {
 		font-size: 0.8em;
+	}
+
+	/* Card */
+	.card-body {
+		padding: 0.5em 0.5em;
+	}
+
+	/* ResultLastRace */
+	.nationality-last {
+		display: none;
+	}
+
+	.name-last {
+    padding-left: 0.4em;
+		/* Kanske för olegit */
+		word-spacing: 9999px;
+	}
+
+	.difference-last {
+		padding-left: 0.3em;
+	}
+
+	.positionDifference {
+		font-size: 0.8em;
+	}
+
+	.full-length {
+		display: none;
 	}
 }
 
@@ -201,6 +231,34 @@ tbody:last-child {
   .leaflet-touch .leaflet-bar {
     margin-top: 4em !important;
   }
+
+		/* ResultLastRace */
+		.nationality-last {
+			display: block;
+		}
+	
+		.name-last {
+			padding-left: 0.4em;
+			/* Kanske för olegit */
+			word-spacing: 5px;
+		}
+	
+		.difference-last {
+			padding-left: 0.3em;
+		}
+	
+		.positionDifference {
+			font-size: 0.8em;
+			margin-left: 0.5em;
+		}
+	
+		.full-length {
+			display: block;
+		}
+
+		.short-length {
+			display: none;
+		}
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
@@ -229,6 +287,16 @@ tbody:last-child {
 		font-size: 1.1em;
 	}
 
+	.first-headline {
+		font-size: 1.5em;
+		text-align: initial;
+	}
+
+	.second-headline {
+		font-size: 1.8em;
+		margin-bottom: 1em;
+	}
+
 	/* Map */
   .leaflet-touch 
   .leaflet-control-layers, 
@@ -240,6 +308,12 @@ tbody:last-child {
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
+	/* ResultLastRace */
+	.card-body {
+		padding: 1em 1em;
+	}
+
 
 	/* Map */
   .leaflet-touch 
@@ -266,6 +340,21 @@ tbody:last-child {
 
 	.nav-link-upcoming {
 		font-size: 1.2em;
+	}
+
+	.first-headline {
+		font-size: 1.8em;
+		text-align: initial;
+	}
+
+	.second-headline {
+		font-size: 2.1em;
+		margin-bottom: 1em;
+	}
+
+	/* Table */
+	td {
+		padding: 0 1em;
 	}
 
 	/* Map */

@@ -3,16 +3,18 @@
     v-if="dataLoaded"
     class="result-last-race-div">
     <b-card>
-      <h1 class="red-text align-title last-gp-title first-headline"> Last GP:</h1>
-      <h1 class="align-title second-healine" style="margin-left:2em"> {{ lastRace.raceName }}</h1>
+      <h1 class="red-text first-headline"> Last GP:</h1>
+      <h1 class="second-headline"> {{ lastRace.raceName }}</h1>
       <table>
       <tr>
-          <th>Position</th>
+          <th class="full-length">Position</th>
+          <th class="short-length">Pos.</th>
           <th></th>
           <th>Name</th>
-          <th>Nationality</th>
+          <th class="nationality-last">Nationality</th>
           <th>Car</th>
-          <th>Points</th>
+          <th class="full-length">Points</th>
+          <th class="short-length">Pts.</th>
           <th></th>
       </tr>
         <tbody         
@@ -20,15 +22,15 @@
           :key="race[i]">
         <tr>
           <td>{{ race.position }}</td>
-          <td>
+          <td class="difference-last">
             <img :src="getArrowImage(race.grid, race.position)"
             :alt='`${race.Driver.nationality}`'
             :class="getArrowClass(race.grid, race.position)"
             />
             <span class="positionDifference">{{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}</span>
           </td>
-          <td>{{ race.Driver.givenName }} {{ race.Driver.familyName }}</td>
-          <td>
+          <td class="name-last">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
+          <td class="nationality-last">
             <img :src="getFlagImage(race.Driver.nationality)"
             :alt='`${race.Driver.nationality}`'
             class="country-flag-img"/>
@@ -102,29 +104,17 @@ export default {
 
 th {
   font-size: 0.9em;
-  color: #fff;
+  /* color: #fff; */
 }
 
-td {
+/* td {
   color: #fff;
-}
-
-/* .card-body {
-  padding: 0 0;
 } */
 
-/* .align-title {
-  text-align: initial;
-} */
-
-/* .last-gp-title {
-  font-size: 1.8em;
-} */
-
-.positionDifference {
+/* .positionDifference {
   font-size: 0.9em;
-  margin-left: 0.5em;
-}
+  
+} */
 
 .country-flag-img {
   height: 1em;
