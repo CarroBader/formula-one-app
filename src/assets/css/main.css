@@ -51,13 +51,13 @@ h4 {
 
 .nav-link {
 	color: #fff !important;
+	padding: 0;
 }
 
 .router-link-active {
-	/* text-decoration: underline !important; */
-	color: #00d2be !important;
-	/* border: 2px solid #000; */
-	/* background-color: #121212; */
+	background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+	border-radius: 8px;
+	border: #ffffff7d 2px solid;
 }
 
 
@@ -121,6 +121,15 @@ tbody:last-child {
 		display: none;
 	}
 
+	.nav-link-upcoming {
+		font-size: 0.8em;
+	}
+
+	.router-link-active  {
+    padding: 0 0.3em !important;
+	}
+
+
 	/* Footer */
 	.footer-nav {
 		display: block;
@@ -137,12 +146,12 @@ tbody:last-child {
 	}
 
 	.second-headline {
+		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+		border-radius: 8px;
+		height: 34px;
+		border: #ffffff7d 2px solid;
 		font-size: 1.5em;
 		margin-bottom: 1em;
-	}
-
-	.nav-link-upcoming {
-		font-size: 0.8em;
 	}
 
 	/* Card */
@@ -204,6 +213,18 @@ tbody:last-child {
     display: block;
   }
 
+	.nav-link-top {
+		font-size: 1em;
+	}
+
+	.nav-link-upcoming {
+		font-size: 1em;
+	}
+
+	/* .router-link-active {
+    padding: 0 0.3em !important;
+	} */
+
   /* Footer */
 
   .footer-nav {
@@ -213,16 +234,6 @@ tbody:last-child {
   footer {
     display: block;
   }
-
-	/* Text */
-
-	.nav-link-top {
-		font-size: 1em;
-	}
-
-	.nav-link-upcoming {
-		font-size: 1em;
-	}
 
   /* Map */ 
 
@@ -278,7 +289,6 @@ tbody:last-child {
     display: none;
   }
 
-	/* Text */
 	.nav-link-top {
 		font-size: 1.1em;
 	}
@@ -287,6 +297,11 @@ tbody:last-child {
 		font-size: 1.1em;
 	}
 
+	/* .router-link-active {
+		padding: 0 1em;
+	} */
+
+	/* Text */
 	.first-headline {
 		font-size: 1.5em;
 		text-align: initial;
@@ -332,8 +347,6 @@ tbody:last-child {
     font-size: 2.3rem;
   }
 
-	/* Text */
-
 	.nav-link-top {
 		font-size: 1.2em;
 	}
@@ -342,6 +355,7 @@ tbody:last-child {
 		font-size: 1.2em;
 	}
 
+	/* Text */
 	.first-headline {
 		font-size: 1.8em;
 		text-align: initial;
