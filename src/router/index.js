@@ -18,7 +18,7 @@ const routes = [
   {
     path: '/grand-prix/',
     name: 'Hungarian Grand Prix',
-    icon: 'home',
+    icon: 'flag-checkered',
     component: UpcomingRace,
     children: [
       {

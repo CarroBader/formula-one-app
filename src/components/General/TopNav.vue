@@ -50,7 +50,7 @@ export default {
   font-family: 'Orbitron', 'sans-serif';
   text-decoration: none;
   text-shadow: 1.5px 1.5px #000;
-  padding: 0px 0px;
+  /* padding: 0px 0px; */
 }
 
 .nav-logo-top {
