@@ -2,9 +2,8 @@
   <div
     v-if="dataLoaded"
     class="result-last-race-div">
-    <b-card>
-      <h1 class="red-text first-headline"> Last GP:</h1>
-      <h1 class="second-headline"> {{ lastRace.raceName }}</h1>
+    <h1 class="second-headline">{{ lastRace.raceName }}</h1>
+    <b-card style="margin-top: 2em;">
       <table>
       <tr>
           <th class="full-length">Position</th>
@@ -104,17 +103,7 @@ export default {
 
 th {
   font-size: 0.9em;
-  /* color: #fff; */
 }
-
-/* td {
-  color: #fff;
-} */
-
-/* .positionDifference {
-  font-size: 0.9em;
-  
-} */
 
 .country-flag-img {
   height: 1em;
@@ -159,5 +148,4 @@ th {
   saturate(400%) 
   contrast(2);
 }
-
 </style>

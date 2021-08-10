@@ -148,8 +148,9 @@ tbody:last-child {
 	.second-headline {
 		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
 		border-radius: 8px;
-		height: 34px;
 		border: #ffffff7d 2px solid;
+		display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
 		font-size: 1.5em;
 		margin-bottom: 1em;
 	}
