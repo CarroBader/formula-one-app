@@ -1,60 +1,62 @@
 <template>
   <div
     v-if="dataLoaded">
-    <div class="leaders-div">
-      <div
-        v-for="topDrivers, i in driverStandings.slice(0,3)"
-        :key="topDrivers[i]"
-        class="leader-div"
-      >
-        <div class="parent">
-          <img 
-            :src='getDriverPhoto(topDrivers.Driver.code)'
-            class='leader-driver-img'
-          />
-          <img 
-            :src="getFlagImage(topDrivers.Driver.nationality)"
-            :alt='`${topDrivers.Driver.nationality}`'
-            class="leader-country-flag-img"
-          />
-        </div>
-        <div class="leaders-info">
-          <h3 class="leader-points">{{ topDrivers.points }}<span class="leader-points-span">pts</span></h3>
-          <h5 class="leader-name-team">{{ topDrivers.Driver.givenName }} {{ topDrivers.Driver.familyName }} </h5>
-          <h6 class="leader-name-team" :class="getColor(topDrivers.Constructors[0].constructorId)">{{ topDrivers.Constructors[0].name }}</h6>
+    <b-card class="card-margin">
+      <div class="leaders-div">
+        <div
+          v-for="topDrivers, i in driverStandings.slice(0,3)"
+          :key="topDrivers[i]"
+          class="leader-div"
+        >
+          <div class="parent">
+            <img 
+              :src='getDriverPhoto(topDrivers.Driver.code)'
+              class='leader-driver-img'
+            />
+            <img 
+              :src="getFlagImage(topDrivers.Driver.nationality)"
+              :alt='`${topDrivers.Driver.nationality}`'
+              class="leader-country-flag-img"
+            />
+          </div>
+          <div class="leaders-info">
+            <h3 class="leader-points">{{ topDrivers.points }}<span class="leader-points-span">pts</span></h3>
+            <h5 class="leader-name-team">{{ topDrivers.Driver.givenName }} {{ topDrivers.Driver.familyName }} </h5>
+            <h6 class="leader-name-team" :class="getColor(topDrivers.Constructors[0].constructorId)">{{ topDrivers.Constructors[0].name }}</h6>
+          </div>
         </div>
       </div>
-    </div>
-   <table>
-    <tr>
-        <th>Position</th>
-        <th>Name</th>
-        <th>Nationality</th>
-        <th>Car</th>
-        <th>Points</th>
-    </tr>
-      <tbody         
-        v-for="driver, i in driverStandings.slice(3,20)"
-        :key="driver[i]"
-      >
+      <table>
       <tr>
-        <td class="red-text"> {{ driver.position }} </td>
-        <td> 
-          {{ driver.Driver.givenName }} {{ driver.Driver.familyName }} 
-        </td>
-        <td>
-          <img :src="getFlagImage(driver.Driver.nationality)"
-          :alt='`${driver.Driver.nationality}`'
-          class="country-flag-img"/>
-        </td>
-        <td
-          :class="getColor(driver.Constructors[0].constructorId)"> 
-          {{ driver.Constructors[0].name }}
-        </td>
-        <td> {{ driver.points }} </td>
+          <th>Position</th>
+          <th>Name</th>
+          <th>Nationality</th>
+          <th>Car</th>
+          <th>Points</th>
       </tr>
-      </tbody>
-    </table>
+        <tbody         
+          v-for="driver, i in driverStandings.slice(3,20)"
+          :key="driver[i]"
+        >
+        <tr>
+          <td class="red-text"> {{ driver.position }} </td>
+          <td> 
+            {{ driver.Driver.givenName }} {{ driver.Driver.familyName }} 
+          </td>
+          <td>
+            <img :src="getFlagImage(driver.Driver.nationality)"
+            :alt='`${driver.Driver.nationality}`'
+            class="country-flag-img"/>
+          </td>
+          <td
+            :class="getColor(driver.Constructors[0].constructorId)"> 
+            {{ driver.Constructors[0].name }}
+          </td>
+          <td> {{ driver.points }} </td>
+        </tr>
+        </tbody>
+      </table>
+    </b-card>
   </div>
 </template>
 

@@ -3,18 +3,18 @@
     v-if="dataLoaded"
     class="result-last-race-div">
     <h1 class="second-headline">{{ lastRace.raceName }}</h1>
-    <b-card style="margin-top: 2em;">
+    <b-card class="card-margin">
       <table>
       <tr>
-          <th class="full-length">Position</th>
-          <th class="short-length">Pos.</th>
-          <th></th>
-          <th>Name</th>
-          <th class="nationality-last">Nationality</th>
-          <th>Car</th>
-          <th class="full-length">Points</th>
-          <th class="short-length">Pts.</th>
-          <th></th>
+        <th class="full-length">Position</th>
+        <th class="short-length">Pos.</th>
+        <th></th>
+        <th>Name</th>
+        <th class="nationality-last">Nationality</th>
+        <th>Car</th>
+        <th class="full-length">Points</th>
+        <th class="short-length">Pts.</th>
+        <th></th>
       </tr>
         <tbody         
           v-for="race, i in lastRace.Results"
@@ -34,7 +34,7 @@
             :alt='`${race.Driver.nationality}`'
             class="country-flag-img"/>
           </td>
-          <td :class="getColor(race.Constructor.constructorId)">{{ race.Constructor.name }}</td>
+          <td :class="getColor(race.Constructor.constructorId)" class="car-last">{{ race.Constructor.name }}</td>
           <td>{{ race.points }}</td>
           <td v-if="fastestLap(race.FastestLap)">
             <img src="../../../assets/img/icons/fastest_lap.png"
