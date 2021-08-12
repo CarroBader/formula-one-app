@@ -10,7 +10,7 @@
         <th class="short-length">Pos.</th>
         <th></th>
         <th>Name</th>
-        <th class="nationality-last">Nationality</th>
+        <th class="nationality-table-mobile">Nationality</th>
         <th>Car</th>
         <th class="full-length">Points</th>
         <th class="short-length">Pts.</th>
@@ -18,24 +18,27 @@
       </tr>
         <tbody         
           v-for="race, i in lastRace.Results"
-          :key="race[i]">
+          :key="race[i]"
+          class="result-last-race-tbody">
         <tr>
-          <td>{{ race.position }}</td>
-          <td class="difference-last">
+          <td class="result-last-race-td">{{ race.position }}</td>
+          <td class="result-last-race-td">
             <img :src="getArrowImage(race.grid, race.position)"
             :alt='`${race.Driver.nationality}`'
             :class="getArrowClass(race.grid, race.position)"
             />
             <span class="positionDifference">{{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}</span>
           </td>
-          <td class="name-last">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
-          <td class="nationality-last">
+          <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
+          <td class="nationality-table-mobile result-last-race-td">
             <img :src="getFlagImage(race.Driver.nationality)"
             :alt='`${race.Driver.nationality}`'
             class="country-flag-img"/>
           </td>
-          <td :class="getColor(race.Constructor.constructorId)" class="car-last">{{ race.Constructor.name }}</td>
-          <td>{{ race.points }}</td>
+          <td :class="getColor(race.Constructor.constructorId)" 
+              class="result-last-race-td">
+              {{ race.Constructor.name }}</td>
+          <td class="result-last-race-td">{{ race.points }}</td>
           <td v-if="fastestLap(race.FastestLap)">
             <img src="../../../assets/img/icons/fastest_lap.png"
             class="fastestLap" 

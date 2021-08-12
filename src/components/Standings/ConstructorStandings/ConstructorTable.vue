@@ -146,12 +146,6 @@ td {
   margin: 0 0.5em;
 }
 
-.leaders-div {
-  display: flex;
-  justify-content: space-between;
-  margin: 2em 0;
-}
-
 .leader-nationality {
   margin-bottom: 0.3em;
 }

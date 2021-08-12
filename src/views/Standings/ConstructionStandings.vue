@@ -1,6 +1,6 @@
 <template>
-  <b-container class="default-background-center smaller-div">
-    <div class="row last-race-row">
+  <b-container class="default-background-center">
+    <div class="row constructionstandings-row">
       <div class="col">
         <ConstructorTable />
       </div>
@@ -21,8 +21,9 @@ export default {
 
 <style scoped>
 
-.smaller-div {
-  width: 70%;
+.constructionstandings-row {
+  display: inline-block;
+  margin-bottom: 3em;
 }
 
 </style>

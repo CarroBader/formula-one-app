@@ -1,6 +1,6 @@
 <template>
-  <b-container class="default-background-center smaller-div">
-    <div class="row last-race-row">
+  <b-container class="default-background-center">
+    <div class="row driverstandings-row">
       <div class="col">
         <DriverTable />
       </div>
@@ -21,8 +21,9 @@ export default {
 
 <style scoped>
 
-.smaller-div {
-  width: 70%;
+.driverstandings-row {
+  display: inline-block;
+  margin-bottom: 3em;
 }
 
 </style>
