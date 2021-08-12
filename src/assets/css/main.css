@@ -144,22 +144,6 @@ tbody:last-child {
 		display: none;
 	}
 
-	/* Text */
-	.first-headline {
-		font-size: 1.3em;
-		text-align: initial;
-	}
-
-	.second-headline {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		display: inline;
-    padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.2em;
-		margin-bottom: 1em;
-	}
-
 	/* Card */
 	.card-body {
 		padding: 0.5em 0.5em;
@@ -171,6 +155,16 @@ tbody:last-child {
 	}
 
 	/* ResultLastRace */
+	.result-last-race-headline {
+		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+		border-radius: 8px;
+		border: #ffffff7d 2px solid;
+		display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
+		font-size: 1.2em;
+		margin-bottom: 1em;
+	}
+
 	.positionDifference {
 		font-size: 0.7em;
 		padding-left: 0.3em;
@@ -449,23 +443,18 @@ tbody:last-child {
 		font-size: 1.1em;
 	}
 
-	/* Text */
-	.first-headline {
-		font-size: 1.5em;
-		text-align: initial;
-	}
-
-	.second-headline {
-		font-size: 1.8em;
-		margin-bottom: 1em;
-	}
-
 	/* Map */
   .leaflet-touch 
   .leaflet-control-layers, 
   .leaflet-touch .leaflet-bar {
     margin-top: 1em !important;
   }
+
+	/* ResultLastRace */
+	.result-last-race-headline {
+		font-size: 1.6em;
+		margin-bottom: 1em;
+	}
 
 	/* DriverTable */
 	.leader-driver-img {
@@ -636,17 +625,6 @@ tbody:last-child {
 		font-size: 1.2em;
 	}
 
-	/* Text */
-	.first-headline {
-		font-size: 1.8em;
-		text-align: initial;
-	}
-
-	.second-headline {
-		font-size: 2em;
-		margin-bottom: 1em;
-	}
-
 	/* Map */
   .leaflet-touch 
   .leaflet-control-layers, 
@@ -655,6 +633,11 @@ tbody:last-child {
   }
 
 	/* ResultLastRace */
+	.result-last-race-headline {
+		font-size: 1.8em;
+		margin-bottom: 1em;
+	}
+
 	.positionDifference {
     font-size: 0.9em;
     padding-left: 0.6em;

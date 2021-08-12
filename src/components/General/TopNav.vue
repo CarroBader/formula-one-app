@@ -28,6 +28,12 @@ export default {
     return {
       routes: this.$router.options.routes
     }
+  },
+  props: {
+    nextRaceName: String
+  },
+  mounted () {
+    this.routes[0].name = this.nextRaceName
   }
 }
 </script>

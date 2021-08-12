@@ -17,7 +17,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/grand-prix/',
-    name: 'Hungarian Grand Prix',
+    name: 'undefined',
     icon: 'flag-checkered',
     component: UpcomingRace,
     children: [
@@ -49,18 +49,18 @@ const routes = [
     ]
   },
   {
-    path: '/standings/',
+    path: '/standings',
     name: 'Standings',
     icon: 'table',
     component: Standings,
     children: [
       {
-        path: '/standings/driver-standings',
-        name: 'Drive',
+        path: '/driver-standings',
+        name: 'Driver',
         component: DriverStandings
       },
       {
-        path: '/standings/constructor-standings',
+        path: '/constructor-standings',
         name: 'Constructor',
         component: ConstructorStandings
       },

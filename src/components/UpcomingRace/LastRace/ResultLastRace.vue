@@ -2,7 +2,7 @@
   <div
     v-if="dataLoaded"
     class="result-last-race-div">
-    <h1 class="second-headline">{{ lastRace.raceName }}</h1>
+    <h1 class="result-last-race-headline">{{ lastRace.raceName }}</h1>
     <b-card class="card-margin">
       <table>
       <tr>
