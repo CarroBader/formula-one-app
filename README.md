@@ -35,6 +35,27 @@ NODE_ENV=dev
 npm run serve
 ```
 
+## Deploy on Heroku
+
+Contact Marcus Bader to be invited to the Heroku project.
+
+## .git/config
+
+Make sure you have these lines in the file `.git/config`.
+
+```
+[remote "heroku"]
+        url = https://git.heroku.com/formula-one-light.git
+        fetch = +refs/heads/*:refs/remotes/heroku/*
+```
+
+## Commands to deploy
+
+Execute these commands
+
+`git push heroku main`
+
+
 ## Tools
 **Execute:**
 
