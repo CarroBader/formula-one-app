@@ -62,7 +62,6 @@ h4 {
 
 
 /* Table */
-
 th {
 	font-family: 'Orbitron', 'sans-serif';
 	border-bottom: 1px solid #fff;
@@ -71,7 +70,6 @@ th {
 
 td {
 	font-family: 'Orbitron', 'sans-serif';
-	/* padding: 0 1em; */
 	color: #fff;
 }
 
@@ -108,6 +106,10 @@ tbody:last-child {
 		flex-direction: row;
 	}
 
+	.navbar-nav-standings {
+		flex-direction: row;
+	}
+
 	.nav-link {
 		margin: 0 0.5em;
 	}
@@ -125,10 +127,13 @@ tbody:last-child {
 		font-size: 0.8em;
 	}
 
+	.nav-link-standings {
+		font-size: 0.8em;
+	}
+
 	.router-link-active  {
     padding: 0 0.3em !important;
 	}
-
 
 	/* Footer */
 	.footer-nav {
@@ -148,9 +153,10 @@ tbody:last-child {
 	.second-headline {
 		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
 		border-radius: 8px;
-		height: 34px;
 		border: #ffffff7d 2px solid;
-		font-size: 1.5em;
+		display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
+		font-size: 1.2em;
 		margin-bottom: 1em;
 	}
 
@@ -159,27 +165,126 @@ tbody:last-child {
 		padding: 0.5em 0.5em;
 	}
 
-	/* ResultLastRace */
-	.nationality-last {
+	/* Many components */
+	.nationality-table-mobile {
 		display: none;
 	}
 
-	.name-last {
-    padding-left: 0.4em;
-		/* Kanske för olegit */
-		word-spacing: 9999px;
-	}
-
-	.difference-last {
+	/* ResultLastRace */
+	.positionDifference {
+		font-size: 0.7em;
 		padding-left: 0.3em;
 	}
 
-	.positionDifference {
+	.result-last-race-tbody {
 		font-size: 0.8em;
+	}
+
+	.result-last-race-td { 
+		padding: 0.3em 0.3em;
+	}
+
+	.card-margin {
+		margin: 2em 0;
 	}
 
 	.full-length {
 		display: none;
+	}
+
+	/* DriverTable */
+	.leader-driver-img {
+		height: 5em;
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+
+	.leaders-driver-info {
+		background-color: #ff1616;
+		border-top: 3px solid #fff;
+		border-radius: 0 0 15px 15px;
+		padding: 0.2em;
+		width: auto;
+	}
+
+	.leader-driver-flag-img {
+		/* display: none; */
+		height: 0.6em;
+		width: 1em;
+	}
+
+	.leader-driver-points {
+		font-size: 0.8em;
+		-webkit-text-stroke-width: 0.4px;
+		-webkit-text-stroke-color: #000;
+	}
+
+	.leader-driver-name-team {
+		background-color: #000;
+		padding: 0.2em;
+		border-radius: 0 15px;
+		/* -webkit-text-stroke-width: 0.9px;
+		-webkit-text-stroke-color: black; */
+		border: 1px solid #fff;
+		font-size: 0.7em;
+	}
+
+	.leader-driver-name {
+		word-spacing: 9999px;
+	}
+
+	.driver-table-tbody {
+		font-size: 0.7em;
+	}
+
+	.driver-table-tr {
+		font-size: 0.8em;
+	}
+
+	/* ConstructorTable */
+	.leader-constructor-img {
+		height: 1.8em;
+	}
+
+	.leaders-constructor-info {
+		background-color: #ff1616;
+		border-top: 3px solid #fff;
+		border-radius: 0 0 15px 15px;
+		padding: 0.2em;
+		width: auto;
+	}
+
+	.leader-constructor-points {
+		font-size: 0.8em;
+		-webkit-text-stroke-width: 0.4px;
+		-webkit-text-stroke-color: #000;
+		margin-bottom: 0;
+	}
+
+	.leader-constructor-name-team {
+		background-color: #000;
+		padding: 0.2em;
+		border-radius: 0 15px;
+		/* -webkit-text-stroke-width: 0.9px;
+		-webkit-text-stroke-color: black; */
+		border: 1px solid #fff;
+		font-size: 0.7em;
+	}
+
+	.leader-constructor-flag-img {
+		height: 0.9em;
+    width: 1.5em;
+		border: 0.1px solid #d60909;
+    margin: 0.4em 0;
+	}
+
+	.constructor-table-tbody {
+		font-size: 0.7em;
+	}
+
+	.constructor-table-tr {
+		font-size: 0.8em;
 	}
 }
 
@@ -188,7 +293,6 @@ tbody:last-child {
 @media (min-width: 544px) {
 
 	/* NavBars */
-
   .nav-title-top {
     font-size: 2rem;
   }
@@ -202,6 +306,10 @@ tbody:last-child {
 	}
 
   .navbar-nav-upcoming {
+    flex-direction: row;
+  }
+
+	.navbar-nav-standings {
     flex-direction: row;
   }
 
@@ -221,12 +329,11 @@ tbody:last-child {
 		font-size: 1em;
 	}
 
-	/* .router-link-active {
-    padding: 0 0.3em !important;
-	} */
+	.nav-link-standings {
+		font-size: 1em;
+	}
 
   /* Footer */
-
   .footer-nav {
     display: none !important;
   }
@@ -236,40 +343,81 @@ tbody:last-child {
   }
 
   /* Map */ 
-
   .leaflet-touch 
   .leaflet-control-layers, 
   .leaflet-touch .leaflet-bar {
     margin-top: 4em !important;
   }
 
-		/* ResultLastRace */
-		.nationality-last {
-			display: block;
-		}
-	
-		.name-last {
-			padding-left: 0.4em;
-			/* Kanske för olegit */
-			word-spacing: 5px;
-		}
-	
-		.difference-last {
-			padding-left: 0.3em;
-		}
-	
-		.positionDifference {
-			font-size: 0.8em;
-			margin-left: 0.5em;
-		}
-	
-		.full-length {
-			display: block;
-		}
+	/* Many components */
+	.nationality-table-mobile {
+		display: revert;
+	}
 
-		.short-length {
-			display: none;
-		}
+	/* ResultLastRace */
+  .positionDifference {
+    font-size: 0.8em;
+    padding-left: 0.4em;
+  }
+  
+  .result-last-race-tbody {
+    font-size: 0.9em;
+  }
+
+  .result-last-race-td { 
+    padding: 0.3em 0.3em;
+  }
+
+	.card-margin {
+		margin: 2em 0 3em 0;
+	}
+
+	.full-length {
+		display: revert;
+	}
+
+	.short-length {
+		display: none;
+	}
+
+	/* DriverTable */
+	.leader-driver-img {
+		height: 7em;
+	}
+
+	.leader-driver-name {
+		word-spacing: 5px;
+	}
+
+	.leaders-driver-info {
+		margin: 0 1em;
+	}
+	
+	/* ConstructorTable */
+	.leader-constructor-img {
+		height: 3em;
+	}
+
+	.leader-constructor-points {
+		font-size: 0.9em;
+	}
+
+	.leader-constructor-name-team {
+		font-size: 0.9em;
+	}
+
+	.leader-constructor-flag-img {
+		height: 1em;
+		width: 1.7em;
+	}
+
+	.constructor-table-tbody {
+		font-size: 0.8em;
+	}
+
+	.constructor-table-tr {
+		font-size: 0.9em;
+	}
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
@@ -296,10 +444,10 @@ tbody:last-child {
 	.nav-link-upcoming {
 		font-size: 1.1em;
 	}
-
-	/* .router-link-active {
-		padding: 0 1em;
-	} */
+	
+	.nav-link-standings {
+		font-size: 1.1em;
+	}
 
 	/* Text */
 	.first-headline {
@@ -318,24 +466,153 @@ tbody:last-child {
   .leaflet-touch .leaflet-bar {
     margin-top: 1em !important;
   }
+
+	/* DriverTable */
+	.leader-driver-img {
+		height: 9em;
+	}
+
+	.leaders-driver-info {
+		border-top: 4px solid #fff;
+		margin: 0 1em;
+	}
+
+	.leader-driver-flag-img {
+		/* display: revert; */
+		height: 1.2em;
+		width: 2em;
+	}
+
+	.leader-driver-points {
+		font-size: 1em;
+		-webkit-text-stroke-width: 0.6px;
+		-webkit-text-stroke-color: #000;
+	}
+
+	.leader-driver-name-team {
+		font-size: 0.9em;
+	}
+
+	.driver-table-tbody {
+		font-size: 0.8em;
+	}
+
+	.driver-table-tr {
+		font-size: 0.9em;
+	}
+
+	/* ConstructorTable */
+	.leader-constructor-img {
+		height: 4em;
+	}
+
+	.leader-constructor-points {
+		font-size: 1em;
+	}
+
+	.leader-constructor-name-team {
+		font-size: 1em;
+	}
+
+	.leader-constructor-flag-img {
+		height: 1.2em;
+		width: 1.9em;
+	}
+
+	.constructor-table-tbody {
+		font-size: 0.9em;
+	}
+
+	.constructor-table-tr {
+		font-size: 1em;
+	}
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
+	/* Map */
+	.leaflet-touch 
+	.leaflet-control-layers, 
+	.leaflet-touch .leaflet-bar {
+		margin-top: 1em !important;
+	}
+
 	/* ResultLastRace */
+	.positionDifference {
+    font-size: 0.9em;
+    padding-left: 0.5em;
+  }
+  
+  .result-last-race-tbody {
+    font-size: 1em;
+  }
+
+  .result-last-race-td { 
+    padding: 0.3em 0.3em;
+  }
+
 	.card-body {
 		padding: 1em 1em;
 	}
 
+	.card-margin {
+		margin: 2em 0 5em 0;
+	}
 
-	/* Map */
-  .leaflet-touch 
-  .leaflet-control-layers, 
-  .leaflet-touch .leaflet-bar {
-    margin-top: 1em !important;
-  }
+	/* DriverTable */
+	.leader-driver-img {
+		height: 10em;
+	}
+
+	.leaders-driver-info {
+		margin: 0 2em;
+	}
+
+	.leader-driver-flag-img {
+		height: 1.4em;
+		width: 2.2em;
+	}
+
+	.leader-driver-points {
+		font-size: 1.2em;
+		-webkit-text-stroke-width: 0.6px;
+		-webkit-text-stroke-color: #000;
+	}
+
+	.leader-driver-name-team {
+		font-size: 1em;
+	}
+
+	.driver-table-tbody {
+		font-size: 0.9em;
+	}
+
+	.driver-table-tr {
+		font-size: 1em;
+	}
+
+	/* ConstructorTable */
+	.leader-constructor-img {
+		height: 4.5em;
+	}
+
+	.leader-constructor-points {
+		font-size: 1.1em;
+	}
+
+	.leader-constructor-name-team {
+		font-size: 1.1em;
+	}
+
+	.constructor-table-tbody {
+		font-size: 1em;
+	}
+
+	.constructor-table-tr {
+		font-size: 1.1em;
+	}
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
@@ -355,6 +632,10 @@ tbody:last-child {
 		font-size: 1.2em;
 	}
 
+	.nav-link-standings {
+		font-size: 1.2em;
+	}
+
 	/* Text */
 	.first-headline {
 		font-size: 1.8em;
@@ -362,13 +643,8 @@ tbody:last-child {
 	}
 
 	.second-headline {
-		font-size: 2.1em;
+		font-size: 2em;
 		margin-bottom: 1em;
-	}
-
-	/* Table */
-	td {
-		padding: 0 1em;
 	}
 
 	/* Map */
@@ -377,6 +653,57 @@ tbody:last-child {
   .leaflet-touch .leaflet-bar {
     margin-top: 1em !important;
   }
+
+	/* ResultLastRace */
+	.positionDifference {
+    font-size: 0.9em;
+    padding-left: 0.6em;
+  }
+  
+  .result-last-race-tbody {
+    font-size: 1.1em;
+  }
+
+  .result-last-race-td { 
+    padding: 0.5em 0.5em;
+  }
+
+	/* DriverTable */
+	.leaders-driver-info {
+		width: 11em;
+	}
+
+	.leader-driver-points {
+		font-size: 1.3em;
+		-webkit-text-stroke-width: 0.8px;
+		-webkit-text-stroke-color: #000;
+	}
+
+	/* ConstructorTable */
+	.leader-constructor-img {
+		height: 5em;
+	}
+
+	.leader-constructor-points {
+		font-size: 1.2em;
+	}
+
+	.leader-constructor-name-team {
+		font-size: 1.2em;
+	}
+
+	.leader-constructor-flag-img {
+		height: 1.6em;
+    width: 2.3em;
+	}
+
+	.constructor-table-tbody {
+		font-size: 1.1em;
+	}
+
+	.constructor-table-tr {
+		font-size: 1.2em;
+	}
 }
 
 /* Driver and Team Colors */

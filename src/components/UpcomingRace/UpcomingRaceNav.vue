@@ -40,7 +40,6 @@ export default {
   font-family: 'Orbitron', 'sans-serif';
   text-decoration: none;
   text-shadow: 2px 2px #000;
-  /* padding: 0px; */
 }
 </style>
 

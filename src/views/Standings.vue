@@ -1,5 +1,5 @@
 <template>
-  <b-container class="default-background-center">
+  <b-container class="view-container">
     <StandingsNav />
     <router-view />
   </b-container>
