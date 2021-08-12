@@ -39,7 +39,7 @@ npm run serve
 
 Contact Marcus Bader to be invited to the Heroku project.
 
-## .git/config
+### .git/config
 
 Make sure you have these lines in the file `.git/config`.
 
@@ -49,7 +49,7 @@ Make sure you have these lines in the file `.git/config`.
         fetch = +refs/heads/*:refs/remotes/heroku/*
 ```
 
-## Commands to deploy
+### Commands to deploy
 
 Execute these commands
 
