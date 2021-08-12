@@ -193,10 +193,6 @@ tbody:last-child {
 	}
 
 	/* DriverTable */
-	/* .card-margin-driver-table {
-		margin: 2em 0;
-	} */
-
 	.leader-driver-img {
 		height: 5em;
 		position: relative;
@@ -204,22 +200,28 @@ tbody:last-child {
 		left: 0;
 	}
 
-	.leader-country-flag-img {
-		display: none;
+	.leaders-driver-info {
+		background-color: #ff1616;
+		border-top: 3px solid #fff;
+		border-radius: 0 0 15px 15px;
+		padding: 0.2em;
+		width: auto;
 	}
 
-	.leader-points-span {
-		font-size: 0.7em;
+	.leader-driver-flag-img {
+		/* display: none; */
+		height: 0.6em;
+		width: 1em;
 	}
 
-	.leader-points {
+	.leader-driver-points {
 		font-size: 0.8em;
 		-webkit-text-stroke-width: 0.4px;
-		-webkit-text-stroke-color: black;
+		-webkit-text-stroke-color: #000;
 	}
 
-	.leader-name-team {
-		background-color: black;
+	.leader-driver-name-team {
+		background-color: #000;
 		padding: 0.2em;
 		border-radius: 0 15px;
 		/* -webkit-text-stroke-width: 0.9px;
@@ -228,22 +230,60 @@ tbody:last-child {
 		font-size: 0.7em;
 	}
 
-	.leader-name {
+	.leader-driver-name {
 		word-spacing: 9999px;
 	}
 
-	.leaders-info {
+	.driver-table-tbody {
+		font-size: 0.7em;
+	}
+
+	.driver-table-tr {
+		font-size: 0.8em;
+	}
+
+	/* ConstructorTable */
+	.leader-constructor-img {
+		height: 1.8em;
+	}
+
+	.leaders-constructor-info {
 		background-color: #ff1616;
 		border-top: 3px solid #fff;
 		border-radius: 0 0 15px 15px;
 		padding: 0.2em;
 		width: auto;
 	}
-	.driver-table-tbody {
+
+	.leader-constructor-points {
+		font-size: 0.8em;
+		-webkit-text-stroke-width: 0.4px;
+		-webkit-text-stroke-color: #000;
+		margin-bottom: 0;
+	}
+
+	.leader-constructor-name-team {
+		background-color: #000;
+		padding: 0.2em;
+		border-radius: 0 15px;
+		/* -webkit-text-stroke-width: 0.9px;
+		-webkit-text-stroke-color: black; */
+		border: 1px solid #fff;
 		font-size: 0.7em;
 	}
 
-	.driver-table-tr {
+	.leader-constructor-flag-img {
+		height: 0.9em;
+    width: 1.5em;
+		border: 0.1px solid #d60909;
+    margin: 0.4em 0;
+	}
+
+	.constructor-table-tbody {
+		font-size: 0.7em;
+	}
+
+	.constructor-table-tr {
 		font-size: 0.8em;
 	}
 }
@@ -345,12 +385,38 @@ tbody:last-child {
 		height: 7em;
 	}
 
-	.leader-name {
+	.leader-driver-name {
 		word-spacing: 5px;
 	}
 
-	.leaders-info {
+	.leaders-driver-info {
 		margin: 0 1em;
+	}
+	
+	/* ConstructorTable */
+	.leader-constructor-img {
+		height: 3em;
+	}
+
+	.leader-constructor-points {
+		font-size: 0.9em;
+	}
+
+	.leader-constructor-name-team {
+		font-size: 0.9em;
+	}
+
+	.leader-constructor-flag-img {
+		height: 1em;
+		width: 1.7em;
+	}
+
+	.constructor-table-tbody {
+		font-size: 0.8em;
+	}
+
+	.constructor-table-tr {
+		font-size: 0.9em;
 	}
 }
 
@@ -406,28 +472,24 @@ tbody:last-child {
 		height: 9em;
 	}
 
-	.leaders-info {
+	.leaders-driver-info {
 		border-top: 4px solid #fff;
 		margin: 0 1em;
 	}
 
-	.leader-country-flag-img {
-		display: revert;
+	.leader-driver-flag-img {
+		/* display: revert; */
 		height: 1.2em;
 		width: 2em;
 	}
 
-	.leader-points-span {
-		font-size: 0.9em;
-	}
-
-	.leader-points {
+	.leader-driver-points {
 		font-size: 1em;
 		-webkit-text-stroke-width: 0.6px;
-		-webkit-text-stroke-color: black;
+		-webkit-text-stroke-color: #000;
 	}
 
-	.leader-name-team {
+	.leader-driver-name-team {
 		font-size: 0.9em;
 	}
 
@@ -437,6 +499,32 @@ tbody:last-child {
 
 	.driver-table-tr {
 		font-size: 0.9em;
+	}
+
+	/* ConstructorTable */
+	.leader-constructor-img {
+		height: 4em;
+	}
+
+	.leader-constructor-points {
+		font-size: 1em;
+	}
+
+	.leader-constructor-name-team {
+		font-size: 1em;
+	}
+
+	.leader-constructor-flag-img {
+		height: 1.2em;
+		width: 1.9em;
+	}
+
+	.constructor-table-tbody {
+		font-size: 0.9em;
+	}
+
+	.constructor-table-tr {
+		font-size: 1em;
 	}
 }
 
@@ -474,35 +562,26 @@ tbody:last-child {
 	}
 
 	/* DriverTable */
-	/* .card-margin-driver-table {
-		margin: 2em 0 5em 0;
-	} */
-
 	.leader-driver-img {
 		height: 10em;
 	}
 
-	.leaders-info {
+	.leaders-driver-info {
 		margin: 0 2em;
 	}
 
-	.leader-country-flag-img {
-		display: revert;
+	.leader-driver-flag-img {
 		height: 1.4em;
 		width: 2.2em;
 	}
 
-	.leader-points-span {
-		font-size: 1.1em;
-	}
-
-	.leader-points {
+	.leader-driver-points {
 		font-size: 1.2em;
 		-webkit-text-stroke-width: 0.6px;
-		-webkit-text-stroke-color: black;
+		-webkit-text-stroke-color: #000;
 	}
 
-	.leader-name-team {
+	.leader-driver-name-team {
 		font-size: 1em;
 	}
 
@@ -512,6 +591,27 @@ tbody:last-child {
 
 	.driver-table-tr {
 		font-size: 1em;
+	}
+
+	/* ConstructorTable */
+	.leader-constructor-img {
+		height: 4.5em;
+	}
+
+	.leader-constructor-points {
+		font-size: 1.1em;
+	}
+
+	.leader-constructor-name-team {
+		font-size: 1.1em;
+	}
+
+	.constructor-table-tbody {
+		font-size: 1em;
+	}
+
+	.constructor-table-tr {
+		font-size: 1.1em;
 	}
 }
 
@@ -569,14 +669,40 @@ tbody:last-child {
   }
 
 	/* DriverTable */
-	.leaders-info {
+	.leaders-driver-info {
 		width: 11em;
 	}
 
-	.leader-points {
+	.leader-driver-points {
 		font-size: 1.3em;
 		-webkit-text-stroke-width: 0.8px;
-		-webkit-text-stroke-color: black;
+		-webkit-text-stroke-color: #000;
+	}
+
+	/* ConstructorTable */
+	.leader-constructor-img {
+		height: 5em;
+	}
+
+	.leader-constructor-points {
+		font-size: 1.2em;
+	}
+
+	.leader-constructor-name-team {
+		font-size: 1.2em;
+	}
+
+	.leader-constructor-flag-img {
+		height: 1.6em;
+    width: 2.3em;
+	}
+
+	.constructor-table-tbody {
+		font-size: 1.1em;
+	}
+
+	.constructor-table-tr {
+		font-size: 1.2em;
 	}
 }
 

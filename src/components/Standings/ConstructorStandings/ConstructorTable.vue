@@ -1,54 +1,54 @@
 <template>
   <div
     v-if="dataLoaded">
-    <div class="leaders-div">
-      <div
-        v-for="topConstructors, i in constructorStandings.slice(0,3)"
-        :key="topConstructors[i]"
-        class="leader-div"
-      >
-        <img 
-          :src='getConstructersPhoto(topConstructors.Constructor.constructorId)'
-          class='leader-constructor-img'
-        />
-        <div class="leaders-info">
-          <h3 class="leader-points">{{ topConstructors.points }}<span class="leader-points-span">pts</span></h3>
-          <div class="leader-nationality">
-            <img 
-              :src="getFlagImage(topConstructors.Constructor.nationality)"
-              :alt='`${topConstructors.Constructor.nationality}`'
-              class="leader-country-flag-img"
-            />
+    <b-card class="card-margin">
+      <div class="leaders-div">
+        <div
+          v-for="topConstructors, i in constructorStandings.slice(0,3)"
+          :key="topConstructors[i]"
+          :class="divsTopThree[i]"
+          class="leader-div">
+          <img 
+            :src='getConstructersPhoto(topConstructors.Constructor.constructorId)'
+            class='leader-constructor-img'
+          />
+          <div class="leaders-constructor-info">
+            <h3 class="leader-constructor-points">{{ topConstructors.points }} pts</h3>
+            <div>
+              <img 
+                :src="getFlagImage(topConstructors.Constructor.nationality)"
+                :alt='`${topConstructors.Constructor.nationality}`'
+                class="leader-constructor-flag-img"
+              />
+            </div>
+            <h5 class="leader-constructor-name-team" :class="getColor(topConstructors.Constructor.constructorId)">{{ topConstructors.Constructor.name }}</h5>
           </div>
-          <h5 class="leader-name-team" :class="getColor(topConstructors.Constructor.constructorId)">{{ topConstructors.Constructor.name }}</h5>
         </div>
       </div>
-    </div>
-   <table>
-    <tr>
-        <th>Position</th>
-        <th>Name</th>
-        <th>Nationality</th>
-        <th>Points</th>
-    </tr>
-      <tbody         
-        v-for="constructor, i in constructorStandings.slice(3,10)"
-        :key="constructor[i]"
-      >
-      <tr>
-        <td class="red-text"> {{ constructor.position }} </td>
-        <td> 
-          {{ constructor.Constructor.name }}
-        </td>
-        <td>
-          <img :src="getFlagImage(constructor.Constructor.nationality)"
-          :alt='`${constructor.Constructor.nationality}`'
-          class="country-flag-img"/>
-        </td>
-        <td> {{ constructor.points }} </td>
+    <table>
+      <tr class="constructor-table-tr">
+          <th>Position</th>
+          <th>Name</th>
+          <th>Nationality</th>
+          <th>Points</th>
       </tr>
-      </tbody>
-    </table>
+        <tbody         
+          v-for="constructor, i in constructorStandings.slice(3,10)"
+          :key="constructor[i]"
+          class="constructor-table-tbody">
+        <tr>
+          <td> {{ constructor.position }} </td>
+          <td :class="getColor(constructor.Constructor.constructorId)"> {{ constructor.Constructor.name }}</td>
+          <td>
+            <img :src="getFlagImage(constructor.Constructor.nationality)"
+            :alt='`${constructor.Constructor.nationality}`'
+            class="country-flag-img"/>
+          </td>
+          <td> {{ constructor.points }} </td>
+        </tr>
+        </tbody>
+      </table>
+    </b-card>
   </div>
 </template>
 
@@ -57,12 +57,15 @@ import getColorMixin from '../../../mixins/getColorMixin'
 import getFlagMixin from '../../../mixins/getFlagMixin'
 import apiCallsMixin from '../../../mixins/apiCallsMixin'
 
+const divsTopThree = ["first", "second", "third"]
+
 export default {
   name: 'ConstructorTable',
   data () {
     return {
       constructorStandings: null,
-      dataLoaded: false
+      dataLoaded: false,
+      divsTopThree: divsTopThree
     }
   },
   async mounted() {
@@ -88,57 +91,22 @@ table {
   width: 100%;
 }
 
-th {
-  font-size: 0.9em;
-  color: #fff;
+.leaders-div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 2em 0;
 }
 
-td {
-  color: #fff;
+.leaders-div > .first {order: 2; }
+.leaders-div > .second {order: 1; }
+.leaders-div > .third {order: 3; }
+
+.second {
+  margin: 2em 0.5em 0 0.5em !important;
 }
 
-.country-flag-img {
-  height: 1em;
-  width: 1.6em;
-}
-
-.driver-img {
-  height: 10em;
-}
-
-.leader-country-flag-img {
-  height: 1.5em;
-  width: 2.5em;
-  border: 0.1px solid black;
-}
-
-.leader-constructor-img {
-  height: 4.7em;
-}
-
-.leaders-info {
-  background-color: #ff1616;
-  border-top: 5px solid #fff;
-  border-radius: 0 0 15px 15px;
-  padding: 0.2em;
-}
-
-.leader-points-span {
-  font-size: medium;
-}
-
-.leader-points {
-  -webkit-text-stroke-width: 0.9px;
-  -webkit-text-stroke-color: black;
-}
-
-.leader-name-team {
-  background-color: black;
-  padding: 0.2em;
-  border-radius: 0 15px;
-  -webkit-text-stroke-width: 0.9px;
-  -webkit-text-stroke-color: black;
-  border: 1px solid #fff;
+.third {
+  margin: 3em 0.5em 0 0.5em !important;
 }
 
 .leader-div {
@@ -146,8 +114,22 @@ td {
   margin: 0 0.5em;
 }
 
-.leader-nationality {
-  margin-bottom: 0.3em;
+/* .parent {
+  position: relative;
+  top: 0;
+  left: 0;
+} */
+
+/* .leader-constructor-flag-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+.country-flag-img {
+  height: 1em;
+  width: 1.6em;
 }
+
 </style>
 
