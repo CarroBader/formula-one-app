@@ -1,19 +1,17 @@
 <template>
   <b-container class="default-background-center">
-    <!-- <div>
-      <h1 class="align-title circuit-name"> {{ this.nextRaceTrackName }}</h1>
-    </div> -->
-    <div class="row">
+    <div class="row next-race-row">
       <div class="col">
         <NextRaceTrackInfo 
           :nextRace="nextRace"
           v-if="nextRaceDataLoaded"/>
       </div>
       <div class="col">
-        <TrackLastWinners 
+      
+        <!-- <TrackLastWinners 
           :latestWinners="latestWinners"
           :nextRaceTrackName="nextRaceTrackName"
-          v-if="latestWinnersDataLoaded"/>
+          v-if="latestWinnersDataLoaded"/> -->
       </div>
     </div>
   </b-container>
@@ -79,6 +77,11 @@ export default {
 </script>
 
 <style scoped>
+
+.next-race-row {
+  margin-bottom: 3em;
+}
+
 .circuit-name {
   margin: auto 2em;
   background-color: grey;
