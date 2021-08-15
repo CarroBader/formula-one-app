@@ -1,28 +1,28 @@
 <template>
   <div
     class="next-race-track-info">
-    <b-card>
-      <h1 class="red-text align-title next-gp-title"> Next GP:</h1>
-      <h1 class="align-title" style="margin-left:2em"> {{ nextRace.raceName }}</h1>
+    <h1 class="next-race-track-info-headline"> {{ nextRace.raceName }}</h1>
+    <b-card class="card-margin">
+      <!-- <h1 class="red-text align-title next-gp-title"> Next GP:</h1> -->
       <img :src="getCircuitImage()"
       :alt='`${nextRace.Circuit.circuitName}`'
-      class="circuit-img"/>
+      class="next-race-track-info-circuit-img"/>
       <table>
         <tr>
-          <th>Track:</th>
-          <td>{{ nextRace.Circuit.circuitName }}</td>
+          <th class="next-race-track-info-th">Track:</th>
+          <td class="next-race-track-info-td">{{ nextRace.Circuit.circuitName }}</td>
         </tr>
         <tr>
-          <th>Location:</th>
-          <td>{{ nextRace.Circuit.Location.locality }}, {{ nextRace.Circuit.Location.country }}</td>
+          <th class="next-race-track-info-th">Location:</th>
+          <td class="next-race-track-info-td">{{ nextRace.Circuit.Location.locality }}, {{ nextRace.Circuit.Location.country }}</td>
         </tr>
         <tr>
-          <th>Date:</th>
-          <td>{{ nextRace.date }}</td>
+          <th class="next-race-track-info-th">Date:</th>
+          <td class="next-race-track-info-td">{{ nextRace.date }}</td>
         </tr>
         <tr>
-          <th>Time:</th>
-          <td>{{ nextRace.time }}</td>
+          <th class="next-race-track-info-th">Time:</th>
+          <td class="next-race-track-info-td">{{ nextRace.time }}</td>
         </tr>
       </table>
     </b-card>
@@ -55,9 +55,9 @@ export default {
   margin: 1.5em 0;
 }
 
-.circuit-img {
+/* .circuit-img {
   margin: 1em 0;
-}
+} */
 
 .align-title {
   text-align: initial;
@@ -65,7 +65,6 @@ export default {
 
 th {
   text-align: initial;
-  font-size: 0.9em;
 }
 
 td {
