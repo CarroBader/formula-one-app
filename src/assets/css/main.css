@@ -88,7 +88,7 @@ tbody:last-child {
 
 /* Colors */
 .red-text {
-	color: #ff1616 !important;
+	color: #E10600 !important;
 }
 
 .darkgrey-text {
@@ -209,7 +209,7 @@ tbody:last-child {
 	}
 
 	.leaders-driver-info {
-		background-color: #ff1616;
+		background-color: #E10600;
 		border-top: 3px solid #fff;
 		border-radius: 0 0 15px 15px;
 		padding: 0.2em;
@@ -256,7 +256,7 @@ tbody:last-child {
 	}
 
 	.leaders-constructor-info {
-		background-color: #ff1616;
+		background-color: #E10600;
 		border-top: 3px solid #fff;
 		border-radius: 0 0 15px 15px;
 		padding: 0.2em;

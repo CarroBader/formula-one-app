@@ -81,7 +81,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-	color: #ff1616;
+	color: #E10600;
 }
 
 .next-gp-title {

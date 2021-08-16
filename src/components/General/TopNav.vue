@@ -40,7 +40,7 @@ export default {
 
 <style scoped>
 .navbar-top {
-  background-color: #ff1616;
+  background-color: #E10600;
   border-bottom: 1px solid #fff;
   /* margin-bottom: 2em; */
   z-index: 10000;
