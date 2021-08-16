@@ -10,7 +10,7 @@
         <th class="short-length">Pos.</th>
         <th></th>
         <th>Name</th>
-        <th class="nationality-table-mobile">Nationality</th>
+        <th class="no-display-when-mobile">Nationality</th>
         <th>Car</th>
         <th class="full-length">Points</th>
         <th class="short-length">Pts.</th>
@@ -30,7 +30,7 @@
             <span class="positionDifference">{{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}</span>
           </td>
           <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
-          <td class="nationality-table-mobile result-last-race-td">
+          <td class="no-display-when-mobile result-last-race-td">
             <img :src="getFlagImage(race.Driver.nationality)"
             :alt='`${race.Driver.nationality}`'
             class="country-flag-img"/>

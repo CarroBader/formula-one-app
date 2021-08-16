@@ -1,47 +1,32 @@
 <template>
   <div
     class="next-race-quali-div">
-    <b-card>
-      <h1 class="red-text align-title qualifying-title"> Qualifyining: </h1>
-      <h1 class="align-title" style="margin-left:2em"> {{ this.qualificationResult.raceName }}</h1>
+    <h1 class="qualification-session-headline">{{ this.qualificationResult.raceName }}</h1>
+    <b-card class="card-margin">
       <table>
-        <tr>
-          <th>Position</th>
+        <tr class="qualifying-session-tr">
+        <th class="full-length">Position</th>
+        <th class="short-length">Pos.</th>
           <th>Name</th>
-          <!-- <th>Number</th> -->
-          <th>Car</th>
+          <th class="no-display-when-mobile">Car</th>
           <th>Q1</th>
           <th>Q2</th>
           <th>Q3</th>
         </tr>
         <tbody         
           v-for="quali, i in this.qualificationResult.QualifyingResults"
-          :key="quali[i]">
+          :key="quali[i]"
+          class="qualifying-session-tbody"
+          :class="[i == 9 || i == 14 ? 'elimination-line' : '']">
         <tr>
-          <td>{{ quali.position }}</td>
-          <!-- <td>
-            <img :src="getArrowImage(res.grid, res.position)"
-            :alt='`${res.Driver.nationality}`'
-            :class="getArrowClass(res.grid, res.position)"
-            />
-            <span class="positionDifference">{{ res.grid - res.position != 0 ? Math.abs(res.grid - res.position) : "" }}</span>
-          </td> -->
-          <td>{{ quali.Driver.givenName }} {{ quali.Driver.familyName }}</td>
-          <!-- <td>{{ next.Driver.permanentNumber }}</td> -->
-          <!-- <td>
-            <img :src="getFlagImage(res.Driver.nationality)"
-            :alt='`${res.Driver.nationality}`'
-            class="country-flag-img"/>
-          </td> -->
-          <td :class="getColor(quali.Constructor.constructorId)">{{ quali.Constructor.name }}</td>
-          <td>{{ quali.Q1 }}</td>
-          <td>{{ quali.Q2 }}</td>
-          <td>{{ quali.Q3 }}</td>
-          <!-- <td v-if="fastestLap(res.FastestLap)">
-            <img src="../assets/img/icons/fastest_lap.png"
-            class="fastestLap" 
-            />
-          </td> -->
+          <td class="qualification-session-td" style="color:darkgrey !important">{{ quali.position }}</td>
+          <td class="qualification-session-td">{{ quali.Driver.givenName }} {{ quali.Driver.familyName }}</td>
+          <td class="qualification-session-td no-display-when-mobile" 
+          :class="getColor(quali.Constructor.constructorId)">
+          {{ quali.Constructor.name }}</td>
+          <td class="qualification-session-td Q1">{{ quali.Q1 }}</td>
+          <td class="qualification-session-td Q2">{{ quali.Q2 }}</td>
+          <td class="qualification-session-td Q3">{{ quali.Q3 }}</td>
         </tr>
         </tbody>
       </table>
@@ -59,6 +44,9 @@ export default {
   },
   mounted() {
     console.log("QS", this.qualificationResult.QualifyingResults)
+    // for (let i = 0; i < this.qualificationResult.QualifyingResults.length; i++) {
+    //   console.log(this.qualificationResult.QualifyingResults[i].Constructor.name.slice(0,1))
+    // } 
   },
   methods: {
   },
@@ -89,6 +77,25 @@ td {
   font-size: 1.8em;
 }
 
+.elimination-line {
+  border-bottom: 1px solid #ff0000;
+}
+
+.Q1 {
+  color: #D3D3D3;
+  border-right: 1px solid #ff0000;
+  border-left: 1px solid #ff0000;
+}
+
+.Q2 {
+  color: #C0C0C0;
+  border-right: 1px solid #ff0000;
+}
+
+.Q3 {
+  color: #A9A9A9;
+  border-right: 1px solid red;
+}
 /* .country-flag-img {
   height: 0.8em;
   width: 1.6em;
