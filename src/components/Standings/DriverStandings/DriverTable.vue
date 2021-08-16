@@ -1,6 +1,9 @@
 <template>
   <div
     v-if="dataLoaded">
+    <div class="driver-table-headline-div">
+      <h1 class="driver-table-headline">2021 Standings</h1>
+    </div>
     <b-card class="card-margin">
       <div class="leaders-div">
         <div
@@ -19,7 +22,7 @@
               class="leader-driver-flag-img"
             />
           </div>
-          <div class="leaders-driver-info">
+          <div class="leader-driver-info">
             <h3 class="leader-driver-points">{{ topDrivers.points }} pts</h3>
             <h5 class="leader-driver-name-team leader-driver-name">{{ topDrivers.Driver.givenName }} {{ topDrivers.Driver.familyName }} </h5>
             <h6 class="leader-driver-name-team" :class="getColor(topDrivers.Constructors[0].constructorId)">{{ topDrivers.Constructors[0].name }}</h6>
@@ -29,29 +32,32 @@
       <div class="scroll-table">
         <table>
         <tr class="driver-table-tr">
-            <th>Position</th>
-            <th>Name</th>
-            <th>Nationality</th>
-            <th>Car</th>
-            <th>Points</th>
+          <th class="browser-view">Position</th>
+          <th class="mobile-view">Pos.</th>
+          <th>Name</th>
+          <th>Nationality</th>
+          <th>Car</th>
+          <th class="browser-view">Points</th>
+          <th class="mobile-view">Pts.</th>
         </tr>
           <tbody         
             v-for="driver, i in driverStandings.slice(3,20)"
             :key="driver[i]"
             class="driver-table-tbody">
           <tr>
-            <td class="darkgrey-text"> {{ driver.position }} </td>
-            <td> {{ driver.Driver.givenName }} {{ driver.Driver.familyName }} </td>
-            <td>
+            <td class="driver-table-td darkgrey-text"> {{ driver.position }} </td>
+            <td class="driver-table-td"> {{ driver.Driver.givenName }} {{ driver.Driver.familyName }} </td>
+            <td class="driver-table-td">
               <img :src="getFlagImage(driver.Driver.nationality)"
               :alt='`${driver.Driver.nationality}`'
-              class="country-flag-img"/>
+              class="driver-table-flag-img "/>
             </td>
             <td
+              class="driver-table-td"
               :class="getColor(driver.Constructors[0].constructorId)"> 
               {{ driver.Constructors[0].name }}
             </td>
-            <td> {{ driver.points }} </td>
+            <td class="driver-table-td"> {{ driver.points }} </td>
           </tr>
           </tbody>
         </table>
@@ -80,6 +86,7 @@ export default {
     let responseDriverStandings = await this.getDriverStandings()
 
     this.driverStandings = responseDriverStandings.standingsDriver
+    console.log("Carro", this.driverStandings)
     this.dataLoaded = responseDriverStandings.dataLoaded
   },
   methods: {
@@ -100,10 +107,13 @@ export default {
     width: 100%;
   }
 
+  .driver-table-headline-div {
+    margin: 0.5em 0 2em;
+  }
+
   .leaders-div {
     display: flex;
     justify-content: space-between;
-    margin: 0 0 2em 0;
   }
 
   .leaders-div > .first {order: 2; }
@@ -133,10 +143,5 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-  }
-
-  .country-flag-img {
-    height: 1em;
-    width: 1.6em;
   }
 </style>

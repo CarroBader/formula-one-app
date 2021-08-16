@@ -279,6 +279,10 @@ tr:last-child {
 
 	/*------------------------ STANDINGS ------------------------*/
 	/* DriverTable */
+	.leaders-div {
+    margin: 0 0 1em 0;
+  }
+
 	.leader-driver-img {
 		height: 5em;
 		position: relative;
@@ -286,35 +290,45 @@ tr:last-child {
 		left: 0;
 	}
 
-	.leaders-driver-info {
+	.leader-driver-info {
 		background-color: #e10600;
-		border-top: 3px solid #fff;
+		border-top: 2px solid #fff;
 		border-radius: 0 0 15px 15px;
-		padding: 0.2em;
-		width: auto;
+		padding: 0.1em;
 	}
 
 	.leader-driver-flag-img {
 		height: 0.6em;
-		width: 1em;
+		width: 1.2em;
 	}
 
 	.leader-driver-points {
 		font-size: 0.8em;
-		-webkit-text-stroke-width: 0.4px;
+		-webkit-text-stroke-width: 0.7px;
 		-webkit-text-stroke-color: #000;
+		margin: 0.3em;
 	}
 
 	.leader-driver-name-team {
 		background-color: #000;
-		padding: 0.2em;
+		padding: 0.1em;
 		border-radius: 0 15px;
 		border: 1px solid #fff;
 		font-size: 0.7em;
+		margin: 0.3em;
 	}
 
 	.leader-driver-name {
 		word-spacing: 9999px;
+	}
+
+	.driver-table-headline {
+		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+		border-radius: 8px;
+		border: #ffffff7d 2px solid;
+		display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
+		font-size: 1.4em;
 	}
 
 	.driver-table-tr {
@@ -323,8 +337,16 @@ tr:last-child {
 
 	.driver-table-tbody {
 		font-size: 0.7em;
+	}
+
+	.driver-table-td {
 		padding: 1em 0.3em;
 	}
+
+	.driver-table-flag-img {
+    height: 1em;
+    width: 1.6em;
+  }
 
 	/* ConstructorTable */
 	.leader-constructor-img {
@@ -336,7 +358,6 @@ tr:last-child {
 		border-top: 3px solid #fff;
 		border-radius: 0 0 15px 15px;
 		padding: 0.2em;
-		width: auto;
 	}
 
 	.leader-constructor-points {
@@ -503,17 +524,56 @@ tr:last-child {
 
 	/*------------------------ STANDINGS ------------------------*/
 	/* DriverTable */
+	.leaders-div {
+    margin: 0 0 2em 0;
+  }
+
 	.leader-driver-img {
 		height: 7em;
 	}
+
+	.leader-driver-info {
+		border-top: 3px solid #fff;
+    padding: 0.2em;
+		width: 9em;
+	}
+
+	.leader-driver-flag-img {
+		height: 1em;
+    width: 1.6em;
+	}
+
+  .leader-driver-points {
+		font-size: 0.9em;
+		-webkit-text-stroke-width: 0.8px;
+    margin: 0 0 8px 0;
+  }
+
+  .leader-driver-name-team {
+    padding: 0.2em;
+    font-size: 0.8em;
+    margin: 0 0 8px 0;
+  }
 
 	.leader-driver-name {
 		word-spacing: 5px;
 	}
 
-	.leaders-driver-info {
-		margin: 0 1em;
-	}
+	.driver-table-headline {
+    font-size: 1.6em;
+  }
+
+  .driver-table-tr {
+    font-size: 0.9em;
+  }
+
+  .driver-table-tbody {
+    font-size: 0.8em;
+  }
+
+  .driver-table-td {
+    padding: 1em;
+  }
 	
 	/* ConstructorTable */
 	.leader-constructor-img {
@@ -651,34 +711,46 @@ tr:last-child {
 		height: 9em;
 	}
 
-	.leaders-driver-info {
+	.leader-driver-info {
 		border-top: 4px solid #fff;
+		width: 10em;
 		margin: 0 1em;
 	}
 
 	.leader-driver-flag-img {
-		/* display: revert; */
 		height: 1.2em;
 		width: 2em;
 	}
 
 	.leader-driver-points {
-		font-size: 1em;
-		-webkit-text-stroke-width: 0.6px;
-		-webkit-text-stroke-color: #000;
+		font-size: 1.1em;
+		-webkit-text-stroke-width: 1px;
 	}
 
 	.leader-driver-name-team {
 		font-size: 0.9em;
 	}
 
-	.driver-table-tbody {
-		font-size: 0.8em;
-	}
+  .driver-table-headline {
+    font-size: 1.8em;
+  }
 
-	.driver-table-tr {
-		font-size: 0.9em;
-	}
+  .driver-table-tr {
+    font-size: 0.95em;
+  }
+
+  .driver-table-tbody {
+    font-size: 0.9em;
+  }
+
+  .driver-table-td {
+    padding: 1em 2em;
+  }
+
+	.driver-table-flag-img {
+    height: 1.1em;
+    width: 1.7em;
+  }
 
 	/* ConstructorTable */
 	.leader-constructor-img {
@@ -781,7 +853,8 @@ tr:last-child {
 		height: 10em;
 	}
 
-	.leaders-driver-info {
+	.leader-driver-info {
+		width: 11em;
 		margin: 0 2em;
 	}
 
@@ -792,21 +865,33 @@ tr:last-child {
 
 	.leader-driver-points {
 		font-size: 1.2em;
-		-webkit-text-stroke-width: 0.6px;
-		-webkit-text-stroke-color: #000;
+		-webkit-text-stroke-width: 1.1px;
 	}
 
 	.leader-driver-name-team {
 		font-size: 1em;
 	}
 
-	.driver-table-tbody {
-		font-size: 0.9em;
-	}
+  .driver-table-headline {
+    font-size: 2em;
+  }
 
-	.driver-table-tr {
-		font-size: 1em;
-	}
+  .driver-table-tr {
+    font-size: 1em;
+  }
+
+  .driver-table-tbody {
+    font-size: 0.95em;
+  }
+
+  .driver-table-td {
+    padding: 1em 3em;
+  }
+
+	.driver-table-flag-img {
+    height: 1.2em;
+    width: 2em;
+  }
 
 	/* ConstructorTable */
 	.leader-constructor-img {
@@ -879,15 +964,30 @@ tr:last-child {
 
 	/*------------------------ STANDINGS ------------------------*/
 	/* DriverTable */
-	.leaders-driver-info {
-		width: 11em;
+	.leader-driver-img {
+		height: 12em;
+	}
+
+	.leader-driver-info {
+		width: 12em;
+	}
+
+	.leader-driver-info {
+    margin: 0 3em;
 	}
 
 	.leader-driver-points {
 		font-size: 1.3em;
-		-webkit-text-stroke-width: 0.8px;
-		-webkit-text-stroke-color: #000;
+		-webkit-text-stroke-width: 1.2px;
 	}
+
+	.driver-table-headline {
+    font-size: 2.2em;
+  }
+
+  .driver-table-td {
+    padding: 1em 3.5em;
+  }
 
 	/* ConstructorTable */
 	.leader-constructor-img {
@@ -931,7 +1031,11 @@ tr:last-child {
   /* Real color
   color: #0600ef !important; 
   */
-  color: #2b26ff !important;
+
+  /* Fake, alternative
+	color: #2b26ff !important; */
+
+	color: #3b38da !important;
 }
 
 .mercedes {

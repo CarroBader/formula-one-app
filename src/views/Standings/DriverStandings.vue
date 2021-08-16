@@ -22,6 +22,5 @@ export default {
 <style scoped>
   .driverstandings-row {
     display: inline-block;
-    margin-bottom: 3em;
   }
 </style>
