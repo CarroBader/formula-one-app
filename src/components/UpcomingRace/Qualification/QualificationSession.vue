@@ -30,15 +30,15 @@
                 :class="getColor(quali.Constructor.constructorId)"> 
                 {{ quali.Constructor.name }}
             </td>
-            <td class="qualification-session-td Q1"
+            <td class="qualification-session-td q1"
                 :class="qualiOne(i)">
                 {{ quali.Q1 }}
             </td>
-            <td class="qualification-session-td Q2"
+            <td class="qualification-session-td q2"
                 :class="qualiTwo(i)">
                 {{ quali.Q2 }}
             </td>
-            <td class="qualification-session-td Q3"
+            <td class="qualification-session-td q3"
                 :class="qualiThree(i)">
                 {{ quali.Q3 }}
             </td>
@@ -110,18 +110,18 @@ export default {
   margin: 1.5em 0;
 }
 
-.Q1 {
+.q1 {
   color: #d3d3d3;
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
 }
 
-.Q2 {
+.q2 {
   color: #c0c0c0;
   border-right: 1px solid #fff;
 }
 
-.Q3 {
+.q3 {
   color: #a9a9a9;
 }
 </style>

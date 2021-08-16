@@ -1,19 +1,15 @@
 <template>
   <div>
     <b-navbar toggleable="md navbar-upcoming">
-      <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
-
-      <!-- <b-collapse id="nav-collapse" is-nav> -->
-          <b-navbar-nav class="navbar-nav-upcoming">
-              <router-link 
-                  v-for="route in routes" 
-                  :key="route.path"
-                  :to="route.path"
-                  class="nav-link nav-link-upcoming">
-              {{route.name}}
-              </router-link>
-          </b-navbar-nav>
-      <!-- </b-collapse> -->
+        <b-navbar-nav class="navbar-nav-upcoming">
+            <router-link 
+                v-for="route in routes" 
+                :key="route.path"
+                :to="route.path"
+                class="nav-link nav-link-upcoming">
+            {{route.name}}
+            </router-link>
+        </b-navbar-nav>
     </b-navbar>
   </div>
 </template>

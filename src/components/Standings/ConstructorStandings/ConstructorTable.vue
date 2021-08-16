@@ -114,22 +114,9 @@ table {
   margin: 0 0.5em;
 }
 
-/* .parent {
-  position: relative;
-  top: 0;
-  left: 0;
-} */
-
-/* .leader-constructor-flag-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
-
 .country-flag-img {
   height: 1em;
   width: 1.6em;
 }
-
 </style>
 

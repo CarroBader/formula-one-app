@@ -3,7 +3,6 @@
     class="next-race-track-info">
     <h1 class="next-race-track-info-headline"> {{ nextRace.raceName }}</h1>
     <b-card class="card-margin">
-      <!-- <h1 class="red-text align-title next-gp-title"> Next GP:</h1> -->
       <img :src="getCircuitImage()"
       :alt='`${nextRace.Circuit.circuitName}`'
       class="next-race-track-info-circuit-img"/>
@@ -50,17 +49,8 @@ export default {
 </script>
 
 <style scoped>
-
 .next-race-track-info {
   margin: 1.5em 0;
-}
-
-/* .circuit-img {
-  margin: 1em 0;
-} */
-
-.align-title {
-  text-align: initial;
 }
 
 th {
@@ -75,17 +65,4 @@ td {
 tr {
   border-bottom: 1px solid #fff;
 }
-
-tr:nth-child(even) {
-	color: #fff;
-}
-
-tr:nth-child(odd) {
-	color: #e10600;
-}
-
-.next-gp-title {
-  font-size: 1.8em;
-}
-
 </style>

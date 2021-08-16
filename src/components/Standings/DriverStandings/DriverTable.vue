@@ -96,7 +96,6 @@ export default {
 </script>
 
 <style scoped>
-
 table {
   width: 100%;
 }
@@ -140,5 +139,4 @@ table {
   height: 1em;
   width: 1.6em;
 }
-
 </style>

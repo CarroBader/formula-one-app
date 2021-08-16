@@ -28,7 +28,7 @@
               :alt='`${race.Driver.nationality}`'
               :class="getArrowClass(race.grid, race.position)"
               />
-              <span class="positionDifference">{{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}</span>
+              <span class="position-difference">{{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}</span>
             </td>
             <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
             <td class="no-display-when-mobile result-last-race-td">
@@ -42,7 +42,7 @@
             <td class="result-last-race-td">{{ race.points }}</td>
             <td v-if="fastestLap(race.FastestLap)">
               <img src="../../../assets/img/icons/fastest_lap.png"
-              class="fastestLap" 
+              class="fastest-lap-img" 
               />
             </td>
           </tr>
@@ -90,7 +90,7 @@ export default {
     getArrowClass(grid, position) {
       let start = Number(grid)
       let end = Number(position)
-      return start == end ? 'samePosition' : (start < end ? "lostPosition" : "gainedPosition");
+      return start == end ? 'same-position' : (start < end ? "lost-position" : "gained-position");
     },
     fastestLap(fastestLap) {
       return fastestLap != undefined && fastestLap.rank == "1" ? true : false
@@ -110,12 +110,12 @@ export default {
   width: 1.6em;
 }
 
-.fastestLap {
+.fastest-lap-img {
   height: 1em;
   width: 1.5em;
 }
 
-.samePosition {
+.same-position {
   height: 1em;
   width: 1em;
   -webkit-filter: invert(100%) 
@@ -124,7 +124,7 @@ export default {
   hue-rotate(0deg)
 }
 
-.lostPosition {
+.lost-position {
   height: 1em;
   width: 1em;
   -webkit-filter: invert(40%)
@@ -136,7 +136,7 @@ export default {
    contrast(2);
 }
 
-.gainedPosition {
+.gained-position {
   height: 1em;
   width: 1em;
   transform: scaleY(-1);

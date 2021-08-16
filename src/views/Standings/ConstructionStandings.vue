@@ -20,10 +20,8 @@ export default {
 </script>
 
 <style scoped>
-
 .constructionstandings-row {
   display: inline-block;
   margin-bottom: 3em;
 }
-
 </style>

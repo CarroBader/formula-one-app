@@ -200,7 +200,7 @@ tbody:last-child {
     padding: 1em 0.3em;
 	}
 
-	.positionDifference {
+	.position-difference {
 		font-size: 0.7em;
 		padding-left: 0.3em;
 	}
@@ -454,7 +454,7 @@ tbody:last-child {
     padding: 1em;
   }
 
-  .positionDifference {
+  .position-difference {
     font-size: 0.8em;
     padding-left: 0.4em;
   }
@@ -717,7 +717,7 @@ tbody:last-child {
     padding: 1em 2em;
   }
 
-	.positionDifference {
+	.position-difference {
     font-size: 0.9em;
     padding-left: 0.5em;
   }
@@ -841,7 +841,7 @@ tbody:last-child {
     padding: 1em 3em
   }
 
-	.positionDifference {
+	.position-difference {
     font-size: 0.9em;
     padding-left: 0.6em;
   }
