@@ -865,42 +865,59 @@ tbody:last-child {
 /* Driver and Team Colors */
 
 .mclaren {
-	color: #e0610e !important;
+  /* Real color
+  color: #e0610e !important; 
+  */
+  color: #f77018 !important;
 }
 
 .red-bull {
-	color: #0600EF !important;
+  /* Real color
+  color: #0600ef !important; 
+  */
+  color: #2b26ff !important;
 }
 
 .mercedes {
-	color: #00d2be !important;
+  /* Real color 
+  color: #00d2be !important; 
+  */
+  color: #03e8d3 !important;
 }
 
 .alpha-romeo {
-	color: #900000 !important;
+  /* Real color
+  color: #900000 !important; 
+  */
+  color: #ad0505 !important;
 }
 
 .alpha-tauri {
-	color: #2b4562 !important;
+  /* Real color
+  color: #2b4562 !important; 
+  */
+  color: #5a84b3 !important;
 }
 
 .haas {
-	color: #fff !important;
+  color: #fff !important;
 }
 
 .alpine {
-	color: #0090ff !important;
+  color: #0090ff !important;
 }
 
 .ferrari {
-	color: #dc0000 !important;
+  color: #dc0000 !important;
 }
 
 .williams {
-	color: #005Aff !important;
+  color: #005aff !important;
 }
 
 .aston-martin {
-	color: #006f62 !important;
+  /* Real color
+  color: #006f62 !important; 
+  */
+  color: #00b19c !important;
 }
-
