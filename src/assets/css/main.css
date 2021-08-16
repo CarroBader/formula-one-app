@@ -179,21 +179,25 @@ tbody:last-child {
 		border: #ffffff7d 2px solid;
 		display: inline;
     padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.2em;
 		margin-bottom: 1em;
+		font-size: 1.1em;
+	}
+
+	.result-last-race-tr {
+		font-size: 0.8em;
+	}
+
+	.result-last-race-tbody {
+		font-size: 0.7em;
+	}
+
+	.result-last-race-td { 
+    padding: 1em 0.3em;
 	}
 
 	.positionDifference {
 		font-size: 0.7em;
 		padding-left: 0.3em;
-	}
-
-	.result-last-race-tbody {
-		font-size: 0.8em;
-	}
-
-	.result-last-race-td { 
-		padding: 0.3em;
 	}
 
 	.card-margin {
@@ -417,18 +421,26 @@ tbody:last-child {
 	}
 
 	/* ResultLastRace */
+	.result-last-race-headline {
+    font-size: 1.2em;
+  }
+
+  .result-last-race-tr {
+    font-size: 0.9em;
+  }
+
+  .result-last-race-tbody {
+    font-size: 0.8em;
+  }
+
+  .result-last-race-td { 
+    padding: 1em;
+  }
+
   .positionDifference {
     font-size: 0.8em;
     padding-left: 0.4em;
   }
-  
-  .result-last-race-tbody {
-    font-size: 0.9em;
-  }
-
-  /* .result-last-race-td { 
-    padding: 0.3em 0.3em;
-  } */
 
 	.card-margin {
 		margin: 2em 0 3em 0;
@@ -538,8 +550,19 @@ tbody:last-child {
 
 	/* ResultLastRace */
 	.result-last-race-headline {
-		font-size: 1.6em;
-		margin-bottom: 1em;
+		font-size: 1.4em;
+	}
+
+	.result-last-race-tr {
+		font-size: 0.95em;
+	}
+
+	.result-last-race-tbody {
+		font-size: 0.9em;
+	}
+
+	.result-last-race-td {
+		padding: 1em 1.5em;
 	}
 
 	/* DriverTable */
@@ -641,21 +664,29 @@ tbody:last-child {
 	}
 
 	/* ResultLastRace */
+	.result-last-race-headline {
+    font-size: 1.6em;
+  }
+
+	.result-last-race-tr {
+    font-size: 1em;
+  }
+
+  .result-last-race-tbody {
+    font-size: 0.95em;
+  }
+
+  .result-last-race-td { 
+    padding: 1em 2em;
+  }
+
 	.positionDifference {
     font-size: 0.9em;
     padding-left: 0.5em;
   }
-  
-  .result-last-race-tbody {
-    font-size: 1em;
-  }
-
-  .result-last-race-td { 
-    padding: 0.55em;
-  }
 
 	.card-body {
-		padding: 1em 1em;
+		padding: 1em;
 	}
 
 	.card-margin {
@@ -758,22 +789,13 @@ tbody:last-child {
   }
 
 	/* ResultLastRace */
-	.result-last-race-headline {
-		font-size: 1.8em;
-		margin-bottom: 1em;
-	}
+  .result-last-race-td { 
+    padding: 1em 3em
+  }
 
 	.positionDifference {
     font-size: 0.9em;
     padding-left: 0.6em;
-  }
-  
-  .result-last-race-tbody {
-    font-size: 1.1em;
-  }
-
-  .result-last-race-td { 
-    padding: 0.5em 0.77em
   }
 
 	/* DriverTable */
@@ -881,3 +903,4 @@ tbody:last-child {
 .aston-martin {
 	color: #006f62 !important;
 }
+

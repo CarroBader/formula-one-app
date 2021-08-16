@@ -6,7 +6,7 @@
     <b-card class="card-margin">
       <div class="scroll-table ">
         <table>
-        <tr>
+        <tr class="result-last-race-tr">
           <th class="full-length">Position</th>
           <th class="short-length">Pos.</th>
           <th></th>
@@ -104,10 +104,6 @@ export default {
 
 .result-last-race-div {
   margin: 1.5em 0;
-}
-
-th {
-  font-size: 0.9em;
 }
 
 .country-flag-img {
