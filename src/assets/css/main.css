@@ -84,7 +84,6 @@ tbody:last-child {
 .scroll-table {
 	overflow: hidden;
 	overflow-y: scroll;
-	height: 500px;
 }
 
 /* Colors */
@@ -163,6 +162,10 @@ tbody:last-child {
 	/* Many components */
 	.no-display-when-mobile  {
 		display: none;
+	}
+	
+	.scroll-table {
+		height: 500px;
 	}
 
 	/* ResultLastRace */
@@ -403,6 +406,10 @@ tbody:last-child {
 	/* Many components */
 	.no-display-when-mobile {
 		display: revert;
+	}
+
+	.scroll-table {
+		height: auto;
 	}
 
 	/* ResultLastRace */
