@@ -1,7 +1,8 @@
 <template>
-  <div
-    class="next-race-quali-div">
-    <h1 class="qualification-session-headline">{{ this.qualificationResult.raceName }}</h1>
+  <div>
+    <div class="qualification-session-headline-div">
+      <h1 class="qualification-session-headline">{{ this.qualificationResult.raceName }}</h1>
+    </div>
     <b-card class="card-margin">
       <div class="scroll-table ">
         <table>
@@ -106,8 +107,8 @@ export default {
 </script>
 
 <style scoped>
-  .next-race-quali-div {
-    margin: 1.5em 0;
+  .qualification-session-headline-div {
+    margin: 0.5em 0 2em;
   }
 
   .q1 {

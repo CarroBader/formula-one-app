@@ -22,6 +22,5 @@ export default {
 <style scoped>
   .last-race-row {
     display: inline-block;
-    margin-bottom: 3em;
   }
 </style>

@@ -54,6 +54,5 @@ export default {
 <style scoped>
   .next-race-quali-row {
     display: inline-block;
-    margin-bottom: 3em;
   }
 </style>

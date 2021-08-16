@@ -1,6 +1,6 @@
 <template>
   <b-container class="default-background-center">
-    <div class="row last-race-row">
+    <div class="row practice-row">
       <div class="col">
         <PracticeSession />
       </div>

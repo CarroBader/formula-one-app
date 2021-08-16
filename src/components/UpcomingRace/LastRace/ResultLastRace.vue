@@ -1,8 +1,9 @@
 <template>
   <div
-    v-if="dataLoaded"
-    class="result-last-race-div">
-    <h1 class="result-last-race-headline">{{ lastRace.raceName }}</h1>
+    v-if="dataLoaded">
+    <div class="result-last-race-headline-div">
+      <h1 class="result-last-race-headline">{{ lastRace.raceName }}</h1>
+    </div>
     <b-card class="card-margin">
       <div class="scroll-table ">
         <table>
@@ -101,10 +102,10 @@ export default {
 </script>
 
 <style scoped>
-  .result-last-race-div {
-    margin: 1.5em 0;
-  }
-
+	.result-last-race-headline-div {
+		margin: 0.5em 0 2em;
+	}
+  
   .country-flag-img {
     height: 1em;
     width: 1.6em;
