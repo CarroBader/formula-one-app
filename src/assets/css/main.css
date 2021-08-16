@@ -51,6 +51,8 @@ h4 {
 .nav-link {
 	color: #fff !important;
 	padding: 0;
+	font-family: 'Orbitron', 'sans-serif';
+  text-shadow: 2px 2px #000;
 }
 
 .router-link-active {
@@ -58,7 +60,6 @@ h4 {
 	border-radius: 8px;
 	border: #ffffff7d 2px solid;
 }
-
 
 /* Table */
 th {
@@ -99,13 +100,46 @@ tbody:last-child {
 	color: #008000 !important;
 }
 
-/* MEDIA */
+/* MEDIA START*/
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* X-Small devices (0px and up) */
 @media (min-width: 0px) {
 
-	/* NavBars */
+	/*------------------------ NAVBARS ------------------------*/
+	/* Navbar */
+	.navbar {
+		padding: 0;
+	}
+
+	.navbar-toggler {
+		display: none;
+	}
+
+	.nav-link {
+		margin: 0 0.5em;
+	}
+
+	.nav-link-sub {
+		font-size: 0.7em;
+	}
+
+	.navbar-sub {
+		background-color: #232323;
+    padding: 2px 0;
+    margin-bottom: 0.5em;
+		justify-content: space-evenly;
+	}
+
+	.navbar-nav-sub {
+		flex-direction: row;
+	}
+
+	.router-link-active  {
+    padding: 0 0.3em !important;
+	}
+	
+	/* Navbar Top */
 	.nav-title-top {
 		font-size: 1.7rem;
 		padding: 0;
@@ -115,40 +149,15 @@ tbody:last-child {
 		height: 2em;
 	}
 
-	.navbar-nav-upcoming {
-		flex-direction: row;
+	.nav-link-top {
+		font-size: 0.9em;
 	}
 
-	.navbar-nav-standings {
-		flex-direction: row;
+	.navbar-top {
+		justify-content: center;
 	}
 
-	.nav-link {
-		margin: 0 0.5em;
-	}
-
-	.navbar {
-		justify-content: space-evenly;
-		padding: 0;
-	}
-
-	.navbar-toggler {
-		display: none;
-	}
-
-	.nav-link-upcoming {
-		font-size: 0.8em;
-	}
-
-	.nav-link-standings {
-		font-size: 0.8em;
-	}
-
-	.router-link-active  {
-    padding: 0 0.3em !important;
-	}
-
-	/* Footer */
+	/*------------------------ FOOTER ------------------------*/
 	.footer-nav {
 		display: block;
 	}
@@ -157,12 +166,12 @@ tbody:last-child {
 		display: none;
 	}
 
-	/* Card */
+	/*------------------------ CARD ------------------------*/
 	.card-body {
 		padding: 0.5em 0.5em;
 	}
 
-	/* Many components */
+	/*------------------------ GENERAL ------------------------*/
 	.no-display-when-mobile  {
 		display: none;
 	}
@@ -175,8 +184,7 @@ tbody:last-child {
 		height: 500px;
 	}
 
-	/*---------------- UPCOMING RACE ----------------*/
-
+	/*------------------------ UPCOMING RACE ------------------------*/
 	/* ResultLastRace */
 	.result-last-race-headline {
 		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
@@ -259,8 +267,7 @@ tbody:last-child {
 		border-bottom: 2px solid #fff;
 	}
 
-	/*---------------- STANDINGS ----------------*/
-
+	/*------------------------ STANDINGS ------------------------*/
 	/* DriverTable */
 	.leader-driver-img {
 		height: 5em;
@@ -357,68 +364,57 @@ tbody:last-child {
 	}
 }
 
-	/* ---------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Small devices (landscape phones, 544px and up) */
 @media (min-width: 544px) {
 
-	/* NavBars */
+	/*------------------------ NAVBARS ------------------------*/
+	/* Navbar */
+	.navbar-toggler {
+    display: revert;
+  }
+
+	.nav-link-sub {
+    font-size: 0.8em;
+  }
+
+	/* Navbar Top */
   .nav-title-top {
     font-size: 2rem;
   }
-
   .nav-logo-top {
     height: 2.3em;
   }
 
+	.navbar-top {
+		justify-content: start;
+	}
+
 	.navbar-nav-top {
-		flex-direction: column;
-	}
-
-  .navbar-nav-upcoming {
-    flex-direction: row;
+    width: 30%;
   }
 
-	.navbar-nav-standings {
-    flex-direction: row;
-  }
+	.nav-collapse-top {
+    text-align: -webkit-center;
+  } 
 
-  .navbar {
-    justify-content: space-between;
-  }
-
-	.navbar-toggler {
-    display: block;
-  }
-
-	.nav-link-top {
-		font-size: 1em;
-	}
-
-	.nav-link-upcoming {
-		font-size: 1em;
-	}
-
-	.nav-link-standings {
-		font-size: 1em;
-	}
-
-  /* Footer */
+  /*------------------------ FOOTER ------------------------*/
   .footer-nav {
     display: none !important;
   }
 
   footer {
-    display: block;
+    display: revert;
   }
 
-  /* Map */ 
+  /*------------------------ MAP ------------------------*/
   .leaflet-touch 
   .leaflet-control-layers, 
   .leaflet-touch .leaflet-bar {
     margin-top: 4em !important;
   }
 
-	/* Many components */
+  /*------------------------ GENERAL ------------------------*/
 	.no-display-when-mobile {
 		display: revert;
 	}
@@ -435,8 +431,7 @@ tbody:last-child {
 		height: auto;
 	}
 
-	/*---------------- UPCOMING RACE ----------------*/
-
+	/*------------------------ UPCOMING RACE ------------------------*/
 	/* ResultLastRace */
 	.result-last-race-headline {
     font-size: 1.2em;
@@ -485,8 +480,7 @@ tbody:last-child {
 		padding: 1em 0.8em;
 	}
 
-	/*---------------- STANDINGS ----------------*/
-
+	/*------------------------ STANDINGS ------------------------*/
 	/* DriverTable */
 	.leader-driver-img {
 		height: 7em;
@@ -531,7 +525,22 @@ tbody:last-child {
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {
 
-	/* NavBars */
+  /*------------------------ NAVBARS ------------------------*/
+	/* Navbar */
+	.navbar-toggler {
+    display: none;
+  }
+
+	.nav-link-sub {
+    font-size: 0.9em;
+  }
+
+	.navbar-sub {
+		justify-content: start;
+    margin-bottom: 1em;
+	}
+
+	/* Navbar Top */
   .nav-title-top {
     font-size: 2.1rem;
   }
@@ -540,31 +549,26 @@ tbody:last-child {
     height: 2.4em;
   }
 
-  .navbar-toggler {
-    display: none;
+	.nav-link-top {
+    font-size: 1em;
   }
 
-	.nav-link-top {
-		font-size: 1.1em;
-	}
+	.navbar-nav-top {
+    width: revert;
+  }
 
-	.nav-link-upcoming {
-		font-size: 1.1em;
-	}
-	
-	.nav-link-standings {
-		font-size: 1.1em;
-	}
+	.nav-collapse-top {
+    text-align: revert;
+  }
 
-	/* Map */
+  /*------------------------ MAP ------------------------*/
   .leaflet-touch 
   .leaflet-control-layers, 
   .leaflet-touch .leaflet-bar {
     margin-top: 1em !important;
   }
 
-	/*---------------- UPCOMING RACE ----------------*/
-
+	/*------------------------ UPCOMING RACE ------------------------*/
 	/* ResultLastRace */
 	.result-last-race-headline {
 		font-size: 1.4em;
@@ -624,8 +628,7 @@ tbody:last-child {
 		border-bottom: 3px solid #fff;
 	}
 
-	/*---------------- STANDINGS ----------------*/
-
+	/*------------------------ STANDINGS ------------------------*/
 	/* DriverTable */
 	.leader-driver-img {
 		height: 9em;
@@ -691,15 +694,18 @@ tbody:last-child {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
-	/* Map */
-	.leaflet-touch 
-	.leaflet-control-layers, 
-	.leaflet-touch .leaflet-bar {
-		margin-top: 1em !important;
-	}
+	/*------------------------ NAVBARS ------------------------*/
+  /* Navbar */
+  .nav-link-sub {
+    font-size: 1em;
+  }
+  
+  /* Navbar Top */
+  .nav-link-top {
+    font-size: 1.1em;
+  }
 
-	/*---------------- UPCOMING RACE ----------------*/
-
+	/*------------------------ UPCOMING RACE ------------------------*/
 	/* ResultLastRace */
 	.result-last-race-headline {
     font-size: 1.6em;
@@ -747,8 +753,7 @@ tbody:last-child {
 		padding: 1em 1.55em;
 	}
 
-	/*---------------- STANDINGS ----------------*/
-
+	/*------------------------ STANDINGS ------------------------*/
 	/* DriverTable */
 	.leader-driver-img {
 		height: 10em;
@@ -807,32 +812,13 @@ tbody:last-child {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
-	/* NavBars */
+  /*------------------------ NAVBARS ------------------------*/
+  /* Navbar */
   .nav-title-top {
     font-size: 2.3rem;
   }
 
-	.nav-link-top {
-		font-size: 1.2em;
-	}
-
-	.nav-link-upcoming {
-		font-size: 1.2em;
-	}
-
-	.nav-link-standings {
-		font-size: 1.2em;
-	}
-
-	/* Map */
-  .leaflet-touch 
-  .leaflet-control-layers, 
-  .leaflet-touch .leaflet-bar {
-    margin-top: 1em !important;
-  }
-
-	/*---------------- UPCOMING RACE ----------------*/
-
+	/*------------------------ UPCOMING RACE ------------------------*/
 	/* ResultLastRace */
 	.result-last-race-headline {
 		font-size: 1.7em;
@@ -864,8 +850,7 @@ tbody:last-child {
 		padding: 1em 2.5em;
 	}
 
-	/*---------------- STANDINGS ----------------*/
-	
+	/*------------------------ STANDINGS ------------------------*/
 	/* DriverTable */
 	.leaders-driver-info {
 		width: 11em;
@@ -904,8 +889,10 @@ tbody:last-child {
 	}
 }
 
-/* Driver and Team Colors */
+/* MEDIA END*/
 
+
+/* Driver and Team Colors */
 .mclaren {
   /* Real color
   color: #e0610e !important; 

@@ -49,20 +49,20 @@ export default {
 </script>
 
 <style scoped>
-.next-race-track-info {
-  margin: 1.5em 0;
-}
+  .next-race-track-info {
+    margin: 1.5em 0;
+  }
 
-th {
-  text-align: initial;
-}
+  th {
+    text-align: initial;
+  }
 
-td {
-  text-align: end;
-  width:100%;
-}
+  td {
+    text-align: end;
+    width:100%;
+  }
 
-tr {
-  border-bottom: 1px solid #fff;
-}
+  tr {
+    border-bottom: 1px solid #fff;
+  }
 </style>

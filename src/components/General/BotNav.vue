@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style scoped>
-.footer-nav {
+  .footer-nav {
     text-align: center;
     background-color: #121212;
     border-top: 1px solid #e10600;
@@ -36,23 +36,22 @@ export default {
     display: flex;
     justify-content: space-evenly;
     margin-top: 3em;
-}
+  }
 
-.bot-nav-link {
+  .bot-nav-link {
     font-size: 1.2em;
     color: #666;
     text-decoration: none;
-}
+  }
 
-.text-icon {
+  .text-icon {
     display: grid;
     text-align: -webkit-center;
     padding: 0.5em;
-}
+  }
 
-.router-link-active {
+  .router-link-active {
     color: #fff;
-    
-}
+  }
 </style>
 

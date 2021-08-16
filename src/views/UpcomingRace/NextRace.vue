@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style scoped>
-.next-race-row {
-  margin-bottom: 3em;
-}
+  .next-race-row {
+    margin-bottom: 3em;
+  }
 </style>

@@ -106,22 +106,22 @@ export default {
 </script>
 
 <style scoped>
-.next-race-quali-div {
-  margin: 1.5em 0;
-}
+  .next-race-quali-div {
+    margin: 1.5em 0;
+  }
 
-.q1 {
-  color: #d3d3d3;
-  border-right: 1px solid #fff;
-  border-left: 1px solid #fff;
-}
+  .q1 {
+    color: #d3d3d3;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+  }
 
-.q2 {
-  color: #c0c0c0;
-  border-right: 1px solid #fff;
-}
+  .q2 {
+    color: #c0c0c0;
+    border-right: 1px solid #fff;
+  }
 
-.q3 {
-  color: #a9a9a9;
-}
+  .q3 {
+    color: #a9a9a9;
+  }
 </style>

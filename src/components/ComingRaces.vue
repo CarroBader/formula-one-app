@@ -57,28 +57,26 @@ export default {
 </script>
 
 <style scoped>
+  th {
+    text-align: initial;
+    font-size: 0.9em;
+    color: #fff;
+  }
 
-th {
-  text-align: initial;
-  font-size: 0.9em;
-  color: #fff;
-}
+  td {
+    text-align: end;
+    width:100%;
+    color: #fff;
+  }
 
-td {
-  text-align: end;
-  width:100%;
-  color: #fff;
-}
+  .coming-races-title {
+    text-decoration: underline;
+    margin-bottom: 0.7em;
+  }
 
-.coming-races-title {
-  text-decoration: underline;
-  margin-bottom: 0.7em;
-}
-
-.country-flag-img {
-  height: 1em;
-  width: 1.6em;
-}
-
+  .country-flag-img {
+    height: 1em;
+    width: 1.6em;
+  }
 </style>
 

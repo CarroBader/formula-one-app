@@ -36,55 +36,55 @@ export default {
 </script>
 
 <style scoped>
-.track-last-winners {
-  margin: 1.5em 0;
-}
+  .track-last-winners {
+    margin: 1.5em 0;
+  }
 
-.align-title {
-  text-align: initial;
-}
+  .align-title {
+    text-align: initial;
+  }
 
-.winners-div {
-  background-color: #121212;
-  border: 3px solid #fff;
-  border-radius: 15px;
-}
+  .winners-div {
+    background-color: #121212;
+    border: 3px solid #fff;
+    border-radius: 15px;
+  }
 
-.winners-div-outer {
-  background-color: #e10600;
-  border-radius: 15px;
-  width: 40%;
-  padding: 0.4em;
-  margin: 2em auto;
-}
+  .winners-div-outer {
+    background-color: #e10600;
+    border-radius: 15px;
+    width: 40%;
+    padding: 0.4em;
+    margin: 2em auto;
+  }
 
-.winners-inner {
-  margin: 0.5em;
-}
+  .winners-inner {
+    margin: 0.5em;
+  }
 
-.winners-p {
-  margin: 0;
-  font-size: 1.2em;
-  color: #fff;
-  font-family: 'Orbitron', 'sans-serif';
-}
-.winners-para-div {
-  display: flex;
-  justify-content: initial;
-  border-bottom: 1px solid #fff;
-  /* margin-left: 1em; */
-}
+  .winners-p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #fff;
+    font-family: 'Orbitron', 'sans-serif';
+  }
+  .winners-para-div {
+    display: flex;
+    justify-content: initial;
+    border-bottom: 1px solid #fff;
+    /* margin-left: 1em; */
+  }
 
-.winners-para-div:last-child {
-  border: none;
-}
+  .winners-para-div:last-child {
+    border: none;
+  }
 
-.year-para {
-  font-size: 1.1em;
-  margin-right: 0.5em;
-}
+  .year-para {
+    font-size: 1.1em;
+    margin-right: 0.5em;
+  }
 
-.lastest-winner-text {
-  font-size: 1.8em;
-}
+  .lastest-winner-text {
+    font-size: 1.8em;
+  }
 </style>

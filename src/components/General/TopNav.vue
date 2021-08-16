@@ -4,9 +4,9 @@
     <img src="../../assets/logo.png" class="nav-logo-top" alt="F1 logo">
     <b-navbar-brand class="nav-title-top">Formula One</b-navbar-brand>
 
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <b-navbar-toggle class="place-toggle-button" target="nav-collapse"></b-navbar-toggle>
 
-    <b-collapse id="nav-collapse" class="items-far-right" is-nav>
+    <b-collapse id="nav-collapse" class="nav-collapse-top" is-nav>
         <b-navbar-nav class="navbar-nav-top">
             <router-link 
                 v-for="route in routes" 
@@ -39,33 +39,34 @@ export default {
 </script>
 
 <style scoped>
-.navbar-top {
-  background-color: #e10600;
-  border-bottom: 1px solid #fff;
-  /* margin-bottom: 2em; */
-  z-index: 10000;
-}
+  .navbar-top {
+    background-color: #e10600;
+    border-bottom: 1px solid #fff;
+    z-index: 10000;
+  }
 
-.nav-title-top {
-  font-family: 'Orbitron', 'sans-serif';
-  color: #fff !important;
-  text-shadow: 2px 2px #000;
-}
+  .nav-collapse-top {
+    justify-content: flex-end;
+  }
 
-.nav-link-top {
-  font-family: 'Orbitron', 'sans-serif';
-  text-decoration: none;
-  text-shadow: 1.5px 1.5px #000;
-  /* padding: 0px 0px; */
-}
+  .nav-title-top {
+    font-family: 'Orbitron', 'sans-serif';
+    color: #fff !important;
+    text-shadow: 2px 2px #000;
+  }
 
-.nav-logo-top {
-  margin: 0 0.5em;
-}
+  .nav-logo-top {
+    margin: 0 0.5em;
+  }
 
-.items-far-right {
-  justify-content: flex-end;
-}
+  .items-far-right {
+    justify-content: flex-end;
+  }
 
+  .place-toggle-button {
+    position: absolute;
+    right: 5px;
+    top: 2.5px;
+  }
 </style>
 

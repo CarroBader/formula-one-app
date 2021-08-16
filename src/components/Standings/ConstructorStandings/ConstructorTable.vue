@@ -87,36 +87,36 @@ export default {
 </script>
 
 <style scoped>
-table {
-  width: 100%;
-}
+  table {
+    width: 100%;
+  }
 
-.leaders-div {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 2em 0;
-}
+  .leaders-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 2em 0;
+  }
 
-.leaders-div > .first {order: 2; }
-.leaders-div > .second {order: 1; }
-.leaders-div > .third {order: 3; }
+  .leaders-div > .first {order: 2; }
+  .leaders-div > .second {order: 1; }
+  .leaders-div > .third {order: 3; }
 
-.second {
-  margin: 2em 0.5em 0 0.5em !important;
-}
+  .second {
+    margin: 2em 0.5em 0 0.5em !important;
+  }
 
-.third {
-  margin: 3em 0.5em 0 0.5em !important;
-}
+  .third {
+    margin: 3em 0.5em 0 0.5em !important;
+  }
 
-.leader-div {
-  flex: 1;
-  margin: 0 0.5em;
-}
+  .leader-div {
+    flex: 1;
+    margin: 0 0.5em;
+  }
 
-.country-flag-img {
-  height: 1em;
-  width: 1.6em;
-}
+  .country-flag-img {
+    height: 1em;
+    width: 1.6em;
+  }
 </style>
 

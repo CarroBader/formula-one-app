@@ -101,51 +101,51 @@ export default {
 </script>
 
 <style scoped>
-.result-last-race-div {
-  margin: 1.5em 0;
-}
+  .result-last-race-div {
+    margin: 1.5em 0;
+  }
 
-.country-flag-img {
-  height: 1em;
-  width: 1.6em;
-}
+  .country-flag-img {
+    height: 1em;
+    width: 1.6em;
+  }
 
-.fastest-lap-img {
-  height: 1em;
-  width: 1.5em;
-}
+  .fastest-lap-img {
+    height: 1em;
+    width: 1.5em;
+  }
 
-.same-position {
-  height: 1em;
-  width: 1em;
-  -webkit-filter: invert(100%) 
-  sepia() 
-  saturate(100%) 
-  hue-rotate(0deg)
-}
+  .same-position {
+    height: 1em;
+    width: 1em;
+    -webkit-filter: invert(100%) 
+    sepia() 
+    saturate(100%) 
+    hue-rotate(0deg)
+  }
 
-.lost-position {
-  height: 1em;
-  width: 1em;
-  -webkit-filter: invert(40%)
-   grayscale(100%) 
-   brightness(70%) 
-   sepia(100%) 
-   hue-rotate(-50deg) 
-   saturate(400%) 
-   contrast(2);
-}
+  .lost-position {
+    height: 1em;
+    width: 1em;
+    -webkit-filter: invert(40%)
+    grayscale(100%) 
+    brightness(70%) 
+    sepia(100%) 
+    hue-rotate(-50deg) 
+    saturate(400%) 
+    contrast(2);
+  }
 
-.gained-position {
-  height: 1em;
-  width: 1em;
-  transform: scaleY(-1);
-  -webkit-filter: invert(40%) 
-  grayscale(100%) 
-  brightness(70%) 
-  sepia(100%) 
-  hue-rotate(50deg) 
-  saturate(400%) 
-  contrast(2);
-}
+  .gained-position {
+    height: 1em;
+    width: 1em;
+    transform: scaleY(-1);
+    -webkit-filter: invert(40%) 
+    grayscale(100%) 
+    brightness(70%) 
+    sepia(100%) 
+    hue-rotate(50deg) 
+    saturate(400%) 
+    contrast(2);
+  }
 </style>
