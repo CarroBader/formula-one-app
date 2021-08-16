@@ -581,6 +581,10 @@ tbody:last-child {
 	}
 
 	/* NextRaceTrackInfo */
+	.qualification-session-headline {
+		font-size: 1.6em;
+	}
+
 	.next-race-track-info-headline {
 		font-size: 1.6em;
 	}
@@ -797,6 +801,10 @@ tbody:last-child {
 	}
 
 	/* QualificationSession */
+	.qualification-session-headline {
+		font-size: 1.8em;
+	}
+
 	.qualification-session-td {
 		padding: 0.5em 0.3em;
 	}
