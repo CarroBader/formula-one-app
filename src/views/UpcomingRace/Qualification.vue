@@ -15,7 +15,7 @@ import QualificationSession from '../../components/UpcomingRace/Qualification/Qu
 import apiCallsMixin from '../../mixins/apiCallsMixin'
 
 export default {
-  name: 'LastRace',
+  name: 'Qualification',
   components: {
     QualificationSession
   },

@@ -23,11 +23,21 @@
             <td class="qualification-session-td darkgrey-text">{{ quali.position }}</td>
             <td class="qualification-session-td">{{ quali.Driver.givenName }} {{ quali.Driver.familyName }}</td>
             <td class="qualification-session-td no-display-when-mobile" 
-            :class="getColor(quali.Constructor.constructorId)">
-            {{ quali.Constructor.name }}</td>
-            <td class="qualification-session-td Q1">{{ quali.Q1 }}</td>
-            <td class="qualification-session-td Q2">{{ quali.Q2 }}</td>
-            <td class="qualification-session-td Q3">{{ quali.Q3 }}</td>
+                :class="getColor(quali.Constructor.constructorId)"> 
+                {{ quali.Constructor.name }}
+            </td>
+            <td class="qualification-session-td Q1"
+                :class="qualiOne(i)">
+                {{ quali.Q1 }}
+            </td>
+            <td class="qualification-session-td Q2"
+                :class="qualiTwo(i)">
+                {{ quali.Q2 }}
+            </td>
+            <td class="qualification-session-td Q3"
+                :class="qualiThree(i)">
+                {{ quali.Q3 }}
+            </td>
           </tr>
           </tbody>
         </table>
@@ -39,18 +49,53 @@
 <script>
 import getColorMixin from '../../../mixins/getColorMixin'
 
+var qualiResult
+
 export default {
-  name: 'PracticeSession',
+  name: 'QualificationSession',
   props: {
     qualificationResult: Object
   },
-  mounted() {
-    console.log("QS", this.qualificationResult.QualifyingResults)
-    // for (let i = 0; i < this.qualificationResult.QualifyingResults.length; i++) {
-    //   console.log(this.qualificationResult.QualifyingResults[i].Constructor.name.slice(0,1))
-    // } 
+  beforeMount() {
+    qualiResult = this.qualificationResult.QualifyingResults
   },
   methods: {
+    // bestQuliTime(index, qualiPhase) {
+    //   if (qualiPhase === "Q1" && qualiResult[index].Q2 !== undefined && qualiResult[index].Q3 === undefined) {
+    //     return qualiResult[index].Q1 < qualiResult[index].Q2 ? "green-text" : ""
+    //   } else if (qualiPhase === "Q1" && qualiResult[index].Q2 === undefined && qualiResult[index].Q3 === undefined) {
+    //     return "green-text"
+    //   }
+
+    //   if (qualiPhase === "Q2" && qualiResult[index].Q3 === undefined) {
+    //     return qualiResult[index].Q2 < qualiResult[index].Q1 ? "green-text" : ""
+    //   } else if (qualiPhase === "Q2" && qualiResult[index].Q3 !== undefined) {
+    //     return qualiResult[index].Q2 < qualiResult[index].Q3 ? "green-text" : ""
+    //   }
+
+    //   if (qualiPhase === "Q3" ) {
+    //     return qualiResult[index].Q3 < qualiResult[index].Q1 
+    //     && qualiResult[index].Q3 < qualiResult[index].Q2 ? "green-text" : ""
+    //   }
+    // },
+    qualiOne(index) {
+      if (qualiResult[index].Q2 !== undefined && qualiResult[index].Q3 === undefined) {
+        return qualiResult[index].Q1 < qualiResult[index].Q2 ? "green-text" : ""
+      } else if (qualiResult[index].Q2 === undefined && qualiResult[index].Q3 === undefined) {
+        return "green-text"
+      }
+    },
+    qualiTwo(index) {
+      if (qualiResult[index].Q3 === undefined) {
+        return qualiResult[index].Q2 < qualiResult[index].Q1 ? "green-text" : ""
+      } else if (qualiResult[index].Q3 !== undefined) {
+        return qualiResult[index].Q2 < qualiResult[index].Q3 ? "green-text" : ""
+      }
+
+    },
+    qualiThree(index) {
+      return qualiResult[index].Q3 < qualiResult[index].Q1 && qualiResult[index].Q3 < qualiResult[index].Q2 ? "green-text" : ""
+    }
   },
   mixins: [getColorMixin]
 }
@@ -97,9 +142,4 @@ td {
 .Q3 {
   color: #a9a9a9;
 }
-/* .country-flag-img {
-  height: 0.8em;
-  width: 1.6em;
-} */
-
 </style>
