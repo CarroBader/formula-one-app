@@ -789,6 +789,9 @@ tbody:last-child {
   }
 
 	/* ResultLastRace */
+	.result-last-race-headline {
+		font-size: 1.7em;
+	}
   .result-last-race-td { 
     padding: 1em 3em
   }
