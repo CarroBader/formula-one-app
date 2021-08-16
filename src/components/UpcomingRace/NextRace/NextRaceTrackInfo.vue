@@ -1,7 +1,6 @@
 <template>
   <div
     class="next-race-track-info">
-    <h1 class="next-race-track-info-headline"> {{ nextRace.raceName }}</h1>
     <b-card class="card-margin">
       <img :src="getCircuitImage()"
       :alt='`${nextRace.Circuit.circuitName}`'
@@ -59,10 +58,10 @@ export default {
 
   td {
     text-align: end;
-    width:100%;
+    width: 100%;
   }
 
-  tr {
-    border-bottom: 1px solid #fff;
+  tr:last-child {
+    border: none;
   }
 </style>

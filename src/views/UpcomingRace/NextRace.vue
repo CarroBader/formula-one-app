@@ -1,5 +1,6 @@
 <template>
   <b-container class="default-background-center">
+    <h1 class="next-race-headline"> {{ this.nextRace.raceName }} </h1>
     <div class="row next-race-row">
       <div class="col">
         <NextRaceTrackInfo 
@@ -52,7 +53,7 @@ export default {
       this.nextRaceTrackId = this.nextRace.Circuit.circuitId
       this.season = Number(this.nextRace.season)
       this.nextRaceDataLoaded = responseRace.dataLoaded
-      console.log(this.nextRace)
+      console.log("NEXT:", this.nextRace)
 
       this.getResult(this.season, this.nextRaceTrackId)
     },

@@ -119,4 +119,3 @@ export default {
     width: 1.6em;
   }
 </style>
-

@@ -64,8 +64,11 @@ h4 {
 /* Table */
 th {
 	font-family: 'Orbitron', 'sans-serif';
-	border-bottom: 1px solid #fff;
 	color: #fff;
+}
+
+tr {
+	border-bottom: 1px solid #fff;
 }
 
 td {
@@ -78,6 +81,10 @@ tbody {
 }
 
 tbody:last-child {
+  border: none;
+}
+
+tr:last-child {
   border: none;
 }
 
@@ -127,7 +134,7 @@ tbody:last-child {
 	.navbar-sub {
 		background-color: #232323;
     padding: 2px 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 		justify-content: space-evenly;
 	}
 
@@ -217,27 +224,32 @@ tbody:last-child {
 		margin: 2em 0;
 	}
 
-	/* NextRaceTrackInfo */
-	.next-race-track-info-headline {
+	/* NextRace  - View */
+	.next-race-headline {
 		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
 		border-radius: 8px;
 		border: #ffffff7d 2px solid;
-		display: inline;
     padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.2em;
-		margin-bottom: 1em;
+		display: -webkit-inline-box;
+		margin-top: 0.5em;
+		font-size: 1.4em;
+	}
+
+	/* NextRaceTrackInfo */
+	.next-race-track-info-th {
+		font-size: 0.5em;
+	}
+
+	.next-race-track-info-td {
+		font-size: 0.6em;
+		color: #e10600;
+		-webkit-text-stroke-width: 0.4px;
+		-webkit-text-stroke-color: #4a0101;
 	}
 
 	.next-race-track-info-circuit-img {
 		height: 10em;
-	}
-
-	.next-race-track-info-th {
-		font-size: 0.7em;
-	}
-
-	.next-race-track-info-td {
-		font-size: 0.7em;
+		margin-bottom: 2em;
 	}
 
 	/* QualificationSession */
@@ -458,7 +470,20 @@ tbody:last-child {
 		margin: 2em 0 3em 0;
 	}
 
+	/* NextRace - View */
+	.next-race-headline {
+		font-size: 1.6em;
+	}
+
 	/* NextRaceTrackInfo */
+	.next-race-track-info-th {
+		font-size: 0.6em;
+	}
+
+	.next-race-track-info-td {
+		font-size: 0.7em;
+	}
+
 	.next-race-track-info-circuit-img {
 		height: 15em;
 	}
@@ -537,7 +562,6 @@ tbody:last-child {
 
 	.navbar-sub {
 		justify-content: start;
-    margin-bottom: 1em;
 	}
 
 	/* Navbar Top */
@@ -586,25 +610,22 @@ tbody:last-child {
 		padding: 1em 1.5em;
 	}
 
-	/* NextRaceTrackInfo */
-	.qualification-session-headline {
-		font-size: 1.6em;
+	/* NextRace - View */
+	.next-race-headline {
+		font-size: 1.8em;
 	}
 
-	.next-race-track-info-headline {
-		font-size: 1.6em;
+	/* NextRaceTrackInfo */
+	.next-race-track-info-th {
+		font-size: 0.7em;
+	}
+
+	.next-race-track-info-td {
+		font-size: 0.8em;
 	}
 
 	.next-race-track-info-circuit-img {
 		height: 18em;
-	}
-
-	.next-race-track-info-th {
-		font-size: 0.9em;
-	}
-
-	.next-race-track-info-td {
-		font-size: 0.9em;
 	}
 
 	/* QualificationSession */
@@ -736,6 +757,11 @@ tbody:last-child {
 		margin: 2em 0 5em 0;
 	}
 
+	/* NextRace - View */
+	.next-race-headline {
+		font-size: 2em;
+	}
+
 	/* QualificationSession */
 	.qualification-session-headline {
 		font-size: 1.6em;
@@ -832,13 +858,18 @@ tbody:last-child {
     padding-left: 0.6em;
   }
 
+	/* NextRace - View */
+	.next-race-headline {
+		font-size: 2.2em;
+	}
+
 	/* NextRaceTrackInfo */	
 	.next-race-track-info-th {
-		font-size: 1em;
+		font-size: 0.8em;
 	}
 
 	.next-race-track-info-td {
-		font-size: 1em;
+		font-size: 0.9em;
 	}
 
 	/* QualificationSession */
