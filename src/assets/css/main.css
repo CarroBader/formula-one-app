@@ -81,6 +81,12 @@ tbody:last-child {
   border: none;
 }
 
+.scroll-table {
+	overflow: hidden;
+	overflow-y: scroll;
+	height: 500px;
+}
+
 /* Colors */
 .red-text {
 	color: #ff1616 !important;

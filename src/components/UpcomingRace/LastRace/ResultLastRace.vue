@@ -4,49 +4,51 @@
     class="result-last-race-div">
     <h1 class="result-last-race-headline">{{ lastRace.raceName }}</h1>
     <b-card class="card-margin">
-      <table>
-      <tr>
-        <th class="full-length">Position</th>
-        <th class="short-length">Pos.</th>
-        <th></th>
-        <th>Name</th>
-        <th class="no-display-when-mobile">Nationality</th>
-        <th>Car</th>
-        <th class="full-length">Points</th>
-        <th class="short-length">Pts.</th>
-        <th></th>
-      </tr>
-        <tbody         
-          v-for="race, i in lastRace.Results"
-          :key="race[i]"
-          class="result-last-race-tbody">
+      <div class="scroll-table ">
+        <table>
         <tr>
-          <td class="result-last-race-td darkgrey-text">{{ race.position }}</td>
-          <td class="result-last-race-td">
-            <img :src="getArrowImage(race.grid, race.position)"
-            :alt='`${race.Driver.nationality}`'
-            :class="getArrowClass(race.grid, race.position)"
-            />
-            <span class="positionDifference">{{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}</span>
-          </td>
-          <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
-          <td class="no-display-when-mobile result-last-race-td">
-            <img :src="getFlagImage(race.Driver.nationality)"
-            :alt='`${race.Driver.nationality}`'
-            class="country-flag-img"/>
-          </td>
-          <td :class="getColor(race.Constructor.constructorId)" 
-              class="result-last-race-td">
-              {{ race.Constructor.name }}</td>
-          <td class="result-last-race-td">{{ race.points }}</td>
-          <td v-if="fastestLap(race.FastestLap)">
-            <img src="../../../assets/img/icons/fastest_lap.png"
-            class="fastestLap" 
-            />
-          </td>
+          <th class="full-length">Position</th>
+          <th class="short-length">Pos.</th>
+          <th></th>
+          <th>Name</th>
+          <th class="no-display-when-mobile">Nationality</th>
+          <th>Car</th>
+          <th class="full-length">Points</th>
+          <th class="short-length">Pts.</th>
+          <th></th>
         </tr>
-        </tbody>
-      </table>
+          <tbody         
+            v-for="race, i in lastRace.Results"
+            :key="race[i]"
+            class="result-last-race-tbody">
+          <tr>
+            <td class="result-last-race-td darkgrey-text">{{ race.position }}</td>
+            <td class="result-last-race-td">
+              <img :src="getArrowImage(race.grid, race.position)"
+              :alt='`${race.Driver.nationality}`'
+              :class="getArrowClass(race.grid, race.position)"
+              />
+              <span class="positionDifference">{{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}</span>
+            </td>
+            <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
+            <td class="no-display-when-mobile result-last-race-td">
+              <img :src="getFlagImage(race.Driver.nationality)"
+              :alt='`${race.Driver.nationality}`'
+              class="country-flag-img"/>
+            </td>
+            <td :class="getColor(race.Constructor.constructorId)" 
+                class="result-last-race-td">
+                {{ race.Constructor.name }}</td>
+            <td class="result-last-race-td">{{ race.points }}</td>
+            <td v-if="fastestLap(race.FastestLap)">
+              <img src="../../../assets/img/icons/fastest_lap.png"
+              class="fastestLap" 
+              />
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </b-card>
   </div>
 </template>

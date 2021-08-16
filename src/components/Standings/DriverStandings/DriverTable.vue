@@ -26,34 +26,36 @@
           </div>
         </div>
       </div>
-      <table>
-      <tr class="driver-table-tr">
-          <th>Position</th>
-          <th>Name</th>
-          <th>Nationality</th>
-          <th>Car</th>
-          <th>Points</th>
-      </tr>
-        <tbody         
-          v-for="driver, i in driverStandings.slice(3,20)"
-          :key="driver[i]"
-          class="driver-table-tbody">
-        <tr>
-          <td class="darkgrey-text"> {{ driver.position }} </td>
-          <td> {{ driver.Driver.givenName }} {{ driver.Driver.familyName }} </td>
-          <td>
-            <img :src="getFlagImage(driver.Driver.nationality)"
-            :alt='`${driver.Driver.nationality}`'
-            class="country-flag-img"/>
-          </td>
-          <td
-            :class="getColor(driver.Constructors[0].constructorId)"> 
-            {{ driver.Constructors[0].name }}
-          </td>
-          <td> {{ driver.points }} </td>
+      <div class="scroll-table">
+        <table>
+        <tr class="driver-table-tr">
+            <th>Position</th>
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>Car</th>
+            <th>Points</th>
         </tr>
-        </tbody>
-      </table>
+          <tbody         
+            v-for="driver, i in driverStandings.slice(3,20)"
+            :key="driver[i]"
+            class="driver-table-tbody">
+          <tr>
+            <td class="darkgrey-text"> {{ driver.position }} </td>
+            <td> {{ driver.Driver.givenName }} {{ driver.Driver.familyName }} </td>
+            <td>
+              <img :src="getFlagImage(driver.Driver.nationality)"
+              :alt='`${driver.Driver.nationality}`'
+              class="country-flag-img"/>
+            </td>
+            <td
+              :class="getColor(driver.Constructors[0].constructorId)"> 
+              {{ driver.Constructors[0].name }}
+            </td>
+            <td> {{ driver.points }} </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </b-card>
   </div>
 </template>
