@@ -6,8 +6,8 @@
       <div class="scroll-table ">
         <table>
           <tr class="qualifying-session-tr">
-          <th class="full-length">Position</th>
-          <th class="short-length">Pos.</th>
+          <th class="browser-view">Position</th>
+          <th class="mobile-view">Pos.</th>
             <th>Name</th>
             <th class="no-display-when-mobile">Car</th>
             <th>Q1</th>
@@ -21,7 +21,11 @@
             :class="[i == 9 || i == 14 ? 'elimination-line' : '']">
           <tr>
             <td class="qualification-session-td darkgrey-text">{{ quali.position }}</td>
-            <td class="qualification-session-td">{{ quali.Driver.givenName }} {{ quali.Driver.familyName }}</td>
+            <td class="qualification-session-td browser-view">{{ quali.Driver.givenName }} {{ quali.Driver.familyName }}</td>
+            <td class="qualification-session-td mobile-view"
+                :class="getColor(quali.Constructor.constructorId)">
+                {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
+            </td>
             <td class="qualification-session-td no-display-when-mobile" 
                 :class="getColor(quali.Constructor.constructorId)"> 
                 {{ quali.Constructor.name }}

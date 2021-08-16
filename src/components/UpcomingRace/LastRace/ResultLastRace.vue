@@ -7,14 +7,14 @@
       <div class="scroll-table ">
         <table>
         <tr class="result-last-race-tr">
-          <th class="full-length">Position</th>
-          <th class="short-length">Pos.</th>
+          <th class="browser-view">Position</th>
+          <th class="mobile-view">Pos.</th>
           <th></th>
           <th>Name</th>
           <th class="no-display-when-mobile">Nationality</th>
           <th>Car</th>
-          <th class="full-length">Points</th>
-          <th class="short-length">Pts.</th>
+          <th class="browser-view">Points</th>
+          <th class="mobile-view">Pts.</th>
           <th></th>
         </tr>
           <tbody         

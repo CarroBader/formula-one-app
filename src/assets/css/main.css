@@ -166,6 +166,10 @@ tbody:last-child {
 	.no-display-when-mobile  {
 		display: none;
 	}
+
+	.browser-view {
+		display: none;
+	}
 	
 	.scroll-table {
 		height: 500px;
@@ -203,10 +207,6 @@ tbody:last-child {
 
 	.card-margin {
 		margin: 2em 0;
-	}
-
-	.full-length {
-		display: none;
 	}
 
 	/* NextRaceTrackInfo */
@@ -256,7 +256,7 @@ tbody:last-child {
 	}
 
 	.elimination-line {
-		border-bottom: 2px solid #e10600;
+		border-bottom: 2px solid #fff;
 	}
 
 	/*---------------- STANDINGS ----------------*/
@@ -423,6 +423,14 @@ tbody:last-child {
 		display: revert;
 	}
 
+	.browser-view {
+		display: revert;
+	}
+
+	.mobile-view {
+		display: none;
+	}
+
 	.scroll-table {
 		height: auto;
 	}
@@ -453,14 +461,6 @@ tbody:last-child {
 
 	.card-margin {
 		margin: 2em 0 3em 0;
-	}
-
-	.full-length {
-		display: revert;
-	}
-
-	.short-length {
-		display: none;
 	}
 
 	/* NextRaceTrackInfo */
@@ -621,7 +621,7 @@ tbody:last-child {
 	}
 
 	.elimination-line {
-		border-bottom: 3px solid #e10600;
+		border-bottom: 3px solid #fff;
 	}
 
 	/*---------------- STANDINGS ----------------*/
