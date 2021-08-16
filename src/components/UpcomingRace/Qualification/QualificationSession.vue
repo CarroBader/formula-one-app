@@ -19,7 +19,7 @@
           class="qualifying-session-tbody"
           :class="[i == 9 || i == 14 ? 'elimination-line' : '']">
         <tr>
-          <td class="qualification-session-td" style="color:darkgrey !important">{{ quali.position }}</td>
+          <td class="qualification-session-td darkgrey-text">{{ quali.position }}</td>
           <td class="qualification-session-td">{{ quali.Driver.givenName }} {{ quali.Driver.familyName }}</td>
           <td class="qualification-session-td no-display-when-mobile" 
           :class="getColor(quali.Constructor.constructorId)">

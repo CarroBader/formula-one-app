@@ -37,7 +37,7 @@
           :key="constructor[i]"
           class="constructor-table-tbody">
         <tr>
-          <td> {{ constructor.position }} </td>
+          <td class="darkgrey-text"> {{ constructor.position }} </td>
           <td :class="getColor(constructor.Constructor.constructorId)"> {{ constructor.Constructor.name }}</td>
           <td>
             <img :src="getFlagImage(constructor.Constructor.nationality)"

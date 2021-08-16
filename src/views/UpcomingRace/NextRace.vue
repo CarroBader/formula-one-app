@@ -81,13 +81,4 @@ export default {
 .next-race-row {
   margin-bottom: 3em;
 }
-
-.circuit-name {
-  margin: auto 2em;
-  background-color: grey;
-  border-radius: 15px;
-  text-align: center;
-  -webkit-text-stroke-width: 0.9px;
-  -webkit-text-stroke-color: black;
-}
 </style>

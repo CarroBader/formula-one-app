@@ -21,7 +21,7 @@
           :key="race[i]"
           class="result-last-race-tbody">
         <tr>
-          <td class="result-last-race-td">{{ race.position }}</td>
+          <td class="result-last-race-td darkgrey-text">{{ race.position }}</td>
           <td class="result-last-race-td">
             <img :src="getArrowImage(race.grid, race.position)"
             :alt='`${race.Driver.nationality}`'

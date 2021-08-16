@@ -39,7 +39,7 @@
           :key="driver[i]"
           class="driver-table-tbody">
         <tr>
-          <td class="red-text"> {{ driver.position }} </td>
+          <td class="darkgrey-text"> {{ driver.position }} </td>
           <td> {{ driver.Driver.givenName }} {{ driver.Driver.familyName }} </td>
           <td>
             <img :src="getFlagImage(driver.Driver.nationality)"

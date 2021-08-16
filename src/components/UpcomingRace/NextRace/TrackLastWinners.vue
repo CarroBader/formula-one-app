@@ -84,15 +84,6 @@ export default {
   margin-right: 0.5em;
 }
 
-.circuit-name {
-  margin: auto 2em;
-  background-color: grey;
-  border-radius: 15px;
-  text-align: center;
-  -webkit-text-stroke-width: 0.9px;
-  -webkit-text-stroke-color: black;
-}
-
 .lastest-winner-text {
   font-size: 1.8em;
 }
