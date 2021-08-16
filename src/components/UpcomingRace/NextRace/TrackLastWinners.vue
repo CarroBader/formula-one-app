@@ -51,7 +51,7 @@ export default {
 }
 
 .winners-div-outer {
-  background-color: #E10600;
+  background-color: #e10600;
   border-radius: 15px;
   width: 40%;
   padding: 0.4em;

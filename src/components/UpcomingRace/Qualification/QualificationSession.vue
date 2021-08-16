@@ -80,23 +80,22 @@ td {
 }
 
 .elimination-line {
-  border-bottom: 1px solid #ff0000;
+  border-bottom: 1px solid #e10600;
 }
 
 .Q1 {
-  color: #D3D3D3;
-  border-right: 1px solid #ff0000;
-  border-left: 1px solid #ff0000;
+  color: #d3d3d3;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
 }
 
 .Q2 {
-  color: #C0C0C0;
-  border-right: 1px solid #ff0000;
+  color: #c0c0c0;
+  border-right: 1px solid #fff;
 }
 
 .Q3 {
-  color: #A9A9A9;
-  border-right: 1px solid red;
+  color: #a9a9a9;
 }
 /* .country-flag-img {
   height: 0.8em;
