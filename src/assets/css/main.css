@@ -191,6 +191,10 @@ tr:last-child {
 		height: 500px;
 	}
 
+	.card-margin {
+    margin: 1em 0 4em
+	}
+
 	/*------------------------ UPCOMING RACE ------------------------*/
 	/* ResultLastRace */
 	.result-last-race-headline {
@@ -217,10 +221,6 @@ tr:last-child {
 	.position-difference {
 		font-size: 0.7em;
 		padding-left: 0.3em;
-	}
-
-	.card-margin {
-    margin: 1em 0 4em
 	}
 
 	/* NextRace  - View */
@@ -344,7 +344,7 @@ tr:last-child {
 	}
 
 	.driver-table-flag-img {
-    height: 1em;
+		height: 1em;
     width: 1.6em;
   }
 
@@ -460,6 +460,10 @@ tr:last-child {
 		height: auto;
 	}
 
+	.card-margin {
+    margin: 2em 0 6em;
+	}
+
 	/*------------------------ UPCOMING RACE ------------------------*/
 	/* ResultLastRace */
 	.result-last-race-headline {
@@ -483,9 +487,10 @@ tr:last-child {
     padding-left: 0.4em;
   }
 
-	.card-margin {
-    margin: 2em 0 6em;
-	}
+	.result-last-race-flag-img {
+		height: 1em;
+    width: 1.6em;
+  }
 
 	/* NextRace - View */
 	.next-race-headline {
@@ -574,6 +579,11 @@ tr:last-child {
   .driver-table-td {
     padding: 1em;
   }
+
+	.driver-table-flag-img {
+		height: 1.2em;
+    width: 1.8em;
+	}
 	
 	/* ConstructorTable */
 	.leader-constructor-img {
@@ -665,6 +675,12 @@ tr:last-child {
 	.result-last-race-td {
 		padding: 1em 1.5em;
 	}
+
+	.result-last-race-flag-img {
+    height: 1.1em;
+    width: 1.7em;
+  }
+
 
 	/* NextRace - View */
 	.next-race-headline {
@@ -794,6 +810,15 @@ tr:last-child {
     font-size: 1.1em;
   }
 
+	/*------------------------ GENERAL ------------------------*/
+	.card-body {
+		padding: 1em;
+	}
+
+	/* .card-margin {
+		margin: 2em 0 5em 0;
+	} */
+
 	/*------------------------ UPCOMING RACE ------------------------*/
 	/* ResultLastRace */
 	.result-last-race-headline {
@@ -817,13 +842,10 @@ tr:last-child {
     padding-left: 0.5em;
   }
 
-	.card-body {
-		padding: 1em;
-	}
-
-	/* .card-margin {
-		margin: 2em 0 5em 0;
-	} */
+	.result-last-race-flag-img {
+		height: 1.2em;
+    width: 2em;
+  }
 
 	/* NextRace - View */
 	.next-race-headline {

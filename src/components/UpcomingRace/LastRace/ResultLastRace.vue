@@ -35,7 +35,7 @@
             <td class="no-display-when-mobile result-last-race-td">
               <img :src="getFlagImage(race.Driver.nationality)"
               :alt='`${race.Driver.nationality}`'
-              class="country-flag-img"/>
+              class="result-last-race-flag-img"/>
             </td>
             <td :class="getColor(race.Constructor.constructorId)" 
                 class="result-last-race-td">
@@ -105,11 +105,6 @@ export default {
 	.result-last-race-headline-div {
 		margin: 0.5em 0 2em;
 	}
-  
-  .country-flag-img {
-    height: 1em;
-    width: 1.6em;
-  }
 
   .fastest-lap-img {
     height: 1em;
