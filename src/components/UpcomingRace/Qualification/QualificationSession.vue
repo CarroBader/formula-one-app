@@ -102,30 +102,8 @@ export default {
 </script>
 
 <style scoped>
-
 .next-race-quali-div {
   margin: 1.5em 0;
-}
-
-th {
-  font-size: 0.9em;
-  color: #fff;
-}
-
-td {
-  color: #fff;
-}
-
-.align-title {
-  text-align: initial;
-}
-
-.qualifying-title {
-  font-size: 1.8em;
-}
-
-.elimination-line {
-  border-bottom: 1px solid #e10600;
 }
 
 .Q1 {

@@ -101,7 +101,6 @@ export default {
 </script>
 
 <style scoped>
-
 .result-last-race-div {
   margin: 1.5em 0;
 }

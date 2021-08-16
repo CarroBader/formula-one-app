@@ -239,20 +239,24 @@ tbody:last-child {
 		border: #ffffff7d 2px solid;
 		display: inline;
     padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.2em;
 		margin-bottom: 1em;
+		font-size: 1.1em;
 	}
-	
-	.qualification-session-td {
-		padding: 0.3em;
+
+	.qualifying-session-tr {
+		font-size: 0.8em;
 	}
 
 	.qualifying-session-tbody {
 		font-size: 0.7em;
 	}
+	
+	.qualification-session-td {
+		padding: 1em 0.3em;
+	}
 
-	.qualifying-session-tr {
-		font-size: 0.7em;
+	.elimination-line {
+		border-bottom: 2px solid #e10600;
 	}
 
 	/*---------------- STANDINGS ----------------*/
@@ -465,16 +469,20 @@ tbody:last-child {
 	}
 
 	/* QualificationSession */
-	.qualification-session-td {
-		padding: 0.6em;
-	}
-
-	.qualifying-session-tbody {
-		font-size: 0.9em;
+	.qualification-session-headline {
+		font-size: 1.2em;
 	}
 
 	.qualifying-session-tr {
 		font-size: 0.9em;
+	}
+
+	.qualifying-session-tbody {
+		font-size: 0.8em;
+	}
+
+	.qualification-session-td {
+		padding: 1em 0.8em;
 	}
 
 	/*---------------- STANDINGS ----------------*/
@@ -596,8 +604,24 @@ tbody:last-child {
 	}
 
 	/* QualificationSession */
+	.qualification-session-headline {
+		font-size: 1.4em;
+	}
+
+	.qualifying-session-tr {
+		font-size: 0.95em;
+	}
+
+	.qualifying-session-tbody {
+		font-size: 0.9em;
+	}
+
 	.qualification-session-td {
-		padding: 0.3em;
+		padding: 1em 1.5em;
+	}
+
+	.elimination-line {
+		border-bottom: 3px solid #e10600;
 	}
 
 	/*---------------- STANDINGS ----------------*/
@@ -707,16 +731,20 @@ tbody:last-child {
 	}
 
 	/* QualificationSession */
-	.qualification-session-td {
-		padding: 0.3em;
-	}
-
-	.qualifying-session-tbody {
-		font-size: 1em;
+	.qualification-session-headline {
+		font-size: 1.6em;
 	}
 
 	.qualifying-session-tr {
 		font-size: 1em;
+	}
+
+	.qualifying-session-tbody {
+		font-size: 0.95em;
+	}
+
+	.qualification-session-td {
+		padding: 1em 1.55em;
 	}
 
 	/*---------------- STANDINGS ----------------*/
@@ -829,23 +857,15 @@ tbody:last-child {
 
 	/* QualificationSession */
 	.qualification-session-headline {
-		font-size: 1.8em;
+		font-size: 1.7em;
 	}
 
 	.qualification-session-td {
-		padding: 0.5em 0.3em;
-	}
-
-	.qualifying-session-tbody {
-		font-size: 1.1em;
-	}
-
-	.qualifying-session-tr {
-		font-size: 1.1em;
+		padding: 1em 2.5em;
 	}
 
 	/*---------------- STANDINGS ----------------*/
-
+	
 	/* DriverTable */
 	.leaders-driver-info {
 		width: 11em;
