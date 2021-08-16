@@ -48,7 +48,6 @@ h4 {
 }
 
 /* NavBar */
-
 .nav-link {
 	color: #fff !important;
 	padding: 0;
@@ -172,6 +171,8 @@ tbody:last-child {
 		height: 500px;
 	}
 
+	/*---------------- UPCOMING RACE ----------------*/
+
 	/* ResultLastRace */
 	.result-last-race-headline {
 		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
@@ -207,6 +208,54 @@ tbody:last-child {
 	.full-length {
 		display: none;
 	}
+
+	/* NextRaceTrackInfo */
+	.next-race-track-info-headline {
+		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+		border-radius: 8px;
+		border: #ffffff7d 2px solid;
+		display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
+		font-size: 1.2em;
+		margin-bottom: 1em;
+	}
+
+	.next-race-track-info-circuit-img {
+		height: 10em;
+	}
+
+	.next-race-track-info-th {
+		font-size: 0.7em;
+	}
+
+	.next-race-track-info-td {
+		font-size: 0.7em;
+	}
+
+	/* QualificationSession */
+	.qualification-session-headline {
+		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+		border-radius: 8px;
+		border: #ffffff7d 2px solid;
+		display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
+		font-size: 1.2em;
+		margin-bottom: 1em;
+	}
+	
+	.qualification-session-td {
+		padding: 0.3em;
+	}
+
+	.qualifying-session-tbody {
+		font-size: 0.7em;
+	}
+
+	.qualifying-session-tr {
+		font-size: 0.7em;
+	}
+
+	/*---------------- STANDINGS ----------------*/
 
 	/* DriverTable */
 	.leader-driver-img {
@@ -302,52 +351,6 @@ tbody:last-child {
 	.constructor-table-tr {
 		font-size: 0.8em;
 	}
-
-	/* NextRaceTrackInfo */
-	.next-race-track-info-headline {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		display: inline;
-    padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.2em;
-		margin-bottom: 1em;
-	}
-
-	.next-race-track-info-circuit-img {
-		height: 10em;
-	}
-
-	.next-race-track-info-th {
-		font-size: 0.7em;
-	}
-
-	.next-race-track-info-td {
-		font-size: 0.7em;
-	}
-
-	/* QualificationSession */
-	.qualification-session-headline {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		display: inline;
-    padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.2em;
-		margin-bottom: 1em;
-	}
-	
-	.qualification-session-td {
-		padding: 0.3em;
-	}
-
-	.qualifying-session-tbody {
-		font-size: 0.7em;
-	}
-
-	.qualifying-session-tr {
-		font-size: 0.7em;
-	}
 }
 
 	/* ---------------------------------------------------------------------------------------------------------------------------- */
@@ -420,6 +423,8 @@ tbody:last-child {
 		height: auto;
 	}
 
+	/*---------------- UPCOMING RACE ----------------*/
+
 	/* ResultLastRace */
 	.result-last-race-headline {
     font-size: 1.2em;
@@ -453,6 +458,26 @@ tbody:last-child {
 	.short-length {
 		display: none;
 	}
+
+	/* NextRaceTrackInfo */
+	.next-race-track-info-circuit-img {
+		height: 15em;
+	}
+
+	/* QualificationSession */
+	.qualification-session-td {
+		padding: 0.6em;
+	}
+
+	.qualifying-session-tbody {
+		font-size: 0.9em;
+	}
+
+	.qualifying-session-tr {
+		font-size: 0.9em;
+	}
+
+	/*---------------- STANDINGS ----------------*/
 
 	/* DriverTable */
 	.leader-driver-img {
@@ -490,24 +515,6 @@ tbody:last-child {
 	}
 
 	.constructor-table-tr {
-		font-size: 0.9em;
-	}
-
-	/* NextRaceTrackInfo */
-	.next-race-track-info-circuit-img {
-		height: 15em;
-	}
-
-	/* QualificationSession */
-	.qualification-session-td {
-		padding: 0.6em;
-	}
-
-	.qualifying-session-tbody {
-		font-size: 0.9em;
-	}
-
-	.qualifying-session-tr {
 		font-size: 0.9em;
 	}
 }
@@ -548,6 +555,8 @@ tbody:last-child {
     margin-top: 1em !important;
   }
 
+	/*---------------- UPCOMING RACE ----------------*/
+
 	/* ResultLastRace */
 	.result-last-race-headline {
 		font-size: 1.4em;
@@ -564,6 +573,34 @@ tbody:last-child {
 	.result-last-race-td {
 		padding: 1em 1.5em;
 	}
+
+	/* NextRaceTrackInfo */
+	.qualification-session-headline {
+		font-size: 1.6em;
+	}
+
+	.next-race-track-info-headline {
+		font-size: 1.6em;
+	}
+
+	.next-race-track-info-circuit-img {
+		height: 18em;
+	}
+
+	.next-race-track-info-th {
+		font-size: 0.9em;
+	}
+
+	.next-race-track-info-td {
+		font-size: 0.9em;
+	}
+
+	/* QualificationSession */
+	.qualification-session-td {
+		padding: 0.3em;
+	}
+
+	/*---------------- STANDINGS ----------------*/
 
 	/* DriverTable */
 	.leader-driver-img {
@@ -624,32 +661,6 @@ tbody:last-child {
 	.constructor-table-tr {
 		font-size: 1em;
 	}
-
-	/* NextRaceTrackInfo */
-	.qualification-session-headline {
-		font-size: 1.6em;
-	}
-
-	.next-race-track-info-headline {
-		font-size: 1.6em;
-	}
-
-	.next-race-track-info-circuit-img {
-		height: 18em;
-	}
-
-	.next-race-track-info-th {
-		font-size: 0.9em;
-	}
-
-	.next-race-track-info-td {
-		font-size: 0.9em;
-	}
-
-	/* QualificationSession */
-	.qualification-session-td {
-		padding: 0.3em;
-	}
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
@@ -662,6 +673,8 @@ tbody:last-child {
 	.leaflet-touch .leaflet-bar {
 		margin-top: 1em !important;
 	}
+
+	/*---------------- UPCOMING RACE ----------------*/
 
 	/* ResultLastRace */
 	.result-last-race-headline {
@@ -692,6 +705,21 @@ tbody:last-child {
 	.card-margin {
 		margin: 2em 0 5em 0;
 	}
+
+	/* QualificationSession */
+	.qualification-session-td {
+		padding: 0.3em;
+	}
+
+	.qualifying-session-tbody {
+		font-size: 1em;
+	}
+
+	.qualifying-session-tr {
+		font-size: 1em;
+	}
+
+	/*---------------- STANDINGS ----------------*/
 
 	/* DriverTable */
 	.leader-driver-img {
@@ -745,19 +773,6 @@ tbody:last-child {
 	.constructor-table-tr {
 		font-size: 1.1em;
 	}
-
-	/* QualificationSession */
-	.qualification-session-td {
-		padding: 0.3em;
-	}
-
-	.qualifying-session-tbody {
-		font-size: 1em;
-	}
-
-	.qualifying-session-tr {
-		font-size: 1em;
-	}
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
@@ -788,6 +803,8 @@ tbody:last-child {
     margin-top: 1em !important;
   }
 
+	/*---------------- UPCOMING RACE ----------------*/
+
 	/* ResultLastRace */
 	.result-last-race-headline {
 		font-size: 1.7em;
@@ -800,6 +817,34 @@ tbody:last-child {
     font-size: 0.9em;
     padding-left: 0.6em;
   }
+
+	/* NextRaceTrackInfo */	
+	.next-race-track-info-th {
+		font-size: 1em;
+	}
+
+	.next-race-track-info-td {
+		font-size: 1em;
+	}
+
+	/* QualificationSession */
+	.qualification-session-headline {
+		font-size: 1.8em;
+	}
+
+	.qualification-session-td {
+		padding: 0.5em 0.3em;
+	}
+
+	.qualifying-session-tbody {
+		font-size: 1.1em;
+	}
+
+	.qualifying-session-tr {
+		font-size: 1.1em;
+	}
+
+	/*---------------- STANDINGS ----------------*/
 
 	/* DriverTable */
 	.leaders-driver-info {
@@ -836,32 +881,6 @@ tbody:last-child {
 
 	.constructor-table-tr {
 		font-size: 1.2em;
-	}
-
-	/* NextRaceTrackInfo */	
-	.next-race-track-info-th {
-		font-size: 1em;
-	}
-
-	.next-race-track-info-td {
-		font-size: 1em;
-	}
-
-	/* QualificationSession */
-	.qualification-session-headline {
-		font-size: 1.8em;
-	}
-
-	.qualification-session-td {
-		padding: 0.5em 0.3em;
-	}
-
-	.qualifying-session-tbody {
-		font-size: 1.1em;
-	}
-
-	.qualifying-session-tr {
-		font-size: 1.1em;
 	}
 }
 
