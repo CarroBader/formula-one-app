@@ -2,10 +2,10 @@
   <div
     v-if="dataLoaded">
     <div class="driver-table-headline-div">
-      <h1 class="driver-table-headline">2021 Standings</h1>
+      <h1 class="driver-table-headline">2021 World Championship</h1>
     </div>
     <b-card class="card-margin">
-      <div class="leaders-div">
+      <div class="leader-driver-div">
         <div
           v-for="topDrivers, i in driverStandings.slice(0,3)"
           :key="topDrivers[i]"
@@ -50,7 +50,7 @@
             <td class="driver-table-td">
               <img :src="getFlagImage(driver.Driver.nationality)"
               :alt='`${driver.Driver.nationality}`'
-              class="driver-table-flag-img "/>
+              class="driver-table-flag-img"/>
             </td>
             <td
               class="driver-table-td"
@@ -111,14 +111,14 @@ export default {
     margin: 0.5em 0 2em;
   }
 
-  .leaders-div {
+  .leader-driver-div {
     display: flex;
     justify-content: space-between;
   }
 
-  .leaders-div > .first {order: 2; }
-  .leaders-div > .second {order: 1; }
-  .leaders-div > .third {order: 3; }
+  .leader-driver-div> .first {order: 2; }
+  .leader-driver-div > .second {order: 1; }
+  .leader-driver-div > .third {order: 3; }
 
   .second {
     margin: 2em 0.5em 0 0.5em !important;

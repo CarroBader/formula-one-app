@@ -1,6 +1,6 @@
 <template>
   <b-container class="default-background-center">
-    <div class="row constructionstandings-row">
+    <div class="row constructor-standings-row">
       <div class="col">
         <ConstructorTable />
       </div>
@@ -12,7 +12,7 @@
 import ConstructorTable from '../../components/Standings/ConstructorStandings/ConstructorTable.vue'
 
 export default {
-  name: 'ConstructionStandings',
+  name: 'ConstructorStandings',
   components: {
     ConstructorTable
   }
@@ -20,8 +20,7 @@ export default {
 </script>
 
 <style scoped>
-  .constructionstandings-row {
+  .constructor-standings-row {
     display: inline-block;
-    margin-bottom: 3em;
   }
 </style>

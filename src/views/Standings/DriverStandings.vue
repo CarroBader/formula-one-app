@@ -1,6 +1,6 @@
 <template>
   <b-container class="default-background-center">
-    <div class="row driverstandings-row">
+    <div class="row driver-standings-row">
       <div class="col">
         <DriverTable />
       </div>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style scoped>
-  .driverstandings-row {
+  .driver-standings-row {
     display: inline-block;
   }
 </style>

@@ -113,6 +113,10 @@ tr:last-child {
 /* X-Small devices (0px and up) */
 @media (min-width: 0px) {
 
+	.container { 
+		max-width: 544px;
+	}
+
 	/*------------------------ NAVBARS ------------------------*/
 	/* Navbar */
 	.navbar {
@@ -279,7 +283,7 @@ tr:last-child {
 
 	/*------------------------ STANDINGS ------------------------*/
 	/* DriverTable */
-	.leaders-div {
+	.leader-driver-div {
     margin: 0 0 1em 0;
   }
 
@@ -294,7 +298,7 @@ tr:last-child {
 		background-color: #e10600;
 		border-top: 2px solid #fff;
 		border-radius: 0 0 15px 15px;
-		padding: 0.1em;
+		padding: 0.2em;
 	}
 
 	.leader-driver-flag-img {
@@ -328,7 +332,7 @@ tr:last-child {
 		border: #ffffff7d 2px solid;
 		display: inline;
     padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.4em;
+		font-size: 1.1em;
 	}
 
 	.driver-table-tr {
@@ -349,22 +353,33 @@ tr:last-child {
   }
 
 	/* ConstructorTable */
+	.leader-constructor-div {
+		margin: 0 0 1em 0;
+	}
+
 	.leader-constructor-img {
 		height: 1.8em;
 	}
 
 	.leaders-constructor-info {
 		background-color: #e10600;
-		border-top: 3px solid #fff;
+		border-top: 2px solid #fff;
 		border-radius: 0 0 15px 15px;
 		padding: 0.2em;
 	}
 
+	.leader-constructor-flag-img {
+		height: 1em;
+    width: 1.7em;
+		border: 0.1px solid #ce0d0d;
+    margin: 0.2em 0;
+	}
+
 	.leader-constructor-points {
 		font-size: 0.8em;
-		-webkit-text-stroke-width: 0.4px;
+		-webkit-text-stroke-width: 0.7px;
 		-webkit-text-stroke-color: #000;
-		margin-bottom: 0;
+		margin: 0.1em;
 	}
 
 	.leader-constructor-name-team {
@@ -375,27 +390,43 @@ tr:last-child {
 		-webkit-text-stroke-color: black; */
 		border: 1px solid #fff;
 		font-size: 0.7em;
+		margin: 0.3em;
 	}
 
-	.leader-constructor-flag-img {
-		height: 0.9em;
-    width: 1.5em;
-		border: 0.1px solid #d60909;
-    margin: 0.4em 0;
+	.constructor-table-headline {
+    background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+    border-radius: 8px;
+    border: #ffffff7d 2px solid;
+    display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
+    font-size: 1.1em;
+  }
+
+	.constructor-table-tr {
+		font-size: 0.8em;
 	}
 
 	.constructor-table-tbody {
 		font-size: 0.7em;
 	}
 
-	.constructor-table-tr {
-		font-size: 0.8em;
+	.constructor-table-td {
+		padding: 1em 0.3em;
+	}
+
+	.constructor-table-flag-img {
+		height: 2.8em;
+    width: 2.3em;
 	}
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Small devices (landscape phones, 544px and up) */
 @media (min-width: 544px) {
+
+	.container { 
+		max-width: 768px;
+	}
 
 	/*------------------------ NAVBARS ------------------------*/
 	/* Navbar */
@@ -529,7 +560,7 @@ tr:last-child {
 
 	/*------------------------ STANDINGS ------------------------*/
 	/* DriverTable */
-	.leaders-div {
+	.leader-driver-div {
     margin: 0 0 2em 0;
   }
 
@@ -539,7 +570,6 @@ tr:last-child {
 
 	.leader-driver-info {
 		border-top: 3px solid #fff;
-    padding: 0.2em;
 		width: 9em;
 	}
 
@@ -565,7 +595,7 @@ tr:last-child {
 	}
 
 	.driver-table-headline {
-    font-size: 1.6em;
+    font-size: 1.3em;
   }
 
   .driver-table-tr {
@@ -586,35 +616,63 @@ tr:last-child {
 	}
 	
 	/* ConstructorTable */
+	.leader-constructor-div {
+		margin: 0 0 2em 0;
+	}
+
 	.leader-constructor-img {
 		height: 3em;
 	}
 
+	.leader-constructor-flag-img {
+		height: 1.2em;
+		width: 1.9em;
+	}
+
+	.leaders-constructor-info {
+    border-top: 3px solid #fff;
+		width: 8em;
+    margin-left: 2em;
+  }
+
 	.leader-constructor-points {
 		font-size: 0.9em;
+		-webkit-text-stroke-width: 0.8px;
 	}
 
 	.leader-constructor-name-team {
-		font-size: 0.9em;
+		font-size: 0.8em;
 	}
 
-	.leader-constructor-flag-img {
-		height: 1em;
-		width: 1.7em;
+	.constructor-table-headline {
+    font-size: 1.3em;
+	}
+
+	.constructor-table-tr {
+		font-size: 0.9em;
 	}
 
 	.constructor-table-tbody {
 		font-size: 0.8em;
 	}
 
-	.constructor-table-tr {
-		font-size: 0.9em;
+	/* .constructor-table-td  {
+		padding: 1em;
+	} */
+
+	.constructor-table-flag-img {
+		height: 3em;
+    width: 2.5em;
 	}
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {
+
+	.container { 
+		max-width: 992px;
+	}
 
   /*------------------------ NAVBARS ------------------------*/
 	/* Navbar */
@@ -684,7 +742,7 @@ tr:last-child {
 
 	/* NextRace - View */
 	.next-race-headline {
-		font-size: 1.8em;
+		font-size: 1.7em;
 	}
 
 	/* NextRaceTrackInfo */
@@ -748,7 +806,7 @@ tr:last-child {
 	}
 
   .driver-table-headline {
-    font-size: 1.8em;
+    font-size: 1.5em;
   }
 
   .driver-table-tr {
@@ -773,31 +831,59 @@ tr:last-child {
 		height: 4em;
 	}
 
+	.leader-constructor-flag-img {
+		height: 1.4em;
+		width: 2.1em;
+	}
+
+	.leaders-constructor-info {
+    border-top: 4px solid #fff;
+		width: 9em;
+    margin-left: 2em;
+  }
+
 	.leader-constructor-points {
-		font-size: 1em;
+    font-size: 1.1em;
+    -webkit-text-stroke-width: 1px;
 	}
 
 	.leader-constructor-name-team {
-		font-size: 1em;
+		font-size: 0.9em;
 	}
 
-	.leader-constructor-flag-img {
-		height: 1.2em;
-		width: 1.9em;
+	.constructor-table-headline {
+    font-size: 1.5em;
+	}
+
+	.constructor-table-tr {
+		font-size: 0.95em;
 	}
 
 	.constructor-table-tbody {
 		font-size: 0.9em;
 	}
 
-	.constructor-table-tr {
-		font-size: 1em;
+	.constructor-table-tb {
+		padding: 1em 1.5em;
+	}
+
+	/* .constructor-table-td  {
+		padding: 1em 1.5em;
+	} */
+
+	.constructor-table-flag-img {
+		height: 3.2em;
+    width: 2.7em;
 	}
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
+	.container { 
+		max-width: 1200px;
+	}
 
 	/*------------------------ NAVBARS ------------------------*/
   /* Navbar */
@@ -849,7 +935,7 @@ tr:last-child {
 
 	/* NextRace - View */
 	.next-race-headline {
-		font-size: 2em;
+		font-size: 1.9em;
 	}
 
 	/* QualificationSession */
@@ -895,7 +981,7 @@ tr:last-child {
 	}
 
   .driver-table-headline {
-    font-size: 2em;
+    font-size: 1.7em;
   }
 
   .driver-table-tr {
@@ -919,27 +1005,50 @@ tr:last-child {
 	.leader-constructor-img {
 		height: 4.5em;
 	}
+	
+	.leader-constructor-flag-img {
+    height: 1.6em;
+    width: 2.3em;
+  }
+
+	.leaders-constructor-info {
+		width: 10em;
+    margin-left: 2em;
+  }
 
 	.leader-constructor-points {
-		font-size: 1.1em;
+    font-size: 1.2em;
+    -webkit-text-stroke-width: 1.1px;
 	}
 
 	.leader-constructor-name-team {
-		font-size: 1.1em;
-	}
-
-	.constructor-table-tbody {
 		font-size: 1em;
 	}
 
-	.constructor-table-tr {
-		font-size: 1.1em;
+	.constructor-table-headline {
+    font-size: 1.7em;
 	}
+
+	.constructor-table-tr {
+		font-size: 1em;
+	}
+
+	.constructor-table-tbody {
+		font-size: 0.95em;
+	}
+
+	/* .constructor-table-td {
+		padding: 1em 2em;
+	} */
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+
+	.container { 
+		max-width: 1500px;
+	}
 
   /*------------------------ NAVBARS ------------------------*/
   /* Navbar */
@@ -963,7 +1072,7 @@ tr:last-child {
 
 	/* NextRace - View */
 	.next-race-headline {
-		font-size: 2.2em;
+		font-size: 2em;
 	}
 
 	/* NextRaceTrackInfo */	
@@ -1004,7 +1113,7 @@ tr:last-child {
 	}
 
 	.driver-table-headline {
-    font-size: 2.2em;
+    font-size: 1.9em;
   }
 
   .driver-table-td {
@@ -1016,25 +1125,36 @@ tr:last-child {
 		height: 5em;
 	}
 
+	.leader-constructor-flag-img {
+		height: 1.8em;
+    width: 2.5em;
+	}
+
+	.leaders-constructor-info {
+		width: 13em;
+    margin-left: 2em;
+  }
+
 	.leader-constructor-points {
-		font-size: 1.2em;
+    font-size: 1.3em;
+    -webkit-text-stroke-width: 1.2px;
 	}
 
 	.leader-constructor-name-team {
-		font-size: 1.2em;
-	}
-
-	.leader-constructor-flag-img {
-		height: 1.6em;
-    width: 2.3em;
-	}
-
-	.constructor-table-tbody {
 		font-size: 1.1em;
 	}
 
-	.constructor-table-tr {
-		font-size: 1.2em;
+	.constructor-table-headline {
+    font-size: 1.9em;
+	}
+
+	/* .constructor-table-td {
+		padding: 1em 3em;
+	} */
+
+	.constructor-table-flag-img {
+		height: 3.4em;
+    width: 2.9em;
 	}
 }
 

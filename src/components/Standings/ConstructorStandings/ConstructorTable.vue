@@ -1,8 +1,11 @@
 <template>
   <div
     v-if="dataLoaded">
+    <div class="constructor-table-headline-div">
+      <h1 class="constructor-table-headline">2021 Constructor Championship</h1>
+    </div>
     <b-card class="card-margin">
-      <div class="leaders-div">
+      <div class="leader-constructor-div">
         <div
           v-for="topConstructors, i in constructorStandings.slice(0,3)"
           :key="topConstructors[i]"
@@ -37,14 +40,18 @@
           :key="constructor[i]"
           class="constructor-table-tbody">
         <tr>
-          <td class="darkgrey-text"> {{ constructor.position }} </td>
-          <td :class="getColor(constructor.Constructor.constructorId)"> {{ constructor.Constructor.name }}</td>
-          <td>
-            <img :src="getFlagImage(constructor.Constructor.nationality)"
-            :alt='`${constructor.Constructor.nationality}`'
-            class="country-flag-img"/>
+          <td class="constructor-table-td darkgrey-text"> {{ constructor.position }} </td>
+          <td class="constructor-table-td"
+              :class="getColor(constructor.Constructor.constructorId)"> {{ constructor.Constructor.name }}
           </td>
-          <td> {{ constructor.points }} </td>
+          <td>
+            <img 
+              :src="getFlagImage(constructor.Constructor.nationality)"
+              :alt='`${constructor.Constructor.nationality}`'
+              class="constructor-table-td constructor-table-flag-img"
+            />
+          </td>
+          <td lass="constructor-table-td"> {{ constructor.points }} </td>
         </tr>
         </tbody>
       </table>
@@ -91,15 +98,18 @@ export default {
     width: 100%;
   }
 
-  .leaders-div {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 0 2em 0;
+  .constructor-table-headline-div {
+    margin: 0.5em 0 2em;
   }
 
-  .leaders-div > .first {order: 2; }
-  .leaders-div > .second {order: 1; }
-  .leaders-div > .third {order: 3; }
+  .leader-constructor-div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .leader-constructor-div > .first {order: 2; }
+  .leader-constructor-div > .second {order: 1; }
+  .leader-constructor-div > .third {order: 3; }
 
   .second {
     margin: 2em 0.5em 0 0.5em !important;
@@ -112,10 +122,5 @@ export default {
   .leader-div {
     flex: 1;
     margin: 0 0.5em;
-  }
-
-  .country-flag-img {
-    height: 1em;
-    width: 1.6em;
   }
 </style>

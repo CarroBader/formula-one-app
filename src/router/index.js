@@ -10,7 +10,7 @@ import Qualification from '../views/UpcomingRace/Qualification.vue'
 import Practice from '../views/UpcomingRace/Practice.vue'
 import Race from '../views/UpcomingRace/Race.vue'
 import DriverStandings from '../views/Standings/DriverStandings.vue'
-import ConstructorStandings from '../views/Standings/ConstructionStandings.vue'
+import ConstructorStandings from '../views/Standings/ConstructorStandings.vue'
 
 Vue.use(VueRouter)
 
