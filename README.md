@@ -71,3 +71,13 @@ For VsCode install the eslint plugin: https://github.com/microsoft/vscode-eslint
 
 This will enable auto fixes on save using the .vscode/settings.json file.
 
+
+## Circuits API
+
+Base url: `https://f1-light-api.herokuapp.com/api/v1/circuits`
+
+A get request with a country name will return the circuit data like this:
+
+`https://f1-light-api.herokuapp.com/api/v1/circuits/<country>`
+
+Just make a GET request on the base url the get the available countries.
