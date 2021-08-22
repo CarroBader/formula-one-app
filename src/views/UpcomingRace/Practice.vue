@@ -5,7 +5,7 @@
         <PracticeSession />
       </div> -->
       <div class="col">
-        <UpcomingRaces />
+        <AllRaces />
       </div>
     </div>
   </b-container>
@@ -13,13 +13,13 @@
 
 <script>
 import PracticeSession from '../../components/UpcomingRace/Practice/PracticeSession.vue'
-import UpcomingRaces from '../../components/UpcomingRaces.vue'
+import AllRaces from '../../components/AllRaces.vue'
 
 export default {
   name: 'Practice',
   components: {
     PracticeSession,
-    UpcomingRaces
+    AllRaces
   }
 }
 </script>

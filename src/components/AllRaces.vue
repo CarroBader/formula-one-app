@@ -36,13 +36,18 @@ import convertTimeMixin from '../mixins/convertTimeMixin'
 import apiCallsMixin from '../mixins/apiCallsMixin'
 
 export default {
-  name: 'UpcomingRaces',
-  props: {
-      futureRaces: Array
+  name: 'AllRaces',
+  data() {
+    return {
+      allRaces: 'allRaces',
+      allRacesDataLoaded: false,
+    }
   },
   async mounted() {
-    let hej = await this.getRaces(allRaces);
-    console.log("Carro", hej)
+    // Returns all races of the current season
+    let responseRace = await this.getRaces(this.allRaces);
+
+    console.log("AllRaces - allRaces", responseRace)
     // this.convertTimeOfArray()
   },
   methods: {

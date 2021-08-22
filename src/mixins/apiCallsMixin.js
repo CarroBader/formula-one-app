@@ -8,12 +8,16 @@ var todaysDate
 export default {
   methods: {
     async getRaces(para) {
+    /*
+      Params:
+      allRaces - Returns an array of all the races of the current season.
+      latestRace - Returns an object contining the season and the round of the lastest race.
+      nextRace - Returns an object contining the next race.
+    */
       try {
         const response = await axios.get(`${baseUrl}current.json`)
 
         this.allRaces = response.data.MRData.RaceTable.Races
-
-        console.log("getRaces, allraces", this.allRaces)
 
         if (para == 'allRaces') {
           return {
@@ -40,7 +44,6 @@ export default {
           }
   
           if (para == 'nextRace') {
-            console.log("nextRace")
             return {
               nextRace: comingRaces[0],
               dataLoaded: true
@@ -52,12 +55,18 @@ export default {
       }
     },
     getTodaysDate() {
+    /*
+      Returns the date of today.
+    */
       let dateToday = new Date(new Date().getTime()
       - new Date().getTimezoneOffset() * 60000).toISOString().substr(0, 10);
 
       return Date.parse(dateToday);
     },
     async getRaceResult(season, lastRound) {
+    /*
+      Returns the result of a specific race.
+    */
       try {
         const response = await axios.get(`${baseUrl}${season}/${lastRound}/results.json`)
         this.race = response.data.MRData.RaceTable.Races[0]
@@ -71,31 +80,32 @@ export default {
         console.error(e)
       }
     },
-    async getResultPerTrack(season, track) {
-      try {
-        const response = await axios.get(`${baseUrl}${season}/circuits/${track}/results.json`)
-        this.result = response.data.MRData.RaceTable.Races
-        //console.log("Resultat", this.result)
+    // async getResultPerTrack(season, track) {
+    //   try {
+    //     const response = await axios.get(`${baseUrl}${season}/circuits/${track}/results.json`)
+    //     this.result = response.data.MRData.RaceTable.Races
 
-        let winnerPerSeasonArray = []
+    //     let winnerPerSeasonArray = []
 
-        if (this.result.length > 1) {
-          this.result.reverse()
-        }
-        for (let i = 0; i < this.result.length; i++) {
-          winnerPerSeasonArray.push({
-            season: this.result[i].season,
-            winner: this.result[i].Results[0].Driver.familyName
-          })
-        }
-        return winnerPerSeasonArray
+    //     if (this.result.length > 1) {
+    //       this.result.reverse()
+    //     }
+    //     for (let i = 0; i < this.result.length; i++) {
+    //       winnerPerSeasonArray.push({
+    //         season: this.result[i].season,
+    //         winner: this.result[i].Results[0].Driver.familyName
+    //       })
+    //     }
+    //     return winnerPerSeasonArray
 
-      } catch(e) {
-        console.error(e)
-      }
-    },
+    //   } catch(e) {
+    //     console.error(e)
+    //   }
+    // },
     async getNextRaceQuali(season, currentRound) {
-      console.log(currentRound)
+    /* 
+      Returns the qulification result of the next race.
+    */
       try {
        //const response = await axios.get(`${baseUrl}${season}/${currentRound}/qualifying.json`)
        const response = await axios.get(`${baseUrl}${season}/11/qualifying.json`)
@@ -111,6 +121,9 @@ export default {
      }     
     },
     async getDriverStandings() {
+    /* 
+      Returns current the driver standing.
+    */
       try {
         const response = await axios.get(`${baseUrl}current/driverStandings.json`)
         this.driverStandings = response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings 
@@ -125,6 +138,9 @@ export default {
       } 
     },
     async getConstructorStandings() {
+    /* 
+      Returns current the constructor standing.
+    */
       try {
         const response = await axios.get(`${baseUrl}current/constructorStandings.json`)
         this.constructorStandings = response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings 
