@@ -13,29 +13,38 @@ export default {
 
         this.allRaces = response.data.MRData.RaceTable.Races
 
-        todaysDate = this.getTodaysDate()
-        this.allRaces.map(race => {
-          let raceDate = Date.parse(race.date);
+        console.log("getRaces, allraces", this.allRaces)
 
-          if (raceDate >= todaysDate) {
-            comingRaces.push(race)
-          } else {
-            pastRaces.push(race)
-          }
-        });
-
-        if (para == 'latestRace') {
-          let lr = pastRaces.slice(-1)[0]
+        if (para == 'allRaces') {
           return {
-            season: lr.season,
-            round: lr.round
-          }
-        }
-
-        if (para == 'nextRace') {
-          return {
-            nextRace: comingRaces[0],
+            allRaces: this.allRaces,
             dataLoaded: true
+          }
+        } else {
+          todaysDate = this.getTodaysDate()
+          this.allRaces.map(race => {
+            let raceDate = Date.parse(race.date);
+            if (raceDate >= todaysDate) {
+              comingRaces.push(race)
+            } else {
+              pastRaces.push(race)
+            }
+          });
+
+          if (para == 'latestRace') {
+            let lr = pastRaces.slice(-1)[0]
+            return {
+              season: lr.season,
+              round: lr.round
+            }
+          }
+  
+          if (para == 'nextRace') {
+            console.log("nextRace")
+            return {
+              nextRace: comingRaces[0],
+              dataLoaded: true
+            }
           }
         }
       } catch(e) {

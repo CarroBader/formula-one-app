@@ -1,6 +1,8 @@
 <template>
   <b-container class="default-background-center">
-    <h1 class="next-race-headline"> {{ this.nextRace.raceName }} </h1>
+    <h1 class="next-race-headline"
+      v-if="nextRaceDataLoaded"> 
+      {{ this.nextRace.raceName }} </h1>
     <div class="row next-race-row">
       <div class="col">
         <NextRaceTrackInfo 
@@ -46,16 +48,20 @@ export default {
   },
   methods: {
     async getNextRace() {
+      // Returns an object containing the next race
       let responseRace = await this.getRaces(this.upcomingRace)
 
+      // Varibles for NextRaceTrackInfo component
       this.nextRace = responseRace.nextRace
       this.nextRaceTrackName = this.nextRace.Circuit.circuitName
-      this.nextRaceTrackId = this.nextRace.Circuit.circuitId
-      this.season = Number(this.nextRace.season)
       this.nextRaceDataLoaded = responseRace.dataLoaded
-      console.log("NEXT:", this.nextRace)
 
-      this.getResult(this.season, this.nextRaceTrackId)
+      // Varibles for TrackLastWinners component
+      // this.nextRaceTrackId = this.nextRace.Circuit.circuitId
+      // this.season = Number(this.nextRace.season)
+      //console.log("NEXT:", this.nextRace)
+
+      //this.getResult(this.season, this.nextRaceTrackId)
     },
     async getResult(season, track) {
       let fiveYearsBack = season - 5

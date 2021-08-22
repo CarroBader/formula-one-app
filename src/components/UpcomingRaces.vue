@@ -1,7 +1,7 @@
 <template>
   <div style="margin-bottom: 4em;">
     <h1 class="coming-races-title">Upcoming Races</h1>
-    <table>
+    <!-- <table>
       <tbody
         v-for="race, i in futureRaces.slice(0, 5)"
         :key="race[i]">
@@ -27,20 +27,23 @@
       </tr>
       <br>
       </tbody>
-    </table>
+    </table> -->
   </div>
 </template>
 
 <script>
 import convertTimeMixin from '../mixins/convertTimeMixin'
+import apiCallsMixin from '../mixins/apiCallsMixin'
 
 export default {
-  name: 'ComingRaces',
+  name: 'UpcomingRaces',
   props: {
       futureRaces: Array
   },
-  mounted() {
-    this.convertTimeOfArray()
+  async mounted() {
+    let hej = await this.getRaces(allRaces);
+    console.log("Carro", hej)
+    // this.convertTimeOfArray()
   },
   methods: {
     getFlagImage(country) {
@@ -52,31 +55,11 @@ export default {
       }
     }
   },
-  mixins: [convertTimeMixin]
+  mixins: [apiCallsMixin, convertTimeMixin]
 }
 </script>
 
 <style scoped>
-  th {
-    text-align: initial;
-    font-size: 0.9em;
-    color: #fff;
-  }
 
-  td {
-    text-align: end;
-    width:100%;
-    color: #fff;
-  }
-
-  .coming-races-title {
-    text-decoration: underline;
-    margin-bottom: 0.7em;
-  }
-
-  .country-flag-img {
-    height: 1em;
-    width: 1.6em;
-  }
 </style>
 

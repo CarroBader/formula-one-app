@@ -1,8 +1,11 @@
 <template>
   <b-container class="default-background-center">
     <div class="row practice-row">
-      <div class="col">
+      <!-- <div class="col">
         <PracticeSession />
+      </div> -->
+      <div class="col">
+        <UpcomingRaces />
       </div>
     </div>
   </b-container>
@@ -10,11 +13,13 @@
 
 <script>
 import PracticeSession from '../../components/UpcomingRace/Practice/PracticeSession.vue'
+import UpcomingRaces from '../../components/UpcomingRaces.vue'
 
 export default {
   name: 'Practice',
   components: {
-    PracticeSession
+    PracticeSession,
+    UpcomingRaces
   }
 }
 </script>
