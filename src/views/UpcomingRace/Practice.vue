@@ -25,5 +25,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .practice-row {
+    margin-bottom: 5em;
+  }
 </style>

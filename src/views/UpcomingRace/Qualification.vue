@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      upcomingRace: 'nextRace',
+      getNextRace: 'nextRace',
       season: null,
       thisRound: null,
       dataLoaded: false,
@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     async getNextRace() {
-      let responseRace = await this.getRaces(this.upcomingRace)
+      let responseRace = await this.getRaces(this.getNextRace)
 
       this.season = responseRace.nextRace.season
       this.thisRound = responseRace.nextRace.round

@@ -65,11 +65,11 @@ export default {
     return {
       lastRace: null,
       dataLoaded: false,
-      latestRace: 'latestRace'
+      getLatestRace: 'latestRace'
     }
   },
   async mounted() {
-    let responseRace = await this.getRaces(this.latestRace)
+    let responseRace = await this.getRaces(this.getLatestRace)
     let responseResults = await this.getRaceResult(responseRace.season, responseRace.round)
 
     this.lastRace = responseResults.lastRaceResult

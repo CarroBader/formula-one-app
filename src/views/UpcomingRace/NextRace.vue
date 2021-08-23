@@ -36,7 +36,7 @@ export default {
       nextRace: null,
       nextRaceDataLoaded: false,
       latestWinnersDataLoaded: false,
-      upcomingRace: 'nextRace',
+      getNextRace: 'nextRace',
       nextRaceTrackName: null,
       nextRaceTrackId: null,
       season: null,
@@ -49,7 +49,7 @@ export default {
   methods: {
     async getNextRace() {
       // Returns an object containing the next race
-      let responseRace = await this.getRaces(this.upcomingRace)
+      let responseRace = await this.getRaces(this.getNextRace)
 
       // Varibles for NextRaceTrackInfo component
       this.nextRace = responseRace.nextRace
