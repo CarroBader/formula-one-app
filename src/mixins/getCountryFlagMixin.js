@@ -1,63 +1,70 @@
 export default { 
   methods: {
-    getCountryFlag: function(nationality) {
+    getCountryName(nationality) {
     /* 
-      Return img of the flag that corresponds with nationality.
+      Convert nationality to respective country.
+      Return a call to getFlag, where the image file path is complete.
     */
-      let country
+      let countryName
       
       switch (nationality) {
         case "Dutch":
-            country = "Netherlands";
+            countryName = "Netherlands";
             break;
         case "British":
-            country = "UK";
+            countryName = "UK";
             break;
         case "Mexican":
-            country = "Mexico";
+            countryName = "Mexico";
             break;
         case "Monegasque":
-            country = "Monaco";
+            countryName = "Monaco";
             break;
         case "Spanish":
-            country = "Spain";
+            countryName = "Spain";
             break;
         case "Finnish":
-            country = "Finland";
+            countryName = "Finland";
             break;
         case "Australian":
-            country = "Australia";
+            countryName = "Australia";
             break;
         case "French":
-            country = "France";
+            countryName = "France";
             break;
         case "German":
-            country = "Germany";
+            countryName = "Germany";
             break;
         case "Canadian":
-            country = "Canada";
+            countryName = "Canada";
             break;
         case "Japanese":
-            country = "Japan";
+            countryName = "Japan";
             break;
         case "Italian":
-            country = "Italy";
+            countryName = "Italy";
             break;
         case "Russian":
-            country = "Russia";
+            countryName = "Russia";
             break;
         case "Austrian":
-            country = "Austria";
+            countryName = "Austria";
             break;
         case "American":
-            country = "USA";
+            countryName = "USA";
             break;
         case "Swiss":
-            country = "Switzerland";
+            countryName = "Switzerland";
             break;
         default:
-            country = "";
+            countryName = "";
       }
+      return this.getFlag(countryName)
+    },
+    getFlag(country) { 
+    /*
+      Return the flag of the country sent as a param.
+    */
       return require(`../assets/img/flags/${country}.png`)
     }
   }

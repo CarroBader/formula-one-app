@@ -10,7 +10,7 @@
       >
         <div class="race-div">
           <img
-            :src="getFlagImage(race.Circuit.Location.country)"
+            :src="getFlag(race.Circuit.Location.country)"
             :alt='`${race.Circuit.Location.country}`'
             class="all-races-flag-img"
           />
@@ -30,8 +30,9 @@
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
 
-import convertRaceTimeMixin from '../mixins/convertRaceTimeMixin.js'
 import apiCallsMixin from '../mixins/apiCallsMixin.js'
+import getCountryFlagMixin from '../mixins/getCountryFlagMixin.js'
+import convertRaceTimeMixin from '../mixins/convertRaceTimeMixin.js'
 
 export default {
   name: 'AllRaces',
@@ -67,10 +68,10 @@ export default {
   },
   async created() {
     // Get all races of the current season
-    let responseAllRaces = await this.getRaces(this.getAllRaces);
+    let responseAllRaces = await this.getRaces(this.getAllRaces)
 
     // Get next race
-    let responseNextRace = await this.getRaces(this.getNextRace);
+    let responseNextRace = await this.getRaces(this.getNextRace)
 
     // Set value to other data properties
     this.allRacesCurrentSeason = responseAllRaces.allRaces
@@ -81,12 +82,6 @@ export default {
     this.nextRaceDataLoaded = responseNextRace.dataLoaded
   },
   methods: {
-    getFlagImage(country) {
-    /*
-      Return the flag from the country sent as a param.
-    */
-      return require(`../assets/img/flags/${country}.png`)
-    },
     expandDiv(e) {
     /*
       Add expand-div-active on the chosen element. If it already exists on another element it will remove it.
@@ -99,7 +94,7 @@ export default {
       e.target.classList.add('expand-div-active')
     }
   },
-  mixins: [apiCallsMixin, convertRaceTimeMixin]
+  mixins: [apiCallsMixin, getCountryFlagMixin, convertRaceTimeMixin]
 }
 </script>
 
