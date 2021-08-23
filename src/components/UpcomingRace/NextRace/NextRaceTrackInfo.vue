@@ -1,10 +1,11 @@
 <template>
-  <div
-    class="next-race-track-info">
+  <div class="next-race-track-info">
     <b-card class="card-margin">
-      <img :src="getCircuitImage()"
-      :alt='`${nextRace.Circuit.circuitName}`'
-      class="next-race-track-info-circuit-img"/>
+      <img
+        :src="getCircuitImage()"
+        :alt='`${nextRace.Circuit.circuitName}`'
+        class="next-race-track-info-circuit-img"
+      />
       <table>
         <tr>
           <th class="next-race-track-info-th">Track:</th>
@@ -12,7 +13,10 @@
         </tr>
         <tr>
           <th class="next-race-track-info-th">Location:</th>
-          <td class="next-race-track-info-td">{{ nextRace.Circuit.Location.locality }}, {{ nextRace.Circuit.Location.country }}</td>
+          <td class="next-race-track-info-td">
+            {{ nextRace.Circuit.Location.locality }}, 
+            {{ nextRace.Circuit.Location.country }}
+          </td>
         </tr>
         <tr>
           <th class="next-race-track-info-th">Date:</th>
@@ -20,7 +24,7 @@
         </tr>
         <tr>
           <th class="next-race-track-info-th">Time:</th>
-          <td class="next-race-track-info-td">{{ nextRace.time }}</td>
+          <td class="next-race-track-info-td">{{ convertRaceTime(nextRace.time) }}</td>
         </tr>
       </table>
     </b-card>
@@ -28,22 +32,30 @@
 </template>
 
 <script>
-import convertTimeMixin from '../../../mixins/convertTimeMixin'
+import convertRaceTimeMixin from '../../../mixins/convertRaceTimeMixin.js'
 
 export default {
-    name: 'NextRaceTrackInfo',
-    props: {
-      nextRace: Object
-    },
-    mounted() {
-      this.nextRace.time = this.convertTime(this.nextRace.time)
-    },
-    methods: {
-      getCircuitImage() {
-        return require(`../../../assets/img/circuits/${this.nextRace.Circuit.circuitId}.png`)
-      }
-    },
-    mixins: [convertTimeMixin]
+  name: 'NextRaceTrackInfo',
+  props: {
+    nextRace: Object
+  },
+  computed: {
+    convertRaceTimeOfArray(time) {
+    /*
+      Return converted time.
+    */
+      return this.convertRaceTime(time)
+    }
+  },
+  methods: {
+    getCircuitImage() {
+    /*
+      Get circuit img.
+    */
+      return require(`../../../assets/img/circuits/${this.nextRace.Circuit.circuitId}.png`)
+    }
+  },
+  mixins: [convertRaceTimeMixin]
 }
 </script>
 

@@ -1,6 +1,10 @@
 export default { 
   methods: {
-    getColor: function(id) {
+    getConstructorColor: function(id) {
+    /*
+      Get constructor color from an id.
+      Return a color name that macthes a class in main.css.
+    */
       let colorName;
 
       switch (id) {

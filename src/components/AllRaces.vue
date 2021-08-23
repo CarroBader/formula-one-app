@@ -1,25 +1,24 @@
 <template>
-  <div 
-    v-if="allRacesDataLoaded">
-    <swiper :options="swiperOptions"> 
+  <div v-if="allRacesDataLoaded">
+    <swiper :options="swiperOptions">
       <div
         v-for="race, index in allRacesCurrentSeason"
         :key="index"
         :id="race.round"
         v-on:click="expandDiv"
-        class="swiper-slide">
-        <div
-          class="race-div">
-            <img 
-              :src="getFlagImage(race.Circuit.Location.country)"
-              :alt='`${race.Circuit.Location.country}`'
-              class="all-races-flag-img"
-            />
-            <div class="all-races-info">
-              <h4>{{ race.Circuit.Location.country }}</h4>
-              <h4>{{ race.raceName }} {{ race.season }}</h4>
-              <h4>{{ race.date }}</h4>
-              <h4>{{ race.time }}</h4>
+        class="swiper-slide"
+      >
+        <div class="race-div">
+          <img
+            :src="getFlagImage(race.Circuit.Location.country)"
+            :alt='`${race.Circuit.Location.country}`'
+            class="all-races-flag-img"
+          />
+          <div class="all-races-info">
+            <h4>{{ race.Circuit.Location.country }}</h4>
+            <h4>{{ race.raceName }} {{ race.season }}</h4>
+            <h4>{{ race.date }}</h4>
+            <h4>{{ race.time }}</h4>
           </div>
         </div>
       </div>
@@ -28,11 +27,11 @@
 </template>
 
 <script>
-import convertTimeMixin from '../mixins/convertTimeMixin'
-import apiCallsMixin from '../mixins/apiCallsMixin'
-
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
+
+import convertRaceTimeMixin from '../mixins/convertRaceTimeMixin.js'
+import apiCallsMixin from '../mixins/apiCallsMixin.js'
 
 export default {
   name: 'AllRaces',
@@ -46,11 +45,11 @@ export default {
   data() {
     return {
       getAllRaces: 'allRaces',
-      allRacesDataLoaded: false,
       allRacesCurrentSeason: null,
+      allRacesDataLoaded: false,
       getNextRace: 'nextRace',
-      nextRaceDataLoaded: false,
       nextRace: null,
+      nextRaceDataLoaded: false,
       swiperOptions : {
         slidesPerView: "auto",
         initialSlide: 0,
@@ -73,18 +72,15 @@ export default {
     // Get next race
     let responseNextRace = await this.getRaces(this.getNextRace);
 
+    // Set value to other data properties
+    this.allRacesCurrentSeason = responseAllRaces.allRaces
+    this.swiperOptions.initialSlide = Number(responseNextRace.nextRace.round) - 1 // Subtract from round because it is one based numbering and not zero as the swiper
+
     // Set value for the dataloaded varibles (true)
     this.allRacesDataLoaded = responseAllRaces.dataLoaded
     this.nextRaceDataLoaded = responseNextRace.dataLoaded
 
-    // Set value to other data properties
-    this.allRacesCurrentSeason = responseAllRaces.allRaces
-    // Subtract from round because it is one based numbering and not zero as the swiper
-    this.swiperOptions.initialSlide = Number(responseNextRace.nextRace.round) - 1
-
-    console.log("AllRaces - allRacesCurrentSeason", this.allRacesCurrentSeason)
-
-    this.convertTimeOfArray()
+    this.convertRaceTimeOfArray()
   },
   methods: {
     getFlagImage(country) {
@@ -93,12 +89,12 @@ export default {
     */
       return require(`../assets/img/flags/${country}.png`)
     },
-    convertTimeOfArray() {
+    convertRaceTimeOfArray() {
     /*
       Converts the time of the race from f to ....
     */
       this.allRacesCurrentSeason.map(race => {
-        race.time = this.convertTime(race.time)
+        race.time = this.convertRaceTime(race.time)
       })
     },
     expandDiv(e) {
@@ -110,11 +106,10 @@ export default {
       if (activeRaceDiv !== null) {
         activeRaceDiv.classList.remove('expand-div-active')
       }
-
       e.target.classList.add('expand-div-active')
     }
   },
-  mixins: [apiCallsMixin, convertTimeMixin]
+  mixins: [apiCallsMixin, convertRaceTimeMixin]
 }
 </script>
 
@@ -142,4 +137,3 @@ export default {
     width: revert;
   }
 </style>
-

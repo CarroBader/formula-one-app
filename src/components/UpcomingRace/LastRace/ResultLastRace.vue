@@ -1,52 +1,61 @@
 <template>
-  <div
-    v-if="dataLoaded">
+  <div v-if="lastRaceDataLoaded">
     <div class="result-last-race-headline-div">
       <h1 class="result-last-race-headline">{{ lastRace.raceName }}</h1>
     </div>
     <b-card class="card-margin">
-      <div class="scroll-table ">
+      <div class="scroll-table">
         <table>
-        <tr class="result-last-race-tr">
-          <th class="browser-view">Position</th>
-          <th class="mobile-view">Pos.</th>
-          <th></th>
-          <th>Name</th>
-          <th class="no-display-when-mobile">Nationality</th>
-          <th>Car</th>
-          <th class="browser-view">Points</th>
-          <th class="mobile-view">Pts.</th>
-          <th></th>
-        </tr>
-          <tbody         
-            v-for="race, i in lastRace.Results"
-            :key="race[i]"
-            class="result-last-race-tbody">
-          <tr>
-            <td class="result-last-race-td darkgrey-text">{{ race.position }}</td>
-            <td class="result-last-race-td">
-              <img :src="getArrowImage(race.grid, race.position)"
-              :alt='`${race.Driver.nationality}`'
-              :class="getArrowClass(race.grid, race.position)"
-              />
-              <span class="position-difference">{{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}</span>
-            </td>
-            <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
-            <td class="no-display-when-mobile result-last-race-td">
-              <img :src="getFlagImage(race.Driver.nationality)"
-              :alt='`${race.Driver.nationality}`'
-              class="result-last-race-flag-img"/>
-            </td>
-            <td :class="getColor(race.Constructor.constructorId)" 
-                class="result-last-race-td">
-                {{ race.Constructor.name }}</td>
-            <td class="result-last-race-td">{{ race.points }}</td>
-            <td v-if="fastestLap(race.FastestLap)">
-              <img src="../../../assets/img/icons/fastest_lap.png"
-              class="fastest-lap-img" 
-              />
-            </td>
+          <tr class="result-last-race-tr">
+            <th class="browser-view">Position</th>
+            <th class="mobile-view">Pos.</th>
+            <th></th>
+            <th>Name</th>
+            <th class="no-display-when-mobile">Nationality</th>
+            <th>Car</th>
+            <th class="browser-view">Points</th>
+            <th class="mobile-view">Pts.</th>
+            <th></th>
           </tr>
+          <tbody
+            v-for="race, index in lastRace.Results"
+            :key="index"
+            class="result-last-race-tbody"
+          >
+            <tr>
+              <td class="result-last-race-td darkgrey-text">{{ race.position }}</td>
+              <td class="result-last-race-td">
+                <img
+                  :src="getSymbolImage(race.grid, race.position)"
+                  :alt='`${race.Driver.nationality}`'
+                  :class="getSymbolClass(race.grid, race.position)"
+                />
+                <span class="position-difference">
+                  {{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}
+                </span>
+              </td>
+              <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
+              <td class="no-display-when-mobile result-last-race-td">
+                <img
+                  :src="getFlagImage(race.Driver.nationality)"
+                  :alt='`${race.Driver.nationality}`'
+                  class="result-last-race-flag-img"
+                />
+              </td>
+              <td
+                class="result-last-race-td"
+                :class="getConstructorColor(race.Constructor.constructorId)" 
+              >
+                {{ race.Constructor.name }}
+              </td>
+              <td class="result-last-race-td">{{ race.points }}</td>
+              <td v-if="fastestLap(race.FastestLap)">
+                <img
+                  src="../../../assets/img/icons/fastest_lap.png"
+                  class="fastest-lap-img" 
+                />
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -55,49 +64,65 @@
 </template>
 
 <script>
-import apiCallsMixin from '../../../mixins/apiCallsMixin'
-import getFlagMixin from '../../../mixins/getFlagMixin'
-import getColorMixin from '../../../mixins/getColorMixin'
+import apiCallsMixin from '../../../mixins/apiCallsMixin.js'
+import convertNationalityToCountryMixin from '../../../mixins/convertNationalityToCountryMixin.js'
+import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
 
 export default {
-  name: 'LastRace',
+  name: 'ResultLastRace',
   data() {
     return {
+      getLastRace: 'lastRace',
       lastRace: null,
-      dataLoaded: false,
-      getLatestRace: 'latestRace'
+      lastRaceDataLoaded: false
     }
   },
-  async mounted() {
-    let responseRace = await this.getRaces(this.getLatestRace)
-    let responseResults = await this.getRaceResult(responseRace.season, responseRace.round)
+  async created() {
+    // Get last race
+    let responseLastRace = await this.getRaces(this.getLastRace)
 
-    this.lastRace = responseResults.lastRaceResult
-    this.dataLoaded = responseResults.dataLoaded
+    // Get last race result
+    let responseLastRaceResult = await this.getRaceResult(responseLastRace.season, responseLastRace.round)
 
+    // Set value on data properties
+    this.lastRace = responseLastRaceResult.lastRaceResult
+
+    // Set dataloaded variable(s) to true
+    this.lastRaceDataLoaded = responseLastRaceResult.dataLoaded
   },
   methods: {
     getFlagImage(nationality) {
-      let countryFlag = this.getFlag(nationality)
+    /*
+      Return country flag.
+    */
+      let countryFlag = this.convertNationalityToCountry(nationality)
       return require(`../../../assets/img/flags/${countryFlag}.png`)
     },
-    getArrowImage(grid, position) {
-      let gridImg
+    getSymbolImage(grid, position) {
+    /*
+      Check if position change happened.
+      Return an img with the correct symbol.
+    */
+      let positionSymbol = grid != position ? 'arrow' : 'line'
 
-      gridImg = grid != position ? 'arrow' : 'line';
-
-      return require(`../../../assets/img/icons/${gridImg}.png`)
+      return require(`../../../assets/img/icons/${positionSymbol}.png`)
     },
-    getArrowClass(grid, position) {
+    getSymbolClass(grid, position) {
+    /*
+      Return the class that matches the position change.
+    */
       let start = Number(grid)
       let end = Number(position)
       return start == end ? 'same-position' : (start < end ? "lost-position" : "gained-position");
     },
     fastestLap(fastestLap) {
+    /*
+      Return true if the driver got the fastest lap.
+    */
       return fastestLap != undefined && fastestLap.rank == "1" ? true : false
     }
   },
-  mixins: [apiCallsMixin, getFlagMixin, getColorMixin]
+  mixins: [apiCallsMixin, convertNationalityToCountryMixin, getConstructorColorMixin]
 }
 </script>
 

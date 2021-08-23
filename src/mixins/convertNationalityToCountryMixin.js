@@ -1,61 +1,65 @@
 export default { 
   methods: {
-    getFlag: function(nationality) {
-      let flag;
+    convertNationalityToCountry: function(nationality) {
+    /* 
+        Convert natonality to country.
+        Return country.
+    */
+      let country;
       
       switch (nationality) {
         case "Dutch":
-            flag = "Netherlands";
+            country = "Netherlands";
             break;
         case "British":
-            flag = "UK";
+            country = "UK";
             break;
         case "Mexican":
-            flag = "Mexico";
+            country = "Mexico";
             break;
         case "Monegasque":
-            flag = "Monaco";
+            country = "Monaco";
             break;
         case "Spanish":
-            flag = "Spain";
+            country = "Spain";
             break;
         case "Finnish":
-            flag = "Finland";
+            country = "Finland";
             break;
         case "Australian":
-            flag = "Australia";
+            country = "Australia";
             break;
         case "French":
-            flag = "France";
+            country = "France";
             break;
         case "German":
-            flag = "Germany";
+            country = "Germany";
             break;
         case "Canadian":
-            flag = "Canada";
+            country = "Canada";
             break;
         case "Japanese":
-            flag = "Japan";
+            country = "Japan";
             break;
         case "Italian":
-            flag = "Italy";
+            country = "Italy";
             break;
         case "Russian":
-            flag = "Russia";
+            country = "Russia";
             break;
         case "Austrian":
-            flag = "Austria";
+            country = "Austria";
             break;
         case "American":
-            flag = "USA";
+            country = "USA";
             break;
         case "Swiss":
-            flag = "Switzerland";
+            country = "Switzerland";
             break;
         default:
-            flag = "";
+            country = "";
       }
-      return flag;
+      return country;
     }
   }
 }

@@ -1,16 +1,18 @@
 <template>
   <b-container class="default-background-center">
     <h1 class="next-race-headline"
-      v-if="nextRaceDataLoaded"> 
-      {{ this.nextRace.raceName }} </h1>
+      v-if="nextRaceDataLoaded"
+    >
+      {{ this.nextRace.raceName }}
+    </h1>
     <div class="row next-race-row">
       <div class="col">
-        <NextRaceTrackInfo 
+        <NextRaceTrackInfo
           :nextRace="nextRace"
-          v-if="nextRaceDataLoaded"/>
+          v-if="nextRaceDataLoaded"
+        />
       </div>
       <div class="col">
-      
         <!-- <TrackLastWinners 
           :latestWinners="latestWinners"
           :nextRaceTrackName="nextRaceTrackName"
@@ -23,7 +25,8 @@
 <script>
 import NextRaceTrackInfo from '../../components/UpcomingRace/NextRace/NextRaceTrackInfo.vue'
 import TrackLastWinners from '../../components/UpcomingRace/NextRace/TrackLastWinners.vue'
-import apiCallsMixin from '../../mixins/apiCallsMixin'
+
+import apiCallsMixin from '../../mixins/apiCallsMixin.js'
 
 export default {
   name: 'NextRace',
@@ -34,29 +37,26 @@ export default {
   data() {
     return {
       getNextRace: 'nextRace',
-      nextRaceDataLoaded: false,
       nextRace: null,
-      latestWinnersDataLoaded: false,
-      nextRaceTrackName: null,
-      nextRaceTrackId: null,
-      season: null,
-      latestWinners: []
+      nextRaceDataLoaded: false,
+      // latestWinnersDataLoaded: false,
+      // nextRaceTrackName: null,
+      // nextRaceTrackId: null,
+      // season: null,
+      // latestWinners: []
     }
   },
   async created() {
     // Get next race
     let responseNextRace = await this.getRaces(this.getNextRace)
 
-    // Varibles for NextRaceTrackInfo component
+    // Set value on data properties
     this.nextRace = responseNextRace.nextRace
-    this.nextRaceTrackName = this.nextRace.Circuit.circuitName
+
+    // Set dataloaded variable(s) to true
     this.nextRaceDataLoaded = responseNextRace.dataLoaded
 
-    // Returns an object containing the next race
-
-    // Varibles for NextRaceTrackInfo component
-
-    // Varibles for TrackLastWinners component
+    //this.nextRaceTrackName = this.nextRace.Circuit.circuitName
     // this.nextRaceTrackId = this.nextRace.Circuit.circuitId
     // this.season = Number(this.nextRace.season)
     //console.log("NEXT:", this.nextRace)

@@ -2,17 +2,20 @@
   <b-container class="default-background-center">
     <div class="row next-race-quali-row">
       <div class="col">
-        <QualificationSession 
+        <QualificationSession
           :qualificationResult="qualificationResult"
-          v-if="qualiDataLoaded"/>
+          :nextRaceName="nextRaceName"
+          v-if="qualificationDataLoaded"
+        />
       </div>
     </div>
   </b-container>
-</template>     
+</template>
 
 <script>
 import QualificationSession from '../../components/UpcomingRace/Qualification/QualificationSession.vue'
-import apiCallsMixin from '../../mixins/apiCallsMixin'
+
+import apiCallsMixin from '../../mixins/apiCallsMixin.js'
 
 export default {
   name: 'Qualification',
@@ -22,26 +25,38 @@ export default {
   data() {
     return {
       getNextRace: 'nextRace',
-      qualiDataLoaded: false,
+      nextRaceName: null,
+      qualificationDataLoaded: false,
       season: null,
       thisRound: null,
       qualificationResult: null
     }
   },
   async created() {
+    // Get next race
     let responseNextRace = await this.getRaces(this.getNextRace)
 
+    // Set value on data properties
+    this.nextRaceName = responseNextRace.nextRace.raceName
     this.season = responseNextRace.nextRace.season
     this.thisRound = responseNextRace.nextRace.round
 
-    this.getNextQualification(this.season, this.thisRound)
+    this.getNextRaceQualification(this.season, this.thisRound)
   },
   methods: {
-    async getNextQualification(season, round) {
-      let responseQualification = await this.getNextRaceQuali(season, round)
+    async getNextRaceQualification(season, round) {
+    /* 
+      Set value on qualificationResult and qualificationDataLoaded.
+    */
+      // Get next race qualification result
+      let responseQualification = await this.getNextRaceQualificationResult(season, round)
 
-      this.qualificationResult = responseQualification.nextRaceQualification
-      this.qualiDataLoaded = responseQualification.dataLoaded
+      // Set value on data properties
+      // Oklart än om det räcker med bara resultatet, ta bort QualifyingResults om mer infor behövs
+      this.qualificationResult = responseQualification.nextRaceQualification.QualifyingResults
+
+      // Set dataloaded variable(s) to true
+      this.qualificationDataLoaded = responseQualification.dataLoaded
     }
   },
   mixins: [apiCallsMixin]

@@ -1,7 +1,9 @@
 <template>
   <div class="default-background-center">
-    <TopNav :nextRaceName="nextRaceName"
-    v-if="dataLoaded"/>
+    <TopNav 
+      :nextRaceName="nextRaceName"
+      v-if="nextRaceDataLoaded" 
+    />
     <router-view />
     <Footer />
     <BotNav />
@@ -9,11 +11,11 @@
 </template>
 
 <script>
-import TopNav from './components/General/TopNav'
-import Footer from './components/General/Footer'
-import BotNav from './components/General/BotNav'
+import TopNav from './components/General/TopNav.vue'
+import Footer from './components/General/Footer.vue'
+import BotNav from './components/General/BotNav.vue'
 
-import apiCallsMixin from './mixins/apiCallsMixin'
+import apiCallsMixin from './mixins/apiCallsMixin.js'
 
 export default {
   name: 'App',
@@ -24,40 +26,25 @@ export default {
   },
   data() {
     return {
-      nextRace: 'nextRace',
+      getNextRace: 'nextRace',
       nextRaceName: null,
-      dataLoaded: false
+      nextRaceDataLoaded: false
     }
   },
-  async mounted() {
-    let responseRace = await this.getRaces(this.nextRace)
-    this.nextRaceName = responseRace.nextRace.raceName
-    this.dataLoaded = responseRace.dataLoaded
+  async created() {
+    // Get next race
+    let responseNextRace = await this.getRaces(this.getNextRace)
+
+    // Set value on data properties
+    this.nextRaceName = responseNextRace.nextRace.raceName
+
+    // Set dataloaded variable(s) to true
+    this.nextRaceDataLoaded = responseNextRace.dataLoaded
   },
   mixins: [apiCallsMixin]
 }
 </script>
 
+<style scoped>
 
-<style>
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-} */
 </style>

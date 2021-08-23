@@ -1,14 +1,14 @@
 <template>
-    <div class="footer-nav">
-        <router-link 
-            v-for="route in routes" 
-            :key="route.path" 
-            :to="route.path"
-            class="bot-nav-link">
-            <div class="text-icon">
-                <font-awesome-icon 
-                :icon="['fas', route.icon]"/>
-            </div>
+    <div class="bot-nav">
+        <router-link
+          v-for="route in routes" 
+          :key="route.path" 
+          :to="route.path"
+          class="bot-nav-link"
+        >
+          <div class="text-icon">
+            <font-awesome-icon :icon="['fas', route.icon]" />
+          </div>
         </router-link>
     </div>
 </template>
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style scoped>
-  .footer-nav {
+  .bot-nav {
     text-align: center;
     background-color: #121212;
     border-top: 1px solid #e10600;
@@ -54,4 +54,3 @@ export default {
     color: #fff;
   }
 </style>
-

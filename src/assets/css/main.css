@@ -169,7 +169,7 @@ tr:last-child {
 	}
 
 	/*------------------------ FOOTER ------------------------*/
-	.footer-nav {
+	.bot-nav {
 		display: block;
 	}
 
@@ -459,7 +459,7 @@ tr:last-child {
   } 
 
   /*------------------------ FOOTER ------------------------*/
-  .footer-nav {
+  .bot-nav {
     display: none !important;
   }
 

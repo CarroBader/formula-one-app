@@ -6,7 +6,7 @@
 </template>     
 
 <script>
-import StandingsNav from '../components/Standings/StandingsNav'
+import StandingsNav from '../components/Standings/StandingsNav.vue'
 
 export default {
   name: 'Standings',

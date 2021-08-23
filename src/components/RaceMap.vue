@@ -51,7 +51,7 @@ export default {
       })
       .finally(() => this.loading = false)
     },
-  data () {
+  data() {
     return {
       zoom: 3,
       center: [47.15561817215472, 21.992011024609532],

@@ -6,7 +6,7 @@
 </template>     
 
 <script>
-import UpcomingRaceNav from '../components/UpcomingRace/UpcomingRaceNav'
+import UpcomingRaceNav from '../components/UpcomingRace/UpcomingRaceNav.vue'
 
 export default {
   name: 'UpcomingRace',

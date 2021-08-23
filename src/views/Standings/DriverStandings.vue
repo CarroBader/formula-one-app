@@ -6,7 +6,7 @@
       </div>
     </div>
   </b-container>
-</template>     
+</template>
 
 <script>
 import DriverTable from '../../components/Standings/DriverStandings/DriverTable.vue'

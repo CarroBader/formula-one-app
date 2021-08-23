@@ -1,24 +1,26 @@
 <template>
-<div>
-  <b-navbar toggleable="md navbar-top">
-    <img src="../../assets/logo.png" class="nav-logo-top" alt="F1 logo">
-    <b-navbar-brand class="nav-title-top">Formula One</b-navbar-brand>
+    <b-navbar toggleable="md navbar-top">
+      <img 
+        src="../../assets/logo.png" 
+        class="nav-logo-top" alt="F1 logo"
+      >
+      <b-navbar-brand class="nav-title-top">Formula One</b-navbar-brand>
 
-    <b-navbar-toggle class="place-toggle-button" target="nav-collapse"></b-navbar-toggle>
+      <b-navbar-toggle class="place-toggle-button" target="nav-collapse"></b-navbar-toggle>
 
-    <b-collapse id="nav-collapse" class="nav-collapse-top" is-nav>
-        <b-navbar-nav class="navbar-nav-top">
-            <router-link 
+      <b-collapse id="nav-collapse" class="nav-collapse-top" is-nav>
+          <b-navbar-nav class="navbar-nav-top">
+              <router-link 
                 v-for="route in routes" 
                 :key="route.path"
                 :to="route.path"
-                class="nav-link nav-link-top">
-            {{route.name}}
-            </router-link>
-        </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
-</div>
+                class="nav-link nav-link-top"
+              >
+                {{ route.name }}
+              </router-link>
+          </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
 </template>
 
 <script>
@@ -32,7 +34,7 @@ export default {
   props: {
     nextRaceName: String
   },
-  mounted () {
+  beforeMount() {
     this.routes[0].name = this.nextRaceName
   }
 }
@@ -69,4 +71,3 @@ export default {
     top: 2.5px;
   }
 </style>
-
