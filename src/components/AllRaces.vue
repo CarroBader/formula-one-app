@@ -1,24 +1,29 @@
 <template>
   <div 
     v-if="allRacesDataLoaded">
-    <h1>Upcoming Races</h1>
-    <div
-      class="main-div swiper-container-horizontal swiper-container-free-mode">
-      <div       
-        v-for="race, i in allRacesCurrentSeason"
-        :key="race[i]"
-        class="for-div">
-
-        <article style="border:1px solid #fff">
-          <img 
-            :src="getFlagImage(race.Circuit.Location.country)"
-            :alt='`${race.Circuit.Location.country}`'
-            class="all-races-flag-img"
-          />
-          <h1> {{ race.Circuit.Location.country }} </h1>
-        </article>
+    <swiper :options="swiperOptions"> 
+      <div
+        v-for="race, index in allRacesCurrentSeason"
+        :key="index"
+        :id="race.round"
+        v-on:click="expandDiv"
+        class="swiper-slide">
+        <div
+          class="race-div">
+            <img 
+              :src="getFlagImage(race.Circuit.Location.country)"
+              :alt='`${race.Circuit.Location.country}`'
+              class="all-races-flag-img"
+            />
+            <div class="all-races-info">
+              <h4>{{ race.Circuit.Location.country }}</h4>
+              <h4>{{ race.raceName }} {{ race.season }}</h4>
+              <h4>{{ race.date }}</h4>
+              <h4>{{ race.time }}</h4>
+          </div>
+        </div>
       </div>
-    </div>
+    </swiper>
   </div>
 </template>
 
@@ -26,27 +31,60 @@
 import convertTimeMixin from '../mixins/convertTimeMixin'
 import apiCallsMixin from '../mixins/apiCallsMixin'
 
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
+
 export default {
   name: 'AllRaces',
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  directives: {
+    swiper: directive
+  },
   data() {
     return {
       getAllRaces: 'allRaces',
       allRacesDataLoaded: false,
-      allRacesCurrentSeason: null
+      allRacesCurrentSeason: null,
+      getNextRace: 'nextRace',
+      nextRaceDataLoaded: false,
+      nextRace: null,
+      swiperOptions : {
+        slidesPerView: "auto",
+        initialSlide: 0,
+        spaceBetween: 0,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        freeMode: true,
+        loop: false,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
     }
   },
-  async mounted() {
-    // Returns all races of the current season
-    let responseRace = await this.getRaces(this.getAllRaces);
+  async created() {
+    // Get all races of the current season
+    let responseAllRaces = await this.getRaces(this.getAllRaces);
 
-    // When data is fetched this varible set to true and the component will show
-    this.allRacesDataLoaded = responseRace.dataLoaded
+    // Get next race
+    let responseNextRace = await this.getRaces(this.getNextRace);
 
-    // Sets the varible to all races in the curren season
-    this.allRacesCurrentSeason = responseRace.allRaces
+    // Set value for the dataloaded varibles (true)
+    this.allRacesDataLoaded = responseAllRaces.dataLoaded
+    this.nextRaceDataLoaded = responseNextRace.dataLoaded
+
+    // Set value to other data properties
+    this.allRacesCurrentSeason = responseAllRaces.allRaces
+    // Subtract from round because it is one based numbering and not zero as the swiper
+    this.swiperOptions.initialSlide = Number(responseNextRace.nextRace.round) - 1
 
     console.log("AllRaces - allRacesCurrentSeason", this.allRacesCurrentSeason)
-    // this.convertTimeOfArray()
+
+    this.convertTimeOfArray()
   },
   methods: {
     getFlagImage(country) {
@@ -59,9 +97,21 @@ export default {
     /*
       Converts the time of the race from f to ....
     */
-      for(let i = 0; i < this.futureRaces.length; i++) {
-        this.futureRaces[i].time = this.convertTime(this.futureRaces[i])
+      this.allRacesCurrentSeason.map(race => {
+        race.time = this.convertTime(race.time)
+      })
+    },
+    expandDiv(e) {
+    /*
+      Add expand-div-active on the chosen element. If it already exists on another element it will remove it.
+    */
+      let activeRaceDiv = document.querySelector(".expand-div-active")
+
+      if (activeRaceDiv !== null) {
+        activeRaceDiv.classList.remove('expand-div-active')
       }
+
+      e.target.classList.add('expand-div-active')
     }
   },
   mixins: [apiCallsMixin, convertTimeMixin]
@@ -69,33 +119,27 @@ export default {
 </script>
 
 <style scoped>
-.all-races-flag-img {
-  height: 2em;
-}
+  .all-races-flag-img {
+    height: 2em;
+    pointer-events: none;
+  }
 
-.main-div {
-  /* display: -webkit-box; */
-  overflow: hidden;
-  position: relative;
-}
+  .all-races-info {
+    pointer-events: none;
+  }
 
-.middle-div {
-  transform: translate3d(-288.77px, 0px, 0px);
-  height: 570px;
-  overflow: hidden;
-}
+  .race-div {
+    border-right: solid 1px #38383f;
+    border-bottom-right-radius: 20px;
+    border-bottom: solid 1px #38383f;
+  }
 
-.for-div {
-  border-right: solid 1px #38383f;
-  border-bottom-right-radius: 20px;
-  border-bottom: solid 1px #38383f;
-  cursor: pointer;
-  float: left;
-  height: 530px;
-  margin: 20px 0;
-  overflow: visible;
-  padding: 10px 0 0;
-  -webkit-transition: width .4s ease-out;
-}
+  .expand-div-active {
+    background-color: aqua;
+  }
+
+  .swiper-slide {
+    width: revert;
+  }
 </style>
 

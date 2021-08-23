@@ -4,7 +4,7 @@
       <div class="col">
         <QualificationSession 
           :qualificationResult="qualificationResult"
-          v-if="dataLoaded"/>
+          v-if="qualiDataLoaded"/>
       </div>
     </div>
   </b-container>
@@ -22,29 +22,26 @@ export default {
   data() {
     return {
       getNextRace: 'nextRace',
+      qualiDataLoaded: false,
       season: null,
       thisRound: null,
-      dataLoaded: false,
       qualificationResult: null
     }
   },
-  mounted() {
-    this.getNextRace()
+  async created() {
+    let responseNextRace = await this.getRaces(this.getNextRace)
+
+    this.season = responseNextRace.nextRace.season
+    this.thisRound = responseNextRace.nextRace.round
+
+    this.getNextQualification(this.season, this.thisRound)
   },
   methods: {
-    async getNextRace() {
-      let responseRace = await this.getRaces(this.getNextRace)
-
-      this.season = responseRace.nextRace.season
-      this.thisRound = responseRace.nextRace.round
-
-      this.getNextQualification(this.season, this.thisRound)
-    },
     async getNextQualification(season, round) {
       let responseQualification = await this.getNextRaceQuali(season, round)
 
       this.qualificationResult = responseQualification.nextRaceQualification
-      this.dataLoaded = responseQualification.dataLoaded
+      this.qualiDataLoaded = responseQualification.dataLoaded
     }
   },
   mixins: [apiCallsMixin]

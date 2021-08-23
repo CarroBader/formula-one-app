@@ -33,36 +33,37 @@ export default {
   },
   data() {
     return {
-      nextRace: null,
-      nextRaceDataLoaded: false,
-      latestWinnersDataLoaded: false,
       getNextRace: 'nextRace',
+      nextRaceDataLoaded: false,
+      nextRace: null,
+      latestWinnersDataLoaded: false,
       nextRaceTrackName: null,
       nextRaceTrackId: null,
       season: null,
       latestWinners: []
     }
   },
-  mounted() {
-    this.getNextRace()
+  async created() {
+    // Get next race
+    let responseNextRace = await this.getRaces(this.getNextRace)
+
+    // Varibles for NextRaceTrackInfo component
+    this.nextRace = responseNextRace.nextRace
+    this.nextRaceTrackName = this.nextRace.Circuit.circuitName
+    this.nextRaceDataLoaded = responseNextRace.dataLoaded
+
+    // Returns an object containing the next race
+
+    // Varibles for NextRaceTrackInfo component
+
+    // Varibles for TrackLastWinners component
+    // this.nextRaceTrackId = this.nextRace.Circuit.circuitId
+    // this.season = Number(this.nextRace.season)
+    //console.log("NEXT:", this.nextRace)
+
+    //this.getResult(this.season, this.nextRaceTrackId)
   },
   methods: {
-    async getNextRace() {
-      // Returns an object containing the next race
-      let responseRace = await this.getRaces(this.getNextRace)
-
-      // Varibles for NextRaceTrackInfo component
-      this.nextRace = responseRace.nextRace
-      this.nextRaceTrackName = this.nextRace.Circuit.circuitName
-      this.nextRaceDataLoaded = responseRace.dataLoaded
-
-      // Varibles for TrackLastWinners component
-      // this.nextRaceTrackId = this.nextRace.Circuit.circuitId
-      // this.season = Number(this.nextRace.season)
-      //console.log("NEXT:", this.nextRace)
-
-      //this.getResult(this.season, this.nextRaceTrackId)
-    },
     async getResult(season, track) {
       let fiveYearsBack = season - 5
       //let latestWinners = []
