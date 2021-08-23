@@ -37,7 +37,7 @@
               <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
               <td class="no-display-when-mobile result-last-race-td">
                 <img
-                  :src="getFlagImage(race.Driver.nationality)"
+                  :src="getCountryFlag(race.Driver.nationality)"
                   :alt='`${race.Driver.nationality}`'
                   class="result-last-race-flag-img"
                 />
@@ -65,7 +65,7 @@
 
 <script>
 import apiCallsMixin from '../../../mixins/apiCallsMixin.js'
-import convertNationalityToCountryMixin from '../../../mixins/convertNationalityToCountryMixin.js'
+import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin.js'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
 
 export default {
@@ -91,13 +91,6 @@ export default {
     this.lastRaceDataLoaded = responseLastRaceResult.dataLoaded
   },
   methods: {
-    getFlagImage(nationality) {
-    /*
-      Return country flag.
-    */
-      let countryFlag = this.convertNationalityToCountry(nationality)
-      return require(`../../../assets/img/flags/${countryFlag}.png`)
-    },
     getSymbolImage(grid, position) {
     /*
       Check if position change happened.
@@ -122,7 +115,7 @@ export default {
       return fastestLap != undefined && fastestLap.rank == "1" ? true : false
     }
   },
-  mixins: [apiCallsMixin, convertNationalityToCountryMixin, getConstructorColorMixin]
+  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin]
 }
 </script>
 

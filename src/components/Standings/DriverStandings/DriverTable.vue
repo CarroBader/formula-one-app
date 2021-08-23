@@ -18,7 +18,7 @@
               class='leader-driver-img'
             />
             <img
-              :src="getFlagImage(topDriver.Driver.nationality)"
+              :src="getCountryFlag(topDriver.Driver.nationality)"
               :alt='`${topDriver.Driver.nationality}`'
               class="leader-driver-flag-img"
             />
@@ -60,7 +60,7 @@
               <td class="driver-table-td">{{ driver.Driver.givenName }} {{ driver.Driver.familyName }}</td>
               <td class="driver-table-td">
                 <img
-                  :src="getFlagImage(driver.Driver.nationality)"
+                  :src="getCountryFlag(driver.Driver.nationality)"
                   :alt='`${driver.Driver.nationality}`'
                   class="driver-table-flag-img"
                 />
@@ -82,7 +82,7 @@
 
 <script>
 import apiCallsMixin from '../../../mixins/apiCallsMixin.js'
-import convertNationalityToCountryMixin from '../../../mixins/convertNationalityToCountryMixin.js'
+import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin.js'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
 
 const divsTopThree = ["first", "second", "third"]
@@ -107,13 +107,6 @@ export default {
     this.driverStandingsDataLoaded = responseDriverStandings.dataLoaded
   },
   methods: {
-    getFlagImage(nationality) {
-    /*
-      Return country flag.
-    */
-      let countryFlag = this.convertNationalityToCountry(nationality)
-      return require(`../../../assets/img/flags/${countryFlag}.png`)
-    },
     getDriverPhoto(driver) {
     /*
       Return driver photo.
@@ -121,7 +114,7 @@ export default {
       return require(`../../../assets/img/drivers/${driver}.png`)
     }
   },
-  mixins: [apiCallsMixin, convertNationalityToCountryMixin, getConstructorColorMixin]
+  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin]
 }
 </script>
 

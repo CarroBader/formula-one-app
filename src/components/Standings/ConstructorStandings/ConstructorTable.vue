@@ -20,7 +20,7 @@
             <h3 class="leader-constructor-points">{{ topConstructor.points }} pts</h3>
             <div>
               <img
-                :src="getFlagImage(topConstructor.Constructor.nationality)"
+                :src="getCountryFlag(topConstructor.Constructor.nationality)"
                 :alt='`${topConstructor.Constructor.nationality}`'
                 class="leader-constructor-flag-img"
               />
@@ -57,7 +57,7 @@
             </td>
             <td>
               <img
-                :src="getFlagImage(constructor.Constructor.nationality)"
+                :src="getCountryFlag(constructor.Constructor.nationality)"
                 :alt='`${constructor.Constructor.nationality}`'
                 class="constructor-table-td constructor-table-flag-img"
               />
@@ -72,7 +72,7 @@
 
 <script>
 import apiCallsMixin from '../../../mixins/apiCallsMixin.js'
-import convertNationalityToCountryMixin from '../../../mixins/convertNationalityToCountryMixin.js'
+import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin.js'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
 
 const divsTopThree = ["first", "second", "third"]
@@ -97,13 +97,6 @@ export default {
     this.constructorStandingsDataLoaded = responseConstructorStandings.dataLoaded
   },
   methods: {
-    getFlagImage(nationality) {
-    /*
-      Return country flag.
-    */
-      let countryFlag = this.convertNationalityToCountry(nationality)
-      return require(`../../../assets/img/flags/${countryFlag}.png`)
-    },
     getConstructerPhoto(constructor) {
     /*
       Return constructor photo.
@@ -111,7 +104,7 @@ export default {
       return require(`../../../assets/img/constructers/${constructor}.png`)
     }
   },
-  mixins: [apiCallsMixin, convertNationalityToCountryMixin, getConstructorColorMixin]
+  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin]
 }
 </script>
 

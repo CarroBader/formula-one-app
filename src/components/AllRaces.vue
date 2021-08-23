@@ -83,7 +83,7 @@ export default {
   methods: {
     getFlagImage(country) {
     /*
-      Returns the flag from the country sent as a param.
+      Return the flag from the country sent as a param.
     */
       return require(`../assets/img/flags/${country}.png`)
     },

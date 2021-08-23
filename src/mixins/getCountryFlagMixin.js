@@ -1,11 +1,10 @@
 export default { 
   methods: {
-    convertNationalityToCountry: function(nationality) {
+    getCountryFlag: function(nationality) {
     /* 
-        Convert natonality to country.
-        Return country.
+      Return img of the flag that corresponds with nationality.
     */
-      let country;
+      let country
       
       switch (nationality) {
         case "Dutch":
@@ -59,7 +58,7 @@ export default {
         default:
             country = "";
       }
-      return country;
+      return require(`../assets/img/flags/${country}.png`)
     }
   }
 }
