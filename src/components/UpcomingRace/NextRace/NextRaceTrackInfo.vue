@@ -39,14 +39,6 @@ export default {
   props: {
     nextRace: Object
   },
-  computed: {
-    convertRaceTimeOfArray(time) {
-    /*
-      Return converted time.
-    */
-      return this.convertRaceTime(time)
-    }
-  },
   methods: {
     getCircuitImage() {
     /*

@@ -18,7 +18,7 @@
             <h4>{{ race.Circuit.Location.country }}</h4>
             <h4>{{ race.raceName }} {{ race.season }}</h4>
             <h4>{{ race.date }}</h4>
-            <h4>{{ race.time }}</h4>
+            <h4>{{ convertRaceTime(race.time) }}</h4>
           </div>
         </div>
       </div>
@@ -79,8 +79,6 @@ export default {
     // Set value for the dataloaded varibles (true)
     this.allRacesDataLoaded = responseAllRaces.dataLoaded
     this.nextRaceDataLoaded = responseNextRace.dataLoaded
-
-    this.convertRaceTimeOfArray()
   },
   methods: {
     getFlagImage(country) {
@@ -88,14 +86,6 @@ export default {
       Returns the flag from the country sent as a param.
     */
       return require(`../assets/img/flags/${country}.png`)
-    },
-    convertRaceTimeOfArray() {
-    /*
-      Converts the time of the race from f to ....
-    */
-      this.allRacesCurrentSeason.map(race => {
-        race.time = this.convertRaceTime(race.time)
-      })
     },
     expandDiv(e) {
     /*
