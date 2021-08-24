@@ -20,7 +20,7 @@
             <h3 class="leader-constructor-points">{{ topConstructor.points }} pts</h3>
             <div>
               <img
-                :src="getCountryFlag(topConstructor.Constructor.nationality)"
+                :src="getCountryName(topConstructor.Constructor.nationality)"
                 :alt='`${topConstructor.Constructor.nationality}`'
                 class="leader-constructor-flag-img"
               />
@@ -57,7 +57,7 @@
             </td>
             <td>
               <img
-                :src="getCountryFlag(constructor.Constructor.nationality)"
+                :src="getCountryName(constructor.Constructor.nationality)"
                 :alt='`${constructor.Constructor.nationality}`'
                 class="constructor-table-td constructor-table-flag-img"
               />

@@ -18,7 +18,7 @@
               class='leader-driver-img'
             />
             <img
-              :src="getCountryFlag(topDriver.Driver.nationality)"
+              :src="getCountryName(topDriver.Driver.nationality)"
               :alt='`${topDriver.Driver.nationality}`'
               class="leader-driver-flag-img"
             />
@@ -60,7 +60,7 @@
               <td class="driver-table-td">{{ driver.Driver.givenName }} {{ driver.Driver.familyName }}</td>
               <td class="driver-table-td">
                 <img
-                  :src="getCountryFlag(driver.Driver.nationality)"
+                  :src="getCountryName(driver.Driver.nationality)"
                   :alt='`${driver.Driver.nationality}`'
                   class="driver-table-flag-img"
                 />

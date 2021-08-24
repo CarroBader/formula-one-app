@@ -37,7 +37,7 @@
               <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
               <td class="no-display-when-mobile result-last-race-td">
                 <img
-                  :src="getCountryFlag(race.Driver.nationality)"
+                  :src="getCountryName(race.Driver.nationality)"
                   :alt='`${race.Driver.nationality}`'
                   class="result-last-race-flag-img"
                 />
