@@ -23,12 +23,12 @@ const routes = [
     children: [
       {
         path: '/grand-prix/last',
-        name: 'Last',
+        name: 'Last Race',
         component: LastRace
       },
       {
         path: '/grand-prix/pre',
-        name: 'Pre',
+        name: 'Upcoming Race',
         component: NextRace
       },
       {
@@ -56,12 +56,12 @@ const routes = [
     children: [
       {
         path: '/driver-standings',
-        name: 'Driver',
+        name: 'Driver Standings',
         component: DriverStandings
       },
       {
         path: '/constructor-standings',
-        name: 'Constructor',
+        name: 'Constructor Standings',
         component: ConstructorStandings
       },
     ]
