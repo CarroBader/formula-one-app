@@ -22,12 +22,12 @@ const routes = [
     component: UpcomingRace,
     children: [
       {
-        path: '/grand-prix/last',
+        path: '/grand-prix/last-race',
         name: 'Last Race',
         component: LastRace
       },
       {
-        path: '/grand-prix/pre',
+        path: '/grand-prix/upcoming-race',
         name: 'Upcoming Race',
         component: NextRace
       },
