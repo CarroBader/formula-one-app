@@ -10,17 +10,25 @@
              :key="index"
           >
             <td class="circuit-last-list-td">
-              <span class="circuit-last-list-year">{{ driver.year }}</span>
+              <span class="circuit-last-list-year extra-dark-grey">{{ driver.year }}</span>
             </td>
             <td class="circuit-last-list-td">
               <span class="circuit-last-list-name">{{ driver.name }}</span>
             </td>
-            <td class="circuit-last-list-td">
+            <td class="circuit-last-list-td"
+              v-if="driver.winners">
               <span
                 class="circuit-last-list-constructor"
                 :class="getConstructorColor(driver.colorCode)"
               >
                 {{ driver.constructor }}
+              </span>
+            </td>
+            <td 
+              v-else
+              class="circuit-last-list-td dark-grey">
+              <span class="circuit-last-list-fastest-lap">
+                {{ driver.time }}
               </span>
             </td>
           </tbody>
@@ -50,5 +58,8 @@ export default {
 
   tbody:last-child {
   border: none;
+  }
+  .hej {
+
   }
 </style>

@@ -107,7 +107,6 @@ tr:last-child {
 }
 
 .extra-dark-grey {
-	/* color: #a9a9a9 !important; */
 	color: #5f5555 !important;
 }
 
@@ -195,6 +194,14 @@ tr:last-child {
 		display: none;
 	}
 
+	.display-when-tablet {
+		display: none;
+	}
+
+	.no-display-when-tablet {
+		display: revert;
+	}
+
 	.browser-view {
 		display: none;
 	}
@@ -260,7 +267,7 @@ tr:last-child {
 	}
 
 	.next-race-circuit-info-name {
-		font-size: 1.1em;
+		font-size: 1em;
 	}
 
 	.next-race-circuit-info-location {
@@ -286,7 +293,7 @@ tr:last-child {
 	}
 
 	/* NextRaceTimeTable */
-	.next-race-time-table-td{
+	.next-race-time-table-td {
 		padding: 0.5em;
 	}
 
@@ -295,7 +302,7 @@ tr:last-child {
 	}
 
 	.next-race-time-table-title {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
 	.next-race-time-table-date {
@@ -304,14 +311,14 @@ tr:last-child {
 
 	.next-race-time-table-event {
     padding-right: 1em;
-		font-size: 0.8em;
+		font-size: 0.7em;
 	}
 
 	.next-race-time-table-day {
     padding-right: 1em;
     color: #a9a9a9;
     text-transform: uppercase;
-		font-size: 0.7em;
+		font-size: 0.6em;
 	}
 
 	.next-race-time-table-time {
@@ -321,7 +328,7 @@ tr:last-child {
     padding: 0 0.3em 0.3em 0.3em;
     display: -webkit-inline-box;
     margin-top: 0.5em;
-    font-size: 0.8em;
+    font-size: 0.7em;
 	}
 
 	.next-race-time-table-border {
@@ -344,7 +351,7 @@ tr:last-child {
     padding: 0 0.3em 0.3em 0.3em;
     display: -webkit-inline-box;
     margin-top: 0.5em;
-		font-size: 1em;
+		font-size: 0.85em;
 	}
 
 	.circuit-last-list-table-div {
@@ -359,16 +366,19 @@ tr:last-child {
 	}
 
 	.circuit-last-list-year {
-		color: #a9a9a9;
-		font-size: 0.7em;
+		font-size: 0.65em;
 	}
 
 	.circuit-last-list-name {
-		font-size: 0.8em;
+		font-size: 0.7em;
 	}
 
 	.circuit-last-list-constructor {
-		font-size: 0.7em;
+		font-size: 0.65em;
+	}
+
+	.circuit-last-list-fastest-lap {
+		font-size: 0.65em;
 	}
 
 	/* NextRaceCountryFlag */
@@ -580,16 +590,6 @@ tr:last-child {
     text-align: -webkit-center;
   }
 
-	/*------------------------ GENERAL ------------------------*/
-
-	.no-display-when-tablet {
-		display: none;
-	}
-
-	.display-when-tablet {
-		display: revert;
-	}
-
   /*------------------------ FOOTER ------------------------*/
   .bot-nav {
     display: none !important;
@@ -670,23 +670,19 @@ tr:last-child {
   }
 
   .next-race-circuit-info-name {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 
   .next-race-circuit-info-location {
     font-size: 1em;
   }
 
-  /* .next-race-circuit-info-circuit-img {
-    height: 14em;
-  } */
-
   .next-race-circuit-info-th {
-    font-size: 0.8em;
+    font-size: 0.75em;
   }
 
   .next-race-circuit-info-td {
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
 
 	/* NextRaceTimeTable */
@@ -695,15 +691,19 @@ tr:last-child {
   }
 
   .next-race-time-table-title {
-    font-size: 1.3em;
+    font-size: 1.1em;
+  }
+
+	.next-race-time-table-event {
+    font-size: 0.75em;
+  }
+
+  .next-race-time-table-day {
+    font-size: 0.65em;
   }
 
   .next-race-time-table-time {
-    font-size: 0.9em;
-  }
-
-  .next-race-time-table-border {
-    border: none;
+    font-size: 0.75em;
   }
 
 	.next-race-time-table-col-left {
@@ -715,16 +715,24 @@ tr:last-child {
 		margin: 1.2em 0.2em;
 	}
 
+	.circuit-last-list-title {
+		font-size: 0.9em;
+	}
+
 	.circuit-last-list-year {
-		font-size: 0.75em;
+		font-size: 0.7em;
 	}
 
 	.circuit-last-list-name {
-		font-size: 0.85em;
+		font-size: 0.75em;
 	}
 
 	.circuit-last-list-constructor {
-		font-size: 0.75em;
+		font-size: 0.7em;
+	}
+
+	.circuit-last-list-fastest-lap {
+		font-size: 0.7em;
 	}
 
 	/* QualificationSession */
@@ -894,6 +902,15 @@ tr:last-child {
 	.nav-collapse-top {
     text-align: revert;
   }
+	
+	/*------------------------ GENERAL ------------------------*/
+	.no-display-when-tablet {
+		display: none;
+	}
+
+	.display-when-tablet {
+		display: revert;
+	}
 
   /*------------------------ MAP ------------------------*/
   .leaflet-touch 
@@ -907,10 +924,6 @@ tr:last-child {
 	.next-race-headline {
 		font-size: 1.7em;
 	}
-
-	/* .next-race-last-top {
-		display: flex;
-	} */
 
 	/* ResultLastRace */
 	.result-last-race-headline {
@@ -940,28 +953,24 @@ tr:last-child {
   }
 
   .next-race-circuit-info-name {
-    font-size: 1.4em;
-  }
-
-  .next-race-circuit-info-location {
     font-size: 1.2em;
   }
 
-  /* .next-race-circuit-info-circuit-img {
-    height: 16em;
-  } */
+  .next-race-circuit-info-location {
+    font-size: 1.1em;
+  }
 
   .next-race-circuit-info-th {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 
   .next-race-circuit-info-td {
-    font-size: 0.95em;
+    font-size: 0.9em;
   }
 
 	/* NextRaceTimeTable */
 	.next-race-time-table-td{
-		padding: 0.2em;
+		padding: 0.2em 0.5em;
 	}
 
 	.next-race-time-table-card-margin {
@@ -969,7 +978,7 @@ tr:last-child {
 	}
 
 	.next-race-time-table-title {
-		font-size: 1.4em;
+		font-size: 1.2em;
 	}
 
 	.next-race-time-table-date {
@@ -977,15 +986,15 @@ tr:last-child {
 	}
 
 	.next-race-time-table-event {
-		font-size: 0.9em;
-	}
-
-	.next-race-time-table-day {
 		font-size: 0.8em;
 	}
 
+	.next-race-time-table-day {
+		font-size: 0.7em;
+	}
+
 	.next-race-time-table-time {
-		font-size: 0.9em;
+		font-size: 0.8em;
 	}
 
 	.next-race-time-table-border {
@@ -1005,16 +1014,24 @@ tr:last-child {
 		margin: 1.2em 0.5em;
 	}
 
+	.circuit-last-list-title {
+		font-size: 0.95em;
+	}
+
 	.circuit-last-list-year {
-		font-size: 0.8em;
+		font-size: 0.75em;
 	}
 
 	.circuit-last-list-name {
-		font-size: 0.9em;
+		font-size: 0.8em;
 	}
 
 	.circuit-last-list-constructor {
-		font-size: 0.8em;
+		font-size: 0.75em;
+	}
+
+	.circuit-last-list-fastest-lap {
+		font-size: 0.75em;
 	}
 
 	/* NextRaceCountryFlag */
@@ -1221,23 +1238,19 @@ tr:last-child {
 	}
 
   .next-race-circuit-info-name {
-    font-size: 1.6em;
+    font-size: 1.3em;
   }
 
   .next-race-circuit-info-location {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
-  /* .next-race-circuit-info-circuit-img {
-    height: 20em;
-  } */
-
   .next-race-circuit-info-th {
-    font-size: 0.95em;
+    font-size: 0.85em;
   }
 
   .next-race-circuit-info-td {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 
 	/* NextRaceTimeTable */
@@ -1250,7 +1263,7 @@ tr:last-child {
 	}
 
 	.next-race-time-table-title {
-		font-size: 1.5em;
+		font-size: 1.3em;
 	}
 
 	.next-race-time-table-date {
@@ -1258,15 +1271,23 @@ tr:last-child {
 	}
 
 	.next-race-time-table-event {
-		font-size: 1em;
+		font-size: 0.85em;
 	}
 
 	.next-race-time-table-day {
-		font-size: 0.9em;
+		font-size: 0.75em;
 	}
 
 	.next-race-time-table-time {
-		font-size: 1em;
+		font-size: 0.85em;
+	}
+
+  .next-race-time-table-border {
+    border: none;
+  }
+
+	.next-race-time-table-col-left {
+		border-right: 1px solid #fff;
 	}
 
 	/* CircuitLastList */
@@ -1280,6 +1301,26 @@ tr:last-child {
 
 	.circuit-last-list-td {
 		padding: 0.5em 1em;
+	}
+
+	.circuit-last-list-title {
+		font-size: 1em;
+	}
+
+	.circuit-last-list-year {
+		font-size: 0.8em;
+	}
+
+	.circuit-last-list-name {
+		font-size: 0.85em;
+	}
+
+	.circuit-last-list-constructor {
+		font-size: 0.8em;
+	}
+
+	.circuit-last-list-fastest-lap {
+		font-size: 0.8em;
 	}
 
 	/* NextRaceCountryFlag */
@@ -1432,15 +1473,6 @@ tr:last-child {
 	/* NextRaceCircuitInfo */
   .next-race-circuit-info-circuit-img {
     height: 16.4em;
-  }
-
-	/* NextRaceTimeTable */
-	.next-race-time-table-border {
-    border: none;
-  }
-
-	.next-race-time-table-col-left {
-    border-right: 1px solid #fff;
   }
 
 	/* NextRaceTimeTable */

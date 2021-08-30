@@ -52,63 +52,63 @@ const winners = [
     year: 2021,
     name: "Max Verstappen",
     constructor: "Red Bull",
-    colorCode: "red_bull"
+    colorCode: "red_bull",
+    winners: true
   },
   {
     year: 2020,
     name: "Lewis Hamilton",
     constructor: "Mercedes",
-    colorCode: "mercedes"
+    colorCode: "mercedes",
+    winners: true
   },
     {
     year: 2019,
     name: "Charles LeClerec",
     constructor: "Ferrari",
-    colorCode: "ferrari"
+    colorCode: "ferrari",
+    winners: true
   },
     {
     year: 2018,
     name: "Sebastian Vettel",
     constructor: "Ferrari",
-    colorCode: "ferrari"
+    colorCode: "ferrari",
+    winners: true
   },
     {
     year: 2017,
     name: "Lewis Hamilton",
     constructor: "Mercedes",
-    colorCode: "mercedes"
+    colorCode: "mercedes",
+    winners: true
   }
 ]
 const poles = [
   {
     year: 2021,
     name: "Max Verstappen",
-    constructor: "Red Bull",
-    colorCode: "red_bull"
+    time: "1:55.006"
   },
   {
     year: 2020,
     name: "Lewis Hamilton",
-    constructor: "Mercedes",
-    colorCode: "mercedes"
+    time: "1:57.592"
   },
     {
     year: 2019,
     name: "Charles LeClerec",
-    constructor: "Ferrari",
-    colorCode: "ferrari"
+    time: "1:58.076"
   },
     {
     year: 2018,
     name: "Lewis Hamilton",
-    constructor: "Mercedes",
-    colorCode: "mercedes"
+    time: "1:57.983"
   },
     {
     year: 2017,
     name: "Lewis Hamilton",
-    constructor: "Mercedes",
-    colorCode: "mercedes"
+    time: "1:59.143"
   }
 ]
 
