@@ -1,6 +1,7 @@
 <template>
   <div v-if="allRacesDataLoaded">
-    <swiper :options="swiperOptions">
+    <h1>all races</h1>
+    <!-- <swiper :options="swiperOptions">
       <div
         v-for="race, index in allRacesCurrentSeason"
         :key="index"
@@ -15,21 +16,21 @@
             class="all-races-flag-img"
           />
           <div class="all-races-info">
-            <!-- <h4>{{ race.Circuit.Location.country }}</h4>
-            <h4>{{ race.raceName }} {{ race.season }}</h4> -->
+                  <h4>{{ race.Circuit.Location.country }}</h4>
+                  <h4>{{ race.raceName }} {{ race.season }}</h4>
             <h4>{{ race.monthName }}</h4>
-            <!-- <h4>{{ convertRaceTime(race.time) }}</h4> -->
+                  <h4>{{ convertRaceTime(race.time) }}</h4>
             <h4>{{ race.dayNumber }}</h4>
           </div>
         </div>
       </div>
-    </swiper>
+    </swiper> -->
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import 'swiper/swiper-bundle.css'
+//import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+//import 'swiper/swiper-bundle.css'
 
 import apiCallsMixin from '../mixins/apiCallsMixin.js'
 import getCountryFlagMixin from '../mixins/getCountryFlagMixin.js'
@@ -38,12 +39,12 @@ import convertRaceTimeMixin from '../mixins/convertRaceTimeMixin.js'
 export default {
   name: 'AllRaces',
   components: {
-    Swiper,
-    SwiperSlide
+    // Swiper,
+    // SwiperSlide
   },
-  directives: {
-    swiper: directive
-  },
+  // directives: {
+  //   swiper: directive
+  // },
   data() {
     return {
       getAllRaces: 'allRaces',
@@ -52,19 +53,19 @@ export default {
       getNextRace: 'nextRace',
       nextRace: null,
       nextRaceDataLoaded: false,
-      swiperOptions : {
-        slidesPerView: "auto",
-        initialSlide: 0,
-        spaceBetween: 0,
-        centeredSlides: true,
-        centeredSlidesBounds: true,
-        freeMode: true,
-        loop: false,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
-      }
+      // Options : {
+      //   slidesPerView: "auto",
+      //   initialSlide: 0,
+      //   spaceBetween: 0,
+      //   centeredSlides: true,
+      //   centeredSlidesBounds: true,
+      //   freeMode: true,
+      //   loop: false,
+      //   navigation: {
+      //     nextEswiperl: '.swiper-button-next',
+      //     prevEl: '.swiper-button-prev'
+      //   }
+      // }
     }
   },
   async created() {
@@ -76,7 +77,7 @@ export default {
 
     // Set value to other data properties
     this.allRacesCurrentSeason = responseAllRaces.allRaces
-    this.swiperOptions.initialSlide = Number(responseNextRace.nextRace.round) - 1 // Subtract from round because it is one based numbering and not zero as the swiper
+   //this.swiperOptions.initialSlide = Number(responseNextRace.nextRace.round) - 1 // Subtract from round because it is one based numbering and not zero as the swiper
 
     this.allRacesCurrentSeason.map(race => {
       console.log(race)
