@@ -55,6 +55,28 @@ h4 {
   text-shadow: 2px 2px #000;
 }
 
+.nav-link.active {
+	/* border: none; */
+	font-size: 1.5em;
+}
+
+.nav-tabs .nav-link {
+	border: none;
+	background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+	border-radius: 8px;
+	border: #ffffff7d 2px solid;
+	display: inline;
+	padding: 0 0.3em 0.3em 0.3em;
+}
+
+.nav-tabs {
+	border: none;
+}
+
+.nav {
+	display: -webkit-inline-box;
+}
+
 .router-link-active {
 	background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
 	border-radius: 8px;
@@ -92,6 +114,10 @@ tr:last-child {
 /* Colors */
 .red {
 	color: #e10600 !important;
+}
+
+.dark-red {
+	color: #9F0000 !important;
 }
 
 .light-grey {

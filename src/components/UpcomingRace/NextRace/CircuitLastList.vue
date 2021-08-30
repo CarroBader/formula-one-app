@@ -55,11 +55,4 @@ export default {
   tbody {
     border-bottom: 1px solid #fff;
   }
-
-  tbody:last-child {
-  border: none;
-  }
-  .hej {
-
-  }
 </style>

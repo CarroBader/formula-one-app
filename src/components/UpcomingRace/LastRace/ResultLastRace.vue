@@ -146,7 +146,7 @@ export default {
     width: 1em;
     -webkit-filter: invert(40%)
     grayscale(100%) 
-    brightness(70%) 
+    brightness(55%) 
     sepia(100%) 
     hue-rotate(-50deg) 
     saturate(400%) 

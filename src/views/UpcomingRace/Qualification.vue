@@ -1,6 +1,6 @@
 <template>
   <b-container class="default-background-center">
-    <div class="row next-race-quali-row">
+    <div class="row qualification-row">
       <div class="col">
         <QualificationSession
           :qualificationResult="qualificationResult"
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style scoped>
-  .next-race-quali-row {
+  .qualification-row {
     display: inline-block;
   }
 </style>
