@@ -19,6 +19,8 @@
       </b-col>
       <b-col>
         <NexRaceTimeTable />
+        <NextRaceCountryFlag 
+          :country="nextRaceCountryFlag"/>
         <b-row class="next-race-last-top">
           <CircuitLastList
             :title="winnersTitle"
@@ -39,6 +41,7 @@
 import NextCircuitTrackInfo from '../../components/UpcomingRace/NextRace/NextRaceCircuitInfo.vue'
 import NexRaceTimeTable from '../../components/UpcomingRace/NextRace/NexRaceTimeTable.vue'
 import CircuitLastList from '../../components/UpcomingRace/NextRace/CircuitLastList.vue'
+import NextRaceCountryFlag from '../../components/UpcomingRace/NextRace/NextRaceCountryFlag.vue'
 
 import apiCallsMixin from '../../mixins/apiCallsMixin.js'
 
@@ -114,13 +117,15 @@ export default {
   components: {
     NextCircuitTrackInfo,
     NexRaceTimeTable,
-    CircuitLastList
+    CircuitLastList,
+    NextRaceCountryFlag
   },
   data() {
     return {
       getNextRace: 'nextRace',
       nextRace: null,
       nextRaceDataLoaded: false,
+      nextRaceCountryFlag: null,
       winnersTitle: winnersTitle,
       winners: winners,
       polesTitle: polesTitle,
@@ -133,6 +138,7 @@ export default {
 
     // Set value on data properties
     this.nextRace = responseNextRace.nextRace
+    this.nextRaceCountryFlag = responseNextRace.nextRace.Circuit.Location.country
 
     // Set dataloaded variable(s) to true
     this.nextRaceDataLoaded = responseNextRace.dataLoaded
