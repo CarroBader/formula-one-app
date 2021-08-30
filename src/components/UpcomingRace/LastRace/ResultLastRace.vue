@@ -23,7 +23,7 @@
             class="result-last-race-tbody"
           >
             <tr>
-              <td class="result-last-race-td darkgrey-text">{{ race.position }}</td>
+              <td class="result-last-race-td extra-dark-grey">{{ race.position }}</td>
               <td class="result-last-race-td">
                 <img
                   :src="getSymbolImage(race.grid, race.position)"
@@ -120,6 +120,9 @@ export default {
 </script>
 
 <style scoped>
+  tbody {
+    border-bottom: 1px solid #fff;
+  }
 	.result-last-race-headline-div {
 		margin: 0.5em 0 2em;
 	}

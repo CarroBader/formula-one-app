@@ -1,49 +1,130 @@
 <template>
-  <b-container class="default-background-center">
-    <h1 class="next-race-headline"
-      v-if="nextRaceDataLoaded"
-    >
+  <b-container 
+    class="default-background-center"
+    v-if="nextRaceDataLoaded"
+  >
+    <h1 class="next-race-headline">
       {{ this.nextRace.raceName }}
     </h1>
-    <div class="row next-race-row">
-      <div class="col">
-        <NextRaceTrackInfo
-          :nextRace="nextRace"
-          v-if="nextRaceDataLoaded"
+    <b-row class="next-race-row">
+      <b-col>
+        <NextCircuitTrackInfo
+          :nextRace="nextRace" 
         />
-      </div>
-      <div class="col">
-        <!-- <TrackLastWinners 
-          :latestWinners="latestWinners"
-          :nextRaceTrackName="nextRaceTrackName"
-          v-if="latestWinnersDataLoaded"/> -->
-      </div>
-    </div>
+        <CircuitLastList
+            class="display-when-tablet"
+            :title="polesTitle"
+            :drivers="poles" 
+        />
+      </b-col>
+      <b-col>
+        <NexRaceTimeTable />
+        <b-row class="next-race-last-top">
+          <CircuitLastList
+            :title="winnersTitle"
+            :drivers="winners" 
+          />
+          <CircuitLastList
+            class="no-display-when-tablet"
+            :title="polesTitle"
+            :drivers="poles" 
+          />
+        </b-row>
+      </b-col>
+    </b-row>
   </b-container>
-</template>     
+</template>
 
 <script>
-import NextRaceTrackInfo from '../../components/UpcomingRace/NextRace/NextRaceTrackInfo.vue'
-import TrackLastWinners from '../../components/UpcomingRace/NextRace/TrackLastWinners.vue'
+import NextCircuitTrackInfo from '../../components/UpcomingRace/NextRace/NextRaceCircuitInfo.vue'
+import NexRaceTimeTable from '../../components/UpcomingRace/NextRace/NexRaceTimeTable.vue'
+import CircuitLastList from '../../components/UpcomingRace/NextRace/CircuitLastList.vue'
 
 import apiCallsMixin from '../../mixins/apiCallsMixin.js'
+
+const winnersTitle = "Last Winners"
+const polesTitle = "Last Poles"
+const winners = [
+  {
+    year: 2021,
+    name: "Max Verstappen",
+    constructor: "Red Bull",
+    colorCode: "red_bull"
+  },
+  {
+    year: 2020,
+    name: "Lewis Hamilton",
+    constructor: "Mercedes",
+    colorCode: "mercedes"
+  },
+    {
+    year: 2019,
+    name: "Charles LeClerec",
+    constructor: "Ferrari",
+    colorCode: "ferrari"
+  },
+    {
+    year: 2018,
+    name: "Sebastian Vettel",
+    constructor: "Ferrari",
+    colorCode: "ferrari"
+  },
+    {
+    year: 2017,
+    name: "Lewis Hamilton",
+    constructor: "Mercedes",
+    colorCode: "mercedes"
+  }
+]
+const poles = [
+  {
+    year: 2021,
+    name: "Max Verstappen",
+    constructor: "Red Bull",
+    colorCode: "red_bull"
+  },
+  {
+    year: 2020,
+    name: "Lewis Hamilton",
+    constructor: "Mercedes",
+    colorCode: "mercedes"
+  },
+    {
+    year: 2019,
+    name: "Charles LeClerec",
+    constructor: "Ferrari",
+    colorCode: "ferrari"
+  },
+    {
+    year: 2018,
+    name: "Lewis Hamilton",
+    constructor: "Mercedes",
+    colorCode: "mercedes"
+  },
+    {
+    year: 2017,
+    name: "Lewis Hamilton",
+    constructor: "Mercedes",
+    colorCode: "mercedes"
+  }
+]
 
 export default {
   name: 'NextRace',
   components: {
-    NextRaceTrackInfo,
-    TrackLastWinners
+    NextCircuitTrackInfo,
+    NexRaceTimeTable,
+    CircuitLastList
   },
   data() {
     return {
       getNextRace: 'nextRace',
       nextRace: null,
       nextRaceDataLoaded: false,
-      // latestWinnersDataLoaded: false,
-      // nextRaceTrackName: null,
-      // nextRaceTrackId: null,
-      // season: null,
-      // latestWinners: []
+      winnersTitle: winnersTitle,
+      winners: winners,
+      polesTitle: polesTitle,
+      poles: poles
     }
   },
   async created() {
@@ -55,37 +136,10 @@ export default {
 
     // Set dataloaded variable(s) to true
     this.nextRaceDataLoaded = responseNextRace.dataLoaded
-
-    //this.nextRaceTrackName = this.nextRace.Circuit.circuitName
-    // this.nextRaceTrackId = this.nextRace.Circuit.circuitId
-    // this.season = Number(this.nextRace.season)
-    //console.log("NEXT:", this.nextRace)
-
-    //this.getResult(this.season, this.nextRaceTrackId)
-  },
-  methods: {
-    async getResult(season, track) {
-      let fiveYearsBack = season - 5
-      //let latestWinners = []
-
-      while (season != fiveYearsBack) {
-        season--
-        let responseResult = await this.getResultPerTrack(season, track)
-        //console.log("responseResult", responseResult)
-
-        for (let i = 0; i < responseResult.length; i++) {
-          this.latestWinners.push(responseResult[i])
-        }
-      }
-      this.latestWinnersDataLoaded = true
-    }
   },
   mixins: [apiCallsMixin]
 }
 </script>
 
 <style scoped>
-  .next-race-row {
-    margin-bottom: 3em;
-  }
 </style>

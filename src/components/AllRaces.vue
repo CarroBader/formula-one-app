@@ -15,10 +15,11 @@
             class="all-races-flag-img"
           />
           <div class="all-races-info">
-            <h4>{{ race.Circuit.Location.country }}</h4>
-            <h4>{{ race.raceName }} {{ race.season }}</h4>
-            <h4>{{ race.date }}</h4>
-            <h4>{{ convertRaceTime(race.time) }}</h4>
+            <!-- <h4>{{ race.Circuit.Location.country }}</h4>
+            <h4>{{ race.raceName }} {{ race.season }}</h4> -->
+            <h4>{{ race.monthName }}</h4>
+            <!-- <h4>{{ convertRaceTime(race.time) }}</h4> -->
+            <h4>{{ race.dayNumber }}</h4>
           </div>
         </div>
       </div>
@@ -77,7 +78,32 @@ export default {
     this.allRacesCurrentSeason = responseAllRaces.allRaces
     this.swiperOptions.initialSlide = Number(responseNextRace.nextRace.round) - 1 // Subtract from round because it is one based numbering and not zero as the swiper
 
-    // Set value for the dataloaded varibles (true)
+    this.allRacesCurrentSeason.map(race => {
+      console.log(race)
+      let lol = race.date
+      
+      //console.log("Lol:", lol)
+      //console.log("Type of lol: ", typeof(lol))
+
+      var date = new Date(lol);
+      const month = date.toLocaleString('default', { month: 'short' });
+      //console.log(month);
+
+      const day = date.getDate()
+      //console.log(day);
+
+      race.monthName = month
+      race.dayNumber = day
+
+
+      console.log(race)
+      //console.log(race.date)
+
+
+      // https://stackoverflow.com/questions/1643320/get-month-name-from-date/18648314#18648314
+    });
+
+   // Set value for the dataloaded varibles (true)
     this.allRacesDataLoaded = responseAllRaces.dataLoaded
     this.nextRaceDataLoaded = responseNextRace.dataLoaded
   },

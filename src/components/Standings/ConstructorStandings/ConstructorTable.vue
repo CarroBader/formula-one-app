@@ -48,7 +48,7 @@
           class="constructor-table-tbody"
         >
           <tr>
-            <td class="constructor-table-td darkgrey-text">{{ constructor.position }}</td>
+            <td class="constructor-table-td extra-dark-grey">{{ constructor.position }}</td>
             <td
               class="constructor-table-td"
               :class="getConstructorColor(constructor.Constructor.constructorId)"

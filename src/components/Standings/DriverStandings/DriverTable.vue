@@ -56,7 +56,7 @@
             class="driver-table-tbody"
           >
             <tr>
-              <td class="driver-table-td darkgrey-text">{{ driver.position }}</td>
+              <td class="driver-table-td extra-dark-grey">{{ driver.position }}</td>
               <td class="driver-table-td">{{ driver.Driver.givenName }} {{ driver.Driver.familyName }}</td>
               <td class="driver-table-td">
                 <img

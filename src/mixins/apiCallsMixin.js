@@ -86,7 +86,7 @@ export default {
     */
       try {
        //const response = await axios.get(`${baseUrl}${season}/${currentRound}/qualifying.json`)
-       const response = await axios.get(`${baseUrl}${season}/11/qualifying.json`)
+       const response = await axios.get(`${baseUrl}${season}/12/qualifying.json`)
        let qualiForRace = response.data.MRData.RaceTable.Races
        if (qualiForRace.length != 0) {
          return {
@@ -132,27 +132,5 @@ export default {
         console.error(e)
       } 
     }
-        // async getResultPerTrack(season, track) {
-    //   try {
-    //     const response = await axios.get(`${baseUrl}${season}/circuits/${track}/results.json`)
-    //     this.result = response.data.MRData.RaceTable.Races
-
-    //     let winnerPerSeasonArray = []
-
-    //     if (this.result.length > 1) {
-    //       this.result.reverse()
-    //     }
-    //     for (let i = 0; i < this.result.length; i++) {
-    //       winnerPerSeasonArray.push({
-    //         season: this.result[i].season,
-    //         winner: this.result[i].Results[0].Driver.familyName
-    //       })
-    //     }
-    //     return winnerPerSeasonArray
-
-    //   } catch(e) {
-    //     console.error(e)
-    //   }
-    // },
   }
 }
