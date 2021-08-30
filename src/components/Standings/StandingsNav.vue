@@ -1,7 +1,7 @@
 <template>
     <b-navbar toggleable="md navbar-sub">
         <b-navbar-nav class="navbar-nav-sub">
-            <router-link 
+            <router-link
               v-for="route in routes"
               :key="route.path"
               :to="route.path"
@@ -15,16 +15,15 @@
 
 <script>
 export default {
-  name: 'StandingsNav',
+  name: `StandingsNav`,
   data() {
     return {
-      routes: this.$router.options.routes[1].children
+      routes: this.$router.options.routes[1].children,
     }
-  }
+  },
 }
 </script>
 
 <style scoped>
 
 </style>
-

@@ -1,7 +1,7 @@
 <template>
     <b-navbar toggleable="md navbar-top">
-      <img 
-        src="../../assets/logo.png" 
+      <img
+        src="../../assets/logo.png"
         class="nav-logo-top" alt="F1 logo"
       >
       <b-navbar-brand class="nav-title-top">Formula One</b-navbar-brand>
@@ -10,8 +10,8 @@
 
       <b-collapse id="nav-collapse" class="nav-collapse-top" is-nav>
           <b-navbar-nav class="navbar-nav-top">
-              <router-link 
-                v-for="route in routes" 
+              <router-link
+                v-for="route in routes"
                 :key="route.path"
                 :to="route.path"
                 class="nav-link nav-link-top"
@@ -25,18 +25,18 @@
 
 <script>
 export default {
-  name: 'TopNav',
+  name: `TopNav`,
   data() {
     return {
-      routes: this.$router.options.routes
+      routes: this.$router.options.routes,
     }
   },
   props: {
-    nextRaceName: String
+    nextRaceName: String,
   },
   beforeMount() {
     this.routes[0].name = this.nextRaceName
-  }
+  },
 }
 </script>
 

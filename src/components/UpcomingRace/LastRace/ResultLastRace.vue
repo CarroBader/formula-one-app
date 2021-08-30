@@ -44,7 +44,7 @@
               </td>
               <td
                 class="result-last-race-td"
-                :class="getConstructorColor(race.Constructor.constructorId)" 
+                :class="getConstructorColor(race.Constructor.constructorId)"
               >
                 {{ race.Constructor.name }}
               </td>
@@ -52,7 +52,7 @@
               <td v-if="fastestLap(race.FastestLap)">
                 <img
                   src="../../../assets/img/icons/fastest_lap.png"
-                  class="fastest-lap-img" 
+                  class="fastest-lap-img"
                 />
               </td>
             </tr>
@@ -67,22 +67,25 @@
 import apiCallsMixin from '../../../mixins/apiCallsMixin.js'
 import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin.js'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
+import getImageMixin from '../../../mixins/getImageMixin.js'
+
+const imgFolder = `icons`
 
 export default {
-  name: 'ResultLastRace',
+  name: `ResultLastRace`,
   data() {
     return {
-      getLastRace: 'lastRace',
+      getLastRace: `lastRace`,
       lastRace: null,
-      lastRaceDataLoaded: false
+      lastRaceDataLoaded: false,
     }
   },
   async created() {
     // Get last race
-    let responseLastRace = await this.getRaces(this.getLastRace)
+    const responseLastRace = await this.getRaces(this.getLastRace)
 
     // Get last race result
-    let responseLastRaceResult = await this.getRaceResult(responseLastRace.season, responseLastRace.round)
+    const responseLastRaceResult = await this.getRaceResult(responseLastRace.season, responseLastRace.round)
 
     // Set value on data properties
     this.lastRace = responseLastRaceResult.lastRaceResult
@@ -96,26 +99,26 @@ export default {
       Check if position change happened.
       Return an img with the correct symbol.
     */
-      let positionSymbol = grid != position ? 'arrow' : 'line'
+      const positionSymbol = grid != position ? `arrow` : `line`
 
-      return require(`../../../assets/img/icons/${positionSymbol}.png`)
+      return this.getImageMixin(imgFolder, positionSymbol)
     },
     getSymbolClass(grid, position) {
     /*
       Return the class that matches the position change.
     */
-      let start = Number(grid)
-      let end = Number(position)
-      return start == end ? 'same-position' : (start < end ? "lost-position" : "gained-position");
+      const start = Number(grid)
+      const end = Number(position)
+      return start == end ? `same-position` : (start < end ? `lost-position` : `gained-position`)
     },
     fastestLap(fastestLap) {
     /*
       Return true if the driver got the fastest lap.
     */
-      return fastestLap != undefined && fastestLap.rank == "1" ? true : false
-    }
+      return !!(fastestLap != undefined && fastestLap.rank == `1`)
+    },
   },
-  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin]
+  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin, getImageMixin],
 }
 </script>
 
@@ -135,9 +138,9 @@ export default {
   .same-position {
     height: 1em;
     width: 1em;
-    -webkit-filter: invert(100%) 
-    sepia() 
-    saturate(100%) 
+    -webkit-filter: invert(100%)
+    sepia()
+    saturate(100%)
     hue-rotate(0deg)
   }
 
@@ -145,11 +148,11 @@ export default {
     height: 1em;
     width: 1em;
     -webkit-filter: invert(40%)
-    grayscale(100%) 
-    brightness(55%) 
-    sepia(100%) 
-    hue-rotate(-50deg) 
-    saturate(400%) 
+    grayscale(100%)
+    brightness(55%)
+    sepia(100%)
+    hue-rotate(-50deg)
+    saturate(400%)
     contrast(2);
   }
 
@@ -157,12 +160,12 @@ export default {
     height: 1em;
     width: 1em;
     transform: scaleY(-1);
-    -webkit-filter: invert(40%) 
-    grayscale(100%) 
-    brightness(70%) 
-    sepia(100%) 
-    hue-rotate(50deg) 
-    saturate(400%) 
+    -webkit-filter: invert(40%)
+    grayscale(100%)
+    brightness(70%)
+    sepia(100%)
+    hue-rotate(50deg)
+    saturate(400%)
     contrast(2);
   }
 </style>

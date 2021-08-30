@@ -29,15 +29,15 @@
 </template>
 
 <script>
-//import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-//import 'swiper/swiper-bundle.css'
+// import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+// import 'swiper/swiper-bundle.css'
 
 import apiCallsMixin from '../mixins/apiCallsMixin.js'
 import getCountryFlagMixin from '../mixins/getCountryFlagMixin.js'
 import convertRaceTimeMixin from '../mixins/convertRaceTimeMixin.js'
 
 export default {
-  name: 'AllRaces',
+  name: `AllRaces`,
   components: {
     // Swiper,
     // SwiperSlide
@@ -47,10 +47,10 @@ export default {
   // },
   data() {
     return {
-      getAllRaces: 'allRaces',
+      getAllRaces: `allRaces`,
       allRacesCurrentSeason: null,
       allRacesDataLoaded: false,
-      getNextRace: 'nextRace',
+      getNextRace: `nextRace`,
       nextRace: null,
       nextRaceDataLoaded: false,
       // Options : {
@@ -70,41 +70,39 @@ export default {
   },
   async created() {
     // Get all races of the current season
-    let responseAllRaces = await this.getRaces(this.getAllRaces)
+    const responseAllRaces = await this.getRaces(this.getAllRaces)
 
     // Get next race
-    let responseNextRace = await this.getRaces(this.getNextRace)
+    const responseNextRace = await this.getRaces(this.getNextRace)
 
     // Set value to other data properties
     this.allRacesCurrentSeason = responseAllRaces.allRaces
-   //this.swiperOptions.initialSlide = Number(responseNextRace.nextRace.round) - 1 // Subtract from round because it is one based numbering and not zero as the swiper
+    // this.swiperOptions.initialSlide = Number(responseNextRace.nextRace.round) - 1 // Subtract from round because it is one based numbering and not zero as the swiper
 
-    this.allRacesCurrentSeason.map(race => {
+    this.allRacesCurrentSeason.map((race) => {
       console.log(race)
-      let lol = race.date
-      
-      //console.log("Lol:", lol)
-      //console.log("Type of lol: ", typeof(lol))
+      const lol = race.date
 
-      var date = new Date(lol);
-      const month = date.toLocaleString('default', { month: 'short' });
-      //console.log(month);
+      // console.log("Lol:", lol)
+      // console.log("Type of lol: ", typeof(lol))
+
+      const date = new Date(lol)
+      const month = date.toLocaleString(`default`, { month: `short` })
+      // console.log(month);
 
       const day = date.getDate()
-      //console.log(day);
+      // console.log(day);
 
       race.monthName = month
       race.dayNumber = day
 
-
       console.log(race)
-      //console.log(race.date)
-
+      // console.log(race.date)
 
       // https://stackoverflow.com/questions/1643320/get-month-name-from-date/18648314#18648314
-    });
+    })
 
-   // Set value for the dataloaded varibles (true)
+    // Set value for the dataloaded varibles (true)
     this.allRacesDataLoaded = responseAllRaces.dataLoaded
     this.nextRaceDataLoaded = responseNextRace.dataLoaded
   },
@@ -113,15 +111,15 @@ export default {
     /*
       Add expand-div-active on the chosen element. If it already exists on another element it will remove it.
     */
-      let activeRaceDiv = document.querySelector(".expand-div-active")
+      const activeRaceDiv = document.querySelector(`.expand-div-active`)
 
       if (activeRaceDiv !== null) {
-        activeRaceDiv.classList.remove('expand-div-active')
+        activeRaceDiv.classList.remove(`expand-div-active`)
       }
-      e.target.classList.add('expand-div-active')
-    }
+      e.target.classList.add(`expand-div-active`)
+    },
   },
-  mixins: [apiCallsMixin, getCountryFlagMixin, convertRaceTimeMixin]
+  mixins: [apiCallsMixin, getCountryFlagMixin, convertRaceTimeMixin],
 }
 </script>
 

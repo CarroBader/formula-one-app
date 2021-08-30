@@ -24,31 +24,31 @@
           <tr>
             <td class="qualification-session-td extra-dark-grey">{{ quali.position }}</td>
             <td class="qualification-session-td browser-view">{{ quali.Driver.givenName }} {{ quali.Driver.familyName }}</td>
-            <td 
+            <td
               class="qualification-session-td mobile-view"
               :class="getConstructorColor(quali.Constructor.constructorId)"
             >
               {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
             </td>
-            <td 
+            <td
               class="qualification-session-td no-display-when-mobile"
               :class="getConstructorColor(quali.Constructor.constructorId)"
-            > 
+            >
               {{ quali.Constructor.name }}
             </td>
-            <td 
+            <td
               class="qualification-session-td q1 light-grey"
               :class="qualiOne(index)"
             >
               {{ quali.Q1 }}
             </td>
-            <td 
+            <td
               class="qualification-session-td q2 medium-grey"
               :class="qualiTwo(index)"
             >
               {{ quali.Q2 }}
             </td>
-            <td 
+            <td
               class="qualification-session-td dark-grey"
               :class="qualiThree(index)"
             >
@@ -66,10 +66,10 @@
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
 
 export default {
-  name: 'QualificationSession',
+  name: `QualificationSession`,
   props: {
     qualificationResult: Array,
-    nextRaceName: String
+    nextRaceName: String,
   },
   methods: {
     qualiOne(index) {
@@ -78,9 +78,9 @@ export default {
       Returns a class that matches the result.
     */
       if (this.qualificationResult[index].Q2 !== undefined && this.qualificationResult[index].Q3 === undefined) {
-        return this.qualificationResult[index].Q1 < this.qualificationResult[index].Q2 ? "green" : ""
-      } else if (this.qualificationResult[index].Q2 === undefined && this.qualificationResult[index].Q3 === undefined) {
-        return "green"
+        return this.qualificationResult[index].Q1 < this.qualificationResult[index].Q2 ? `green` : ``
+      } if (this.qualificationResult[index].Q2 === undefined && this.qualificationResult[index].Q3 === undefined) {
+        return `green`
       }
     },
     qualiTwo(index) {
@@ -89,9 +89,9 @@ export default {
       Returns a class that matches the result.
     */
       if (this.qualificationResult[index].Q3 === undefined) {
-        return this.qualificationResult[index].Q2 < this.qualificationResult[index].Q1 ? "green" : ""
-      } else if (this.qualificationResult[index].Q3 !== undefined) {
-        return this.qualificationResult[index].Q2 < this.qualificationResult[index].Q3 ? "green" : ""
+        return this.qualificationResult[index].Q2 < this.qualificationResult[index].Q1 ? `green` : ``
+      } if (this.qualificationResult[index].Q3 !== undefined) {
+        return this.qualificationResult[index].Q2 < this.qualificationResult[index].Q3 ? `green` : ``
       }
     },
     qualiThree(index) {
@@ -99,10 +99,10 @@ export default {
       Checks if Q3 contains a drivers fastest time.
       Returns a class that matches the result.
     */
-      return this.qualificationResult[index].Q3 < this.qualificationResult[index].Q1 && this.qualificationResult[index].Q3 < this.qualificationResult[index].Q2 ? "green" : ""
-    }
+      return this.qualificationResult[index].Q3 < this.qualificationResult[index].Q1 && this.qualificationResult[index].Q3 < this.qualificationResult[index].Q2 ? `green` : ``
+    },
   },
-  mixins: [getConstructorColorMixin]
+  mixins: [getConstructorColorMixin],
 }
 </script>
 
@@ -110,7 +110,7 @@ export default {
   tbody {
     border-bottom: 1px solid #fff;
   }
-  
+
   .qualification-session-headline-div {
     margin: 0.5em 0 2em;
   }

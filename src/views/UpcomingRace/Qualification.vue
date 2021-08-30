@@ -18,23 +18,23 @@ import QualificationSession from '../../components/UpcomingRace/Qualification/Qu
 import apiCallsMixin from '../../mixins/apiCallsMixin.js'
 
 export default {
-  name: 'Qualification',
+  name: `Qualification`,
   components: {
-    QualificationSession
+    QualificationSession,
   },
   data() {
     return {
-      getNextRace: 'nextRace',
+      getNextRace: `nextRace`,
       nextRaceName: null,
       qualificationDataLoaded: false,
       season: null,
       thisRound: null,
-      qualificationResult: null
+      qualificationResult: null,
     }
   },
   async created() {
     // Get next race
-    let responseNextRace = await this.getRaces(this.getNextRace)
+    const responseNextRace = await this.getRaces(this.getNextRace)
 
     // Set value on data properties
     this.nextRaceName = responseNextRace.nextRace.raceName
@@ -45,11 +45,11 @@ export default {
   },
   methods: {
     async getNextRaceQualification(season, round) {
-    /* 
+    /*
       Set value on qualificationResult and qualificationDataLoaded.
     */
       // Get next race qualification result
-      let responseQualification = await this.getNextRaceQualificationResult(season, round)
+      const responseQualification = await this.getNextRaceQualificationResult(season, round)
 
       // Set value on data properties
       // Oklart än om det räcker med bara resultatet, ta bort QualifyingResults om mer infor behövs
@@ -57,9 +57,9 @@ export default {
 
       // Set dataloaded variable(s) to true
       this.qualificationDataLoaded = responseQualification.dataLoaded
-    }
+    },
   },
-  mixins: [apiCallsMixin]
+  mixins: [apiCallsMixin],
 }
 </script>
 

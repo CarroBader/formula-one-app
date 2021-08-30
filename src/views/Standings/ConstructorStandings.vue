@@ -12,10 +12,10 @@
 import ConstructorTable from '../../components/Standings/ConstructorStandings/ConstructorTable.vue'
 
 export default {
-  name: 'ConstructorStandings',
+  name: `ConstructorStandings`,
   components: {
-    ConstructorTable
-  }
+    ConstructorTable,
+  },
 }
 </script>
 

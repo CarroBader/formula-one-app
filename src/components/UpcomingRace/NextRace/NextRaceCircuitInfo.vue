@@ -6,7 +6,7 @@
         {{ nextRace.Circuit.Location.locality }},
         {{ nextRace.Circuit.Location.country }}</h5>
       <img
-        :src="getCircuitImage()"
+        :src="getImageMixin(imgFolder, nextRace.Circuit.circuitId)"
         :alt='`${nextRace.Circuit.circuitName}`'
         class="next-race-circuit-info-circuit-img"
       />
@@ -46,22 +46,21 @@
 
 <script>
 import convertRaceTimeMixin from '../../../mixins/convertRaceTimeMixin.js'
+import getImageMixin from '../../../mixins/getImageMixin.js'
+
+const imgFolder = `circuits`
 
 export default {
-  name: 'NextRaceCircuitInfo',
+  name: `NextRaceCircuitInfo`,
   props: {
-    nextRace: Object
+    nextRace: Object,
   },
-  methods: {
-    getCircuitImage() {
-    /*
-      Get circuit img.
-    */
-      return require(`../../../assets/img/circuits/${this.nextRace.Circuit.circuitId}.png`)
-      //return require(`../../../assets/img/circuits/spa.png`)
+  data() {
+    return {
+      imgFolder,
     }
   },
-  mixins: [convertRaceTimeMixin]
+  mixins: [convertRaceTimeMixin, getImageMixin],
 }
 </script>
 

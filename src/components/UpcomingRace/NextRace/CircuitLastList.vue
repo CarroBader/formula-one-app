@@ -24,7 +24,7 @@
                 {{ driver.constructor }}
               </span>
             </td>
-            <td 
+            <td
               v-else
               class="circuit-last-list-td dark-grey">
               <span class="circuit-last-list-fastest-lap">
@@ -42,12 +42,12 @@
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
 
 export default {
-  name: 'CircuitLastList',
+  name: `CircuitLastList`,
   props: {
     title: String,
-    drivers: Array
+    drivers: Array,
   },
-  mixins: [getConstructorColorMixin]
+  mixins: [getConstructorColorMixin],
 }
 </script>
 

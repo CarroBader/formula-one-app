@@ -6,16 +6,16 @@
       </div>
     </div>
   </b-container>
-</template>     
+</template>
 
 <script>
 import MainRace from '../../components/UpcomingRace/Race/MainRace.vue'
 
 export default {
-  name: 'Race',
+  name: `Race`,
   components: {
-    MainRace
-  }
+    MainRace,
+  },
 }
 </script>
 

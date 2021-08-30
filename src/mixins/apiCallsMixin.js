@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { baseUrl } from '../vars'
 
-var comingRaces = []
-var pastRaces = []
-var todaysDate
+const comingRaces = []
+const pastRaces = []
+let todaysDate
 
 export default {
   methods: {
@@ -19,38 +19,37 @@ export default {
 
         this.allRaces = response.data.MRData.RaceTable.Races
 
-        if (para == 'allRaces') {
+        if (para == `allRaces`) {
           return {
             allRaces: this.allRaces,
-            dataLoaded: true
-          }
-        } else {
-          todaysDate = this.getTodaysDate()
-          this.allRaces.map(race => {
-            let raceDate = Date.parse(race.date);
-            if (raceDate >= todaysDate) {
-              comingRaces.push(race)
-            } else {
-              pastRaces.push(race)
-            }
-          });
-
-          if (para == 'lastRace') {
-            let lr = pastRaces.slice(-1)[0]
-            return {
-              season: lr.season,
-              round: lr.round
-            }
-          }
-  
-          if (para == 'nextRace') {
-            return {
-              nextRace: comingRaces[0],
-              dataLoaded: true
-            }
+            dataLoaded: true,
           }
         }
-      } catch(e) {
+        todaysDate = this.getTodaysDate()
+        this.allRaces.map((race) => {
+          const raceDate = Date.parse(race.date)
+          if (raceDate >= todaysDate) {
+            comingRaces.push(race)
+          } else {
+            pastRaces.push(race)
+          }
+        })
+
+        if (para == `lastRace`) {
+          const lr = pastRaces.slice(-1)[0]
+          return {
+            season: lr.season,
+            round: lr.round,
+          }
+        }
+
+        if (para == `nextRace`) {
+          return {
+            nextRace: comingRaces[0],
+            dataLoaded: true,
+          }
+        }
+      } catch (e) {
         console.error(e)
       }
     },
@@ -58,10 +57,10 @@ export default {
     /*
       Return the date of today.
     */
-      let dateToday = new Date(new Date().getTime()
-      - new Date().getTimezoneOffset() * 60000).toISOString().substr(0, 10);
+      const dateToday = new Date(new Date().getTime()
+      - new Date().getTimezoneOffset() * 60000).toISOString().substr(0, 10)
 
-      return Date.parse(dateToday);
+      return Date.parse(dateToday)
     },
     async getRaceResult(season, lastRound) {
     /*
@@ -73,64 +72,61 @@ export default {
 
         return {
           lastRaceResult: this.race,
-          dataLoaded: true
+          dataLoaded: true,
         }
-
-      } catch(e) {
+      } catch (e) {
         console.error(e)
       }
     },
     async getNextRaceQualificationResult(season, currentRound) {
-    /* 
+    /*
       Return the qulification result of the next race.
     */
       try {
-       //const response = await axios.get(`${baseUrl}${season}/${currentRound}/qualifying.json`)
-       const response = await axios.get(`${baseUrl}${season}/12/qualifying.json`)
-       let qualiForRace = response.data.MRData.RaceTable.Races
-       if (qualiForRace.length != 0) {
-         return {
-          nextRaceQualification: response.data.MRData.RaceTable.Races[0],
-          dataLoaded: true
-         }
-       }
-     } catch(e) {
-       console.error(e)
-     }     
+        // const response = await axios.get(`${baseUrl}${season}/${currentRound}/qualifying.json`)
+        const response = await axios.get(`${baseUrl}${season}/12/qualifying.json`)
+        const qualiForRace = response.data.MRData.RaceTable.Races
+        if (qualiForRace.length != 0) {
+          return {
+            nextRaceQualification: response.data.MRData.RaceTable.Races[0],
+            dataLoaded: true,
+          }
+        }
+      } catch (e) {
+        console.error(e)
+      }
     },
     async getDriverStandings() {
-    /* 
+    /*
       Return current driver standing.
     */
       try {
         const response = await axios.get(`${baseUrl}current/driverStandings.json`)
-        this.driverStandings = response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings 
+        this.driverStandings = response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
 
         return {
           standingsDriver: this.driverStandings,
-          dataLoaded: true
+          dataLoaded: true,
         }
-
-      } catch(e) {
+      } catch (e) {
         console.error(e)
-      } 
+      }
     },
     async getConstructorStandings() {
-    /* 
+    /*
       Return current constructor standing.
     */
       try {
         const response = await axios.get(`${baseUrl}current/constructorStandings.json`)
-        this.constructorStandings = response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings 
+        this.constructorStandings = response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings
 
         return {
           standingsConstructor: this.constructorStandings,
-          dataLoaded: true
+          dataLoaded: true,
         }
-
-      } catch(e) {
+      } catch (e) {
         console.error(e)
-      } 
-    }
-  }
+      }
+    },
+  },
 }

@@ -6,16 +6,16 @@
       </div>
     </div>
   </b-container>
-</template>     
+</template>
 
 <script>
 import ResultLastRace from '../../components/UpcomingRace/LastRace/ResultLastRace.vue'
 
 export default {
-  name: 'LastRace',
+  name: `LastRace`,
   components: {
-    ResultLastRace
-  }
+    ResultLastRace,
+  },
 }
 </script>
 

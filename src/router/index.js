@@ -16,68 +16,68 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/grand-prix/',
-    name: 'undefined',
-    icon: 'flag-checkered',
+    path: `/grand-prix/`,
+    name: `undefined`,
+    icon: `flag-checkered`,
     component: UpcomingRace,
     children: [
       {
-        path: '/grand-prix/last-race',
-        name: 'Last Race',
-        component: LastRace
+        path: `/grand-prix/last-race`,
+        name: `Last Race`,
+        component: LastRace,
       },
       {
-        path: '/grand-prix/upcoming-race',
-        name: 'Upcoming Race',
-        component: NextRace
+        path: `/grand-prix/upcoming-race`,
+        name: `Upcoming Race`,
+        component: NextRace,
       },
       {
-        path: '/grand-prix/practice',
-        name: 'Practice',
-        component: Practice
+        path: `/grand-prix/practice`,
+        name: `Practice`,
+        component: Practice,
       },
       {
-        path: '/grand-prix/qualification',
-        name: 'Qualification',
-        component: Qualification
+        path: `/grand-prix/qualification`,
+        name: `Qualification`,
+        component: Qualification,
       },
       {
-        path: '/grand-prix/race',
-        name: 'Race',
-        component: Race
+        path: `/grand-prix/race`,
+        name: `Race`,
+        component: Race,
       },
-    ]
+    ],
   },
   {
-    path: '/standings',
-    name: 'Standings',
-    icon: 'table',
+    path: `/standings`,
+    name: `Standings`,
+    icon: `table`,
     component: Standings,
     children: [
       {
-        path: '/driver-standings',
-        name: 'Driver Standings',
-        component: DriverStandings
+        path: `/driver-standings`,
+        name: `Driver Standings`,
+        component: DriverStandings,
       },
       {
-        path: '/constructor-standings',
-        name: 'Constructor Standings',
-        component: ConstructorStandings
+        path: `/constructor-standings`,
+        name: `Constructor Standings`,
+        component: ConstructorStandings,
       },
-    ]
+    ],
   },
   {
-    path: '/map',
-    name: 'Map',
-    icon: 'globe-europe',
-    component: Map
+    path: `/map`,
+    name: `Map`,
+    icon: `globe-europe`,
+    component: Map,
   },
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: `history`,
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
 export default router

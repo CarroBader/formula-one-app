@@ -6,7 +6,7 @@
       <h5 class="next-race-time-table-date red">27 August - 29 August</h5>
       <b-row>
         <b-col class="
-          next-race-time-table-col 
+          next-race-time-table-col
           next-race-time-table-col-left"
         >
           <!-- Table One -->
@@ -22,7 +22,7 @@
                 <span class="next-race-time-table-time">11:30-12:30</span>
               </td>
             </tbody>
-            
+
             <tbody class="next-race-time-table-border">
               <td class="next-race-time-table-td">
                 <span class="next-race-time-table-event">Practice 2</span>
@@ -36,7 +36,7 @@
             </tbody>
 
             <tbody>
-              <td class="next-race-time-table-td">             
+              <td class="next-race-time-table-td">
                 <span class="next-race-time-table-event">Practice 3</span>
               </td>
               <td class="next-race-time-table-td">
@@ -63,7 +63,7 @@
                 <span class="next-race-time-table-time">11:30-12:30</span>
               </td>
             </tbody>
-            
+
             <tbody>
               <td class="next-race-time-table-td">
                 <span class="next-race-time-table-event">Race</span>
@@ -86,7 +86,7 @@
 <script>
 
 export default {
-  name: 'NexRaceTimeTable',
+  name: `NexRaceTimeTable`,
   props: {
 
   },

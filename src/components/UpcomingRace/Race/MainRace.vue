@@ -7,7 +7,7 @@
 <script>
 
 export default {
-  name: 'MainRace',
+  name: `MainRace`,
   props: {
 
   },

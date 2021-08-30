@@ -1,18 +1,18 @@
 <template>
   <b-container class="view-container">
     <UpcomingRaceNav />
-    <router-view /> 
+    <router-view />
   </b-container>
-</template>     
+</template>
 
 <script>
 import UpcomingRaceNav from '../components/UpcomingRace/UpcomingRaceNav.vue'
 
 export default {
-  name: 'UpcomingRace',
+  name: `UpcomingRace`,
   components: {
-    UpcomingRaceNav
-  }
+    UpcomingRaceNav,
+  },
 }
 </script>
 

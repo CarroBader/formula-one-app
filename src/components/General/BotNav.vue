@@ -1,8 +1,8 @@
 <template>
     <div class="bot-nav">
         <router-link
-          v-for="route in routes" 
-          :key="route.path" 
+          v-for="route in routes"
+          :key="route.path"
           :to="route.path"
           class="bot-nav-link"
         >
@@ -15,12 +15,12 @@
 
 <script>
 export default {
-  name: 'BotNav',
+  name: `BotNav`,
   data() {
     return {
-      routes: this.$router.options.routes
+      routes: this.$router.options.routes,
     }
-  }
+  },
 }
 </script>
 

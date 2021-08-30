@@ -13,7 +13,7 @@
           class="leader-div"
         >
           <img
-            :src='getConstructerPhoto(topConstructor.Constructor.constructorId)'
+            :src='getImageMixin(imgFolder, topConstructor.Constructor.constructorId)'
             class='leader-constructor-img'
           />
           <div class="leaders-constructor-info">
@@ -25,8 +25,8 @@
                 class="leader-constructor-flag-img"
               />
             </div>
-            <h5 
-              class="leader-constructor-name-team" 
+            <h5
+              class="leader-constructor-name-team"
               :class="getConstructorColor(topConstructor.Constructor.constructorId)"
             >
               {{ topConstructor.Constructor.name }}
@@ -74,21 +74,24 @@
 import apiCallsMixin from '../../../mixins/apiCallsMixin.js'
 import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin.js'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
+import getImageMixin from '../../../mixins/getImageMixin.js'
 
-const divsTopThree = ["first", "second", "third"]
+const divsTopThree = [`first`, `second`, `third`]
+const imgFolder = `constructers`
 
 export default {
-  name: 'ConstructorTable',
+  name: `ConstructorTable`,
   data() {
     return {
       constructorStandings: null,
       constructorStandingsDataLoaded: false,
-      divsTopThree: divsTopThree
+      divsTopThree,
+      imgFolder,
     }
   },
   async created() {
     // Get current constructor standings
-    let responseConstructorStandings = await this.getConstructorStandings()
+    const responseConstructorStandings = await this.getConstructorStandings()
 
     // Set value on data properties
     this.constructorStandings = responseConstructorStandings.standingsConstructor
@@ -96,21 +99,17 @@ export default {
     // Set dataloaded variable(s) to true
     this.constructorStandingsDataLoaded = responseConstructorStandings.dataLoaded
   },
-  methods: {
-    getConstructerPhoto(constructor) {
-    /*
-      Return constructor photo.
-    */
-      return require(`../../../assets/img/constructers/${constructor}.png`)
-    }
-  },
-  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin]
+  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin, getImageMixin],
 }
 </script>
 
 <style scoped>
   table {
     width: 100%;
+  }
+
+  tbody {
+    border-bottom: 1px solid #fff;
   }
 
   .constructor-table-headline-div {

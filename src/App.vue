@@ -1,8 +1,8 @@
 <template>
   <div class="default-background-center">
-    <TopNav 
+    <TopNav
       :nextRaceName="nextRaceName"
-      v-if="nextRaceDataLoaded" 
+      v-if="nextRaceDataLoaded"
     />
     <router-view />
     <Footer />
@@ -18,22 +18,22 @@ import BotNav from './components/General/BotNav.vue'
 import apiCallsMixin from './mixins/apiCallsMixin.js'
 
 export default {
-  name: 'App',
+  name: `App`,
   components: {
     TopNav,
     Footer,
-    BotNav
+    BotNav,
   },
   data() {
     return {
-      getNextRace: 'nextRace',
+      getNextRace: `nextRace`,
       nextRaceName: null,
-      nextRaceDataLoaded: false
+      nextRaceDataLoaded: false,
     }
   },
   async created() {
     // Get next race
-    let responseNextRace = await this.getRaces(this.getNextRace)
+    const responseNextRace = await this.getRaces(this.getNextRace)
 
     // Set value on data properties
     this.nextRaceName = responseNextRace.nextRace.raceName
@@ -41,7 +41,7 @@ export default {
     // Set dataloaded variable(s) to true
     this.nextRaceDataLoaded = responseNextRace.dataLoaded
   },
-  mixins: [apiCallsMixin]
+  mixins: [apiCallsMixin],
 }
 </script>
 

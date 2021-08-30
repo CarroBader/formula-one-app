@@ -19,14 +19,14 @@
           >
           <tr>
             <td class="practice-session-td extra-dark-grey">{{ pThree.position }}</td>
-            <td 
+            <td
               class="practice-session-td"
               :class="getConstructorColor(pThree.car)">{{ pThree.number }}</td>
             <td class="practice-session-td">{{ pThree.name }}</td>
             <td class="practice-session-td practice-session-border-left dark-grey">{{ pThree.time }}</td>
             <td class="practice-session-td practice-session-border-left dark-red">{{ pThree.gap }}<span v-if="pThree.gap !== ''" class="practice-session-second">s</span></td>
             <td class="practice-session-td extra-dark-grey">{{ pThree.laps }}</td>
-            <!-- <td 
+            <!-- <td
               class="practice-session-td mobile-view"
               :class="getConstructorColor(quali.Constructor.constructorId)"
             >
@@ -44,11 +44,11 @@
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
 
 export default {
-  name: 'PracticeSessionThree',
+  name: `PracticeSessionThree`,
   props: {
-    practiceThree: Array
+    practiceThree: Array,
   },
-  mixins: [getConstructorColorMixin]
+  mixins: [getConstructorColorMixin],
 }
 </script>
 
@@ -73,7 +73,7 @@ export default {
   .practice-session-headline-div {
     margin: 0.5em 0 2em;
   }
-  
+
   .practice-session-tr {
 		font-size: 0.95em;
 	}

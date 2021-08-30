@@ -6,16 +6,16 @@
     </div>
   </div>
   </b-container>
-</template>     
+</template>
 
 <script>
 import RaceMap from '../components/RaceMap.vue'
 
 export default {
-  name: 'Map',
+  name: `Map`,
   components: {
-    RaceMap
-  }
+    RaceMap,
+  },
 }
 </script>
 

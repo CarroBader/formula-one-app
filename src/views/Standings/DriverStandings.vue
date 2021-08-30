@@ -12,10 +12,10 @@
 import DriverTable from '../../components/Standings/DriverStandings/DriverTable.vue'
 
 export default {
-  name: 'DriverStandings',
+  name: `DriverStandings`,
   components: {
-    DriverTable
-  }
+    DriverTable,
+  },
 }
 </script>
 

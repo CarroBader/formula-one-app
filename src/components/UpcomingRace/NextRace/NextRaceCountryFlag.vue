@@ -12,11 +12,11 @@
 import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin.js'
 
 export default {
-  name: 'NextRaceCountryFlag',
+  name: `NextRaceCountryFlag`,
   props: {
-    country: String
+    country: String,
   },
-  mixins: [getCountryFlagMixin]
+  mixins: [getCountryFlagMixin],
 }
 </script>
 

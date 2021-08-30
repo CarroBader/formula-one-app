@@ -14,7 +14,7 @@
         >
           <div class="parent">
             <img
-              :src='getDriverPhoto(topDriver.Driver.code)'
+              :src='getImageMixin(imgFolder, topDriver.Driver.code)'
               class='leader-driver-img'
             />
             <img
@@ -26,7 +26,7 @@
           <div class="leader-driver-info">
             <h3 class="leader-driver-points">{{ topDriver.points }} pts</h3>
             <h5 class="leader-driver-name-team leader-driver-name">
-              {{ topDriver.Driver.givenName }} 
+              {{ topDriver.Driver.givenName }}
               {{ topDriver.Driver.familyName }}
             </h5>
             <h6
@@ -84,21 +84,24 @@
 import apiCallsMixin from '../../../mixins/apiCallsMixin.js'
 import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin.js'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
+import getImageMixin from '../../../mixins/getImageMixin.js'
 
-const divsTopThree = ["first", "second", "third"]
+const divsTopThree = [`first`, `second`, `third`]
+const imgFolder = `drivers`
 
 export default {
-  name: 'DriverTable',
+  name: `DriverTable`,
   data() {
     return {
       driverStandings: null,
       driverStandingsDataLoaded: false,
-      divsTopThree: divsTopThree
+      divsTopThree,
+      imgFolder,
     }
   },
   async created() {
     // Get current driver standings
-    let responseDriverStandings = await this.getDriverStandings()
+    const responseDriverStandings = await this.getDriverStandings()
 
     // Set value on data properties
     this.driverStandings = responseDriverStandings.standingsDriver
@@ -106,21 +109,17 @@ export default {
     // Set dataloaded variable(s) to true
     this.driverStandingsDataLoaded = responseDriverStandings.dataLoaded
   },
-  methods: {
-    getDriverPhoto(driver) {
-    /*
-      Return driver photo.
-    */
-      return require(`../../../assets/img/drivers/${driver}.png`)
-    }
-  },
-  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin]
+  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin, getImageMixin],
 }
 </script>
 
 <style scoped>
   table {
     width: 100%;
+  }
+
+  tbody {
+    border-bottom: 1px solid #fff;
   }
 
   .driver-table-headline-div {

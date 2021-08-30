@@ -3,16 +3,16 @@
     <StandingsNav />
     <router-view />
   </b-container>
-</template>     
+</template>
 
 <script>
 import StandingsNav from '../components/Standings/StandingsNav.vue'
 
 export default {
-  name: 'Standings',
+  name: `Standings`,
   components: {
-    StandingsNav
-  }
+    StandingsNav,
+  },
 }
 </script>
 
