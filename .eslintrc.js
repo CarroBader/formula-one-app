@@ -5,16 +5,34 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:vue/essential',
-    'airbnb-base',
+    `plugin:vue/essential`,
+    `airbnb-base`,
   ],
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: `module`,
   },
   plugins: [
-    'vue',
+    `vue`,
   ],
   rules: {
+    semi: [
+      `error`,
+      `never`,
+      {
+        beforeStatementContinuationChars: `always`,
+      },
+    ],
+    quotes: [`error`, `backtick`],
+    'consistent-return': `off`,
+    'no-param-reassign': `off`,
+    'no-console': [`error`, { allow: [`info`, `warn`, `error`] }],
+    'prefer-promise-reject-errors': `off`,
+    'arrow-body-style': `off`,
+    'newline-per-chained-call': `off`,
+    'max-len': `off`,
+    'no-plusplus': `off`,
+    strict: 0,
+    'no-shadow': `off`,
   },
-};
+}
