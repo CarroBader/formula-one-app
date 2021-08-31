@@ -15,16 +15,6 @@
           :practiceThree="practiceThree" />
         </b-tab>
       </b-tabs>
-
-      <!-- <div class="col">
-        <PracticeSessionOne
-          :practiceOne="practiceOne" />
-        <PracticeSessionTwo
-          :practiceTwo="practiceTwo" />
-      </div> -->
-      <!-- <div class="col">
-        <AllRaces />
-      </div> -->
     </div>
   </b-container>
 </template>
@@ -33,7 +23,6 @@
 import PracticeSessionOne from '../../components/UpcomingRace/Practice/PracticeSessionOne.vue'
 import PracticeSessionTwo from '../../components/UpcomingRace/Practice/PracticeSessionTwo.vue'
 import PracticeSessionThree from '../../components/UpcomingRace/Practice/PracticeSessionThree.vue'
-import AllRaces from '../../components/AllRaces.vue'
 
 const practiceOne = [
   {
@@ -588,7 +577,6 @@ export default {
     PracticeSessionOne,
     PracticeSessionTwo,
     PracticeSessionThree,
-    AllRaces,
   },
   data() {
     return {

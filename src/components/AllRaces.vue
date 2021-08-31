@@ -32,9 +32,9 @@
 // import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 // import 'swiper/swiper-bundle.css'
 
-import apiCallsMixin from '../mixins/apiCallsMixin.js'
-import getCountryFlagMixin from '../mixins/getCountryFlagMixin.js'
-import convertRaceTimeMixin from '../mixins/convertRaceTimeMixin.js'
+import apiCallsMixin from '../mixins/apiCallsMixin'
+import getCountryFlagMixin from '../mixins/getCountryFlagMixin'
+import convertRaceTimeMixin from '../mixins/convertRaceTimeMixin'
 
 export default {
   name: `AllRaces`,
@@ -79,28 +79,28 @@ export default {
     this.allRacesCurrentSeason = responseAllRaces.allRaces
     // this.swiperOptions.initialSlide = Number(responseNextRace.nextRace.round) - 1 // Subtract from round because it is one based numbering and not zero as the swiper
 
-    this.allRacesCurrentSeason.map((race) => {
-      console.log(race)
-      const lol = race.date
+    // this.allRacesCurrentSeason.map((race) => {
+    //   console.log(race)
+    //   const lol = race.date
 
-      // console.log("Lol:", lol)
-      // console.log("Type of lol: ", typeof(lol))
+    //   // console.log("Lol:", lol)
+    //   // console.log("Type of lol: ", typeof(lol))
 
-      const date = new Date(lol)
-      const month = date.toLocaleString(`default`, { month: `short` })
-      // console.log(month);
+    //   const date = new Date(lol)
+    //   const month = date.toLocaleString(`default`, { month: `short` })
+    //   // console.log(month);
 
-      const day = date.getDate()
-      // console.log(day);
+    //   const day = date.getDate()
+    //   // console.log(day);
 
-      race.monthName = month
-      race.dayNumber = day
+    //   race.monthName = month
+    //   race.dayNumber = day
 
-      console.log(race)
-      // console.log(race.date)
+    //   console.log(race)
+    // console.log(race.date)
 
-      // https://stackoverflow.com/questions/1643320/get-month-name-from-date/18648314#18648314
-    })
+    // https://stackoverflow.com/questions/1643320/get-month-name-from-date/18648314#18648314
+    //  })
 
     // Set value for the dataloaded varibles (true)
     this.allRacesDataLoaded = responseAllRaces.dataLoaded

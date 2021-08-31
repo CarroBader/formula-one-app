@@ -1,3 +1,6 @@
+const lol = require.context(`../assets/img/flags/`, false, /.png$/)
+console.log(`lol`, lol)
+
 export default {
   methods: {
     getCountryName(nationality) {
@@ -65,6 +68,7 @@ export default {
     /*
       Return the flag of the country sent as a param.
     */
+      // eslint-disable-next-line global-require, import/no-dynamic-require
       return require(`../assets/img/flags/${country}.png`)
     },
   },

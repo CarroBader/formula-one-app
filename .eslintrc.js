@@ -26,7 +26,7 @@ module.exports = {
     quotes: [`error`, `backtick`],
     'consistent-return': `off`,
     'no-param-reassign': `off`,
-    'no-console': [`error`, { allow: [`info`, `warn`, `error`] }],
+    'no-console': [`error`, { allow: [`info`, `warn`, `error`, `log`] }],
     'prefer-promise-reject-errors': `off`,
     'arrow-body-style': `off`,
     'newline-per-chained-call': `off`,

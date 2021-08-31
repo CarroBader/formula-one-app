@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
+import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
 
 export default {
   name: `CircuitLastList`,

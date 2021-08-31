@@ -45,8 +45,8 @@
 </template>
 
 <script>
-import convertRaceTimeMixin from '../../../mixins/convertRaceTimeMixin.js'
-import getImageMixin from '../../../mixins/getImageMixin.js'
+import convertRaceTimeMixin from '../../../mixins/convertRaceTimeMixin'
+import getImageMixin from '../../../mixins/getImageMixin'
 
 const imgFolder = `circuits`
 

@@ -19,14 +19,14 @@ export default {
 
         this.allRaces = response.data.MRData.RaceTable.Races
 
-        if (para == `allRaces`) {
+        if (para === `allRaces`) {
           return {
             allRaces: this.allRaces,
             dataLoaded: true,
           }
         }
         todaysDate = this.getTodaysDate()
-        this.allRaces.map((race) => {
+        this.allRaces.forEach((race) => {
           const raceDate = Date.parse(race.date)
           if (raceDate >= todaysDate) {
             comingRaces.push(race)
@@ -35,7 +35,7 @@ export default {
           }
         })
 
-        if (para == `lastRace`) {
+        if (para === `lastRace`) {
           const lr = pastRaces.slice(-1)[0]
           return {
             season: lr.season,
@@ -43,7 +43,7 @@ export default {
           }
         }
 
-        if (para == `nextRace`) {
+        if (para === `nextRace`) {
           return {
             nextRace: comingRaces[0],
             dataLoaded: true,
@@ -68,10 +68,10 @@ export default {
     */
       try {
         const response = await axios.get(`${baseUrl}${season}/${lastRound}/results.json`)
-        this.race = response.data.MRData.RaceTable.Races[0]
+        const race = response.data.MRData.RaceTable.Races
 
         return {
-          lastRaceResult: this.race,
+          lastRaceResult: race[0],
           dataLoaded: true,
         }
       } catch (e) {
@@ -83,10 +83,11 @@ export default {
       Return the qulification result of the next race.
     */
       try {
+        console.log(currentRound)
         // const response = await axios.get(`${baseUrl}${season}/${currentRound}/qualifying.json`)
         const response = await axios.get(`${baseUrl}${season}/12/qualifying.json`)
         const qualiForRace = response.data.MRData.RaceTable.Races
-        if (qualiForRace.length != 0) {
+        if (qualiForRace.length !== 0) {
           return {
             nextRaceQualification: response.data.MRData.RaceTable.Races[0],
             dataLoaded: true,

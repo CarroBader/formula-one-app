@@ -53,7 +53,10 @@ export default {
         console.log(error)
         this.errored = true
       })
-      .finally(() => this.loading = false)
+      .finally(() => {
+        this.loading = false
+        return this.loading
+      })
   },
   data() {
     return {
@@ -68,7 +71,7 @@ export default {
   },
   methods: {
     getCoordinates(allRaces) {
-      allRaces.map((race) => {
+      allRaces.forEach((race) => {
         trackLocation.push({
           coordinates: [race.Circuit.Location.lat, race.Circuit.Location.long],
           circuit: race.raceName,

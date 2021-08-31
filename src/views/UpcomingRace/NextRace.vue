@@ -43,7 +43,7 @@ import NexRaceTimeTable from '../../components/UpcomingRace/NextRace/NexRaceTime
 import CircuitLastList from '../../components/UpcomingRace/NextRace/CircuitLastList.vue'
 import NextRaceCountryFlag from '../../components/UpcomingRace/NextRace/NextRaceCountryFlag.vue'
 
-import apiCallsMixin from '../../mixins/apiCallsMixin.js'
+import apiCallsMixin from '../../mixins/apiCallsMixin'
 
 const winnersTitle = `Last Winners`
 const polesTitle = `Last Poles`
