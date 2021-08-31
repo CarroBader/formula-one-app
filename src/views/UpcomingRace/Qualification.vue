@@ -15,7 +15,7 @@
 <script>
 import QualificationSession from '../../components/UpcomingRace/Qualification/QualificationSession.vue'
 
-import apiCallsMixin from '../../mixins/apiCallsMixin.js'
+import apiCallsMixin from '../../mixins/apiCallsMixin'
 
 export default {
   name: `Qualification`,

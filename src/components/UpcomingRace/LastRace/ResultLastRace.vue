@@ -64,10 +64,10 @@
 </template>
 
 <script>
-import apiCallsMixin from '../../../mixins/apiCallsMixin.js'
-import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin.js'
-import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
-import getImageMixin from '../../../mixins/getImageMixin.js'
+import apiCallsMixin from '../../../mixins/apiCallsMixin'
+import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin'
+import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
+import getImageMixin from '../../../mixins/getImageMixin'
 
 const imgFolder = `icons`
 
@@ -99,7 +99,7 @@ export default {
       Check if position change happened.
       Return an img with the correct symbol.
     */
-      const positionSymbol = grid != position ? `arrow` : `line`
+      const positionSymbol = grid !== position ? `arrow` : `line`
 
       return this.getImageMixin(imgFolder, positionSymbol)
     },
@@ -109,13 +109,15 @@ export default {
     */
       const start = Number(grid)
       const end = Number(position)
-      return start == end ? `same-position` : (start < end ? `lost-position` : `gained-position`)
+
+      // eslint-disable-next-line no-nested-ternary
+      return start === end ? `same-position` : (start < end ? `lost-position` : `gained-position`)
     },
     fastestLap(fastestLap) {
     /*
       Return true if the driver got the fastest lap.
     */
-      return !!(fastestLap != undefined && fastestLap.rank == `1`)
+      return !!(fastestLap !== undefined && fastestLap.rank === `1`)
     },
   },
   mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin, getImageMixin],
@@ -126,9 +128,10 @@ export default {
   tbody {
     border-bottom: 1px solid #fff;
   }
-	.result-last-race-headline-div {
-		margin: 0.5em 0 2em;
-	}
+
+  .result-last-race-headline-div {
+    margin: 0.5em 0 2em;
+  }
 
   .fastest-lap-img {
     height: 1em;
@@ -138,16 +141,31 @@ export default {
   .same-position {
     height: 1em;
     width: 1em;
-    -webkit-filter: invert(100%)
+    -webkit-filter:
+    invert(100%)
     sepia()
     saturate(100%)
-    hue-rotate(0deg)
+    hue-rotate(0deg);
+    filter:
+    invert(100%)
+    sepia()
+    saturate(100%)
+    hue-rotate(0deg);
   }
 
   .lost-position {
     height: 1em;
     width: 1em;
-    -webkit-filter: invert(40%)
+    -webkit-filter:
+    invert(40%)
+    grayscale(100%)
+    brightness(55%)
+    sepia(100%)
+    hue-rotate(-50deg)
+    saturate(400%)
+    contrast(2);
+    filter:
+    invert(40%)
     grayscale(100%)
     brightness(55%)
     sepia(100%)
@@ -160,7 +178,16 @@ export default {
     height: 1em;
     width: 1em;
     transform: scaleY(-1);
-    -webkit-filter: invert(40%)
+    -webkit-filter:
+    invert(40%)
+    grayscale(100%)
+    brightness(70%)
+    sepia(100%)
+    hue-rotate(50deg)
+    saturate(400%)
+    contrast(2);
+    filter:
+    invert(40%)
     grayscale(100%)
     brightness(70%)
     sepia(100%)

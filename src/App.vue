@@ -15,7 +15,7 @@ import TopNav from './components/General/TopNav.vue'
 import Footer from './components/General/Footer.vue'
 import BotNav from './components/General/BotNav.vue'
 
-import apiCallsMixin from './mixins/apiCallsMixin.js'
+import apiCallsMixin from './mixins/apiCallsMixin'
 
 export default {
   name: `App`,

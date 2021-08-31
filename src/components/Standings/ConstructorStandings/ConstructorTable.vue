@@ -71,10 +71,10 @@
 </template>
 
 <script>
-import apiCallsMixin from '../../../mixins/apiCallsMixin.js'
-import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin.js'
-import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
-import getImageMixin from '../../../mixins/getImageMixin.js'
+import apiCallsMixin from '../../../mixins/apiCallsMixin'
+import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin'
+import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
+import getImageMixin from '../../../mixins/getImageMixin'
 
 const divsTopThree = [`first`, `second`, `third`]
 const imgFolder = `constructers`

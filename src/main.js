@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import App from './App.vue'
 import './registerServiceWorker'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -15,11 +14,10 @@ import { Icon } from 'leaflet'
 /* Icons */
 // import { faHome } from '@fortawesome/free-solid-svg-icons/faHome'
 import { faTable } from '@fortawesome/free-solid-svg-icons/faTable'
-// import { faScrewdriver } from '@fortawesome/free-solid-svg-icons/faScrewdriver'
 import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons/faGlobeEurope'
 import { faFlagCheckered } from '@fortawesome/free-solid-svg-icons/faFlagCheckered'
 import router from './router'
-// import { faStopwatch } from '@fortawesome/free-solid-svg-icons/faStopwatch'
+import App from './App.vue'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
@@ -28,11 +26,15 @@ Vue.use(VueAxios, axios)
 library.add(faTable, faGlobeEurope, faFlagCheckered)
 Vue.component(`font-awesome-icon`, FontAwesomeIcon)
 
-delete Icon.Default.prototype._getIconUrl
+delete Icon.Default.prototype.getIconUrl
+const requiredIconRetinaUrl = require(`./assets/img/mapMarkers/position.png`)
+const requiredIconUrl = require(`./assets/img/mapMarkers/position.png`)
+const requiredShadowUrl = require(`leaflet/dist/images/marker-shadow.png`)
+
 Icon.Default.mergeOptions({
-  iconRetinaUrl: require(`./assets/img/mapMarkers/position.png`),
-  iconUrl: require(`./assets/img/mapMarkers/position.png`),
-  shadowUrl: require(`leaflet/dist/images/marker-shadow.png`),
+  iconRetinaUrl: requiredIconRetinaUrl,
+  iconUrl: requiredIconUrl,
+  shadowUrrequiredIconUrll: requiredShadowUrl,
 })
 
 Vue.config.productionTip = false

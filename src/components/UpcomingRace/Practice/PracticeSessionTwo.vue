@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin.js'
+import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
 
 export default {
   name: `PracticeSessionTwo`,
@@ -61,30 +61,30 @@ export default {
     border-bottom: 1px solid #fff;
   }
 
-	.practice-session-headline {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		display: inline;
+  .practice-session-headline {
+    background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+    border-radius: 8px;
+    border: #ffffff7d 2px solid;
+    display: inline;
     padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.7em;
-	}
+    font-size: 1.7em;
+  }
 
   .practice-session-headline-div {
     margin: 0.5em 0 2em;
   }
 
   .practice-session-tr {
-		font-size: 0.95em;
-	}
+    font-size: 0.95em;
+  }
 
   .practice-session-tbody {
-		font-size: 0.95em;
-	}
+    font-size: 0.95em;
+  }
 
   .practice-session-td {
-		padding: 1em 2.5em;
-	}
+    padding: 1em 2.5em;
+  }
 
   .practice-session-second {
     font-size: 0.8em;

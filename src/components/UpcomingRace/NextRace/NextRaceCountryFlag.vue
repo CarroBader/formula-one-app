@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin.js'
+import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin'
 
 export default {
   name: `NextRaceCountryFlag`,
