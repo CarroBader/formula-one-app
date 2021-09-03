@@ -150,4 +150,9 @@ export default {
   font-family: 'Orbitron', 'sans-serif';
   font-weight: 500;
 }
+
+.leaflet-marker-icon {
+  width: auto !important;
+  height: 35px !important;
+}
 </style>
