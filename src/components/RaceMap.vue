@@ -4,10 +4,9 @@
       <v-map :zoom="zoom" :center="center" class="map">
         <v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
         <v-marker
-        v-for="marker, index in markers"
-        :key="index"
-        :lat-lng="marker.coordinates"
-        style="witdh:auto">
+        v-for="marker, i in markers"
+        :key="marker[i]"
+        :lat-lng="marker.coordinates">
         <v-tooltip :content="`
           ${marker.raceName} <br/>
           ${marker.weather.location.country} <hr/>
@@ -136,9 +135,4 @@ export default {
   font-family: 'Orbitron', 'sans-serif';
   font-weight: 500;
 }
-
-.element.style {
-  width: auto;
-}
-
 </style>
