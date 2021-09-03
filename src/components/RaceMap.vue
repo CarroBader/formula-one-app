@@ -6,13 +6,15 @@
         <v-marker
         v-for="marker, i in markers"
         :key="marker[i]"
-        :lat-lng="marker.coordinates">
+        :lat-lng="marker.coordinates"
+        >
         <v-tooltip :content="`
           ${marker.raceName} <br/>
           ${marker.weather.location.country} <hr/>
           ${marker.weather.current.temp_c}°<br/>
           <img src='${marker.weather.current.condition.icon}'
-          alt='Weather icon'/>`">
+          alt='Weather icon'/> <br/>
+          ${marker.weather.current.condition.text}`">
         </v-tooltip>
         </v-marker>
       </v-map>
@@ -25,10 +27,23 @@ import {
   LMap, LTileLayer, LMarker, LTooltip,
 } from 'vue2-leaflet'
 import axios from 'axios'
+// import icon from 'leaflet/dist/images/marker-icon.png'
+// import iconShadow from 'leaflet/dist/images/marker-shadow.png'
+import L from 'leaflet'
 import {
   baseUrl, baseUrlWeather, host, apiKey,
 } from '../vars'
+import 'leaflet/dist/leaflet.css'
 
+// eslint-disable-next-line no-underscore-dangle
+delete L.Icon.Default.prototype._getIconUrl
+
+/* eslint-disable global-require */
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require(`../assets/img/mapMarkers/position.png`),
+  iconUrl: require(`../assets/img/mapMarkers/position.png`),
+  shadowUrl: require(`leaflet/dist/images/marker-shadow.png`),
+})
 const trackLocation = []
 const weather = []
 const locationAndweather = []
@@ -108,7 +123,7 @@ export default {
         for (let j = 0; j < weathers.length; j++) {
           const lat = Number(trackLocation[i].coordinates[0]).toFixed(2)
           const lon = Number(trackLocation[i].coordinates[1]).toFixed(2)
-
+          console.log(weathers[j])
           if (lat === weathers[j].location.lat.toFixed(2)
             && lon === weathers[j].location.lon.toFixed(2)) {
             locationAndweather.push({ coordinates: [lat, lon], raceName: trackLocation[i].circuit, weather: weathers[j] })
