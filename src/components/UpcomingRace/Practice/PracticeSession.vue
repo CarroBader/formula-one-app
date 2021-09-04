@@ -3,8 +3,7 @@
     <div class="scroll-table">
       <table>
         <tr class="practice-session-tr">
-          <th class="browser-view">Position</th>
-          <th class="mobile-view">Pos.</th>
+          <th>Position</th>
           <th class="no-display-when-mobile">Number</th>
           <th>Name</th>
           <th>Laps</th>
