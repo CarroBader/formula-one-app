@@ -108,6 +108,7 @@ export default {
 
   .next-race-time-table-col {
     display: flex;
+    display:-webkit-flex;
     justify-content: center;
     align-items: baseline;
   }

@@ -34,6 +34,7 @@ export default {
     width: 100%;
     height: auto;
     display: flex;
+    display:-webkit-flex;
     justify-content: space-evenly;
     margin-top: 3em;
   }

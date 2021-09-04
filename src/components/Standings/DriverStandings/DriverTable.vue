@@ -130,6 +130,7 @@ export default {
 
   .leader-driver-div {
     display: flex;
+    display:-webkit-flex;
     justify-content: space-between;
   }
 

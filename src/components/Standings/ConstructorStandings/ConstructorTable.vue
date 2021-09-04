@@ -120,6 +120,7 @@ export default {
 
   .leader-constructor-div {
     display: flex;
+    display:-webkit-flex;
     justify-content: space-between;
   }
 
