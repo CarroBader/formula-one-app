@@ -3,16 +3,16 @@
     <div class="row practice-row">
       <b-tabs content-class="mt-3">
         <b-tab title="Practice 1" active>
-          <PracticeSessionOne
-          :practiceOne="practiceOne" />
+          <PracticeSession
+          :practiceResult="practiceOne" />
         </b-tab>
         <b-tab title="Practice 2">
-          <PracticeSessionTwo
-          :practiceTwo="practiceTwo" />
+          <PracticeSession
+          :practiceResult="practiceTwo" />
         </b-tab>
         <b-tab title="Practice 3">
-          <PracticeSessionThree
-          :practiceThree="practiceThree" />
+          <PracticeSession
+          :practiceResult="practiceThree" />
         </b-tab>
       </b-tabs>
     </div>
@@ -20,9 +20,7 @@
 </template>
 
 <script>
-import PracticeSessionOne from '../../components/UpcomingRace/Practice/PracticeSessionOne.vue'
-import PracticeSessionTwo from '../../components/UpcomingRace/Practice/PracticeSessionTwo.vue'
-import PracticeSessionThree from '../../components/UpcomingRace/Practice/PracticeSessionThree.vue'
+import PracticeSession from '../../components/UpcomingRace/Practice/PracticeSession.vue'
 
 const practiceOne = [
   {
@@ -574,9 +572,7 @@ const practiceThree = [
 export default {
   name: `Practice`,
   components: {
-    PracticeSessionOne,
-    PracticeSessionTwo,
-    PracticeSessionThree,
+    PracticeSession,
   },
   data() {
     return {

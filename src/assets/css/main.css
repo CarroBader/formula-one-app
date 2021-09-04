@@ -14,7 +14,6 @@
 }
 
 /* Font and size */
-
 h1,
 h2,
 h3,
@@ -53,11 +52,6 @@ h4 {
 	padding: 0;
 	font-family: 'Orbitron', 'sans-serif';
   text-shadow: 2px 2px #000;
-}
-
-.nav-link.active {
-	/* border: none; */
-	font-size: 1.5em;
 }
 
 .nav-tabs .nav-link {
@@ -247,7 +241,7 @@ td {
 	}
 	
 	.scroll-table {
-		height: 500px;
+		height: 700px;
 	}
 
 	.card-margin {
@@ -427,6 +421,31 @@ td {
     height: 2.5em;
     margin: 1.2em 0.2em 0.15em 0.2em;
   }
+
+	/* PracticeSession  x-small */
+	.nav-tabs .nav-link {
+		font-size: 0.7em;
+	}
+
+  .practice-session-tr {
+    font-size: 0.8em;
+  }
+
+  .practice-session-tbody {
+    font-size: 0.7em;
+  }
+
+  .practice-session-td {
+    padding: 1em 0.3em;
+  }
+
+  .practice-session-seconds {
+    font-size: 0.7em;
+  }
+
+	.nav-link.active {
+		font-size: 0.9em;
+	}
 
 	/* QualificationSession */
 	.qualification-session-headline {
@@ -787,6 +806,31 @@ td {
 		font-size: 0.7em;
 	}
 
+	/* PracticeSession  Small */
+	.nav-tabs .nav-link {
+		font-size: 0.8em;
+	}
+
+	.practice-session-tr {
+		font-size: 0.9em;
+	}
+
+	.practice-session-tbody {
+		font-size: 0.8em;
+	}
+
+	.practice-session-td {
+		padding: 1em 1.3em;
+	}
+
+	.practice-session-seconds {
+		font-size: 0.8em;
+	}
+
+	.nav-link.active {
+		font-size: 1em;
+	}
+
 	/* QualificationSession */
 	.qualification-session-headline {
 		font-size: 1.2em;
@@ -901,10 +945,6 @@ td {
 	.constructor-table-tbody {
 		font-size: 0.8em;
 	}
-
-	/* .constructor-table-td  {
-		padding: 1em;
-	} */
 
 	.constructor-table-flag-img {
 		height: 3em;
@@ -1103,6 +1143,31 @@ td {
 		margin: 1.2em 0.3em 0.15em 0.3em;
 	}
 
+	/* PracticeSession  Medium */
+	.nav-tabs .nav-link {
+		font-size: 0.9em;
+	}
+
+	.practice-session-tr {
+		font-size: 0.95em;
+	}
+
+	.practice-session-tbody {
+		font-size: 0.9em;
+	}
+
+	.practice-session-td {
+		padding: 1em 2em;
+	}
+
+	.practice-session-seconds {
+		font-size: 0.7em;
+	}
+
+	.nav-link.active {
+		font-size: 1.1em;
+	}
+
 	/* QualificationSession */
 	.qualification-session-headline {
 		font-size: 1.4em;
@@ -1211,10 +1276,6 @@ td {
 	.constructor-table-tb {
 		padding: 1em 1.5em;
 	}
-
-	/* .constructor-table-td  {
-		padding: 1em 1.5em;
-	} */
 
 	.constructor-table-flag-img {
 		height: 3.2em;
@@ -1406,6 +1467,31 @@ td {
 		margin: 1.2em 1em 0.15em 0;
 	}
 
+	/* PracticeSession  Large */
+	.nav-tabs .nav-link {
+		font-size: 1.1em;
+	}
+
+	.practice-session-tr {
+		font-size: 1em;
+	}
+
+	.practice-session-tbody {
+		font-size: 0.95em;
+	}
+
+	.practice-session-td {
+		padding: 1em 2.5em;
+	}
+
+	.practice-session-seconds {
+		font-size: 0.9em;
+	}
+
+	.nav-link.active {
+		font-size: 1.3em;
+	}
+
 	/* QualificationSession */
 	.qualification-session-headline {
 		font-size: 1.6em;
@@ -1571,6 +1657,31 @@ td {
 		height: 4em;
 	}
 
+	/* PracticeSession  Large */
+	.nav-tabs .nav-link {
+		font-size: 1.2em;
+	}
+
+	.practice-session-tr {
+		font-size: 1em;
+	}
+
+	.practice-session-tbody {
+		font-size: 0.95em;
+	}
+
+	.practice-session-td {
+		padding: 1em 3em;
+	}
+
+	.practice-session-seconds {
+		font-size: 0.9em;
+	}
+
+	.nav-link.active {
+		font-size: 1.4em;
+	}
+
 	/* QualificationSession */
 	.qualification-session-headline {
 		font-size: 1.7em;
@@ -1634,10 +1745,6 @@ td {
 	.constructor-table-headline {
     font-size: 1.9em;
 	}
-
-	/* .constructor-table-td {
-		padding: 1em 3em;
-	} */
 
 	.constructor-table-flag-img {
 		height: 3.4em;
