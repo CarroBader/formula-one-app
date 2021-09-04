@@ -451,7 +451,7 @@ td {
 	}
 
 	.elimination-line {
-		border-bottom: 2px solid #fff !important;
+		border-bottom: 3px solid #fff !important;
 	}
 
 	/*------------------------ STANDINGS ------------------------*/
@@ -1121,7 +1121,7 @@ td {
 	}
 
 	.elimination-line {
-		border-bottom: 3px solid #fff !important;
+		border-bottom: 5px solid #fff !important;
 	}
 
 	/*------------------------ STANDINGS ------------------------*/
