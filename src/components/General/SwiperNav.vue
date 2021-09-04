@@ -111,7 +111,7 @@ export default {
 
 <style scoped>
   .swiper-nav {
-    overflow-x:hidden;
+    overflow-x: hidden;
   }
 
   .swiper-nav-div {

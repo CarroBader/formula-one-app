@@ -27,8 +27,6 @@ import {
   LMap, LTileLayer, LMarker, LTooltip,
 } from 'vue2-leaflet'
 import axios from 'axios'
-// import icon from 'leaflet/dist/images/marker-icon.png'
-// import iconShadow from 'leaflet/dist/images/marker-shadow.png'
 import L from 'leaflet'
 import {
   baseUrl, baseUrlWeather, host, apiKey,
@@ -137,22 +135,14 @@ export default {
 </script>
 
 <style>
-.map {
-  position: fixed;
-  top: 6.2em;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
+  .leaflet-tooltip {
+    border-radius: 10% !important;
+    font-family: 'Orbitron', 'sans-serif';
+    font-weight: 500;
+  }
 
-.leaflet-tooltip {
-  border-radius: 10% !important;
-  font-family: 'Orbitron', 'sans-serif';
-  font-weight: 500;
-}
-
-.leaflet-marker-icon {
-  width: auto !important;
-  height: 35px !important;
-}
+  .leaflet-marker-icon {
+    width: auto !important;
+    height: 35px !important;
+  }
 </style>
