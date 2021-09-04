@@ -17,22 +17,20 @@
             :key="index"
             class="practice-session-tbody"
           >
-          <tr>
-            <td class="practice-session-td extra-dark-grey">{{ pTwo.position }}</td>
-            <td
-              class="practice-session-td"
-              :class="getConstructorColor(pTwo.car)">{{ pTwo.number }}</td>
-            <td class="practice-session-td">{{ pTwo.name }}</td>
-            <td class="practice-session-td light-grey lol">{{ pTwo.time }}</td>
-            <td class="practice-session-td practice-session-border-left dark-red lal">{{ pTwo.gap }}<span v-if="pTwo.gap !== ''" class="practice-session-second">s</span></td>
-            <td class="practice-session-td practice-session-border-left extra-dark-grey">{{ pTwo.laps }}</td>
-            <!-- <td
-              class="practice-session-td mobile-view"
-              :class="getConstructorColor(quali.Constructor.constructorId)"
-            >
-              {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
-            </td> -->
-          </tr>
+          <td class="practice-session-td extra-dark-grey">{{ pTwo.position }}</td>
+          <td
+            class="practice-session-td"
+            :class="getConstructorColor(pTwo.car)">{{ pTwo.number }}</td>
+          <td class="practice-session-td">{{ pTwo.name }}</td>
+          <td class="practice-session-td light-grey lol">{{ pTwo.time }}</td>
+          <td class="practice-session-td practice-session-border-left dark-red lal">{{ pTwo.gap }}<span v-if="pTwo.gap !== ''" class="practice-session-second">s</span></td>
+          <td class="practice-session-td practice-session-border-left extra-dark-grey">{{ pTwo.laps }}</td>
+          <!-- <td
+            class="practice-session-td mobile-view"
+            :class="getConstructorColor(quali.Constructor.constructorId)"
+          >
+            {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
+          </td> -->
           </tbody>
         </table>
       </div>
@@ -53,6 +51,14 @@ export default {
 </script>
 
 <style scoped>
+  tbody {
+    border-bottom: 1px solid #fff;
+  }
+
+  tbody:last-child {
+    border-bottom: none;
+  }
+
   .practice-session-border-left {
     border-left: 1px solid #fff;
   }

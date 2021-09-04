@@ -17,22 +17,20 @@
             :key="index"
             class="practice-session-tbody"
           >
-          <tr>
-            <td class="practice-session-td extra-dark-grey">{{ pThree.position }}</td>
-            <td
-              class="practice-session-td"
-              :class="getConstructorColor(pThree.car)">{{ pThree.number }}</td>
-            <td class="practice-session-td">{{ pThree.name }}</td>
-            <td class="practice-session-td practice-session-border-left dark-grey">{{ pThree.time }}</td>
-            <td class="practice-session-td practice-session-border-left dark-red">{{ pThree.gap }}<span v-if="pThree.gap !== ''" class="practice-session-second">s</span></td>
-            <td class="practice-session-td extra-dark-grey">{{ pThree.laps }}</td>
-            <!-- <td
-              class="practice-session-td mobile-view"
-              :class="getConstructorColor(quali.Constructor.constructorId)"
-            >
-              {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
-            </td> -->
-          </tr>
+          <td class="practice-session-td extra-dark-grey">{{ pThree.position }}</td>
+          <td
+            class="practice-session-td"
+            :class="getConstructorColor(pThree.car)">{{ pThree.number }}</td>
+          <td class="practice-session-td">{{ pThree.name }}</td>
+          <td class="practice-session-td practice-session-border-left dark-grey">{{ pThree.time }}</td>
+          <td class="practice-session-td practice-session-border-left dark-red">{{ pThree.gap }}<span v-if="pThree.gap !== ''" class="practice-session-second">s</span></td>
+          <td class="practice-session-td extra-dark-grey">{{ pThree.laps }}</td>
+          <!-- <td
+            class="practice-session-td mobile-view"
+            :class="getConstructorColor(quali.Constructor.constructorId)"
+          >
+            {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
+          </td> -->
           </tbody>
         </table>
       </div>
@@ -53,6 +51,14 @@ export default {
 </script>
 
 <style scoped>
+  tbody {
+    border-bottom: 1px solid #fff;
+  }
+
+  tbody:last-child {
+    border-bottom: none;
+  }
+
   .practice-session-border-left {
     border-left: 1px solid #fff;
   }

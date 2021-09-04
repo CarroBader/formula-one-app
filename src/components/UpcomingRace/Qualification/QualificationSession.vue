@@ -21,40 +21,38 @@
             :class="[index == 9 || index == 14 ? 'elimination-line' : '']"
             class="qualifying-session-tbody"
           >
-          <tr>
-            <td class="qualification-session-td extra-dark-grey">{{ quali.position }}</td>
-            <td class="qualification-session-td browser-view">{{ quali.Driver.givenName }} {{ quali.Driver.familyName }}</td>
-            <td
-              class="qualification-session-td mobile-view"
-              :class="getConstructorColor(quali.Constructor.constructorId)"
-            >
-              {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
-            </td>
-            <td
-              class="qualification-session-td no-display-when-mobile"
-              :class="getConstructorColor(quali.Constructor.constructorId)"
-            >
-              {{ quali.Constructor.name }}
-            </td>
-            <td
-              class="qualification-session-td q1 light-grey"
-              :class="qualiOne(index)"
-            >
-              {{ quali.Q1 }}
-            </td>
-            <td
-              class="qualification-session-td q2 medium-grey"
-              :class="qualiTwo(index)"
-            >
-              {{ quali.Q2 }}
-            </td>
-            <td
-              class="qualification-session-td dark-grey"
-              :class="qualiThree(index)"
-            >
-              {{ quali.Q3 }}
-            </td>
-          </tr>
+          <td class="qualification-session-td extra-dark-grey">{{ quali.position }}</td>
+          <td class="qualification-session-td browser-view">{{ quali.Driver.givenName }} {{ quali.Driver.familyName }}</td>
+          <td
+            class="qualification-session-td mobile-view"
+            :class="getConstructorColor(quali.Constructor.constructorId)"
+          >
+            {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
+          </td>
+          <td
+            class="qualification-session-td no-display-when-mobile"
+            :class="getConstructorColor(quali.Constructor.constructorId)"
+          >
+            {{ quali.Constructor.name }}
+          </td>
+          <td
+            class="qualification-session-td q1 light-grey"
+            :class="qualiOne(index)"
+          >
+            {{ quali.Q1 }}
+          </td>
+          <td
+            class="qualification-session-td q2 medium-grey"
+            :class="qualiTwo(index)"
+          >
+            {{ quali.Q2 }}
+          </td>
+          <td
+            class="qualification-session-td dark-grey"
+            :class="qualiThree(index)"
+          >
+            {{ quali.Q3 }}
+          </td>
           </tbody>
         </table>
       </div>
@@ -107,6 +105,14 @@ export default {
 </script>
 
 <style scoped>
+  tbody {
+    border-bottom: 1px solid #fff;
+  }
+
+  tbody:last-child {
+    border-bottom: none;
+  }
+
   .qualification-session-headline-div {
     margin: 0.5em 0 2em;
   }

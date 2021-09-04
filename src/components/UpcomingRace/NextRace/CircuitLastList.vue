@@ -52,4 +52,11 @@ export default {
 </script>
 
 <style scoped>
+  tbody {
+    border-bottom: 1px solid #fff;
+  }
+
+  tbody:last-child {
+    border-bottom: none;
+  }
 </style>

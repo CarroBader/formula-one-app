@@ -22,40 +22,38 @@
             :key="index"
             class="result-last-race-tbody"
           >
-            <tr>
-              <td class="result-last-race-td extra-dark-grey">{{ race.position }}</td>
-              <td class="result-last-race-td">
-                <img
-                  :src="getSymbolImage(race.grid, race.position)"
-                  :alt='`${race.Driver.nationality}`'
-                  :class="getSymbolClass(race.grid, race.position)"
-                />
-                <span class="position-difference">
-                  {{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}
-                </span>
-              </td>
-              <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
-              <td class="no-display-when-mobile result-last-race-td">
-                <img
-                  :src="getCountryName(race.Driver.nationality)"
-                  :alt='`${race.Driver.nationality}`'
-                  class="result-last-race-flag-img"
-                />
-              </td>
-              <td
-                class="result-last-race-td"
-                :class="getConstructorColor(race.Constructor.constructorId)"
-              >
-                {{ race.Constructor.name }}
-              </td>
-              <td class="result-last-race-td">{{ race.points }}</td>
-              <td v-if="fastestLap(race.FastestLap)">
-                <img
-                  src="../../../assets/img/icons/fastest_lap.png"
-                  class="fastest-lap-img"
-                />
-              </td>
-            </tr>
+            <td class="result-last-race-td extra-dark-grey">{{ race.position }}</td>
+            <td class="result-last-race-td">
+              <img
+                :src="getSymbolImage(race.grid, race.position)"
+                :alt='`${race.Driver.nationality}`'
+                :class="getSymbolClass(race.grid, race.position)"
+              />
+              <span class="position-difference">
+                {{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}
+              </span>
+            </td>
+            <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
+            <td class="no-display-when-mobile result-last-race-td">
+              <img
+                :src="getCountryName(race.Driver.nationality)"
+                :alt='`${race.Driver.nationality}`'
+                class="result-last-race-flag-img"
+              />
+            </td>
+            <td
+              class="result-last-race-td"
+              :class="getConstructorColor(race.Constructor.constructorId)"
+            >
+              {{ race.Constructor.name }}
+            </td>
+            <td class="result-last-race-td">{{ race.points }}</td>
+            <td v-if="fastestLap(race.FastestLap)">
+              <img
+                src="../../../assets/img/icons/fastest_lap.png"
+                class="fastest-lap-img"
+              />
+            </td>
           </tbody>
         </table>
       </div>
@@ -125,6 +123,14 @@ export default {
 </script>
 
 <style scoped>
+  tbody {
+    border-bottom: 1px solid #fff;
+  }
+
+  tbody:last-child {
+    border-bottom: none;
+  }
+
   .result-last-race-headline-div {
     margin: 0.5em 0 2em;
   }

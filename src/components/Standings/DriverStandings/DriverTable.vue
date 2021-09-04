@@ -55,24 +55,22 @@
             :key="index"
             class="driver-table-tbody"
           >
-            <tr>
-              <td class="driver-table-td extra-dark-grey">{{ driver.position }}</td>
-              <td class="driver-table-td">{{ driver.Driver.givenName }} {{ driver.Driver.familyName }}</td>
-              <td class="driver-table-td">
-                <img
-                  :src="getCountryName(driver.Driver.nationality)"
-                  :alt='`${driver.Driver.nationality}`'
-                  class="driver-table-flag-img"
-                />
-              </td>
-              <td
-                class="driver-table-td"
-                :class="getConstructorColor(driver.Constructors[0].constructorId)"
-              >
-                {{ driver.Constructors[0].name }}
-              </td>
-              <td class="driver-table-td">{{ driver.points }}</td>
-            </tr>
+            <td class="driver-table-td extra-dark-grey">{{ driver.position }}</td>
+            <td class="driver-table-td">{{ driver.Driver.givenName }} {{ driver.Driver.familyName }}</td>
+            <td class="driver-table-td">
+              <img
+                :src="getCountryName(driver.Driver.nationality)"
+                :alt='`${driver.Driver.nationality}`'
+                class="driver-table-flag-img"
+              />
+            </td>
+            <td
+              class="driver-table-td"
+              :class="getConstructorColor(driver.Constructors[0].constructorId)"
+            >
+              {{ driver.Constructors[0].name }}
+            </td>
+            <td class="driver-table-td">{{ driver.points }}</td>
           </tbody>
         </table>
       </div>
@@ -116,6 +114,14 @@ export default {
 <style scoped>
   table {
     width: 100%;
+  }
+
+  tbody {
+    border-bottom: 1px solid #fff;
+  }
+
+  tbody:last-child {
+    border-bottom: none;
   }
 
   .driver-table-headline-div {

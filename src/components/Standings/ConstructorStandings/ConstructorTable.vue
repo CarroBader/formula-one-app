@@ -47,23 +47,21 @@
           :key="index"
           class="constructor-table-tbody"
         >
-          <tr>
-            <td class="constructor-table-td extra-dark-grey">{{ constructor.position }}</td>
-            <td
-              class="constructor-table-td"
-              :class="getConstructorColor(constructor.Constructor.constructorId)"
-            >
-              {{ constructor.Constructor.name }}
-            </td>
-            <td>
-              <img
-                :src="getCountryName(constructor.Constructor.nationality)"
-                :alt='`${constructor.Constructor.nationality}`'
-                class="constructor-table-td constructor-table-flag-img"
-              />
-            </td>
-            <td class="constructor-table-td">{{ constructor.points }}</td>
-          </tr>
+          <td class="constructor-table-td extra-dark-grey">{{ constructor.position }}</td>
+          <td
+            class="constructor-table-td"
+            :class="getConstructorColor(constructor.Constructor.constructorId)"
+          >
+            {{ constructor.Constructor.name }}
+          </td>
+          <td>
+            <img
+              :src="getCountryName(constructor.Constructor.nationality)"
+              :alt='`${constructor.Constructor.nationality}`'
+              class="constructor-table-td constructor-table-flag-img"
+            />
+          </td>
+          <td class="constructor-table-td">{{ constructor.points }}</td>
         </tbody>
       </table>
     </b-card>
@@ -106,6 +104,14 @@ export default {
 <style scoped>
   table {
     width: 100%;
+  }
+
+  tbody {
+    border-bottom: 1px solid #fff;
+  }
+
+  tbody:last-child {
+    border-bottom: none;
   }
 
   .constructor-table-headline-div {
