@@ -1,6 +1,3 @@
-const lol = require.context(`../assets/img/flags/`, false, /.png$/)
-console.log(`lol`, lol)
-
 export default {
   methods: {
     getCountryName(nationality) {

@@ -201,6 +201,19 @@ tr:last-child {
 		justify-content: center;
 	}
 
+	/*------------------------ SWIPERNAV ------------------------*/
+	.swiper-nav-div {
+    width: 4em;
+  }
+
+  .swiper-nav-flag-img {
+    height: 0.9em;
+  }
+
+  .swiper-nav-info-text {
+    font-size: 0.55em;
+  }
+
 	/*------------------------ FOOTER ------------------------*/
 	.bot-nav {
 		display: block;
@@ -616,6 +629,19 @@ tr:last-child {
     text-align: -webkit-center;
   }
 
+	/*------------------------ SWIPERNAV ------------------------*/
+	.swiper-nav-div {
+		width: 5.5em;
+	}
+
+	.swiper-nav-flag-img {
+		height: 1.1em;
+	}
+
+	.swiper-nav-info-text {
+		font-size: 0.7em;
+	}
+
   /*------------------------ FOOTER ------------------------*/
   .bot-nav {
     display: none !important;
@@ -928,6 +954,19 @@ tr:last-child {
 	.nav-collapse-top {
     text-align: revert;
   }
+
+	/*------------------------ SWIPERNAV ------------------------*/
+	.swiper-nav-div {
+		width: 6em;
+	}
+
+	.swiper-nav-flag-img {
+		height: 1.3em;
+	}
+
+	.swiper-nav-info-text {
+		font-size: 0.8em;
+	}
 	
 	/*------------------------ GENERAL ------------------------*/
 	.no-display-when-tablet {
@@ -1203,6 +1242,19 @@ tr:last-child {
   .nav-link-top {
     font-size: 1.1em;
   }
+
+	/*------------------------ SWIPERNAV ------------------------*/
+	.swiper-nav-div {
+		width: 8em;
+	}
+
+	.swiper-nav-flag-img {
+		height: 1.5em;
+	}
+	
+	.swiper-nav-info-text {
+		font-size: 0.9em;
+	}
 
 	/*------------------------ GENERAL ------------------------*/
 	.card-body {
