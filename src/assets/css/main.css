@@ -396,7 +396,7 @@ td {
 
 	.circuit-last-list-table-div {
 		display: flex;
-		display:-webkit-flex;
+		display: -webkit-inline-box;
     justify-content: center;
     align-items: baseline;
 		text-align: -webkit-right
@@ -1537,7 +1537,6 @@ td {
 
 	.next-race-last-top {
 		display: flex;
-		display:-webkit-flex;
 	}
 	
 	/* ResultLastRace */
