@@ -83,7 +83,6 @@ export default {
       Return the qulification result of the next race.
     */
       try {
-        console.log(currentRound)
         // const response = await axios.get(`${baseUrl}${season}/${currentRound}/qualifying.json`)
         const response = await axios.get(`${baseUrl}${season}/12/qualifying.json`)
         const qualiForRace = response.data.MRData.RaceTable.Races

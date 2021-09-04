@@ -97,7 +97,6 @@ export default {
       Checks if Q3 contains a drivers fastest time.
       Returns a class that matches the result.
     */
-      console.log(`CARRO`, this.qualificationResult)
       return this.qualificationResult[index].Q3 < this.qualificationResult[index].Q1 && this.qualificationResult[index].Q3 < this.qualificationResult[index].Q2 ? `green` : ``
     },
   },

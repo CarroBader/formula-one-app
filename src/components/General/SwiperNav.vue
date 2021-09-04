@@ -62,7 +62,6 @@ export default {
     }
   },
   async created() {
-    console.log(`created`)
     // Get all races of the current season
     const responseAllRaces = await this.getRaces(this.getAllRaces)
 

@@ -121,7 +121,7 @@ export default {
         for (let j = 0; j < weathers.length; j++) {
           const lat = Number(trackLocation[i].coordinates[0]).toFixed(2)
           const lon = Number(trackLocation[i].coordinates[1]).toFixed(2)
-          console.log(weathers[j])
+
           if (lat === weathers[j].location.lat.toFixed(2)
             && lon === weathers[j].location.lon.toFixed(2)) {
             locationAndweather.push({ coordinates: [lat, lon], raceName: trackLocation[i].circuit, weather: weathers[j] })
