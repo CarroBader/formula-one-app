@@ -57,10 +57,6 @@ export default {
     border-left: 1px solid #fff;
   }
 
-  tbody {
-    border-bottom: 1px solid #fff;
-  }
-
   .practice-session-headline {
     background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
     border-radius: 8px;
@@ -89,5 +85,4 @@ export default {
   .practice-session-second {
     font-size: 0.8em;
   }
-
 </style>

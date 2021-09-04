@@ -118,10 +118,6 @@ export default {
     width: 100%;
   }
 
-  tbody {
-    border-bottom: 1px solid #fff;
-  }
-
   .driver-table-headline-div {
     margin: 0.5em 0 2em;
   }

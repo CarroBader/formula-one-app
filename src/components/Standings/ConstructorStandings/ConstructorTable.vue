@@ -108,10 +108,6 @@ export default {
     width: 100%;
   }
 
-  tbody {
-    border-bottom: 1px solid #fff;
-  }
-
   .constructor-table-headline-div {
     margin: 0.5em 0 2em;
   }

@@ -89,21 +89,21 @@ th {
 	color: #fff;
 }
 
-tr {
+/* tr {
 	border-bottom: 1px solid #fff;
-}
+} */
 
 td {
 	font-family: 'Orbitron', 'sans-serif';
 	color: #fff;
 }
 
-tbody:last-child {
-  border: none;
+tbody {
+	border-bottom: 1px solid #fff;
 }
 
-tr:last-child {
-  border: none;
+tbody:last-child {
+  border-bottom: none !important;
 }
 
 .scroll-table {

@@ -107,10 +107,6 @@ export default {
 </script>
 
 <style scoped>
-  tbody {
-    border-bottom: 1px solid #fff;
-  }
-
   .qualification-session-headline-div {
     margin: 0.5em 0 2em;
   }

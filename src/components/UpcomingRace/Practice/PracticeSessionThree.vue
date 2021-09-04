@@ -53,10 +53,6 @@ export default {
 </script>
 
 <style scoped>
-  tbody {
-    border-bottom: 1px solid #fff;
-  }
-
   .practice-session-border-left {
     border-left: 1px solid #fff;
   }

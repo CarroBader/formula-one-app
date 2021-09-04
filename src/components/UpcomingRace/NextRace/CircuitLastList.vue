@@ -52,7 +52,4 @@ export default {
 </script>
 
 <style scoped>
-  tbody {
-    border-bottom: 1px solid #fff;
-  }
 </style>

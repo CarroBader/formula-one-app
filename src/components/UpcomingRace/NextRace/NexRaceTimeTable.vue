@@ -102,6 +102,10 @@ export default {
     text-align: start;
   }
 
+  tbody {
+    border-bottom: none;
+  }
+
   .next-race-time-table-col {
     display: flex;
     justify-content: center;
