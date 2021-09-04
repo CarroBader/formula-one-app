@@ -389,9 +389,9 @@ td {
     border-radius: 8px;
     border: #ffffff7d 2px solid;
     padding: 0 0.3em 0.3em 0.3em;
-    display: -webkit-inline-box;
     margin-top: 0.5em;
 		font-size: 0.85em;
+		width: fit-content;
 	}
 
 	.circuit-last-list-table-div {
@@ -451,7 +451,7 @@ td {
 	}
 
 	.elimination-line {
-		border-bottom: 2px solid #fff;
+		border-bottom: 2px solid #fff !important;
 	}
 
 	/*------------------------ STANDINGS ------------------------*/
@@ -1121,7 +1121,7 @@ td {
 	}
 
 	.elimination-line {
-		border-bottom: 3px solid #fff;
+		border-bottom: 3px solid #fff !important;
 	}
 
 	/*------------------------ STANDINGS ------------------------*/

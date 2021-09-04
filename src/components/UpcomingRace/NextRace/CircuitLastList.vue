@@ -2,7 +2,9 @@
   <div
     class="circuit-last-list-div">
     <b-card class="circuit-last-list-card-margin">
-      <h1 class="circuit-last-list-title">{{ this.title }}</h1>
+      <div class="circuit-last-list-title-div">
+        <h1 class="circuit-last-list-title">{{ this.title }}</h1>
+      </div>
       <div class="circuit-last-list-table-div">
         <table>
           <tbody
@@ -58,5 +60,9 @@ export default {
 
   tbody:last-child {
     border-bottom: none;
+  }
+
+  .circuit-last-list-title-div {
+    text-align: -webkit-center;
   }
 </style>
