@@ -223,6 +223,15 @@ tr:last-child {
 		display: none;
 	}
 
+	/*------------------------ MAP ------------------------*/
+	.map {
+		position: fixed;
+		top: 3.4em;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
 	/*------------------------ CARD ------------------------*/
 	.card-body {
 		padding: 0.5em 0.5em;
@@ -651,12 +660,10 @@ tr:last-child {
     display: revert;
   }
 
-  /*------------------------ MAP ------------------------*/
-  .leaflet-touch 
-  .leaflet-control-layers, 
-  .leaflet-touch .leaflet-bar {
-    margin-top: 4em !important;
-  }
+	/*------------------------ MAP ------------------------*/
+	.map {
+		top: 4.1em;
+	}
 
   /*------------------------ GENERAL ------------------------*/
 	.no-display-when-mobile {
@@ -967,6 +974,11 @@ tr:last-child {
 	.swiper-nav-info-text {
 		font-size: 0.8em;
 	}
+
+	/*------------------------ MAP ------------------------*/
+	.map {
+		top: 4.25em;
+	}
 	
 	/*------------------------ GENERAL ------------------------*/
 	.no-display-when-tablet {
@@ -976,13 +988,6 @@ tr:last-child {
 	.display-when-tablet {
 		display: revert;
 	}
-
-  /*------------------------ MAP ------------------------*/
-  .leaflet-touch 
-  .leaflet-control-layers, 
-  .leaflet-touch .leaflet-bar {
-    margin-top: 1em !important;
-  }
 
 	/*------------------------ UPCOMING RACE ------------------------*/
 	/* NextRace - View */
@@ -1255,6 +1260,11 @@ tr:last-child {
 	.swiper-nav-info-text {
 		font-size: 0.9em;
 	}
+	
+	/*------------------------ MAP ------------------------*/
+	.map {
+		top: 4.2em;
+	}
 
 	/*------------------------ GENERAL ------------------------*/
 	.card-body {
@@ -1268,10 +1278,6 @@ tr:last-child {
 	.display-when-tablet {
 		display: none;
 	}
-
-	/* .card-margin {
-		margin: 2em 0 5em 0;
-	} */
 
 	/*------------------------ UPCOMING RACE ------------------------*/
 	/* NextRace - View */
@@ -1524,6 +1530,11 @@ tr:last-child {
   .nav-title-top {
     font-size: 2.3rem;
   }
+
+	/*------------------------ MAP ------------------------*/
+	.map {
+		top: 4.7em;
+	}
 
 	/*------------------------ UPCOMING RACE ------------------------*/
 	/* NextRace - View */

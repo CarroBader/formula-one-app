@@ -4,7 +4,6 @@
       :nextRaceName="nextRaceName"
       v-if="nextRaceDataLoaded"
     />
-    <SwiperNav />
     <router-view />
     <Footer />
     <BotNav />
@@ -15,7 +14,6 @@
 import TopNav from './components/General/TopNav.vue'
 import Footer from './components/General/Footer.vue'
 import BotNav from './components/General/BotNav.vue'
-import SwiperNav from './components/General/SwiperNav.vue'
 
 import apiCallsMixin from './mixins/apiCallsMixin'
 
@@ -25,7 +23,6 @@ export default {
     TopNav,
     Footer,
     BotNav,
-    SwiperNav,
   },
   data() {
     return {
