@@ -380,7 +380,7 @@ tbody:last-child {
 	}
 
 	.next-race-time-table-border {
-		border-bottom: 1px solid #fff;
+		border-bottom: 1px solid #fff !important;
 	}
 
 	/* CircuitLastList */
@@ -1367,7 +1367,7 @@ tbody:last-child {
 	}
 
   .next-race-time-table-border {
-    border: none;
+    border: none !important;
   }
 
 	.next-race-time-table-col-left {
