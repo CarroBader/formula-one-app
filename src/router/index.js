@@ -42,6 +42,12 @@ const routes = [
         component: Qualification,
       },
       {
+        path: `/grand-prix/sprint-qualification`,
+        name: `Sprint Qualifying`,
+        component: Qualification,
+        onlyForSprintRaces: true,
+      },
+      {
         path: `/grand-prix/race`,
         name: `Race`,
         component: Race,
