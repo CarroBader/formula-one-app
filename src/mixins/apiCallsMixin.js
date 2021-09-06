@@ -85,7 +85,7 @@ export default {
       try {
         console.log(currentRound)
         // const response = await axios.get(`${baseUrl}${season}/${currentRound}/qualifying.json`)
-        const response = await axios.get(`${baseUrl}${season}/12/qualifying.json`)
+        const response = await axios.get(`${baseUrl}${season}/13/qualifying.json`)
         const qualiForRace = response.data.MRData.RaceTable.Races
         if (qualiForRace.length !== 0) {
           return {

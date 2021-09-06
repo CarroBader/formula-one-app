@@ -56,6 +56,9 @@ export default {
         case `Swiss`:
           countryName = `Switzerland`
           break
+        case `Polish`:
+          countryName = `Poland`
+          break
         default:
           countryName = ``
       }

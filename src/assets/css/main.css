@@ -224,22 +224,6 @@ td {
 	}
 
 	/*------------------------ GENERAL ------------------------*/
-	.no-display-when-mobile  {
-		display: none;
-	}
-
-	.display-when-tablet {
-		display: none;
-	}
-
-	.no-display-when-tablet {
-		display: revert;
-	}
-
-	.browser-view {
-		display: none;
-	}
-	
 	.scroll-table {
 		height: 700px;
 	}
@@ -500,7 +484,7 @@ td {
 
 	.leader-driver-points {
 		font-size: 0.8em;
-		-webkit-text-stroke-width: 0.7px;
+		-webkit-text-stroke-width: 0.5px;
 		-webkit-text-stroke-color: #000;
 		margin: 0.3em;
 	}
@@ -678,18 +662,6 @@ td {
 	}
 
   /*------------------------ GENERAL ------------------------*/
-	.no-display-when-mobile {
-		display: revert;
-	}
-
-	.browser-view {
-		display: revert;
-	}
-
-	.mobile-view {
-		display: none;
-	}
-
 	.scroll-table {
 		height: auto;
 	}
@@ -1012,15 +984,6 @@ td {
 	.map {
 		top: 4.25em;
 	}
-	
-	/*------------------------ GENERAL ------------------------*/
-	.no-display-when-tablet {
-		display: none;
-	}
-
-	.display-when-tablet {
-		display: revert;
-	}
 
 	/*------------------------ UPCOMING RACE ------------------------*/
 	/* NextRace - View */
@@ -1323,14 +1286,6 @@ td {
 	/*------------------------ GENERAL ------------------------*/
 	.card-body {
 		padding: 1em;
-	}
-
-	.no-display-when-tablet {
-		display: revert;
-	}
-
-	.display-when-tablet {
-		display: none;
 	}
 
 	/*------------------------ UPCOMING RACE ------------------------*/

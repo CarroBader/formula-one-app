@@ -14,7 +14,7 @@
         >
           <div class="parent">
             <img
-              :src='getImageMixin(imgFolder, topDriver.Driver.code)'
+              :src='getImageMixin(driversFolder, topDriver.Driver.code)'
               class='leader-driver-img'
             />
             <img
@@ -42,13 +42,11 @@
       <div class="scroll-table">
         <table>
           <tr class="driver-table-tr">
-            <th class="browser-view">Position</th>
-            <th class="mobile-view">Pos.</th>
+            <th>{{ returnAltBySize(small, positionLong, positionShort) }}</th>
             <th>Name</th>
             <th>Nationality</th>
             <th>Car</th>
-            <th class="browser-view">Points</th>
-            <th class="mobile-view">Pts.</th>
+            <th>{{ returnAltBySize(small, pointsLong, pointsShort) }}</th>
           </tr>
           <tbody
             v-for="driver, index in driverStandings.slice(3,20)"
@@ -83,9 +81,8 @@ import apiCallsMixin from '../../../mixins/apiCallsMixin'
 import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
 import getImageMixin from '../../../mixins/getImageMixin'
-
-const divsTopThree = [`first`, `second`, `third`]
-const imgFolder = `drivers`
+import getWindowSizeMixin from '../../../mixins/getWindowSizeMixin'
+import generalVars from '../../../mixins/generalVars'
 
 export default {
   name: `DriverTable`,
@@ -93,8 +90,6 @@ export default {
     return {
       driverStandings: null,
       driverStandingsDataLoaded: false,
-      divsTopThree,
-      imgFolder,
     }
   },
   async created() {
@@ -107,7 +102,13 @@ export default {
     // Set dataloaded variable(s) to true
     this.driverStandingsDataLoaded = responseDriverStandings.dataLoaded
   },
-  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin, getImageMixin],
+  mixins: [
+    apiCallsMixin,
+    getCountryFlagMixin,
+    getConstructorColorMixin,
+    getImageMixin,
+    getWindowSizeMixin,
+    generalVars],
 }
 </script>
 

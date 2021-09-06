@@ -112,5 +112,4 @@ export default {
     justify-content: center;
     align-items: baseline;
   }
-
 </style>
