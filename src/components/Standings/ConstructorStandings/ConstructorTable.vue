@@ -13,7 +13,7 @@
           class="leader-div"
         >
           <img
-            :src='getImageMixin(imgFolder, topConstructor.Constructor.constructorId)'
+            :src='getImageMixin(constructersFolder, topConstructor.Constructor.constructorId)'
             class='leader-constructor-img'
           />
           <div class="leaders-constructor-info">
@@ -37,10 +37,10 @@
       <!-- Constructors placed 4-10 -->
       <table>
         <tr class="constructor-table-tr">
-          <th>Position</th>
+          <th>{{ returnAltBySize(small, positionLong, positionShort) }}</th>
           <th>Name</th>
           <th>Nationality</th>
-          <th>Points</th>
+          <th>{{ returnAltBySize(small, pointsLong, pointsShort) }}</th>
         </tr>
         <tbody
           v-for="constructor, index in constructorStandings.slice(3)"
@@ -73,9 +73,8 @@ import apiCallsMixin from '../../../mixins/apiCallsMixin'
 import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
 import getImageMixin from '../../../mixins/getImageMixin'
-
-const divsTopThree = [`first`, `second`, `third`]
-const imgFolder = `constructers`
+import getWindowSizeMixin from '../../../mixins/getWindowSizeMixin'
+import generalVars from '../../../mixins/generalVars'
 
 export default {
   name: `ConstructorTable`,
@@ -83,8 +82,6 @@ export default {
     return {
       constructorStandings: null,
       constructorStandingsDataLoaded: false,
-      divsTopThree,
-      imgFolder,
     }
   },
   async created() {
@@ -97,7 +94,13 @@ export default {
     // Set dataloaded variable(s) to true
     this.constructorStandingsDataLoaded = responseConstructorStandings.dataLoaded
   },
-  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin, getImageMixin],
+  mixins: [
+    apiCallsMixin,
+    getCountryFlagMixin,
+    getConstructorColorMixin,
+    getImageMixin,
+    getWindowSizeMixin,
+    generalVars],
 }
 </script>
 

@@ -11,23 +11,18 @@
         <NextCircuitTrackInfo
           :nextRace="nextRace"
         />
-        <CircuitLastList
-            class="display-when-tablet"
-            :title="polesTitle"
-            :drivers="poles"
-        />
       </b-col>
       <b-col>
         <NexRaceTimeTable />
         <NextRaceCountryFlag
-          :country="nextRaceCountryFlag"/>
+          :country="nextRaceCountryFlag"
+        />
         <b-row class="next-race-last-top">
           <CircuitLastList
             :title="winnersTitle"
             :drivers="winners"
           />
           <CircuitLastList
-            class="no-display-when-tablet"
             :title="polesTitle"
             :drivers="poles"
           />
@@ -44,6 +39,8 @@ import CircuitLastList from '../../components/UpcomingRace/NextRace/CircuitLastL
 import NextRaceCountryFlag from '../../components/UpcomingRace/NextRace/NextRaceCountryFlag.vue'
 
 import apiCallsMixin from '../../mixins/apiCallsMixin'
+import getWindowSizeMixin from '../../mixins/getWindowSizeMixin'
+import generalVars from '../../mixins/generalVars'
 
 const winnersTitle = `Last Winners`
 const polesTitle = `Last Poles`
@@ -143,7 +140,7 @@ export default {
     // Set dataloaded variable(s) to true
     this.nextRaceDataLoaded = responseNextRace.dataLoaded
   },
-  mixins: [apiCallsMixin],
+  mixins: [apiCallsMixin, getWindowSizeMixin, generalVars],
 }
 </script>
 

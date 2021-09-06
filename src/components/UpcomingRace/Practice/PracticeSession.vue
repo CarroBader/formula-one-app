@@ -3,8 +3,8 @@
     <div class="scroll-table">
       <table>
         <tr class="practice-session-tr">
-          <th>Position</th>
-          <th class="no-display-when-mobile">Number</th>
+          <th>{{ returnAltBySize(small, positionLong, positionShort) }}</th>
+          <th :style="returnAltBySize(small, revert, none)">Number</th>
           <th>Name</th>
           <th>Laps</th>
           <th>Time</th>
@@ -17,19 +17,28 @@
         >
         <td class="practice-session-td extra-dark-grey">{{ result.position }}</td>
         <td
-          class="practice-session-td no-display-when-mobile"
-          :class="getConstructorColor(result.car)">{{ result.number }}
+          class="practice-session-td"
+          :class="getConstructorColor(result.car)"
+          :style="returnAltBySize(small, revert, none)"
+        >
+          {{ result.number }}
         </td>
 
-        <td class="practice-session-td browser-view">{{ result.name }}</td>
-        <td class="practice-session-td mobile-view"
-            :class="getConstructorColor(result.car)">{{ result.name }}
+        <td
+        class="practice-session-td"
+        :class="returnAltBySize(small, '', getConstructorColor(result.car))"
+        >
+          {{ result.name }}
         </td>
 
         <td class="practice-session-td extra-dark-grey">{{ result.laps }}</td>
         <td class="practice-session-td practice-session-border-left">{{ result.time }}</td>
-        <td class="practice-session-td practice-session-border-left browser-view red">{{ result.gap }}<span v-if="result.gap !== ''" class="practice-session-seconds">s</span></td>
-        <td class="practice-session-td practice-session-border-left mobile-view dark-grey">{{ result.gap }}<span v-if="result.gap !== ''" class="practice-session-seconds">s</span></td>
+        <td
+          class="practice-session-td practice-session-border-left"
+          :class="returnAltBySize(small, 'red', 'dark-grey')"
+        >
+          {{ result.gap }}<span v-if="result.gap !== ''" class="practice-session-seconds">s</span>
+        </td>
         </tbody>
       </table>
     </div>
@@ -38,16 +47,15 @@
 
 <script>
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
+import getWindowSizeMixin from '../../../mixins/getWindowSizeMixin'
+import generalVars from '../../../mixins/generalVars'
 
 export default {
   name: `PracticeSession`,
   props: {
     practiceResult: Array,
   },
-  mounted() {
-    console.log(this.practiceResult)
-  },
-  mixins: [getConstructorColorMixin],
+  mixins: [getConstructorColorMixin, getWindowSizeMixin, generalVars],
 }
 </script>
 

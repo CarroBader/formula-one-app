@@ -7,14 +7,12 @@
       <div class="scroll-table">
         <table>
           <tr class="result-last-race-tr">
-            <th class="browser-view">Position</th>
-            <th class="mobile-view">Pos.</th>
+            <th>{{ returnAltBySize(small, positionLong, positionShort) }}</th>
             <th></th>
             <th>Name</th>
-            <th class="no-display-when-mobile">Nationality</th>
+            <th :style="returnAltBySize(small, revert, none)">Nationality</th>
             <th>Car</th>
-            <th class="browser-view">Points</th>
-            <th class="mobile-view">Pts.</th>
+            <th>{{ returnAltBySize(small, pointsLong, pointsShort) }}</th>
             <th></th>
           </tr>
           <tbody
@@ -34,7 +32,10 @@
               </span>
             </td>
             <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
-            <td class="no-display-when-mobile result-last-race-td">
+            <td
+              class="result-last-race-td"
+              :style="returnAltBySize(small, revert, none)"
+            >
               <img
                 :src="getCountryName(race.Driver.nationality)"
                 :alt='`${race.Driver.nationality}`'
@@ -66,8 +67,8 @@ import apiCallsMixin from '../../../mixins/apiCallsMixin'
 import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
 import getImageMixin from '../../../mixins/getImageMixin'
-
-const imgFolder = `icons`
+import getWindowSizeMixin from '../../../mixins/getWindowSizeMixin'
+import generalVars from '../../../mixins/generalVars'
 
 export default {
   name: `ResultLastRace`,
@@ -99,7 +100,7 @@ export default {
     */
       const positionSymbol = grid !== position ? `arrow` : `line`
 
-      return this.getImageMixin(imgFolder, positionSymbol)
+      return this.getImageMixin(this.iconsFolder, positionSymbol)
     },
     getSymbolClass(grid, position) {
     /*
@@ -118,7 +119,13 @@ export default {
       return !!(fastestLap !== undefined && fastestLap.rank === `1`)
     },
   },
-  mixins: [apiCallsMixin, getCountryFlagMixin, getConstructorColorMixin, getImageMixin],
+  mixins: [
+    apiCallsMixin,
+    getCountryFlagMixin,
+    getConstructorColorMixin,
+    getImageMixin,
+    getWindowSizeMixin,
+    generalVars],
 }
 </script>
 

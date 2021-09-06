@@ -7,10 +7,9 @@
       <div class="scroll-table">
         <table>
           <tr class="qualifying-session-tr">
-            <th class="browser-view">Position</th>
-            <th class="mobile-view">Pos.</th>
+            <th>{{ returnAltBySize(small, positionLong, positionShort) }}</th>
             <th>Name</th>
-            <th class="no-display-when-mobile">Car</th>
+            <th :style="returnAltBySize(small, revert, none)">Car</th>
             <th>Q1</th>
             <th>Q2</th>
             <th>Q3</th>
@@ -22,16 +21,16 @@
             class="qualifying-session-tbody"
           >
           <td class="qualification-session-td extra-dark-grey">{{ quali.position }}</td>
-          <td class="qualification-session-td browser-view">{{ quali.Driver.givenName }} {{ quali.Driver.familyName }}</td>
           <td
-            class="qualification-session-td mobile-view"
-            :class="getConstructorColor(quali.Constructor.constructorId)"
+            class="qualification-session-td"
+            :class="returnAltBySize(small, '', getConstructorColor(quali.Constructor.constructorId))"
           >
             {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
           </td>
           <td
-            class="qualification-session-td no-display-when-mobile"
+            class="qualification-session-td"
             :class="getConstructorColor(quali.Constructor.constructorId)"
+            :style="returnAltBySize(small, revert, none)"
           >
             {{ quali.Constructor.name }}
           </td>
@@ -62,6 +61,8 @@
 
 <script>
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
+import getWindowSizeMixin from '../../../mixins/getWindowSizeMixin'
+import generalVars from '../../../mixins/generalVars'
 
 export default {
   name: `QualificationSession`,
@@ -100,7 +101,7 @@ export default {
       return this.qualificationResult[index].Q3 < this.qualificationResult[index].Q1 && this.qualificationResult[index].Q3 < this.qualificationResult[index].Q2 ? `green` : ``
     },
   },
-  mixins: [getConstructorColorMixin],
+  mixins: [getConstructorColorMixin, getWindowSizeMixin, generalVars],
 }
 </script>
 
