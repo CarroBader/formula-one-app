@@ -431,8 +431,8 @@ td {
 		font-size: 0.9em;
 	}
 
-	/* QualificationSession */
-	.qualification-session-headline {
+	/* QualifyingSession */
+	.qualifying-session-headline {
 		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
 		border-radius: 8px;
 		border: #ffffff7d 2px solid;
@@ -449,7 +449,7 @@ td {
 		font-size: 0.7em;
 	}
 	
-	.qualification-session-td {
+	.qualifying-session-td {
 		padding: 1em 0.3em;
 	}
 
@@ -803,8 +803,8 @@ td {
 		font-size: 1em;
 	}
 
-	/* QualificationSession */
-	.qualification-session-headline {
+	/* QualifyingSession */
+	.qualifying-session-headline {
 		font-size: 1.2em;
 	}
 
@@ -816,7 +816,7 @@ td {
 		font-size: 0.8em;
 	}
 
-	.qualification-session-td {
+	.qualifying-session-td {
 		padding: 1em 0.8em;
 	}
 
@@ -1131,8 +1131,8 @@ td {
 		font-size: 1.1em;
 	}
 
-	/* QualificationSession */
-	.qualification-session-headline {
+	/* QualifyingSession */
+	.qualifying-session-headline {
 		font-size: 1.4em;
 	}
 
@@ -1144,7 +1144,7 @@ td {
 		font-size: 0.9em;
 	}
 
-	.qualification-session-td {
+	.qualifying-session-td {
 		padding: 1em 1.5em;
 	}
 
@@ -1447,8 +1447,8 @@ td {
 		font-size: 1.3em;
 	}
 
-	/* QualificationSession */
-	.qualification-session-headline {
+	/* QualifyingSession */
+	.qualifying-session-headline {
 		font-size: 1.6em;
 	}
 
@@ -1460,7 +1460,7 @@ td {
 		font-size: 0.95em;
 	}
 
-	.qualification-session-td {
+	.qualifying-session-td {
 		padding: 1em 1.55em;
 	}
 
@@ -1637,12 +1637,12 @@ td {
 		font-size: 1.4em;
 	}
 
-	/* QualificationSession */
-	.qualification-session-headline {
+	/* QualifyingSession */
+	.qualifying-session-headline {
 		font-size: 1.7em;
 	}
 
-	.qualification-session-td {
+	.qualifying-session-td {
 		padding: 1em 2.5em;
 	}
 

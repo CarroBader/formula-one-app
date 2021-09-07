@@ -6,7 +6,7 @@ import Map from '../views/Map.vue'
 import UpcomingRace from '../views/UpcomingRace.vue'
 import NextRace from '../views/UpcomingRace/NextRace.vue'
 import LastRace from '../views/UpcomingRace/LastRace.vue'
-import Qualification from '../views/UpcomingRace/Qualification.vue'
+import Qualifying from '../views/UpcomingRace/Qualifying.vue'
 import Practice from '../views/UpcomingRace/Practice.vue'
 import Race from '../views/UpcomingRace/Race.vue'
 import DriverStandings from '../views/Standings/DriverStandings.vue'
@@ -37,14 +37,14 @@ const routes = [
         component: Practice,
       },
       {
-        path: `/grand-prix/qualification`,
-        name: `Qualification`,
-        component: Qualification,
+        path: `/grand-prix/qualifying`,
+        name: `Qualifying`,
+        component: Qualifying,
       },
       {
-        path: `/grand-prix/sprint-qualification`,
+        path: `/grand-prix/sprint-qualifying`,
         name: `Sprint Qualifying`,
-        component: Qualification,
+        component: Qualifying,
         onlyForSprintRaces: true,
       },
       {

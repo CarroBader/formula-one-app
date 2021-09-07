@@ -78,7 +78,7 @@ export default {
         console.error(e)
       }
     },
-    async getNextRaceQualificationResult(season, currentRound) {
+    async getNextRaceQualifyingResult(season, currentRound) {
     /*
       Return the qulification result of the next race.
     */
@@ -89,7 +89,7 @@ export default {
         const qualiForRace = response.data.MRData.RaceTable.Races
         if (qualiForRace.length !== 0) {
           return {
-            nextRaceQualification: response.data.MRData.RaceTable.Races[0],
+            nextRaceQualifying: response.data.MRData.RaceTable.Races[0],
             dataLoaded: true,
           }
         }

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="qualification-session-headline-div">
-      <h1 class="qualification-session-headline">{{ this.nextRaceName }}</h1>
+    <div class="qualifying-session-headline-div">
+      <h1 class="qualifying-session-headline">{{ this.nextRaceName }}</h1>
     </div>
     <b-card class="card-margin">
       <div class="scroll-table">
@@ -15,39 +15,39 @@
             <th>Q3</th>
           </tr>
           <tbody
-            v-for="quali, index in this.qualificationResult"
+            v-for="quali, index in this.qualifyingResult"
             :key="index"
             :class="[index == 9 || index == 14 ? 'elimination-line' : '']"
             class="qualifying-session-tbody"
           >
-          <td class="qualification-session-td extra-dark-grey">{{ quali.position }}</td>
+          <td class="qualifying-session-td extra-dark-grey">{{ quali.position }}</td>
           <td
-            class="qualification-session-td"
+            class="qualifying-session-td"
             :class="returnAltBySize(small, '', getConstructorColor(quali.Constructor.constructorId))"
           >
             {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
           </td>
           <td
-            class="qualification-session-td"
+            class="qualifying-session-td"
             :class="getConstructorColor(quali.Constructor.constructorId)"
             :style="returnAltBySize(small, revert, none)"
           >
             {{ quali.Constructor.name }}
           </td>
           <td
-            class="qualification-session-td q1 light-grey"
+            class="qualifying-session-td q1 light-grey"
             :class="qualiOne(index)"
           >
             {{ quali.Q1 }}
           </td>
           <td
-            class="qualification-session-td q2 medium-grey"
+            class="qualifying-session-td q2 medium-grey"
             :class="qualiTwo(index)"
           >
             {{ quali.Q2 }}
           </td>
           <td
-            class="qualification-session-td dark-grey"
+            class="qualifying-session-td dark-grey"
             :class="qualiThree(index)"
           >
             {{ quali.Q3 }}
@@ -65,9 +65,9 @@ import getWindowSizeMixin from '../../../mixins/getWindowSizeMixin'
 import generalVars from '../../../mixins/generalVars'
 
 export default {
-  name: `QualificationSession`,
+  name: `QualifyingSession`,
   props: {
-    qualificationResult: Array,
+    qualifyingResult: Array,
     nextRaceName: String,
   },
   methods: {
@@ -76,9 +76,9 @@ export default {
       Checks if Q1 contains a drivers fastest time.
       Returns a class that matches the result.
     */
-      if (this.qualificationResult[index].Q2 !== undefined && this.qualificationResult[index].Q3 === undefined) {
-        return this.qualificationResult[index].Q1 < this.qualificationResult[index].Q2 ? `green` : ``
-      } if (this.qualificationResult[index].Q2 === undefined && this.qualificationResult[index].Q3 === undefined) {
+      if (this.qualifyingResult[index].Q2 !== undefined && this.qualifyingResult[index].Q3 === undefined) {
+        return this.qualifyingResult[index].Q1 < this.qualifyingResult[index].Q2 ? `green` : ``
+      } if (this.qualifyingResult[index].Q2 === undefined && this.qualifyingResult[index].Q3 === undefined) {
         return `green`
       }
     },
@@ -87,10 +87,10 @@ export default {
       Checks if Q2 contains a drivers fastest time.
       Returns a class that matches the result.
     */
-      if (this.qualificationResult[index].Q3 === undefined) {
-        return this.qualificationResult[index].Q2 < this.qualificationResult[index].Q1 ? `green` : ``
-      } if (this.qualificationResult[index].Q3 !== undefined) {
-        return this.qualificationResult[index].Q2 < this.qualificationResult[index].Q3 ? `green` : ``
+      if (this.qualifyingResult[index].Q3 === undefined) {
+        return this.qualifyingResult[index].Q2 < this.qualifyingResult[index].Q1 ? `green` : ``
+      } if (this.qualifyingResult[index].Q3 !== undefined) {
+        return this.qualifyingResult[index].Q2 < this.qualifyingResult[index].Q3 ? `green` : ``
       }
     },
     qualiThree(index) {
@@ -98,7 +98,7 @@ export default {
       Checks if Q3 contains a drivers fastest time.
       Returns a class that matches the result.
     */
-      return this.qualificationResult[index].Q3 < this.qualificationResult[index].Q1 && this.qualificationResult[index].Q3 < this.qualificationResult[index].Q2 ? `green` : ``
+      return this.qualifyingResult[index].Q3 < this.qualifyingResult[index].Q1 && this.qualifyingResult[index].Q3 < this.qualifyingResult[index].Q2 ? `green` : ``
     },
   },
   mixins: [getConstructorColorMixin, getWindowSizeMixin, generalVars],
@@ -114,7 +114,7 @@ export default {
     border-bottom: none;
   }
 
-  .qualification-session-headline-div {
+  .qualifying-session-headline-div {
     margin: 0.5em 0 2em;
   }
 
