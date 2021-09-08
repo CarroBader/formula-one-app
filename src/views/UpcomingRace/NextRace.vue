@@ -13,7 +13,7 @@
         />
       </b-col>
       <b-col>
-        <NexRaceTimeTable />
+        <NextRaceTimeTable />
         <NextRaceCountryFlag
           :country="nextRaceCountryFlag"
         />
@@ -34,7 +34,7 @@
 
 <script>
 import NextCircuitTrackInfo from '../../components/UpcomingRace/NextRace/NextRaceCircuitInfo.vue'
-import NexRaceTimeTable from '../../components/UpcomingRace/NextRace/NexRaceTimeTable.vue'
+import NextRaceTimeTable from '../../components/UpcomingRace/NextRace/NextRaceTimeTable.vue'
 import CircuitLastList from '../../components/UpcomingRace/NextRace/CircuitLastList.vue'
 import NextRaceCountryFlag from '../../components/UpcomingRace/NextRace/NextRaceCountryFlag.vue'
 
@@ -113,7 +113,7 @@ export default {
   name: `NextRace`,
   components: {
     NextCircuitTrackInfo,
-    NexRaceTimeTable,
+    NextRaceTimeTable,
     CircuitLastList,
     NextRaceCountryFlag,
   },
