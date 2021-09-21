@@ -72,12 +72,36 @@ For VsCode install the eslint plugin: https://github.com/microsoft/vscode-eslint
 This will enable auto fixes on save using the .vscode/settings.json file.
 
 
-## Circuits API
+## API
 
-Base url: `https://f1-light-api.herokuapp.com/api/v1/circuits`
+Base url: `https://f1-light-api.herokuapp.com`
 
-A get request with a country name will return the circuit data like this:
+Get all circuits id:
+`https://f1-light-api.herokuapp.com/api/v1/circuits`
 
-`https://f1-light-api.herokuapp.com/api/v1/circuits/<country>`
+Get one circuit using track_id:
+`https://f1-light-api.herokuapp.com/api/v1/circuit/<id>`
 
-Just make a GET request on the base url the get the available countries.
+Get all grands prix id:
+`https://f1-light-api.herokuapp.com/api/v1/grands-prix`
+
+Get one grand prix using grand_prix_id:
+`https://f1-light-api.herokuapp.com/api/v1/grand-prix/<id>`
+
+Get all drivers id:
+`https://f1-light-api.herokuapp.com/api/v1/drivers`
+
+Get one driver using driver_id:
+`https://f1-light-api.herokuapp.com/api/v1/driver/<id>`
+
+Get all teams id:
+`https://f1-light-api.herokuapp.com/api/v1/teams`
+
+Get one team using team_id:
+`https://f1-light-api.herokuapp.com/api/v1/team/<id>`
+
+Get all starting grids id:
+`https://f1-light-api.herokuapp.com/api/v1/starting-grids`
+
+Get one starting grid using grand_prix_id:
+`https://f1-light-api.herokuapp.com/api/v1/starting-grid/<id>`
