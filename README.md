@@ -76,32 +76,32 @@ This will enable auto fixes on save using the .vscode/settings.json file.
 
 Base url: `https://f1-light-api.herokuapp.com`
 
-Get all circuits id:
+Get all circuits:
 `https://f1-light-api.herokuapp.com/api/v1/circuits`
 
 Get one circuit using track_id:
-`https://f1-light-api.herokuapp.com/api/v1/circuit/<id>`
+`https://f1-light-api.herokuapp.com/api/v1/circuits/<id>`
 
-Get all grands prix id:
+Get all grands prix:
 `https://f1-light-api.herokuapp.com/api/v1/grands-prix`
 
 Get one grand prix using grand_prix_id:
-`https://f1-light-api.herokuapp.com/api/v1/grand-prix/<id>`
+`https://f1-light-api.herokuapp.com/api/v1/grands-prix/<id>`
 
-Get all drivers id:
+Get all drivers:
 `https://f1-light-api.herokuapp.com/api/v1/drivers`
 
 Get one driver using driver_id:
-`https://f1-light-api.herokuapp.com/api/v1/driver/<id>`
+`https://f1-light-api.herokuapp.com/api/v1/drivers/<id>`
 
-Get all teams id:
+Get all teams:
 `https://f1-light-api.herokuapp.com/api/v1/teams`
 
 Get one team using team_id:
-`https://f1-light-api.herokuapp.com/api/v1/team/<id>`
+`https://f1-light-api.herokuapp.com/api/v1/teams/<id>`
 
-Get all starting grids id:
+Get all starting grids:
 `https://f1-light-api.herokuapp.com/api/v1/starting-grids`
 
 Get one starting grid using grand_prix_id:
-`https://f1-light-api.herokuapp.com/api/v1/starting-grid/<id>`
+`https://f1-light-api.herokuapp.com/api/v1/starting-grids/<id>`
