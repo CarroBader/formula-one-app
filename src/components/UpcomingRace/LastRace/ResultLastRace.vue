@@ -1,14 +1,15 @@
 <template>
-  <div v-if="lastRaceDataLoaded">
+  <div>
     <div class="result-last-race-headline-div">
-      <h1 class="result-last-race-headline">{{ lastRace.raceName }}</h1>
+      <!-- <h1 class="result-last-race-headline">{{ lastRace.raceName }}</h1> -->
+      <h1>Lol</h1>
     </div>
-    <b-card class="card-margin">
+    <!-- <b-card class="card-margin">
       <div class="scroll-table">
         <table>
           <tr class="result-last-race-tr">
             <th>{{ returnAltBySize(small, positionLong, positionShort) }}</th>
-            <th></th>
+            <th>Grid</th>
             <th>Name</th>
             <th :style="returnAltBySize(small, revert, none)">Nationality</th>
             <th>Car</th>
@@ -16,11 +17,12 @@
             <th></th>
           </tr>
           <tbody
-            v-for="race, index in lastRace.Results"
+            v-for="race, index in lastRace"
             :key="index"
             class="result-last-race-tbody"
           >
             <td class="result-last-race-td extra-dark-grey">{{ race.position }}</td>
+            <td class="result-last-race-td extra-dark-grey">{{ race.gridPosition }}</td>
             <td class="result-last-race-td">
               <img
                 :src="getSymbolImage(race.grid, race.position)"
@@ -31,7 +33,7 @@
                 {{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}
               </span>
             </td>
-            <td class="result-last-race-td">{{ race.Driver.givenName }} {{race.Driver.familyName }}</td>
+            <td class="result-last-race-td"> {{race.name }}</td>
             <td
               class="result-last-race-td"
               :style="returnAltBySize(small, revert, none)"
@@ -46,7 +48,8 @@
               class="result-last-race-td"
               :class="getConstructorColor(race.Constructor.constructorId)"
             >
-              {{ race.Constructor.name }}
+            <td>
+              {{ race.team }}
             </td>
             <td class="result-last-race-td">{{ race.points }}</td>
             <td v-if="fastestLap(race.FastestLap)">
@@ -58,12 +61,11 @@
           </tbody>
         </table>
       </div>
-    </b-card>
+    </b-card> -->
   </div>
 </template>
 
 <script>
-import apiCallsMixin from '../../../mixins/apiCallsMixin'
 import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
 import getImageMixin from '../../../mixins/getImageMixin'
@@ -74,23 +76,10 @@ export default {
   name: `ResultLastRace`,
   data() {
     return {
-      getLastRace: `lastRace`,
-      lastRace: null,
-      lastRaceDataLoaded: false,
     }
   },
-  async created() {
-    // Get last race
-    const responseLastRace = await this.getRaces(this.getLastRace)
-
-    // Get last race result
-    const responseLastRaceResult = await this.getRaceResult(responseLastRace.season, responseLastRace.round)
-
-    // Set value on data properties
-    this.lastRace = responseLastRaceResult.lastRaceResult
-
-    // Set dataloaded variable(s) to true
-    this.lastRaceDataLoaded = responseLastRaceResult.dataLoaded
+  created() {
+    // console.log(`lastRace`, lastRace)
   },
   methods: {
     getSymbolImage(grid, position) {
@@ -120,7 +109,6 @@ export default {
     },
   },
   mixins: [
-    apiCallsMixin,
     getCountryFlagMixin,
     getConstructorColorMixin,
     getImageMixin,

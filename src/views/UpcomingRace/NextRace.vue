@@ -1,31 +1,32 @@
 <template>
   <b-container
     class="default-background-center"
-    v-if="nextRaceDataLoaded"
   >
     <h1 class="next-race-headline">
-      {{ this.nextRace.raceName }}
+      {{ nextRaceName }}
     </h1>
     <b-row class="next-race-row">
       <b-col>
-        <NextCircuitTrackInfo
-          :nextRace="nextRace"
-        />
+        <!-- <NextCircuitTrackInfo
+          :nextRace="this.allRaces"
+        /> -->
       </b-col>
       <b-col>
-        <NextRaceTimeTable />
-        <NextRaceCountryFlag
-          :country="nextRaceCountryFlag"
+        <!-- <NextRaceTimeTable
+          :timeTableData="timeTableData"
         />
+        <NextRaceCountryFlag
+          :country="nextRaceCountry"
+        /> -->
         <b-row class="next-race-last-top">
-          <CircuitLastList
+          <!-- <CircuitLastList
             :title="winnersTitle"
             :drivers="winners"
-          />
-          <CircuitLastList
+          /> -->
+          <!-- <CircuitLastList
             :title="polesTitle"
             :drivers="poles"
-          />
+          /> -->
         </b-row>
       </b-col>
     </b-row>
@@ -33,114 +34,71 @@
 </template>
 
 <script>
-import NextCircuitTrackInfo from '../../components/UpcomingRace/NextRace/NextRaceCircuitInfo.vue'
+// import NextCircuitTrackInfo from '../../components/UpcomingRace/NextRace/NextRaceCircuitInfo.vue'
 import NextRaceTimeTable from '../../components/UpcomingRace/NextRace/NextRaceTimeTable.vue'
-import CircuitLastList from '../../components/UpcomingRace/NextRace/CircuitLastList.vue'
+// import CircuitLastList from '../../components/UpcomingRace/NextRace/CircuitLastList.vue'
 import NextRaceCountryFlag from '../../components/UpcomingRace/NextRace/NextRaceCountryFlag.vue'
 
-import apiCallsMixin from '../../mixins/apiCallsMixin'
 import getWindowSizeMixin from '../../mixins/getWindowSizeMixin'
 import generalVars from '../../mixins/generalVars'
+import convertDateFormatMixin from '../../mixins/convertDateFormatMixin'
+import dataMixin from '../../mixins/dataMixin'
 
-const winnersTitle = `Last Winners`
-const polesTitle = `Last Poles`
-const winners = [
-  {
-    year: 2021,
-    name: `Max Verstappen`,
-    constructor: `Red Bull`,
-    colorCode: `red_bull`,
-    winners: true,
-  },
-  {
-    year: 2020,
-    name: `Lewis Hamilton`,
-    constructor: `Mercedes`,
-    colorCode: `mercedes`,
-    winners: true,
-  },
-  {
-    year: 2019,
-    name: `Charles LeClerec`,
-    constructor: `Ferrari`,
-    colorCode: `ferrari`,
-    winners: true,
-  },
-  {
-    year: 2018,
-    name: `Sebastian Vettel`,
-    constructor: `Ferrari`,
-    colorCode: `ferrari`,
-    winners: true,
-  },
-  {
-    year: 2017,
-    name: `Lewis Hamilton`,
-    constructor: `Mercedes`,
-    colorCode: `mercedes`,
-    winners: true,
-  },
-]
-const poles = [
-  {
-    year: 2021,
-    name: `Max Verstappen`,
-    time: `1:55.006`,
-  },
-  {
-    year: 2020,
-    name: `Lewis Hamilton`,
-    time: `1:57.592`,
-  },
-  {
-    year: 2019,
-    name: `Charles LeClerec`,
-    time: `1:58.076`,
-  },
-  {
-    year: 2018,
-    name: `Lewis Hamilton`,
-    time: `1:57.983`,
-  },
-  {
-    year: 2017,
-    name: `Lewis Hamilton`,
-    time: `1:59.143`,
-  },
-]
+const sessionsToRemove = [`Grid`, `FastestLap`, `Qualifying 2`, `Qualifying 3`]
 
 export default {
   name: `NextRace`,
   components: {
-    NextCircuitTrackInfo,
-    NextRaceTimeTable,
-    CircuitLastList,
-    NextRaceCountryFlag,
+    // NextCircuitTrackInfo,
+    // NextRaceTimeTable,
+    // CircuitLastList,
+    // NextRaceCountryFlag,
   },
   data() {
     return {
-      getNextRace: `nextRace`,
-      nextRace: null,
-      nextRaceDataLoaded: false,
-      nextRaceCountryFlag: null,
-      winnersTitle,
-      winners,
-      polesTitle,
-      poles,
+      allRaces: null,
+      nextRaceObj: null,
+      nextRaceName: null,
+      nextRaceCountry: null,
+      timeTableData: null,
     }
   },
-  async created() {
-    // Get next race
-    const responseNextRace = await this.getRaces(this.getNextRace)
-
-    // Set value on data properties
-    this.nextRace = responseNextRace.nextRace
-    this.nextRaceCountryFlag = responseNextRace.nextRace.Circuit.Location.country
-
-    // Set dataloaded variable(s) to true
-    this.nextRaceDataLoaded = responseNextRace.dataLoaded
+  created() {
+    console.log(`NextRace - created`)
+    // this.allRaces = this.$store.state.allConfirmedRaces
+    // this.getNextRaceObj()
+    // this.getTimeTableData()
   },
-  mixins: [apiCallsMixin, getWindowSizeMixin, generalVars],
+  methods: {
+    getNextRaceObj() {
+      /*
+        Gets next race object and assign value to nextRaceObj.
+      */
+      this.nextRaceObj = this.getNextRace()
+
+      // Assign variables value
+      this.nextRaceName = this.nextRaceObj.name
+      this.nextRaceCountry = this.nextRaceObj.country
+    },
+    getTimeTableData() {
+      /*
+        Returns an object with time table data.
+      */
+      const raceSessions = []
+      const dateString = this.getDateString(this.nextRaceObj.start_date, this.nextRaceObj.end_date)
+
+      this.nextRaceObj.sessions.forEach((session) => {
+        if (!sessionsToRemove.includes(session.session_name)) {
+          raceSessions.push(this.getFormattedDayAndTime(session))
+        }
+      })
+      this.timeTableData = {
+        date: dateString,
+        sessions: raceSessions,
+      }
+    },
+  },
+  mixins: [getWindowSizeMixin, generalVars, convertDateFormatMixin, dataMixin],
 }
 </script>
 

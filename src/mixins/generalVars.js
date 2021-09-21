@@ -1,14 +1,14 @@
 export default {
   data() {
     return {
-      // Size
+      // Size of breakpoint
       small: 544,
       medium: 768,
       large: 992,
-      // Display
+      // Display or not
       none: `display:none;`,
       revert: `display:revert;`,
-      // Text
+      // Long or Short version of text
       pointsLong: `Points`,
       pointsShort: `Pts.`,
       positionLong: `Position`,
@@ -17,8 +17,7 @@ export default {
       iconsFolder: `icons`,
       driversFolder: `drivers`,
       constructersFolder: `constructers`,
-      // Variables
-      divsTopThree: [`first`, `second`, `third`],
+      // Variables used in Standings
     }
   },
 }

@@ -28,8 +28,6 @@ export default {
     */
       const screenSize = this.window.width
       const sizeValue = size
-      console.log(`screenSize`, screenSize)
-      console.log(`sizeValue`, sizeValue)
 
       return screenSize > sizeValue ? altOne : altTwo
     },

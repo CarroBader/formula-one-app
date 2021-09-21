@@ -24,19 +24,33 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
+import dataMixin from '../../mixins/dataMixin'
+
 export default {
   name: `TopNav`,
   data() {
     return {
       routes: this.$router.options.routes,
+      allRaces: null,
     }
   },
-  props: {
-    nextRaceName: String,
+  computed: {
+    ...mapGetters([`allConfirmedRaces`]),
   },
-  beforeMount() {
-    this.routes[0].name = this.nextRaceName
+  created() {
+    this.allRaces = this.allConfirmedRaces
+    this.getNextRaceName()
   },
+  methods: {
+    getNextRaceName() {
+      const nextRace = this.getNextRace(this.allRaces)
+
+      this.routes[0].name = nextRace.name
+    },
+  },
+  mixins: [dataMixin],
 }
 </script>
 
