@@ -1,5 +1,6 @@
 <template>
   <b-container class="default-background-center">
+        <h1> {{ id }}</h1>
     <div class="row race-row">
       <div class="col">
         <MainRace />
@@ -16,6 +17,7 @@ export default {
   components: {
     MainRace,
   },
+  props: [`id`],
 }
 </script>
 

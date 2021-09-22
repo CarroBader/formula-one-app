@@ -61,30 +61,53 @@ const changeCountryName = {
   'Abu Dhabi': `UAE`,
 }
 
+const todaysDate = Date.parse(new Date())
+
+const notWantedSessions = [`Grid`, `FastestLap`]
+
+const newSessionType = {
+  'Practice 1': `practice`,
+  'Practice 2': `practice`,
+  'Practice 3': `practice`,
+  'Qualifying 1': `qualifying`,
+  'Qualifying 2': `qualifying`,
+  'Qualifying 3': `qualifying`,
+  Race: `race`,
+}
+
 // If you want to clear createPersistedState sessionStorage.clear()
 export default new Vuex.Store({
   plugins: [createPersistedState({
     storage: window.sessionStorage,
   })],
   state: {
-    dataLoaded: false,
+    allDataLoaded: false,
+    raceDataLoaded: false,
+    raceNav: `Next Race`,
+    standingsNav: `Driver Standings`,
     allConfirmedRaces: [],
     allDrivers: [],
     allTeams: [],
-    lastRaceSession: {},
+    nextRace: {},
+    currentRound: 0,
+    nextSession: {},
+    // lastRaceSession: {},
   },
   getters: {
     allConfirmedRaces: (state) => state.allConfirmedRaces,
     allDrivers: (state) => state.allDrivers,
     allTeams: (state) => state.allTeams,
-    lastRaceSession: (state) => state.lastRaceSession,
+    nextRace: (state) => state.nextRace,
+    currentRound: (state) => state.currentRound,
+    nextSession: (state) => state.nextSession,
+    // lastRaceSession: (state) => state.lastRaceSession,
   },
   mutations: {
     SET_RACES: (state, confirmedRaces) => {
       console.log(`SET_RACES mutations`)
       state.allConfirmedRaces.push(...confirmedRaces)
 
-      state.dataLoaded = true
+      state.raceDataLoaded = true
       // state.allConfirmedRaces = []
     },
     SET_DRIVERS: (state, drivers) => {
@@ -97,10 +120,35 @@ export default new Vuex.Store({
       state.allTeams.push(...teams)
       // state.allTeams = []
     },
-    SET_LAST_RACE: (state, sessionData) => {
-      console.log(`SET_LAST_RACE - mutations`)
-      state.lastRaceSession = sessionData
+    SET_NEXT_RACE: (state, nextRaceObj) => {
+      console.log(`SET_NEXT_RACE mutations`)
+      state.nextRace = nextRaceObj
+      // state.allTeams = []
     },
+    SET_CURRENT_ROUND: (state, round) => {
+      console.log(`SET_CURRENT_ROUND mutations`)
+      console.log(`här`, round)
+      state.currentRound = round
+      // state.allTeams = []
+    },
+    SET_SESSION: (state, currentSession) => {
+      console.log(`SET_SESSION mutations`)
+      state.nextSession = currentSession
+      // state.allTeams = []
+      state.allDataLoaded = true
+    },
+    SET_NAV_NAME: (state, raceNavValue) => {
+      console.log(`SET_NAV_NAME mutations`)
+      state.raceNav = raceNavValue
+    },
+    SET_STANDINGS_NAME: (state, standingsNavValue) => {
+      console.log(`SET_STANDINGS_NAME mutations`)
+      state.standingsNav = standingsNavValue
+    },
+    // SET_LAST_RACE: (state, sessionData) => {
+    //   console.log(`SET_LAST_RACE - mutations`)
+    //   state.lastRaceSession = sessionData
+    // },
   },
   actions: {
     async getAllRaces({ commit }) {
@@ -133,9 +181,8 @@ export default new Vuex.Store({
         confirmedRaces.forEach((race, index) => {
           race.track_id = addTrackId[race.track]
           race.grand_prix_id = addGrandPrixId[race.name]
-          race.race_round = index
+          race.race_round = index + 1
           if (race.country in changeCountryName) {
-            console.log(`race.country`, race.country)
             race.country = changeCountryName[race.country]
           }
         })
@@ -181,6 +228,63 @@ export default new Vuex.Store({
       } catch (e) {
         console.error(e)
       }
+    },
+    getNextRace({ commit }, allRaces) {
+      /*
+        Return - the next race obj
+      */
+      const nextRaceObj = allRaces.find((race) => race.date_in_milli >= todaysDate)
+
+      console.log(`Set nextRace`)
+      commit(`SET_NEXT_RACE`, nextRaceObj)
+    },
+    getNextRaceRound({ commit }, nextRace) {
+      /*
+        Return - the current round number
+      */
+      const round = nextRace.race_round
+
+      console.log(`Set current round number`)
+      commit(`SET_CURRENT_ROUND`, round)
+    },
+    getNextSession({ commit }, nextRace) {
+      /*
+        Return - the active session
+        If: the active session don't have live data: sessionType, nextSessionName, nextSessionDate
+        Else: sessionType and sessionId
+      */
+      const relevantSessions = []
+      let nextSession = {}
+
+      nextRace.sessions.forEach((session) => {
+        if (!notWantedSessions.includes(session.session_name)) {
+          session.session_type = newSessionType[session.session_name]
+          relevantSessions.push(session)
+        }
+      })
+
+      relevantSessions.find((relSession) => {
+        const dateInMilli = Date.parse(relSession.date)
+
+        if (dateInMilli === todaysDate) {
+          nextSession = {
+            sessionType: relSession.session_type,
+            sessionId: relSession.id,
+          }
+        }
+
+        if (dateInMilli >= todaysDate) {
+          nextSession = {
+            sessionType: `Next Race`,
+            sessionName: relSession.session_name,
+            startTime: relSession.date,
+          }
+        }
+        return nextSession
+      })
+      this.currentSession = nextSession
+      console.log(`Set current session`)
+      commit(`SET_SESSION`, this.currentSession)
     },
     // async getSessionById({ commit }, incomingSession) {
     //   /*

@@ -2,19 +2,19 @@
   <b-container class="default-background-center">
   <div class="row">
     <div class="col">
-      <RaceMap />
+      <RaceMapView />
     </div>
   </div>
   </b-container>
 </template>
 
 <script>
-import RaceMap from '../components/RaceMap.vue'
+import RaceMapView from '../components/RaceMapView.vue'
 
 export default {
-  name: `Map`,
+  name: `RaceMap`,
   components: {
-    RaceMap,
+    RaceMapView,
   },
 }
 </script>
