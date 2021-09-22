@@ -138,10 +138,12 @@ export default new Vuex.Store({
       state.allDataLoaded = true
     },
     SET_NAV_NAME: (state, raceNavValue) => {
+      // Varible used for routing of race.
       console.log(`SET_NAV_NAME mutations`)
       state.raceNav = raceNavValue
     },
     SET_STANDINGS_NAME: (state, standingsNavValue) => {
+      // Varible used for routing of standings.
       console.log(`SET_STANDINGS_NAME mutations`)
       state.standingsNav = standingsNavValue
     },

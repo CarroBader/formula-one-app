@@ -18,6 +18,7 @@ export default {
       driversFolder: `drivers`,
       constructersFolder: `constructers`,
       // Variables used in Standings
+      divsTopThree: [`first`, `second`, `third`],
     }
   },
 }

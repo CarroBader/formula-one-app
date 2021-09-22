@@ -1,31 +1,25 @@
+/* eslint-disable guard-for-in */
+/* eslint-disable no-restricted-syntax */
+import axios from 'axios'
+import {
+  baseURLF1, hostF1, apiKeyF1,
+} from '../vars'
+
+const newTeamIds = {
+  58685: `mercedes`,
+  33121: `red_bull`,
+  56525: `mclaren`,
+  183197: `ferrari`,
+  31205: `alpine`,
+  199493: `alphatauri`,
+  65311: `aston_martin`,
+  163637: `williams`,
+  71583: `alfa_romeo`,
+  143585: `haas`,
+}
+
 export default {
   methods: {
-    async getNextRace(season, date) {
-      /*
-        Return next race in the calender.
-        Exemple:
-        Input - (2021, "2021-09-08") <- Should be todays date
-        Return - {
-          dataLoaded: true
-          race: {race_id: 384, name: "Italian Grand Prix", country: "Italy", status: "Confirmed", season: "2021", …}
-        }
-      */
-      const todaysDate = this.convertDate(date)
-
-      try {
-        // Returns an array of all confirmed races
-        const response = await this.getAllRaces(season)
-
-        const nextRace = response.races.find((race) => race.dateInMilli >= todaysDate)
-
-        return {
-          race: nextRace,
-          dataLoaded: true,
-        }
-      } catch (e) {
-        console.error(e)
-      }
-    },
     async getTimeTableForRace(season, raceId) {
     /*
       Return time table information for a specific race.
@@ -61,6 +55,41 @@ export default {
           start: this.chosenRace.start_date,
           end: this.chosenRace.end_date,
           sessions: returnSessions,
+          dataLoaded: true,
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    },
+    async getDriverStandings() {
+      /*
+        Return constructor standings for a aeason
+        Param: season
+      */
+      const todaysDate = new Date()
+      const season = todaysDate.getFullYear()
+
+      try {
+        const response = await axios.get(`${baseURLF1}/constructors/standings/${season}`, {
+          headers: {
+            "x-rapidapi-key": apiKeyF1,
+            "x-rapidapi-host": hostF1,
+          },
+        })
+
+        const teams = response.data.results
+
+        teams.forEach((team) => {
+          if (team.team_id in newTeamIds) {
+            team.team_id = newTeamIds[team.team_id]
+          }
+          if (team.team_name === `Alfa Romeo Racing`) {
+            team.team_name = `Alfa Romeo`
+          }
+        })
+        // console.log(`teams`, teams)
+        return {
+          allTeams: teams,
           dataLoaded: true,
         }
       } catch (e) {

@@ -1,7 +1,9 @@
 <template>
   <b-container class="view-container">
     <StandingsNav />
+    <keep-alive>
     <router-view />
+    </keep-alive>
   </b-container>
 </template>
 
@@ -17,5 +19,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
