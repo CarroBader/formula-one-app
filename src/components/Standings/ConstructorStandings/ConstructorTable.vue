@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="constructor-table-headline-div">
-      <h1 class="constructor-table-headline">2021 Constructor Championship</h1>
+      <h1 class="constructor-table-headline"> {{ season }} Constructor Championship</h1>
     </div>
     <b-card class="card-margin">
       <!-- Constructors placed 1-3 -->
@@ -79,10 +79,6 @@ export default {
   name: `ConstructorTable`,
   props: {
     teamStandings: Array,
-  },
-  data() {
-    return {
-    }
   },
   async created() {
     console.log(`ConstructorTable - teamStandings`, this.teamStandings)

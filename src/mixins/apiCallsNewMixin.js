@@ -4,8 +4,9 @@ import axios from 'axios'
 import {
   baseURLF1, hostF1, apiKeyF1,
 } from '../vars'
+import generalVars from "./generalVars"
 
-const newTeamIds = {
+const newTeamIdsTeamStandings = {
   58685: `mercedes`,
   33121: `red_bull`,
   56525: `mclaren`,
@@ -16,6 +17,49 @@ const newTeamIds = {
   163637: `williams`,
   71583: `alfa_romeo`,
   143585: `haas`,
+}
+
+const newDriverIds = {
+  87445: `max_verstappen`,
+  21838: `lewis_hamilton`,
+  92948: `valtteri_bottas`,
+  539806: `lando_norris`,
+  26087: `sergio_perez`,
+  328938: `charles_leclerc`,
+  87222: `carlos_sainz`,
+  58339: `daniel_ricciardo`,
+  991967: `pierre_gasly`,
+  21122: `fernando_alonso`,
+  102533: `esteban_ocon`,
+  31997: `sebastian_vettel`,
+  754025: `lance_stroll`,
+  50864: `yuki_tsunoda`,
+  764647: `george_russell`,
+  547297: `nicholas_latifi`,
+  64723: `kimi_raikkonen`,
+  351420: `antonio_giovinazzi`,
+  704606: `mick_schumacher`,
+  106571: `robert_kubica`,
+  280605: `nikita_mazepin`,
+}
+
+const newTeamIdsDriverStandings = {
+  16549: `red_bull`,
+  29331: `mercedes`,
+  28251: `mclaren`,
+  91587: `ferrari`,
+  99735: `alphatauri`,
+  15591: `alpine`,
+  32644: `aston_martin`,
+  81807: `williams`,
+  35780: `alfa_romeo`,
+  71781: `haas`,
+}
+
+const changeCountryName = {
+  'Great Britain': `United Kingdom`,
+  USA: `United States`,
+  'Abu Dhabi': `UAE`,
 }
 
 export default {
@@ -61,16 +105,13 @@ export default {
         console.error(e)
       }
     },
-    async getDriverStandings() {
+    async getTeamStandings() {
       /*
-        Return constructor standings for a aeason
+        Return team standings for a aeason
         Param: season
       */
-      const todaysDate = new Date()
-      const season = todaysDate.getFullYear()
-
       try {
-        const response = await axios.get(`${baseURLF1}/constructors/standings/${season}`, {
+        const response = await axios.get(`${baseURLF1}/constructors/standings/${this.season}`, {
           headers: {
             "x-rapidapi-key": apiKeyF1,
             "x-rapidapi-host": hostF1,
@@ -80,21 +121,63 @@ export default {
         const teams = response.data.results
 
         teams.forEach((team) => {
-          if (team.team_id in newTeamIds) {
-            team.team_id = newTeamIds[team.team_id]
+          if (team.team_id in newTeamIdsTeamStandings) {
+            team.team_id = newTeamIdsTeamStandings[team.team_id]
           }
           if (team.team_name === `Alfa Romeo Racing`) {
             team.team_name = `Alfa Romeo`
           }
         })
-        // console.log(`teams`, teams)
+
         return {
           allTeams: teams,
-          dataLoaded: true,
+          teamDataLoaded: true,
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    },
+    async getDriverStandings() {
+    /*
+      Return driver standings for a season
+      Param: season
+    */
+      try {
+        const response = await axios.get(`${baseURLF1}/drivers/standings/${this.season}`, {
+          headers: {
+            "x-rapidapi-key": apiKeyF1,
+            "x-rapidapi-host": hostF1,
+          },
+        })
+
+        const drivers = response.data.results
+
+        drivers.forEach((driver) => {
+          if (driver.driver_id in newDriverIds) {
+            driver.driver_id = newDriverIds[driver.driver_id]
+          }
+
+          if (driver.team_id in newTeamIdsDriverStandings) {
+            driver.team_id = newTeamIdsDriverStandings[driver.team_id]
+          }
+
+          if (driver.nationality in changeCountryName) {
+            driver.nationality = changeCountryName[driver.nationality]
+          }
+
+          if (driver.team_name === `Alfa Romeo Racing`) {
+            driver.team_name = `Alfa Romeo`
+          }
+        })
+
+        return {
+          allDrivers: drivers,
+          driverDataLoaded: true,
         }
       } catch (e) {
         console.error(e)
       }
     },
   },
+  mixins: [generalVars],
 }
