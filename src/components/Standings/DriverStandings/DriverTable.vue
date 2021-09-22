@@ -93,14 +93,14 @@ export default {
     }
   },
   async created() {
-    // Get current driver standings
-    const responseDriverStandings = await this.getDriverStandings()
+    // // Get current driver standings
+    // const responseDriverStandings = await this.getDriverStandings()
 
-    // Set value on data properties
-    this.driverStandings = responseDriverStandings.standingsDriver
+    // // Set value on data properties
+    // this.driverStandings = responseDriverStandings.standingsDriver
 
-    // Set dataloaded variable(s) to true
-    this.driverStandingsDataLoaded = responseDriverStandings.dataLoaded
+    // // Set dataloaded variable(s) to true
+    // this.driverStandingsDataLoaded = responseDriverStandings.dataLoaded
   },
   mixins: [
     apiCallsMixin,

@@ -1,7 +1,10 @@
 <template>
   <b-container class="default-background-center">
+    <h3>Pracrice</h3>
+
+        <h1> {{ id }}</h1>
     <div class="row practice-row">
-      <b-tabs content-class="mt-3">
+      <!-- <b-tabs content-class="mt-3">
         <b-tab title="Practice 1" active>
           <PracticeSession
           :practiceResult="practiceOne" />
@@ -14,7 +17,7 @@
           <PracticeSession
           :practiceResult="practiceThree" />
         </b-tab>
-      </b-tabs>
+      </b-tabs> -->
     </div>
   </b-container>
 </template>
@@ -581,6 +584,7 @@ export default {
       practiceThree,
     }
   },
+  props: [`id`],
 }
 </script>
 

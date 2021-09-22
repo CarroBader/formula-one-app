@@ -2,6 +2,8 @@
   <b-container
     class="default-background-center"
   >
+    <h3>Upcoming Race</h3>
+    <h1> {{ id }}</h1>
     <h1 class="next-race-headline">
       {{ nextRaceName }}
     </h1>
@@ -63,6 +65,7 @@ export default {
       timeTableData: null,
     }
   },
+  props: [`id`],
   created() {
     console.log(`NextRace - created`)
     // this.allRaces = this.$store.state.allConfirmedRaces

@@ -1,5 +1,7 @@
 <template>
-    <b-navbar toggleable="md navbar-top">
+<div>
+  <div class="lol"></div>
+    <b-navbar toggleable="md navbar-top figure.blur5">
       <img
         src="../../assets/logo.png"
         class="nav-logo-top" alt="F1 logo"
@@ -10,47 +12,49 @@
 
       <b-collapse id="nav-collapse" class="nav-collapse-top" is-nav>
           <b-navbar-nav class="navbar-nav-top">
-              <router-link
+              <!-- <router-link
                 v-for="route in routes"
                 :key="route.path"
                 :to="route.path"
                 class="nav-link nav-link-top"
               >
                 {{ route.name }}
-              </router-link>
+              </router-link> -->
+              <router-link class="nav-link nav-link-top" :to="{name: raceNav, params: { id: currentRound }}"> {{ nextRace.name }}</router-link>
+              <router-link class="nav-link nav-link-top" :to="{name: standingsNav }">Standings</router-link>
+              <router-link class="nav-link nav-link-top" :to="{name: 'Race Map'}"> Map</router-link>
           </b-navbar-nav>
       </b-collapse>
     </b-navbar>
+</div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
-import dataMixin from '../../mixins/dataMixin'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   name: `TopNav`,
   data() {
     return {
-      routes: this.$router.options.routes,
-      allRaces: null,
     }
   },
-  computed: {
-    ...mapGetters([`allConfirmedRaces`]),
-  },
-  created() {
-    this.allRaces = this.allConfirmedRaces
-    this.getNextRaceName()
-  },
-  methods: {
-    getNextRaceName() {
-      const nextRace = this.getNextRace(this.allRaces)
-
-      this.routes[0].name = nextRace.name
+  watch: {
+    currentRound(newValue) {
+      this.$router.replace({ name: this.raceNav, params: { id: newValue } })
     },
   },
-  mixins: [dataMixin],
+  computed: {
+    ...mapGetters([`nextRace`, `nextSession`]),
+    ...mapState([`currentRound`, `raceNav`, `standingsNav`]),
+  },
+  created() {
+    this.$store.commit(`SET_NAV_NAME`, this.nextSession.sessionType)
+  },
+  methods: {
+    activate(a) {
+      console.log(a, `a`)
+    },
+  },
 }
 </script>
 

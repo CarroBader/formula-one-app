@@ -8,8 +8,8 @@
     >
       <div
         class="swiper-nav-div"
-        v-on:click="activeRace"
-        :class="race.race_round === swiperOptions.initialSlide ? 'active-race' : ''"
+        @click="[activeRace($event), changeRace(race)]"
+        :class="(race.race_round - 1) === swiperOptions.initialSlide ? 'active-race' : ''"
       >
         <img
           :src="getFlag(race.country)"
@@ -26,9 +26,8 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
-import dataMixin from '../../mixins/dataMixin'
 import getCountryFlagMixin from '../../mixins/getCountryFlagMixin'
 import convertRaceTimeMixin from '../../mixins/convertRaceTimeMixin'
 
@@ -40,12 +39,8 @@ export default {
   },
   data() {
     return {
-      // getAllRaces: `allRaces`,
       allRaces: null,
-      // allRacesDataLoaded: false,
-      // getNextRace: `nextRace`,
-      nextRace: null,
-      // raceRound: null,
+      upcomingRace: null,
       swiperOptions: {
         slidesPerView: `auto`,
         initialSlide: 0,
@@ -62,13 +57,17 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([`allConfirmedRaces`, `allDrivers`, `allTeams`]),
+    ...mapGetters([`allConfirmedRaces`, `allDrivers`, `allTeams`, `nextRace`]),
+    ...mapState([`currentRound`]),
   },
   async created() {
-    this.allRaces = this.allConfirmedRaces
-    this.nextRace = this.getNextRace(this.allRaces)
+    console.log(`create`)
 
-    this.swiperOptions.initialSlide = Number(this.nextRace.race_round)
+    this.allRaces = this.allConfirmedRaces
+    this.upcomingRace = this.nextRace
+
+    this.swiperOptions.initialSlide = Number(this.upcomingRace.race_round) - 1
+    this.$store.commit(`SET_CURRENT_ROUND`, Number(this.upcomingRace.race_round))
 
     this.getNameOfMonth()
   },
@@ -89,6 +88,7 @@ export default {
     /*
       Add active-race on the chosen element. If it already exists on another element it will remove it.
     */
+      console.log(`carro`, e)
       const activeRaceDiv = document.querySelector(`.active-race`)
 
       if (activeRaceDiv !== null) {
@@ -96,8 +96,15 @@ export default {
       }
       e.target.classList.add(`active-race`)
     },
+    changeRace(race) {
+    /*
+      Change race_round according to wish race is clicked
+    */
+      console.log(`SET_CURRENT_ROUND`, race.race_round)
+      this.$store.commit(`SET_CURRENT_ROUND`, race.race_round)
+    },
   },
-  mixins: [dataMixin, getCountryFlagMixin, convertRaceTimeMixin],
+  mixins: [getCountryFlagMixin, convertRaceTimeMixin],
 }
 </script>
 

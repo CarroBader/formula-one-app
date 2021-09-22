@@ -2,7 +2,6 @@
   <div>
     <div class="result-last-race-headline-div">
       <!-- <h1 class="result-last-race-headline">{{ lastRace.raceName }}</h1> -->
-      <h1>Lol</h1>
     </div>
     <!-- <b-card class="card-margin">
       <div class="scroll-table">

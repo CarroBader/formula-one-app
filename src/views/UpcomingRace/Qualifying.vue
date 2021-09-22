@@ -1,5 +1,7 @@
 <template>
   <b-container class="default-background-center">
+    <h3>Qualifying</h3>
+    <h1> {{ id }}</h1>
     <div class="row qualifying-row">
       <div class="col">
         <QualifyingSession
@@ -22,6 +24,7 @@ export default {
   components: {
     QualifyingSession,
   },
+  props: [`id`],
   data() {
     return {
       getNextRace: `nextRace`,
@@ -34,14 +37,14 @@ export default {
   },
   async created() {
     // Get next race
-    const responseNextRace = await this.getRaces(this.getNextRace)
+    // const responseNextRace = await this.getRaces(this.getNextRace)
 
-    // Set value on data properties
-    this.nextRaceName = responseNextRace.nextRace.raceName
-    this.season = responseNextRace.nextRace.season
-    this.thisRound = responseNextRace.nextRace.round
+    // // Set value on data properties
+    // this.nextRaceName = responseNextRace.nextRace.raceName
+    // this.season = responseNextRace.nextRace.season
+    // this.thisRound = responseNextRace.nextRace.round
 
-    this.getNextRaceQualifying(this.season, this.thisRound)
+    // this.getNextRaceQualifying(this.season, this.thisRound)
   },
   methods: {
     async getNextRaceQualifying(season, round) {

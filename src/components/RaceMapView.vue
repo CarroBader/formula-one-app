@@ -47,7 +47,7 @@ const weather = []
 const locationAndweather = []
 
 export default {
-  name: `RaceMap`,
+  name: `RaceMapView`,
   components: {
     'v-map': LMap,
     'v-tilelayer': LTileLayer,

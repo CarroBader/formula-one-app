@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '../views/Home.vue'
 import Standings from '../views/Standings.vue'
-import Map from '../views/Map.vue'
+import RaceMap from '../views/RaceMap.vue'
 import UpcomingRace from '../views/UpcomingRace.vue'
 import NextRace from '../views/UpcomingRace/NextRace.vue'
 import LastRace from '../views/UpcomingRace/LastRace.vue'
@@ -15,41 +14,52 @@ import ConstructorStandings from '../views/Standings/ConstructorStandings.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  // {
+  //   path: `/`,
+  //   // redirect: `/grand-prix/`,
+  //   // component: UpcomingRace,
+  // },
   {
-    path: `/grand-prix/`,
-    name: `undefined`,
-    icon: `flag-checkered`,
+    path: `/grand-prix/:id`,
     component: UpcomingRace,
+    props: true,
+    icon: `flag-checkered`,
     children: [
       {
-        path: `/grand-prix/last-race`,
+        path: `last-race`,
         name: `Last Race`,
+        props: true,
         component: LastRace,
       },
       {
-        path: `/grand-prix/upcoming-race`,
-        name: `Upcoming Race`,
+        path: `next-race`,
+        name: `Next Race`,
+        props: true,
         component: NextRace,
       },
       {
-        path: `/grand-prix/practice`,
+        path: `practice`,
         name: `Practice`,
+        props: true,
         component: Practice,
       },
       {
-        path: `/grand-prix/qualifying`,
+        path: `qualifying`,
         name: `Qualifying`,
+        props: true,
         component: Qualifying,
       },
       {
-        path: `/grand-prix/sprint-qualifying`,
+        path: `sprint-qualifying`,
         name: `Sprint Qualifying`,
+        props: true,
         component: Qualifying,
         onlyForSprintRaces: true,
       },
       {
-        path: `/grand-prix/race`,
+        path: `race`,
         name: `Race`,
+        props: true,
         component: Race,
       },
     ],
@@ -61,22 +71,22 @@ const routes = [
     component: Standings,
     children: [
       {
-        path: `/driver-standings`,
+        path: `driver-standings`,
         name: `Driver Standings`,
         component: DriverStandings,
       },
       {
-        path: `/constructor-standings`,
+        path: `constructor-standings`,
         name: `Constructor Standings`,
         component: ConstructorStandings,
       },
     ],
   },
   {
-    path: `/map`,
-    name: `Map`,
+    path: `/race-map`,
+    name: `Race Map`,
     icon: `globe-europe`,
-    component: Map,
+    component: RaceMap,
   },
 ]
 

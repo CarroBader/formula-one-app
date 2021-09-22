@@ -1,5 +1,7 @@
 <template>
   <b-container class="default-background-center">
+    <h1>Last Race</h1>
+    <h1> {{ id }}</h1>
     <div class="row last-race-row">
       <div class="col">
         <ResultLastRace />
@@ -9,7 +11,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex"
+import { mapGetters } from 'vuex'
 import store from '../../store/ store'
 
 import ResultLastRace from '../../components/UpcomingRace/LastRace/ResultLastRace.vue'
@@ -29,6 +31,7 @@ export default {
       lastRaceSessionId: {},
     }
   },
+  props: [`id`],
   computed: {
     ...mapGetters([`lastRaceSession`]),
   },
@@ -47,14 +50,14 @@ export default {
       /*
         Calls api to get Last Race result.
       */
-      this.lastRaceObj = this.getLastRace()
+      // this.lastRaceObj = this.getLastRace()
 
-      this.lastRaceObj.sessions.forEach((session) => {
-        if (session.session_name === `Race`) {
-          this.lastRaceSessionId = { stateName: this.stateName, sessionId: session.id }
-        }
-      })
-      store.dispatch(`getSessionById`, this.lastRaceSessionId)
+      // this.lastRaceObj.sessions.forEach((session) => {
+      //   if (session.session_name === `Race`) {
+      //     this.lastRaceSessionId = { stateName: this.stateName, sessionId: session.id }
+      //   }
+      // })
+      // store.dispatch(`getSessionById`, this.lastRaceSessionId)
     },
     getLastRaceData() {
       // - [ ] Position - results.drivers.position

@@ -1,71 +1,5 @@
 <template>
-  <div v-if="constructorStandingsDataLoaded">
-    <div class="constructor-table-headline-div">
-      <h1 class="constructor-table-headline">2021 Constructor Championship</h1>
-    </div>
-    <b-card class="card-margin">
-      <!-- Constructors placed 1-3 -->
-      <div class="leader-constructor-div">
-        <div
-          v-for="topConstructor, index in constructorStandings.slice(0,3)"
-          :key="index"
-          :class="divsTopThree[index]"
-          class="leader-div"
-        >
-          <img
-            :src='getImageMixin(constructersFolder, topConstructor.Constructor.constructorId)'
-            class='leader-constructor-img'
-          />
-          <div class="leaders-constructor-info">
-            <h3 class="leader-constructor-points">{{ topConstructor.points }} pts</h3>
-            <div>
-              <img
-                :src="getCountryName(topConstructor.Constructor.nationality)"
-                :alt='`${topConstructor.Constructor.nationality}`'
-                class="leader-constructor-flag-img"
-              />
-            </div>
-            <h5
-              class="leader-constructor-name-team"
-              :class="getConstructorColor(topConstructor.Constructor.constructorId)"
-            >
-              {{ topConstructor.Constructor.name }}
-            </h5>
-          </div>
-        </div>
-      </div>
-      <!-- Constructors placed 4-10 -->
-      <table>
-        <tr class="constructor-table-tr">
-          <th>{{ returnAltBySize(small, positionLong, positionShort) }}</th>
-          <th>Name</th>
-          <th>Nationality</th>
-          <th>{{ returnAltBySize(small, pointsLong, pointsShort) }}</th>
-        </tr>
-        <tbody
-          v-for="constructor, index in constructorStandings.slice(3)"
-          :key="index"
-          class="constructor-table-tbody"
-        >
-          <td class="constructor-table-td extra-dark-grey">{{ constructor.position }}</td>
-          <td
-            class="constructor-table-td"
-            :class="getConstructorColor(constructor.Constructor.constructorId)"
-          >
-            {{ constructor.Constructor.name }}
-          </td>
-          <td>
-            <img
-              :src="getCountryName(constructor.Constructor.nationality)"
-              :alt='`${constructor.Constructor.nationality}`'
-              class="constructor-table-td constructor-table-flag-img"
-            />
-          </td>
-          <td class="constructor-table-td">{{ constructor.points }}</td>
-        </tbody>
-      </table>
-    </b-card>
-  </div>
+  <div><h3>Team Win</h3></div>
 </template>
 
 <script>
@@ -85,14 +19,14 @@ export default {
     }
   },
   async created() {
-    // Get current constructor standings
-    const responseConstructorStandings = await this.getConstructorStandings()
+    // // Get current constructor standings
+    // const responseConstructorStandings = await this.getConstructorStandings()
 
-    // Set value on data properties
-    this.constructorStandings = responseConstructorStandings.standingsConstructor
+    // // Set value on data properties
+    // this.constructorStandings = responseConstructorStandings.standingsConstructor
 
-    // Set dataloaded variable(s) to true
-    this.constructorStandingsDataLoaded = responseConstructorStandings.dataLoaded
+    // // Set dataloaded variable(s) to true
+    // this.constructorStandingsDataLoaded = responseConstructorStandings.dataLoaded
   },
   mixins: [
     apiCallsMixin,
