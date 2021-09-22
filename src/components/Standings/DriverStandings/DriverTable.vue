@@ -1,7 +1,7 @@
 <template>
-  <div v-if="driverStandingsDataLoaded">
+  <div>
     <div class="driver-table-headline-div">
-      <h1 class="driver-table-headline">2021 World Championship</h1>
+      <h1 class="driver-table-headline">{{ season }} World Championship</h1>
     </div>
     <b-card class="card-margin">
       <!-- Drivers placed 1-3 -->
@@ -14,31 +14,28 @@
         >
           <div class="parent">
             <img
-              :src='getImageMixin(driversFolder, topDriver.Driver.code)'
+              :src='getImageMixin(driversFolder, topDriver.driver_id)'
               class='leader-driver-img'
             />
             <img
-              :src="getCountryName(topDriver.Driver.nationality)"
-              :alt='`${topDriver.Driver.nationality}`'
+              :src="getFlag(topDriver.nationality)"
+              :alt='`${topDriver.nationality}`'
               class="leader-driver-flag-img"
             />
           </div>
           <div class="leader-driver-info">
             <h3 class="leader-driver-points">{{ topDriver.points }} pts</h3>
-            <h5 class="leader-driver-name-team leader-driver-name">
-              {{ topDriver.Driver.givenName }}
-              {{ topDriver.Driver.familyName }}
-            </h5>
+            <h5 class="leader-driver-name-team leader-driver-name">{{ topDriver.driver_name }}</h5>
             <h6
               class="leader-driver-name-team"
-              :class="getConstructorColor(topDriver.Constructors[0].constructorId)"
+              :class="getConstructorColor(topDriver.team_id)"
             >
-              {{ topDriver.Constructors[0].name }}
+              {{ topDriver.team_name }}
             </h6>
           </div>
         </div>
       </div>
-      <!-- Drivers placed 4-20 -->
+      <!-- Drivers placed 4- ... -->
       <div class="scroll-table">
         <table>
           <tr class="driver-table-tr">
@@ -49,24 +46,24 @@
             <th>{{ returnAltBySize(small, pointsLong, pointsShort) }}</th>
           </tr>
           <tbody
-            v-for="driver, index in driverStandings.slice(3,20)"
+            v-for="driver, index in driverStandings.slice(3)"
             :key="index"
             class="driver-table-tbody"
           >
             <td class="driver-table-td extra-dark-grey">{{ driver.position }}</td>
-            <td class="driver-table-td">{{ driver.Driver.givenName }} {{ driver.Driver.familyName }}</td>
+            <td class="driver-table-td">{{ driver.driver_name }}</td>
             <td class="driver-table-td">
               <img
-                :src="getCountryName(driver.Driver.nationality)"
-                :alt='`${driver.Driver.nationality}`'
+                :src="getFlag(driver.nationality)"
+                :alt='`${driver.nationality}`'
                 class="driver-table-flag-img"
               />
             </td>
             <td
               class="driver-table-td"
-              :class="getConstructorColor(driver.Constructors[0].constructorId)"
+              :class="getConstructorColor(driver.team_id)"
             >
-              {{ driver.Constructors[0].name }}
+              {{ driver.team_name }}
             </td>
             <td class="driver-table-td">{{ driver.points }}</td>
           </tbody>
@@ -77,7 +74,6 @@
 </template>
 
 <script>
-import apiCallsMixin from '../../../mixins/apiCallsMixin'
 import getCountryFlagMixin from '../../../mixins/getCountryFlagMixin'
 import getConstructorColorMixin from '../../../mixins/getConstructorColorMixin'
 import getImageMixin from '../../../mixins/getImageMixin'
@@ -86,24 +82,10 @@ import generalVars from '../../../mixins/generalVars'
 
 export default {
   name: `DriverTable`,
-  data() {
-    return {
-      driverStandings: null,
-      driverStandingsDataLoaded: false,
-    }
-  },
-  async created() {
-    // // Get current driver standings
-    // const responseDriverStandings = await this.getDriverStandings()
-
-    // // Set value on data properties
-    // this.driverStandings = responseDriverStandings.standingsDriver
-
-    // // Set dataloaded variable(s) to true
-    // this.driverStandingsDataLoaded = responseDriverStandings.dataLoaded
+  props: {
+    driverStandings: Array,
   },
   mixins: [
-    apiCallsMixin,
     getCountryFlagMixin,
     getConstructorColorMixin,
     getImageMixin,

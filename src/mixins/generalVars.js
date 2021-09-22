@@ -19,6 +19,15 @@ export default {
       constructersFolder: `constructers`,
       // Variables used in Standings
       divsTopThree: [`first`, `second`, `third`],
+      // Time and Date
+      season: this.getYear(),
     }
+  },
+  methods: {
+    getYear() {
+      const todaysDate = new Date()
+      const year = todaysDate.getFullYear()
+      return year
+    },
   },
 }

@@ -3,8 +3,8 @@
     <div class="row constructor-standings-row">
       <div class="col">
         <ConstructorTable
-        v-if="teamStandingsDataLoaded"
-        :teamStandings="teamStandings" />
+          v-if="teamStandingsDataLoaded"
+          :teamStandings="teamStandings" />
       </div>
     </div>
   </b-container>
@@ -16,79 +16,6 @@ import { mapGetters } from 'vuex'
 import ConstructorTable from '../../components/Standings/ConstructorStandings/ConstructorTable.vue'
 
 import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
-
-const driverStandings = [
-  {
-    position: 1,
-    points: `362.5`,
-    team_id: `mercedes`,
-    team_name: `Mercedes`,
-    season: 2021,
-  },
-  {
-    position: 2,
-    points: `344.5`,
-    team_id: `red_bull`,
-    team_name: `Red Bull`,
-    season: 2021,
-  },
-  {
-    position: 3,
-    points: `215`,
-    team_id: `mclaren`,
-    team_name: `McLaren`,
-    season: 2021,
-  },
-  {
-    position: 4,
-    points: `201.5`,
-    team_id: `ferrari`,
-    team_name: `Ferrari`,
-    season: 2021,
-  },
-  {
-    position: 5,
-    points: `95`,
-    team_id: `alpine`,
-    team_name: `Alpine`,
-    season: 2021,
-  },
-  {
-    position: 6,
-    points: `84`,
-    team_id: `alphatauri`,
-    team_name: `AlphaTauri`,
-    season: 2021,
-  },
-  {
-    position: 7,
-    points: `59`,
-    team_id: `aston_martin`,
-    team_name: `Aston Martin`,
-    season: 2021,
-  },
-  {
-    position: 8,
-    points: `22`,
-    team_id: `williams`,
-    team_name: `Williams`,
-    season: 2021,
-  },
-  {
-    position: 9,
-    points: `3`,
-    team_id: `alfa_romeo`,
-    team_name: `Alfa Romeo`,
-    season: 2021,
-  },
-  {
-    position: 10,
-    points: `0`,
-    team_id: `haas`,
-    team_name: `Haas`,
-    season: 2021,
-  },
-]
 
 export default {
   name: `ConstructorStandings`,
@@ -106,19 +33,16 @@ export default {
     }
   },
   async created() {
+    if (this.teamStandings && this.teamStandings.length > 0) return
+    console.log(`ConstructorStandings - No data in teamStandings yet`)
+    const teamStandingsData = await this.getTeamStandings()
+
+    this.teamStandings = teamStandingsData.allTeams
     this.allTeamsStore = this.allTeams
-    this.teamStandings = driverStandings
-    this.teamStandingsDataLoaded = true
-    console.log(`ConstructorTable - allTeamsStore`, this.allTeamsStore)
 
     this.getTeamsNationality()
 
-    // if (this.teamStandings && this.teamStandings.length > 0) return
-    // console.log(`ConstructorStandings - No data in teamStandings yet`)
-    // const teamStandingsData = await this.getDriverStandings()
-
-    // this.teamStandings = teamStandingsData.allTeams
-    // this.teamStandingsDataLoaded = teamStandingsData.dataLoaded
+    this.teamStandingsDataLoaded = teamStandingsData.teamDataLoaded
   },
   methods: {
     getTeamsNationality() {
@@ -129,7 +53,6 @@ export default {
           }
         }
       }
-      console.log(`this.teamStandings`, this.teamStandings)
     },
   },
   mixins: [apiCallsNewMixin],
