@@ -16,8 +16,6 @@ import store from '../../store/ store'
 
 import ResultLastRace from '../../components/UpcomingRace/LastRace/ResultLastRace.vue'
 
-import dataMixin from '../../mixins/dataMixin'
-
 export default {
   name: `LastRace`,
   components: {
@@ -36,16 +34,31 @@ export default {
     ...mapGetters([`lastRaceSession`]),
   },
   created() {
-    this.allRaces = this.$store.state.allConfirmedRaces
-    console.log(`LastRace - created`)
-    console.log(`Time`, new Date())
-    console.log(`LastRace - Last Race Session`, this.lastRaceSession)
+    console.log(`LastRace - updating`)
+    // this.allRaces = this.$store.state.allConfirmedRaces
+    // console.log(`LastRace - created`)
+    // console.log(`Time`, new Date())
+    // console.log(`LastRace - Last Race Session`, this.lastRaceSession)
 
-    if (this.lastRaceSession && Object.keys(this.lastRaceSession).length > 0) return
-    console.log(`LastRace - No data yet`)
-    this.getLastRaceSessionById()
+    // if (this.lastRaceSession && Object.keys(this.lastRaceSession).length > 0) return
+    // console.log(`LastRace - No data yet`)
+    // this.getLastRaceSessionById()
   },
   methods: {
+    // getLastRace() {
+    //   let lastRace
+    //   this.allRaces.forEach((race) => {
+    //     if (race.race_round === this.round - 1) {
+    //       lastRace = race
+    //     }
+    //   })
+    //   return lastRace
+    // },
+    // getLastRace() {
+    //   const reveredAllRaces = [...this.allRaces].reverse()
+
+    //   return reveredAllRaces.find((race) => race.race_round <= this.round - 1)
+    // },
     getLastRaceSessionById() {
       /*
         Calls api to get Last Race result.
@@ -95,7 +108,6 @@ export default {
       console.log(`Last Race - drivers`, this.lastRace)
     },
   },
-  mixins: [dataMixin],
 }
 </script>
 

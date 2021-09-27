@@ -57,7 +57,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([`allConfirmedRaces`, `allDrivers`, `allTeams`, `nextRace`]),
+    ...mapGetters([`allConfirmedRaces`, `nextRace`]),
     ...mapState([`currentRound`]),
   },
   async created() {
@@ -88,7 +88,6 @@ export default {
     /*
       Add active-race on the chosen element. If it already exists on another element it will remove it.
     */
-      console.log(`carro`, e)
       const activeRaceDiv = document.querySelector(`.active-race`)
 
       if (activeRaceDiv !== null) {

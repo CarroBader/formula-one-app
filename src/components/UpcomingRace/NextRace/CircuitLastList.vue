@@ -15,15 +15,15 @@
               <span class="circuit-last-list-year extra-dark-grey">{{ driver.year }}</span>
             </td>
             <td class="circuit-last-list-td">
-              <span class="circuit-last-list-name">{{ driver.name }}</span>
+              <span class="circuit-last-list-name">{{ driver.driver_name }}</span>
             </td>
             <td class="circuit-last-list-td"
-              v-if="driver.winners">
+              v-if="driver.winner === 'true'">
               <span
                 class="circuit-last-list-constructor"
-                :class="getConstructorColor(driver.colorCode)"
+                :class="getConstructorColor(driver.team_id)"
               >
-                {{ driver.constructor }}
+                {{ driver.team_name }}
               </span>
             </td>
             <td

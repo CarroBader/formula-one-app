@@ -16,8 +16,8 @@ Vue.use(VueRouter)
 const routes = [
   // {
   //   path: `/`,
-  //   // redirect: `/grand-prix/`,
-  //   // component: UpcomingRace,
+  //   redirect: `/grand-prix/`,
+  //   component: UpcomingRace,
   // },
   {
     path: `/grand-prix/:id`,

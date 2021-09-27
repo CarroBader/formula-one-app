@@ -36,6 +36,7 @@ export default {
     }
   },
   async created() {
+    console.log(`Qualy - updating`)
     // Get next race
     // const responseNextRace = await this.getRaces(this.getNextRace)
 

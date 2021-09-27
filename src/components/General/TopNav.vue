@@ -48,7 +48,11 @@ export default {
     ...mapState([`currentRound`, `raceNav`, `standingsNav`]),
   },
   created() {
+    console.log(`TOP NAV`)
+    console.log(`TOP NAV ------------------------------------------ nextSession.sessionType`, this.nextSession.sessionType)
+    console.log(`Top NAV ------------------------------------------ raceNav`, this.raceNav)
     this.$store.commit(`SET_NAV_NAME`, this.nextSession.sessionType)
+    console.log(`Top NAV ------------------------------------------ raceNav`, this.raceNav)
   },
   methods: {
     activate(a) {

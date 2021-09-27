@@ -1,11 +1,13 @@
 <template>
-  <b-container class="view-container">
+  <b-container class="view-container" :key="renderKey">
     <UpcomingRaceNav />
     <router-view />
   </b-container>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import UpcomingRaceNav from '../components/UpcomingRace/UpcomingRaceNav.vue'
 
 export default {
@@ -13,13 +15,28 @@ export default {
   components: {
     UpcomingRaceNav,
   },
-  props: [`id`],
+  data() {
+    return {
+      renderKey: 0,
+    }
+  },
+  computed: {
+    ...mapState([`currentRound`]),
+  },
+  watch: {
+    currentRound(newV, oldV) {
+      if (newV !== oldV) {
+        this.forceRerender()
+      }
+    },
+  },
   methods: {
-    // Get data with this.round
+    forceRerender() {
+      this.renderKey += 1
+    },
   },
 }
 </script>
 
 <style scoped>
-
 </style>

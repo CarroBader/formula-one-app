@@ -577,6 +577,7 @@ export default {
   components: {
     PracticeSession,
   },
+  props: [`id`],
   data() {
     return {
       practiceOne,
@@ -584,7 +585,9 @@ export default {
       practiceThree,
     }
   },
-  props: [`id`],
+  created() {
+    console.log(`Practise - updating`)
+  },
 }
 </script>
 
