@@ -18,6 +18,9 @@ export default {
     MainRace,
   },
   props: [`id`],
+  created() {
+    console.log(`Race - updating`)
+  },
 }
 </script>
 

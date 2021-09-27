@@ -2,33 +2,37 @@
   <b-container
     class="default-background-center"
   >
-    <h3>Upcoming Race</h3>
-    <h1> {{ id }}</h1>
-    <h1 class="next-race-headline">
-      {{ nextRaceName }}
-    </h1>
+  <!-- <h1>Upcoming</h1>
+  <h1>{{ this.round}}</h1> -->
+    <h1 class="next-race-headline">{{ nextRaceName }}</h1>
     <b-row class="next-race-row">
       <b-col>
-        <!-- <NextCircuitTrackInfo
-          :nextRace="this.allRaces"
-        /> -->
+        <NextRaceCircuitInfo
+          v-if="trackDataLoded"
+          :nextTrack="this.trackData"
+        />
+        <NextRaceGrandPrixInfo
+          v-if="grandPrixDataLoded"
+          :nextGrandPrix="this.grandPrixData"
+        />
       </b-col>
       <b-col>
-        <!-- <NextRaceTimeTable
+        <NextRaceTimeTable
+          v-if="timeTableDataLoaded"
           :timeTableData="timeTableData"
         />
         <NextRaceCountryFlag
           :country="nextRaceCountry"
-        /> -->
+        />
         <b-row class="next-race-last-top">
-          <!-- <CircuitLastList
+          <CircuitLastList
             :title="winnersTitle"
-            :drivers="winners"
-          /> -->
-          <!-- <CircuitLastList
+            :drivers="lastWinners"
+          />
+          <CircuitLastList
             :title="polesTitle"
-            :drivers="poles"
-          /> -->
+            :drivers="lastPoles"
+          />
         </b-row>
       </b-col>
     </b-row>
@@ -36,72 +40,123 @@
 </template>
 
 <script>
-// import NextCircuitTrackInfo from '../../components/UpcomingRace/NextRace/NextRaceCircuitInfo.vue'
+import { mapGetters, mapState } from 'vuex'
+
+import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
+import convertDateFormatMixin from '../../mixins/convertDateFormatMixin'
+
+import NextRaceCircuitInfo from '../../components/UpcomingRace/NextRace/NextRaceCircuitInfo.vue'
+import NextRaceGrandPrixInfo from '../../components/UpcomingRace/NextRace/NextRaceGrandPrixInfo.vue'
 import NextRaceTimeTable from '../../components/UpcomingRace/NextRace/NextRaceTimeTable.vue'
-// import CircuitLastList from '../../components/UpcomingRace/NextRace/CircuitLastList.vue'
+import CircuitLastList from '../../components/UpcomingRace/NextRace/CircuitLastList.vue'
 import NextRaceCountryFlag from '../../components/UpcomingRace/NextRace/NextRaceCountryFlag.vue'
 
-import getWindowSizeMixin from '../../mixins/getWindowSizeMixin'
-import generalVars from '../../mixins/generalVars'
-import convertDateFormatMixin from '../../mixins/convertDateFormatMixin'
-import dataMixin from '../../mixins/dataMixin'
+// import getWindowSizeMixin from '../../mixins/getWindowSizeMixin'
+// import generalVars from '../../mixins/generalVars'
 
 const sessionsToRemove = [`Grid`, `FastestLap`, `Qualifying 2`, `Qualifying 3`]
 
 export default {
   name: `NextRace`,
   components: {
-    // NextCircuitTrackInfo,
-    // NextRaceTimeTable,
-    // CircuitLastList,
-    // NextRaceCountryFlag,
+    NextRaceCircuitInfo,
+    NextRaceGrandPrixInfo,
+    NextRaceTimeTable,
+    CircuitLastList,
+    NextRaceCountryFlag,
   },
   data() {
     return {
-      allRaces: null,
-      nextRaceObj: null,
+      winnersTitle: `Last Winners`,
+      polesTitle: `Last Poles`,
+      nextRace: null,
       nextRaceName: null,
+      allRaces: null,
+      round: 0,
+      lastWinners: null,
+      lastPoles: null,
       nextRaceCountry: null,
       timeTableData: null,
+      timeTableDataLoaded: false,
+      grandPrixData: null,
+      grandPrixDataLoded: false,
+      trackData: null,
+      trackDataLoded: false,
     }
   },
-  props: [`id`],
-  created() {
-    console.log(`NextRace - created`)
-    // this.allRaces = this.$store.state.allConfirmedRaces
-    // this.getNextRaceObj()
-    // this.getTimeTableData()
+  computed: {
+    ...mapGetters([`allConfirmedRaces`]),
+    ...mapState([`currentRound`]),
+  },
+  async created() {
+    // Assign data from veux
+    this.allRaces = this.allConfirmedRaces
+    this.round = this.currentRound
+
+    // Assign data by using veux datan
+    this.nextRace = this.getNextRace()
+    this.nextRaceName = this.nextRace.name
+    const trackId = this.nextRace.track_id
+    const grandPrixId = this.nextRace.grand_prix_id
+    this.nextRaceCountry = this.nextRace.country
+
+    // Get data from database
+
+    // Next Track
+    const nextTrack = await this.getOneTrack(trackId)
+    this.trackData = nextTrack.data
+    this.trackDataLoded = nextTrack.dataLoaded
+
+    // Next Grand Prix
+    const nextGrandPrix = await this.getOneGrandPrix(grandPrixId)
+    this.grandPrixData = nextGrandPrix.data
+    this.grandPrixDataLoded = nextGrandPrix.dataLoaded
+    this.lastWinners = this.grandPrixData.winners.slice(-5)
+    this.lastPoles = this.grandPrixData.poles.slice(-5)
+
+    // Time Table
+    const nextTimeTable = this.getTimeTableData()
+    this.timeTableData = nextTimeTable.data
+    this.timeTableDataLoaded = nextTimeTable.dataLoaded
+
+    console.log(`this.timeTableData`, this.timeTableData)
+
+    console.log(`Next Race - updating`)
+    // console.log(`this.lastWinners`, this.lastWinners)
+    console.log(`this.nextRace`, this.nextRace)
+    console.log(`this.currentRound`, this.currentRound)
+    // this.lastWinners.map((lw) => lw.winner = true)
   },
   methods: {
-    getNextRaceObj() {
-      /*
-        Gets next race object and assign value to nextRaceObj.
-      */
-      this.nextRaceObj = this.getNextRace()
-
-      // Assign variables value
-      this.nextRaceName = this.nextRaceObj.name
-      this.nextRaceCountry = this.nextRaceObj.country
+    getNextRace() {
+      return this.allRaces.find((race) => race.race_round >= this.round)
     },
     getTimeTableData() {
-      /*
-        Returns an object with time table data.
-      */
+    /*
+      Returns an object with time table data.
+    */
+      console.log(`getTimeTableData`)
       const raceSessions = []
-      const dateString = this.getDateString(this.nextRaceObj.start_date, this.nextRaceObj.end_date)
+      const dateString = this.getDateString(this.nextRace.start_date, this.nextRace.end_date)
 
-      this.nextRaceObj.sessions.forEach((session) => {
+      this.nextRace.sessions.forEach((session) => {
         if (!sessionsToRemove.includes(session.session_name)) {
+          if (session.session_name === `Qualifying 1`) {
+            session.session_name = session.session_name.slice(0, -2)
+          }
           raceSessions.push(this.getFormattedDayAndTime(session))
         }
       })
-      this.timeTableData = {
-        date: dateString,
-        sessions: raceSessions,
+      return {
+        data: {
+          date: dateString,
+          sessions: raceSessions,
+        },
+        dataLoaded: true,
       }
     },
   },
-  mixins: [getWindowSizeMixin, generalVars, convertDateFormatMixin, dataMixin],
+  mixins: [apiCallsNewMixin, convertDateFormatMixin], // getWindowSizeMixin, generalVars,
 }
 </script>
 

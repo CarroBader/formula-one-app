@@ -34,7 +34,7 @@ export default {
   },
   beforeMount() {
     this.routesToUse = this.$router.options.routes[0].children
-    if (!this.isSprintRace) { this.routesToUse = this.routesToUse.filter((race) => !race.onlyForSprintRaces) }
+    // if (!this.isSprintRace) { this.routesToUse = this.routesToUse.filter((race) => !race.onlyForSprintRaces) }
   },
   methods: {
     changeName(name) {
@@ -42,6 +42,9 @@ export default {
         this.$store.commit(`SET_NAV_NAME`, name)
       }
     },
+  },
+  created() {
+    console.log(`UPcomingNav ------------------------------------------ raceNav`, this.raceNav)
   },
 }
 </script>

@@ -52,7 +52,6 @@ export default {
       }
     },
     $route(to, from) {
-      console.log(to)
       if (from.name === `Race Map`) {
         this.forceRerender()
       }
@@ -69,6 +68,8 @@ export default {
     console.log(`App - nextRace`, this.nextRace)
     console.log(`App - currentRound`, this.currentRound)
     console.log(`App - nextSession`, this.nextSession)
+    console.log(`App - allDataLoaded`, this.allDataLoaded)
+    console.log(`App ------------------------------------------ raceNav`, this.raceNav)
 
     if (this.allConfirmedRaces && this.allConfirmedRaces.length > 0) return
     console.log(`App - No data getAllRaces yet`)

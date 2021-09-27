@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-syntax */
 import axios from 'axios'
 import {
-  baseURLF1, hostF1, apiKeyF1,
+  baseUrl, baseURLF1, hostF1, apiKeyF1,
 } from '../vars'
 import generalVars from "./generalVars"
 
@@ -173,6 +173,40 @@ export default {
         return {
           allDrivers: drivers,
           driverDataLoaded: true,
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    },
+    async getOneTrack(trackId) {
+      /*
+        Return - One track
+        Params: track_id
+      */
+      try {
+        const response = await axios.get(`${baseUrl}/circuits/${trackId}`)
+        // console.log(`Fetching track from database`)
+
+        return {
+          data: response.data.data,
+          dataLoaded: true,
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    },
+    async getOneGrandPrix(grandPrixId) {
+      /*
+        Return - One grand prix
+        Params: grand_prix_id
+      */
+      try {
+        const response = await axios.get(`${baseUrl}/grands-prix/${grandPrixId}`)
+        // console.log(`Fetching grand prix from database`)
+
+        return {
+          data: response.data.data,
+          dataLoaded: true,
         }
       } catch (e) {
         console.error(e)

@@ -58,7 +58,7 @@ const addGrandPrixId = {
 const changeCountryName = {
   'Great Britain': `United Kingdom`,
   USA: `United States`,
-  'Abu Dhabi': `UAE`,
+  'Abu Dhabi': `United Arab Emirates`,
 }
 
 const todaysDate = Date.parse(new Date())
@@ -83,7 +83,7 @@ export default new Vuex.Store({
   state: {
     allDataLoaded: false,
     raceDataLoaded: false,
-    raceNav: `Next Race`,
+    raceNav: `Last Race`,
     standingsNav: `Driver Standings`,
     allConfirmedRaces: [],
     allDrivers: [],
@@ -135,6 +135,7 @@ export default new Vuex.Store({
       console.log(`SET_SESSION mutations`)
       state.nextSession = currentSession
       // state.allTeams = []
+      console.log(`SET_SESSION -------------------`, currentSession)
       state.allDataLoaded = true
     },
     SET_NAV_NAME: (state, raceNavValue) => {
@@ -175,7 +176,7 @@ export default new Vuex.Store({
 
         response.data.results.forEach((race) => {
           if (race.status !== `Cancelled`) {
-            race.date_in_milli = Date.parse(race.start_date)
+            race.date_in_milli = Date.parse(race.end_date)
             confirmedRaces.push(race)
           }
         })
