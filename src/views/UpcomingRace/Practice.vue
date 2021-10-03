@@ -101,13 +101,12 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([`allConfirmedRaces`, `allDrivers`]),
+    ...mapGetters([`allConfirmedRaces`]),
     ...mapState([`currentRound`]),
   },
   async created() {
     this.allRaces = this.allConfirmedRaces
     this.round = this.currentRound
-    this.drivers = this.allDrivers
 
     this.nextRace = this.getNextRace(this.allRaces, this.round)
 
