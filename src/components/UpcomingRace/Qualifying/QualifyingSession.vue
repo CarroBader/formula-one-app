@@ -10,9 +10,9 @@
             <th>{{ returnAltBySize(small, positionLong, positionShort) }}</th>
             <th>Name</th>
             <th :style="returnAltBySize(small, revert, none)">Car</th>
-            <th>q1Time</th>
-            <th>q2Time</th>
-            <th>q3Time</th>
+            <th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
           </tr>
           <tbody
             v-for="quali, index in this.qualifyingResults"

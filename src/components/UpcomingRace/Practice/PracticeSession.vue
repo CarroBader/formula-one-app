@@ -18,26 +18,26 @@
         <td class="practice-session-td extra-dark-grey">{{ result.position }}</td>
         <td
           class="practice-session-td"
-          :class="getConstructorColor(result.car)"
+          :class="getConstructorColor(result.color_code)"
           :style="returnAltBySize(small, revert, none)"
         >
-          {{ result.number }}
+          {{ result.permanent_number }}
         </td>
 
         <td
         class="practice-session-td"
-        :class="returnAltBySize(small, '', getConstructorColor(result.car))"
+        :class="returnAltBySize(small, '', getConstructorColor(result.color_code))"
         >
           {{ result.name }}
         </td>
 
-        <td class="practice-session-td extra-dark-grey">{{ result.laps }}</td>
+        <td class="practice-session-td extra-dark-grey">{{ result.current_lap }}</td>
         <td class="practice-session-td practice-session-border-left">{{ result.time }}</td>
         <td
           class="practice-session-td practice-session-border-left"
-          :class="returnAltBySize(small, 'red', 'dark-grey')"
+          :class="returnAltBySize(small, 'medium-red', 'dark-grey')"
         >
-          {{ result.gap }}<span v-if="result.gap !== ''" class="practice-session-seconds">s</span>
+          <span v-if="result.gap !== ''" class="practice-session-seconds">+</span>{{ result.gap }}<span v-if="result.gap !== ''" class="practice-session-seconds">s</span>
         </td>
         </tbody>
       </table>

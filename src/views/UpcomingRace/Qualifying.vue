@@ -16,6 +16,7 @@
 import { mapGetters, mapState } from 'vuex'
 
 import QualifyingSession from '../../components/UpcomingRace/Qualifying/QualifyingSession.vue'
+
 import helpersMixin from '../../mixins/helpersMixin'
 import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
 
