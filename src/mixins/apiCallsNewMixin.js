@@ -212,6 +212,30 @@ export default {
         console.error(e)
       }
     },
+    async getSessionById(sessionIds) {
+      /*
+        Return session according to session ids.
+        Exemple:
+        Input - An array with session Ids.
+        Return - An object with session name and array with drivers
+      */
+      console.log(`Entering - API - getSessionById`)
+      const qualifyingSessions = {}
+      await Promise.all(sessionIds.map(async (session) => {
+        try {
+          const response = await axios.get(`${baseURLF1}/session/${session}`, {
+            headers: {
+              "x-rapidapi-key": apiKeyF1,
+              "x-rapidapi-host": hostF1,
+            },
+          })
+          qualifyingSessions[response.data.results.session.general.session_name.replace(` `, ``)] = response.data.results.drivers
+        } catch (e) {
+          console.error(e)
+        }
+      }))
+      return qualifyingSessions
+    },
   },
   mixins: [generalVars],
 }
