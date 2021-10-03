@@ -19,7 +19,7 @@
                 class="nav-link nav-link-top"
               >
                 {{ route.name }}
-              </router-link> -->
+              </router-link> -->                                             <!-- Detta är inte legit, måste alltid hitta next race. -->
               <router-link class="nav-link nav-link-top" :to="{name: raceNav, params: { id: currentRound }}"> {{ nextRace.name }}</router-link>
               <router-link class="nav-link nav-link-top" :to="{name: standingsNav }">Standings</router-link>
               <router-link class="nav-link nav-link-top" :to="{name: 'Race Map'}"> Map</router-link>

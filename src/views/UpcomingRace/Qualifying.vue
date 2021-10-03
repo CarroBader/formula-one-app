@@ -1,13 +1,11 @@
 <template>
   <b-container class="default-background-center">
-    <h3>Qualifying</h3>
-    <h1> {{ id }}</h1>
     <div class="row qualifying-row">
       <div class="col">
         <QualifyingSession
-          :qualifyingResult="qualifyingResult"
-          :nextRaceName="nextRaceName"
           v-if="qualifyingDataLoaded"
+          :qualifyingResults="qualifyingResults"
+          :nextRaceName="nextRaceName"
         />
       </div>
     </div>
@@ -15,9 +13,11 @@
 </template>
 
 <script>
-import QualifyingSession from '../../components/UpcomingRace/Qualifying/QualifyingSession.vue'
+import { mapGetters, mapState } from 'vuex'
 
-import apiCallsMixin from '../../mixins/apiCallsMixin'
+import QualifyingSession from '../../components/UpcomingRace/Qualifying/QualifyingSession.vue'
+import helpersMixin from '../../mixins/helpersMixin'
+import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
 
 export default {
   name: `Qualifying`,
@@ -27,43 +27,94 @@ export default {
   props: [`id`],
   data() {
     return {
-      getNextRace: `nextRace`,
+      allRaces: null,
+      round: null,
+      nextRace: null,
       nextRaceName: null,
+      sessionIds: [],
+      qualifyingResponse: null,
+      qualifyingResults: [],
       qualifyingDataLoaded: false,
-      season: null,
-      thisRound: null,
-      qualifyingResult: null,
     }
   },
+  computed: {
+    ...mapGetters([`allConfirmedRaces`]),
+    ...mapState([`currentRound`]),
+  },
   async created() {
-    console.log(`Qualy - updating`)
-    // Get next race
-    // const responseNextRace = await this.getRaces(this.getNextRace)
+    this.allRaces = this.allConfirmedRaces
+    this.round = this.currentRound
 
-    // // Set value on data properties
-    // this.nextRaceName = responseNextRace.nextRace.raceName
-    // this.season = responseNextRace.nextRace.season
-    // this.thisRound = responseNextRace.nextRace.round
+    this.nextRace = this.getNextRace(this.allRaces, this.round)
+    this.nextRaceName = this.nextRace.name
 
-    // this.getNextRaceQualifying(this.season, this.thisRound)
+    this.getNextSessionIds()
+
+    if (this.sessionIds && this.sessionIds.length > 0) {
+      this.qualifyingResponse = await this.getSessionById(this.sessionIds)
+    }
+    const qualifyingResultObj = this.createQualifyingResult()
+    this.qualifyingResults = qualifyingResultObj.data
+    this.qualifyingDataLoaded = qualifyingResultObj.dataLoaded
   },
   methods: {
-    async getNextRaceQualifying(season, round) {
+    getNextSessionIds() {
     /*
-      Set value on qualifyingResult and qualifyingDataLoaded.
+     Get the session ids for all qualifying sessions.
     */
-      // Get next race qualifying result
-      const responseQualifying = await this.getNextRaceQualifyingResult(season, round)
+      this.nextRace.sessions.forEach((session) => {
+        if (session.session_name.includes(`Qualifying`)) {
+          this.sessionIds.push(session.id)
+        }
+      })
+    },
+    createQualifyingResult() {
+      const qualiOne = this.qualifyingResponse.Qualifying1
+      const qualiTwo = this.qualifyingResponse.Qualifying2
+      const qualiThree = this.qualifyingResponse.Qualifying3
+      const combinedQuali = []
 
-      // Set value on data properties
-      // Oklart än om det räcker med bara resultatet, ta bort QualifyingResults om mer infor behövs
-      this.qualifyingResult = responseQualifying.nextRaceQualifying.QualifyingResults
+      for (let i = 0; i < qualiOne.length; i++) {
+        const driver = {}
+        driver.id = qualiOne[i].id
+        driver.driver_name = qualiOne[i].name
+        driver.team_name = qualiOne[i].team_name
+        driver.team_id = qualiOne[i].team_name.toLowerCase().replace(` `, `_`)
+        driver.q1Time = qualiOne[i].time
+        for (let j = 0; j < qualiTwo.length; j++) {
+          if (qualiOne[i].id === qualiTwo[j].id && qualiOne[i].time !== qualiTwo[j].time) {
+            driver.q2Time = qualiTwo[j].time
+          }
+        }
+        combinedQuali.push(driver)
+      }
 
-      // Set dataloaded variable(s) to true
-      this.qualifyingDataLoaded = responseQualifying.dataLoaded
+      for (let k = 0; k < combinedQuali.length; k++) {
+        if (combinedQuali[k].team_name === `Alfa Romeo Racing`) {
+          combinedQuali[k].team_name = `Alfa Romeo`
+          combinedQuali[k].team_id = `Alfa Romeo`.toLowerCase().replace(` `, `_`)
+        }
+        for (let l = 0; l < qualiThree.length; l++) {
+          if (combinedQuali[k].id === qualiThree[l].id) {
+            combinedQuali[k].position = qualiThree[l].position
+            if (combinedQuali[k].q2Time !== qualiThree[l].time && combinedQuali[k].q2Time) {
+              combinedQuali[k].q3Time = qualiThree[l].time
+            }
+          }
+        }
+      }
+
+      combinedQuali.sort((a, b) => {
+        return a.position - b.position
+      })
+
+      return {
+        data: combinedQuali,
+        dataLoaded: true,
+      }
     },
   },
-  mixins: [apiCallsMixin],
+  mixins: [helpersMixin, apiCallsNewMixin],
 }
 </script>
 

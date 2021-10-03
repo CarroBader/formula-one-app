@@ -10,12 +10,12 @@
             <th>{{ returnAltBySize(small, positionLong, positionShort) }}</th>
             <th>Name</th>
             <th :style="returnAltBySize(small, revert, none)">Car</th>
-            <th>Q1</th>
-            <th>Q2</th>
-            <th>Q3</th>
+            <th>q1Time</th>
+            <th>q2Time</th>
+            <th>q3Time</th>
           </tr>
           <tbody
-            v-for="quali, index in this.qualifyingResult"
+            v-for="quali, index in this.qualifyingResults"
             :key="index"
             :class="[index == 9 || index == 14 ? 'elimination-line' : '']"
             class="qualifying-session-tbody"
@@ -23,34 +23,34 @@
           <td class="qualifying-session-td extra-dark-grey">{{ quali.position }}</td>
           <td
             class="qualifying-session-td"
-            :class="returnAltBySize(small, '', getConstructorColor(quali.Constructor.constructorId))"
+            :class="returnAltBySize(small, '', getConstructorColor(quali.team_id))"
           >
-            {{ quali.Driver.givenName }} {{ quali.Driver.familyName }}
+            {{ quali.driver_name }}
           </td>
           <td
             class="qualifying-session-td"
-            :class="getConstructorColor(quali.Constructor.constructorId)"
+            :class="getConstructorColor(quali.team_id)"
             :style="returnAltBySize(small, revert, none)"
           >
-            {{ quali.Constructor.name }}
+            {{ quali.team_name }}
           </td>
           <td
-            class="qualifying-session-td q1 light-grey"
+            class="qualifying-session-td q1Time light-grey"
             :class="qualiOne(index)"
           >
-            {{ quali.Q1 }}
+            {{ quali.q1Time }}
           </td>
           <td
-            class="qualifying-session-td q2 medium-grey"
+            class="qualifying-session-td q2Time medium-grey"
             :class="qualiTwo(index)"
           >
-            {{ quali.Q2 }}
+            {{ quali.q2Time }}
           </td>
           <td
             class="qualifying-session-td dark-grey"
             :class="qualiThree(index)"
           >
-            {{ quali.Q3 }}
+            {{ quali.q3Time }}
           </td>
           </tbody>
         </table>
@@ -67,38 +67,42 @@ import generalVars from '../../../mixins/generalVars'
 export default {
   name: `QualifyingSession`,
   props: {
-    qualifyingResult: Array,
+    qualifyingResults: Array,
     nextRaceName: String,
   },
   methods: {
     qualiOne(index) {
     /*
-      Checks if Q1 contains a drivers fastest time.
+      Checks if q1Time contains a drivers fastest time.
       Returns a class that matches the result.
     */
-      if (this.qualifyingResult[index].Q2 !== undefined && this.qualifyingResult[index].Q3 === undefined) {
-        return this.qualifyingResult[index].Q1 < this.qualifyingResult[index].Q2 ? `green` : ``
-      } if (this.qualifyingResult[index].Q2 === undefined && this.qualifyingResult[index].Q3 === undefined) {
+      if ((this.qualifyingResults[index].q2Time === undefined || this.qualifyingResults[index].q2Time.length === 0) && this.qualifyingResults[index].q3Time === undefined) {
         return `green`
+      }
+
+      if (this.qualifyingResults[index].q2Time !== undefined && this.qualifyingResults[index].q3Time === undefined) {
+        return this.qualifyingResults[index].q1Time < this.qualifyingResults[index].q2Time ? `green` : ``
       }
     },
     qualiTwo(index) {
     /*
-      Checks if Q2 contains a drivers fastest time.
+      Checks if q2Time contains a drivers fastest time.
       Returns a class that matches the result.
     */
-      if (this.qualifyingResult[index].Q3 === undefined) {
-        return this.qualifyingResult[index].Q2 < this.qualifyingResult[index].Q1 ? `green` : ``
-      } if (this.qualifyingResult[index].Q3 !== undefined) {
-        return this.qualifyingResult[index].Q2 < this.qualifyingResult[index].Q3 ? `green` : ``
+      if (this.qualifyingResults[index].q3Time === undefined) {
+        return this.qualifyingResults[index].q2Time < this.qualifyingResults[index].q1Time ? `green` : ``
+      }
+
+      if (this.qualifyingResults[index].q3Time !== undefined) {
+        return this.qualifyingResults[index].q2Time < this.qualifyingResults[index].q3Time ? `green` : ``
       }
     },
     qualiThree(index) {
     /*
-      Checks if Q3 contains a drivers fastest time.
+      Checks if q3Time contains a drivers fastest time.
       Returns a class that matches the result.
     */
-      return this.qualifyingResult[index].Q3 < this.qualifyingResult[index].Q1 && this.qualifyingResult[index].Q3 < this.qualifyingResult[index].Q2 ? `green` : ``
+      return this.qualifyingResults[index].q3Time < this.qualifyingResults[index].q1Time && this.qualifyingResults[index].q3Time < this.qualifyingResults[index].q2Time ? `green` : ``
     },
   },
   mixins: [getConstructorColorMixin, getWindowSizeMixin, generalVars],
@@ -118,12 +122,12 @@ export default {
     margin: 0.5em 0 2em;
   }
 
-  .q1 {
+  .q1Time {
     border-right: 1px solid #fff;
     border-left: 1px solid #fff;
   }
 
-  .q2 {
+  .q2Time {
     border-right: 1px solid #fff;
   }
 </style>

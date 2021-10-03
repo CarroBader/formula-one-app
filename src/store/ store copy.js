@@ -91,6 +91,7 @@ export default new Vuex.Store({
     nextRace: {},
     currentRound: 0,
     nextSession: {},
+    // lastRaceSession: {},
   },
   getters: {
     allConfirmedRaces: (state) => state.allConfirmedRaces,
@@ -99,6 +100,7 @@ export default new Vuex.Store({
     nextRace: (state) => state.nextRace,
     currentRound: (state) => state.currentRound,
     nextSession: (state) => state.nextSession,
+    // lastRaceSession: (state) => state.lastRaceSession,
   },
   mutations: {
     SET_RACES: (state, confirmedRaces) => {
@@ -146,6 +148,10 @@ export default new Vuex.Store({
       console.log(`SET_STANDINGS_NAME mutations`)
       state.standingsNav = standingsNavValue
     },
+    // SET_LAST_RACE: (state, sessionData) => {
+    //   console.log(`SET_LAST_RACE - mutations`)
+    //   state.lastRaceSession = sessionData
+    // },
   },
   actions: {
     async getAllRaces({ commit }) {
@@ -283,5 +289,29 @@ export default new Vuex.Store({
       console.log(`Set current session`)
       commit(`SET_SESSION`, this.currentSession)
     },
+    // async getSessionById({ commit }, incomingSession) {
+    //   /*
+    //     Return session according to session id.
+    //     Exemple:
+    //     Input - ({stateName: `LAST_NAME`, sessionId: 2972})
+    //     Return - {race: {…}, session: {…}, drivers: Array(20), speed: null, weather: Array(0)}, with all races from the season
+    //   */
+    //   try {
+    //     const response = await axios.get(`${baseURLF1}/session/${incomingSession.sessionId}`, {
+    //       headers: {
+    //         "x-rapidapi-key": apiKeyF1,
+    //         "x-rapidapi-host": hostF1,
+    //       },
+    //     })
+
+    //     const sessionData = response.data.results
+
+    //     const name = incomingSession.stateName.toUpperCase()
+    //     console.log(`getSessionById - KALLAR API, DETTA SKA INTE SKE SÅ SE TILL ATT VI SER DENNA OM DET BEHÖVS`)
+    //     commit(`SET_${name}`, sessionData)
+    //   } catch (e) {
+    //     console.error(e)
+    //   }
+    // },
   },
 })

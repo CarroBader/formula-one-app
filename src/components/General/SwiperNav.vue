@@ -66,8 +66,8 @@ export default {
     this.allRaces = this.allConfirmedRaces
     this.upcomingRace = this.nextRace
 
-    this.swiperOptions.initialSlide = Number(this.upcomingRace.race_round) - 1
-    this.$store.commit(`SET_CURRENT_ROUND`, Number(this.upcomingRace.race_round))
+    this.swiperOptions.initialSlide = Number(this.upcomingRace.race_round) - 1 // Titta över detta
+    this.$store.commit(`SET_CURRENT_ROUND`, Number(this.upcomingRace.race_round)) // Titta över detta
 
     this.getNameOfMonth()
   },
