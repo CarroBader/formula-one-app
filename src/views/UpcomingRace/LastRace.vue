@@ -1,7 +1,5 @@
 <template>
   <b-container class="default-background-center">
-    <h1>Last Race</h1>
-    <h1> {{ id }}</h1>
     <div class="row last-race-row">
       <div class="col">
         <ResultLastRace
