@@ -1,7 +1,7 @@
 <template>
   <div class="default-background-center" v-if="allDataLoaded">
     <TopNav />
-     <SwiperNav :key="renderKey"/>
+    <SwiperNav :key="renderKey"/>
     <router-view />
     <Footer />
     <BotNav />

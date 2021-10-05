@@ -227,13 +227,13 @@ td {
 		padding: 0.5em 0.5em;
 	}
 
+	.card-margin {
+    margin: 1em 0 4em
+	}
+
 	/*------------------------ GENERAL ------------------------*/
 	.scroll-table {
 		height: 700px;
-	}
-
-	.card-margin {
-    margin: 1em 0 4em
 	}
 
 	/*------------------------ UPCOMING RACE ------------------------*/
