@@ -236,6 +236,22 @@ export default {
       }))
       return qualifyingSessions
     },
+    async getGridStartingForRace(grandPrixId) {
+      /*
+        Return - Starting for race
+        Params: grand_prix_id
+      */
+      try {
+        const response = await axios.get(`${baseUrl}/starting-grids/${grandPrixId}`)
+
+        return {
+          data: response.data.data.grid,
+          dataLoaded: true,
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    },
   },
   mixins: [generalVars],
 }
