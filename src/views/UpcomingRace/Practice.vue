@@ -108,7 +108,7 @@ export default {
     this.allRaces = this.allConfirmedRaces
     this.round = this.currentRound
 
-    this.nextRace = this.getNextRace(this.allRaces, this.round)
+    this.nextRace = this.getRace(this.allRaces, this.round)
 
     this.getNextSessionIds()
 
