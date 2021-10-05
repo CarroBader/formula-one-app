@@ -66,7 +66,7 @@ export default {
     this.round = this.currentRound
     this.drivers = this.allDrivers
 
-    this.nextRace = this.getNextRace(this.allRaces, this.round)
+    this.nextRace = this.getRace(this.allRaces, this.round)
     this.nextRaceName = this.nextRace.name
 
     if (this.nextRace !== null) responseStartingGrid = await this.getGridStartingForRace(this.nextRace.grand_prix_id)

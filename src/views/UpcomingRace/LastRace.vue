@@ -4,110 +4,156 @@
     <h1> {{ id }}</h1>
     <div class="row last-race-row">
       <div class="col">
-        <ResultLastRace />
+        <ResultLastRace
+          v-if="dataDone"
+          :lastRaceName="lastRaceName"
+          :raceResult="raceSessionData"
+          />
       </div>
     </div>
   </b-container>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import store from '../../store/ store'
+import { mapGetters, mapState } from 'vuex'
 
 import ResultLastRace from '../../components/UpcomingRace/LastRace/ResultLastRace.vue'
+
+import helpersMixin from '../../mixins/helpersMixin'
+import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
+
+const points = {
+  1: 25,
+  2: 18,
+  3: 15,
+  4: 12,
+  5: 10,
+  6: 8,
+  7: 6,
+  8: 4,
+  9: 2,
+  10: 1,
+}
+
+let responseStartingGrid = []
+let leaderLapCompleted = 0
 
 export default {
   name: `LastRace`,
   components: {
     ResultLastRace,
   },
+  props: [`id`],
   data() {
     return {
-      stateName: `LAST_RACE`,
       allRaces: null,
-      lastRaceObj: null,
-      lastRaceSessionId: {},
+      round: null,
+      drivers: null,
+      lastRace: null,
+      lastRaceName: null,
+      lastRaceLaps: 0,
+      sessionIds: [],
+      raceSessionData: null,
+      fastestLapSessionData: null,
+      startingGrid: null,
+      dataDone: false,
     }
   },
-  props: [`id`],
   computed: {
-    ...mapGetters([`lastRaceSession`]),
+    ...mapGetters([`allConfirmedRaces`, `allDrivers`]),
+    ...mapState([`currentRound`]),
   },
-  created() {
-    console.log(`LastRace - updating`)
-    // this.allRaces = this.$store.state.allConfirmedRaces
-    // console.log(`LastRace - created`)
-    // console.log(`Time`, new Date())
-    // console.log(`LastRace - Last Race Session`, this.lastRaceSession)
+  async created() {
+    this.allRaces = this.allConfirmedRaces
+    this.round = this.currentRound - 1
+    this.drivers = this.allDrivers
 
-    // if (this.lastRaceSession && Object.keys(this.lastRaceSession).length > 0) return
-    // console.log(`LastRace - No data yet`)
-    // this.getLastRaceSessionById()
+    this.lastRace = this.getRace(this.allRaces, this.round)
+    this.lastRaceName = this.lastRace.name
+
+    if (this.lastRace !== null) responseStartingGrid = await this.getGridStartingForRace(this.lastRace.grand_prix_id)
+    this.startingGrid = responseStartingGrid.data
+
+    this.getLastSessionIds()
+
+    if (this.sessionIds && this.sessionIds.length > 0) {
+      this.raceResponse = await this.getSessionById(this.sessionIds)
+    }
+
+    this.raceSessionData = this.raceResponse.Race
+    this.lastRaceLaps = this.raceResponse.Race[0].current_lap
+    this.fastestLapSessionData = this.raceResponse.FastestLap
+
+    if (this.raceSessionData && this.raceSessionData.length > 0) this.createRaceResult()
   },
   methods: {
-    // getLastRace() {
-    //   let lastRace
-    //   this.allRaces.forEach((race) => {
-    //     if (race.race_round === this.round - 1) {
-    //       lastRace = race
-    //     }
-    //   })
-    //   return lastRace
-    // },
-    // getLastRace() {
-    //   const reveredAllRaces = [...this.allRaces].reverse()
+    getLastSessionIds() {
+    /*
+     Get the session ids for all qualifying sessions.
+    */
+      this.lastRace.sessions.forEach((session) => {
+        if (session.session_name.includes(`Race`)) {
+          this.sessionIds.push(session.id)
+        }
 
-    //   return reveredAllRaces.find((race) => race.race_round <= this.round - 1)
-    // },
-    getLastRaceSessionById() {
-      /*
-        Calls api to get Last Race result.
-      */
-      // this.lastRaceObj = this.getLastRace()
-
-      // this.lastRaceObj.sessions.forEach((session) => {
-      //   if (session.session_name === `Race`) {
-      //     this.lastRaceSessionId = { stateName: this.stateName, sessionId: session.id }
-      //   }
-      // })
-      // store.dispatch(`getSessionById`, this.lastRaceSessionId)
+        if (session.session_name.includes(`FastestLap`)) {
+          this.sessionIds.push(session.id)
+        }
+      })
     },
-    getLastRaceData() {
-      // - [ ] Position - results.drivers.position
-      // - [ ] Name - results.drivers.name
-      // - [ ] Nationality - results.drivers.id
-      // - [ ] Car - results.drivers.team_name
+    createRaceResult() {
+      this.addGridPosition()
+      this.addDriverInfo()
+      this.addfastestLap()
+      this.addPoints()
 
-      // Get starting grid data from database
-      // Call this function in the if statement, do not return
-      // If they are not in the grid then they start in Pit (20)
-
-      const race = this.raceSession.drivers
-      const grid = this.gridSession.drivers
-      let driver = {}
-
-      for (let i = 0; race.length > i; i++) {
-        driver.position = race[i].position
-        driver.name = race[i].name
-        driver.team = race[i].team_name
-
-        for (let j = 0; grid.length > j; j++) {
-          if (race[i].name === grid[j].name) {
-            console.log(`Race name:`, race[i].name)
-            console.log(`Grid name:`, grid[j].name)
-            console.log(`Race obj`, race[i])
-            console.log(`Grid obj`, grid[j])
-            driver.gridPosition = grid[j].position
-            break
+      this.dataDone = true
+    },
+    addGridPosition() {
+      for (let i = 0; i < this.raceSessionData.length; i++) {
+        for (let j = 0; j < this.startingGrid.length; j++) {
+          if (this.raceSessionData[i].name === this.startingGrid[j].driver_name) {
+            this.raceSessionData[i].grid_position = this.startingGrid[j].grid_position
+          } else if (!this.raceSessionData[i].grid_position) {
+            this.raceSessionData[i].grid_position = 20
           }
         }
-        this.lastRace.push(driver)
-        driver = {}
       }
+    },
+    addDriverInfo() {
+      for (let i = 0; i < this.raceSessionData.length; i++) {
+        for (let j = 0; j < this.drivers.length; j++) {
+          const driverId = this.raceSessionData[i].name.replace(` `, `_`).toLowerCase()
+          if (driverId === this.drivers[j].driver_id) {
+            this.raceSessionData[i].nationality = this.drivers[j].origin.nationality
+            this.raceSessionData[i].color_code = this.drivers[j].team.team_id
+            this.raceSessionData[i].team_name = this.drivers[j].team.team_name
+          }
+        }
+      }
+    },
+    addfastestLap() {
+      for (let i = 0; i < this.raceSessionData.length; i++) {
+        for (let j = 0; j < this.fastestLapSessionData.length; j++) {
+          if (this.raceSessionData[i].id === this.fastestLapSessionData[j].id && this.fastestLapSessionData[j].position === 1) {
+            this.raceSessionData[i].fastest_lap = true
+          }
+        }
+      }
+    },
+    addPoints() {
+      this.raceSessionData.forEach((driver) => {
+        if (driver.position === 1) leaderLapCompleted = driver.current_lap
 
-      console.log(`Last Race - drivers`, this.lastRace)
+        if (leaderLapCompleted > (this.lastRaceLaps * 0.75)) {
+          if (driver.position in points) driver.points = points[driver.position]
+        } else if (driver.position in points) driver.points = (points[driver.position] / 2)
+
+        if (driver.fastest_lap) driver.points += 1
+      })
     },
   },
+  mixins: [helpersMixin, apiCallsNewMixin],
 }
 </script>
 

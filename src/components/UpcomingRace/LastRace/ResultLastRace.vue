@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="result-last-race-headline-div">
-      <!-- <h1 class="result-last-race-headline">{{ lastRace.raceName }}</h1> -->
+    <h1 class="result-last-race-headline">{{ lastRaceName }}</h1>
     </div>
-    <!-- <b-card class="card-margin">
+    <b-card class="card-margin">
       <div class="scroll-table">
         <table>
           <tr class="result-last-race-tr">
             <th>{{ returnAltBySize(small, positionLong, positionShort) }}</th>
-            <th>Grid</th>
+            <th></th>
             <th>Name</th>
             <th :style="returnAltBySize(small, revert, none)">Nationality</th>
             <th>Car</th>
@@ -16,20 +16,19 @@
             <th></th>
           </tr>
           <tbody
-            v-for="race, index in lastRace"
+            v-for="race, index in raceResult"
             :key="index"
             class="result-last-race-tbody"
           >
             <td class="result-last-race-td extra-dark-grey">{{ race.position }}</td>
-            <td class="result-last-race-td extra-dark-grey">{{ race.gridPosition }}</td>
             <td class="result-last-race-td">
               <img
-                :src="getSymbolImage(race.grid, race.position)"
-                :alt='`${race.Driver.nationality}`'
-                :class="getSymbolClass(race.grid, race.position)"
+                :src="getSymbolImage(race.grid_position, race.position)"
+                :alt='`Symbol`'
+                :class="getSymbolClass(race.grid_position, race.position)"
               />
               <span class="position-difference">
-                {{ race.grid - race.position != 0 ? Math.abs(race.grid - race.position) : "" }}
+                {{ race.grid_position - race.position != 0 ? Math.abs(race.grid_position - race.position) : "" }}
               </span>
             </td>
             <td class="result-last-race-td"> {{race.name }}</td>
@@ -38,20 +37,19 @@
               :style="returnAltBySize(small, revert, none)"
             >
               <img
-                :src="getCountryName(race.Driver.nationality)"
-                :alt='`${race.Driver.nationality}`'
+                :src="getFlag(race.nationality)"
+                :alt='`${race.nationality}`'
                 class="result-last-race-flag-img"
               />
             </td>
             <td
               class="result-last-race-td"
-              :class="getConstructorColor(race.Constructor.constructorId)"
+              :class="getConstructorColor(race.color_code)"
             >
-            <td>
-              {{ race.team }}
+              {{ race.team_name }}
             </td>
             <td class="result-last-race-td">{{ race.points }}</td>
-            <td v-if="fastestLap(race.FastestLap)">
+            <td v-if="race.fastest_lap">
               <img
                 src="../../../assets/img/icons/fastest_lap.png"
                 class="fastest-lap-img"
@@ -60,7 +58,7 @@
           </tbody>
         </table>
       </div>
-    </b-card> -->
+    </b-card>
   </div>
 </template>
 
@@ -73,12 +71,17 @@ import generalVars from '../../../mixins/generalVars'
 
 export default {
   name: `ResultLastRace`,
+  props: {
+    raceResult: Array,
+    lastRaceName: String,
+  },
   data() {
     return {
     }
   },
   created() {
-    // console.log(`lastRace`, lastRace)
+    // console.log(`Comp - lastRaceName`, this.lastRaceName)
+    // console.log(`Comp - raceResult`, this.raceResult)
   },
   methods: {
     getSymbolImage(grid, position) {
