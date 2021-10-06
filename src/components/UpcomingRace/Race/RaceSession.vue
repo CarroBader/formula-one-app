@@ -3,7 +3,10 @@
     <div class="result-last-race-headline-div">
     <h1 class="result-last-race-headline">{{ nextRaceName }}</h1>
     </div>
-    <b-card class="card-margin">
+    <div v-if="!statusCompleted">
+      <p class="noDataMessage">This race is not completed yet.</p>
+    </div>
+    <b-card class="card-margin" v-if="statusCompleted">
       <div class="scroll-table">
         <table>
           <tr class="result-last-race-tr">
@@ -74,6 +77,7 @@ export default {
   props: {
     raceResult: Array,
     nextRaceName: String,
+    statusCompleted: Boolean,
   },
   data() {
     return {
@@ -129,6 +133,10 @@ export default {
 
   .result-last-race-headline-div {
     margin: 0.5em 0 2em;
+  }
+
+  .noDataMessage {
+    color: #fff;
   }
 
   .fastest-lap-img {

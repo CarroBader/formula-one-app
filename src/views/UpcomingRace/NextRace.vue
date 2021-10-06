@@ -42,7 +42,7 @@
 <script>
 import { mapGetters, mapState } from 'vuex'
 
-import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
+import apiCallsMixin from '../../mixins/apiCallsMixin'
 import convertDateFormatMixin from '../../mixins/convertDateFormatMixin'
 
 import NextRaceCircuitInfo from '../../components/UpcomingRace/NextRace/NextRaceCircuitInfo.vue'
@@ -156,7 +156,7 @@ export default {
       }
     },
   },
-  mixins: [apiCallsNewMixin, convertDateFormatMixin], // getWindowSizeMixin, generalVars,
+  mixins: [apiCallsMixin, convertDateFormatMixin], // getWindowSizeMixin, generalVars,
 }
 </script>
 

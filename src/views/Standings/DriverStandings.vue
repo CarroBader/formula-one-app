@@ -13,7 +13,7 @@
 <script>
 import DriverTable from '../../components/Standings/DriverStandings/DriverTable.vue'
 
-import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
+import apiCallsMixin from '../../mixins/apiCallsMixin'
 
 export default {
   name: `DriverStandings`,
@@ -34,7 +34,7 @@ export default {
     this.driverStandings = driverStandingsData.allDrivers
     this.driverStandingsDataLoaded = driverStandingsData.driverDataLoaded
   },
-  mixins: [apiCallsNewMixin],
+  mixins: [apiCallsMixin],
 }
 </script>
 

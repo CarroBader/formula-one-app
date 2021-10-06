@@ -48,11 +48,7 @@ export default {
     ...mapState([`currentRound`, `raceNav`, `standingsNav`]),
   },
   created() {
-    console.log(`TOP NAV`)
-    console.log(`TOP NAV ------------------------------------------ nextSession.sessionType`, this.nextSession.sessionType)
-    console.log(`Top NAV ------------------------------------------ raceNav`, this.raceNav)
-    this.$store.commit(`SET_NAV_NAME`, this.nextSession.sessionType)
-    console.log(`Top NAV ------------------------------------------ raceNav`, this.raceNav)
+    this.$store.commit(`SET_NAV_NAME`, this.nextSession)
   },
   methods: {
     activate(a) {
@@ -64,7 +60,9 @@ export default {
 
 <style scoped>
   .navbar-top {
-    background-color: #e10600;
+    /* background-color: #e10600; */
+    box-shadow: inset 0 0 5px #000000;
+    background-color: rgb(255 13 13 / 79%);
     border-bottom: 1px solid #fff;
     z-index: 10000;
   }
