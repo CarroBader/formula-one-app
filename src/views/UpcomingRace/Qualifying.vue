@@ -6,6 +6,7 @@
           v-if="qualifyingDataLoaded"
           :qualifyingResults="qualifyingResults"
           :nextRaceName="nextRaceName"
+          :qualifyingDataExists="qualifyingDataExists"
         />
       </div>
     </div>
@@ -18,7 +19,7 @@ import { mapGetters, mapState } from 'vuex'
 import QualifyingSession from '../../components/UpcomingRace/Qualifying/QualifyingSession.vue'
 
 import helpersMixin from '../../mixins/helpersMixin'
-import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
+import apiCallsMixin from '../../mixins/apiCallsMixin'
 
 export default {
   name: `Qualifying`,
@@ -36,6 +37,7 @@ export default {
       qualifyingResponse: null,
       qualifyingResults: [],
       qualifyingDataLoaded: false,
+      qualifyingDataExists: false,
     }
   },
   computed: {
@@ -57,6 +59,8 @@ export default {
     const qualifyingResultObj = this.createQualifyingResult()
     this.qualifyingResults = qualifyingResultObj.data
     this.qualifyingDataLoaded = qualifyingResultObj.dataLoaded
+
+    if (this.qualifyingResults.length > 0) this.qualifyingDataExists = true
   },
   methods: {
     getNextSessionIds() {
@@ -115,7 +119,7 @@ export default {
       }
     },
   },
-  mixins: [helpersMixin, apiCallsNewMixin],
+  mixins: [helpersMixin, apiCallsMixin],
 }
 </script>
 

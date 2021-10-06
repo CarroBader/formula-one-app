@@ -133,7 +133,6 @@ export default new Vuex.Store({
       console.log(`SET_SESSION mutations`)
       state.nextSession = currentSession
       // state.allTeams = []
-      console.log(`SET_SESSION -------------------`, currentSession)
       state.allDataLoaded = true
     },
     SET_NAV_NAME: (state, raceNavValue) => {
@@ -251,7 +250,7 @@ export default new Vuex.Store({
         Else: sessionType and sessionId
       */
       const relevantSessions = []
-      let nextSession = {}
+      // let nextSession = {}
 
       nextRace.sessions.forEach((session) => {
         if (!notWantedSessions.includes(session.session_name)) {
@@ -260,26 +259,29 @@ export default new Vuex.Store({
         }
       })
 
-      relevantSessions.find((relSession) => {
-        const dateInMilli = Date.parse(relSession.date)
+      // relevantSessions.find((relSession) => {
+      //   console.log('relSession', )
+      //   const dateInMilli = Date.parse(relSession.date)
 
-        if (dateInMilli === todaysDate) {
-          nextSession = {
-            sessionType: relSession.session_type,
-            sessionId: relSession.id,
-          }
-        }
+      //   if (dateInMilli === todaysDate) {
+      //     nextSession = {
+      //       sessionType: relSession.session_type,
+      //       sessionId: relSession.id,
+      //     }
+      //   }
 
-        if (dateInMilli >= todaysDate) {
-          nextSession = {
-            sessionType: `Next Race`,
-            sessionName: relSession.session_name,
-            startTime: relSession.date,
-          }
-        }
-        return nextSession
-      })
-      this.currentSession = nextSession
+      //   if (dateInMilli >= todaysDate) {
+      //     nextSession = {
+      //       sessionType: `Next Race`,
+      //       sessionName: relSession.session_name,
+      //       startTime: relSession.date,
+      //     }
+      //   }
+      //   return nextSession
+      // })
+
+      // this.currentSession = nextSession
+      this.currentSession = `Next Race`
       console.log(`Set current session`)
       commit(`SET_SESSION`, this.currentSession)
     },

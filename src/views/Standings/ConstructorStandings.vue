@@ -15,7 +15,7 @@ import { mapGetters } from 'vuex'
 
 import ConstructorTable from '../../components/Standings/ConstructorStandings/ConstructorTable.vue'
 
-import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
+import apiCallsMixin from '../../mixins/apiCallsMixin'
 
 export default {
   name: `ConstructorStandings`,
@@ -55,7 +55,7 @@ export default {
       }
     },
   },
-  mixins: [apiCallsNewMixin],
+  mixins: [apiCallsMixin],
 }
 </script>
 

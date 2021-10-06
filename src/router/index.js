@@ -6,6 +6,7 @@ import UpcomingRace from '../views/UpcomingRace.vue'
 import NextRace from '../views/UpcomingRace/NextRace.vue'
 import LastRace from '../views/UpcomingRace/LastRace.vue'
 import Qualifying from '../views/UpcomingRace/Qualifying.vue'
+import SprintQualifying from '../views/UpcomingRace/SprintQualifying.vue'
 import Practice from '../views/UpcomingRace/Practice.vue'
 import Race from '../views/UpcomingRace/Race.vue'
 import DriverStandings from '../views/Standings/DriverStandings.vue'
@@ -53,7 +54,7 @@ const routes = [
         path: `sprint-qualifying`,
         name: `Sprint Qualifying`,
         props: true,
-        component: Qualifying,
+        component: SprintQualifying,
         onlyForSprintRaces: true,
       },
       {

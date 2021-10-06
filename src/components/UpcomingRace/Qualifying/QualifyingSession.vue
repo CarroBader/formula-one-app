@@ -3,7 +3,10 @@
     <div class="qualifying-session-headline-div">
       <h1 class="qualifying-session-headline">{{ this.nextRaceName }}</h1>
     </div>
-    <b-card class="card-margin">
+    <div class="noDataMessage" v-if="!qualifyingDataExists">
+      <p>Qualifying have been completed yet.</p>
+    </div>
+    <b-card class="card-margin" v-if="qualifyingDataExists">
       <div class="scroll-table">
         <table>
           <tr class="qualifying-session-tr">
@@ -69,6 +72,7 @@ export default {
   props: {
     qualifyingResults: Array,
     nextRaceName: String,
+    qualifyingDataExists: Boolean,
   },
   methods: {
     qualiOne(index) {
@@ -129,5 +133,9 @@ export default {
 
   .q2Time {
     border-right: 1px solid #fff;
+  }
+
+  .noDataMessage {
+    color: #fff;
   }
 </style>

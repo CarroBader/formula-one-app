@@ -7,17 +7,20 @@
         <b-tab title="Practice 1" active>
           <PracticeSession
           v-if="practiceOneDataLoaded"
-          :practiceResult="practiceOneData" />
+          :practiceResult="practiceOneData"
+          :practiceDataExists="practiceDataExists" />
         </b-tab>
         <b-tab title="Practice 2">
           <PracticeSession
           v-if="practiceTwoDataLoaded"
-          :practiceResult="practiceTwoData" />
+          :practiceResult="practiceTwoData"
+          :practiceDataExists="practiceDataExists" />
         </b-tab>
         <b-tab title="Practice 3">
           <PracticeSession
           v-if="practiceThreeDataLoaded"
-          :practiceResult="practiceThreeData" />
+          :practiceResult="practiceThreeData"
+          :practiceDataExists="practiceDataExists" />
         </b-tab>
       </b-tabs>
     </div>
@@ -30,7 +33,7 @@ import { mapGetters, mapState } from 'vuex'
 import PracticeSession from '../../components/UpcomingRace/Practice/PracticeSession.vue'
 
 import helpersMixin from '../../mixins/helpersMixin'
-import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
+import apiCallsMixin from '../../mixins/apiCallsMixin'
 
 const driverNum = {
   max_verstappen: `33`,
@@ -98,6 +101,7 @@ export default {
       practiceTwoDataLoaded: false,
       practiceThreeData: null,
       practiceThreeDataLoaded: false,
+      practiceDataExists: false,
     }
   },
   computed: {
@@ -127,6 +131,8 @@ export default {
     const responsePThree = this.addDriverNumberAndColorCode(this.practiceResponse.Practice3)
     this.practiceThreeData = responsePThree.data
     this.practiceThreeDataLoaded = responsePThree.data
+
+    if (this.practiceOneData.length > 0) this.practiceDataExists = true
   },
   methods: {
     getNextSessionIds() {
@@ -155,7 +161,7 @@ export default {
       }
     },
   },
-  mixins: [helpersMixin, apiCallsNewMixin],
+  mixins: [helpersMixin, apiCallsMixin],
 }
 </script>
 

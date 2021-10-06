@@ -6,6 +6,7 @@
           v-if="dataDone"
           :lastRaceName="lastRaceName"
           :raceResult="raceSessionData"
+          :statusCompleted="statusCompleted"
           />
       </div>
     </div>
@@ -18,7 +19,7 @@ import { mapGetters, mapState } from 'vuex'
 import ResultLastRace from '../../components/UpcomingRace/LastRace/ResultLastRace.vue'
 
 import helpersMixin from '../../mixins/helpersMixin'
-import apiCallsNewMixin from '../../mixins/apiCallsNewMixin'
+import apiCallsMixin from '../../mixins/apiCallsMixin'
 
 const points = {
   1: 25,
@@ -55,6 +56,7 @@ export default {
       fastestLapSessionData: null,
       startingGrid: null,
       dataDone: false,
+      statusCompleted: false,
     }
   },
   computed: {
@@ -69,20 +71,24 @@ export default {
     this.lastRace = this.getRace(this.allRaces, this.round)
     this.lastRaceName = this.lastRace.name
 
-    if (this.lastRace !== null) responseStartingGrid = await this.getGridStartingForRace(this.lastRace.grand_prix_id)
-    this.startingGrid = responseStartingGrid.data
+    if (this.lastRace.status === `Complete`) {
+      if (this.lastRace !== null) responseStartingGrid = await this.getGridStartingForRace(this.lastRace.grand_prix_id)
+      this.startingGrid = responseStartingGrid.data
 
-    this.getLastSessionIds()
+      this.getLastSessionIds()
 
-    if (this.sessionIds && this.sessionIds.length > 0) {
-      this.raceResponse = await this.getSessionById(this.sessionIds)
+      if (this.sessionIds && this.sessionIds.length > 0) {
+        this.raceResponse = await this.getSessionById(this.sessionIds)
+      }
+
+      this.raceSessionData = this.raceResponse.Race
+      this.lastRaceLaps = this.raceResponse.Race[0].current_lap
+      this.fastestLapSessionData = this.raceResponse.FastestLap
+
+      if (this.raceSessionData && this.raceSessionData.length > 0) this.createRaceResult()
+    } else {
+      this.dataDone = true
     }
-
-    this.raceSessionData = this.raceResponse.Race
-    this.lastRaceLaps = this.raceResponse.Race[0].current_lap
-    this.fastestLapSessionData = this.raceResponse.FastestLap
-
-    if (this.raceSessionData && this.raceSessionData.length > 0) this.createRaceResult()
   },
   methods: {
     getLastSessionIds() {
@@ -105,6 +111,7 @@ export default {
       this.addfastestLap()
       this.addPoints()
 
+      this.statusCompleted = true
       this.dataDone = true
     },
     addGridPosition() {
@@ -151,7 +158,7 @@ export default {
       })
     },
   },
-  mixins: [helpersMixin, apiCallsNewMixin],
+  mixins: [helpersMixin, apiCallsMixin],
 }
 </script>
 

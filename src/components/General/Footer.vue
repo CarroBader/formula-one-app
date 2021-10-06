@@ -8,7 +8,7 @@
   footer {
     text-align: center;
     background-color: #121212;
-    border-top: 1px solid #e10600;
+    border-top: 1px solid rgb(255 13 13 / 79%);
     bottom: 0;
     position: fixed;
     width: 100%;
