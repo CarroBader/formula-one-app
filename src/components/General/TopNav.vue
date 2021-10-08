@@ -49,6 +49,9 @@ export default {
   },
   created() {
     this.$store.commit(`SET_NAV_NAME`, this.nextSession)
+    if (this.$router.history.current.path === `/`) {
+      this.$router.replace(`/grand-prix/${this.currentRound}/next-race`)
+    }
   },
   methods: {
     activate(a) {
