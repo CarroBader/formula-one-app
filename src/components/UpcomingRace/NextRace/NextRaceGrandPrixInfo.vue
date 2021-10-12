@@ -20,24 +20,22 @@
           <th class="next-race-circuit-info-th">Laps:</th>
           <td class="next-race-circuit-info-td">{{ nextGrandPrix.laps }}</td>
         </tr>
-        <tr v-for="tWins in nextGrandPrix.most_wins_team" :key="tWins.team_id">
+        <tr>
           <th class="next-race-circuit-info-th">Most wins teams:</th>
-          <td class="next-race-circuit-info-td">{{ tWins.wins }} - &ensp; <span :class="getConstructorColor(tWins.team_id)">{{ tWins.team_name }}</span></td>
-          <!-- <td class="next-race-circuit-info-th"></td> -->
+          <td class="next-race-circuit-info-th"></td>
         </tr>
-        <!-- <tr v-for="tWins in nextGrandPrix.most_wins_team" :key="tWins.team_id">
+        <tr v-for="tWins in nextGrandPrix.most_wins_team" :key="tWins.team_id">
           <th class="next-race-circuit-info-th"></th>
           <td class="next-race-circuit-info-td">{{ tWins.wins }} - &ensp; <span :class="getConstructorColor(tWins.team_id)">{{ tWins.team_name }}</span></td>
-        </tr> -->
-        <tr v-for="dWins, index in nextGrandPrix.most_wins_driver" :key="index">
+        </tr>
+        <tr> 
           <th class="next-race-circuit-info-th">Most wins drivers:</th>
-          <td class="next-race-circuit-info-td">{{ dWins.wins }} - &ensp; {{ dWins.driver_name }}</td>
-          <!-- <td class="next-race-circuit-info-th"></td> -->
+          <td class="next-race-circuit-info-th"></td>
         </tr>
-        <!-- <tr v-for="dWins, index in nextGrandPrix.most_wins_driver" :key="index">
+        <tr v-for="dWins, index in nextGrandPrix.most_wins_driver" :key="index">
           <th class="next-race-circuit-info-th"></th>
           <td class="next-race-circuit-info-td">{{ dWins.wins }} - &ensp; {{ dWins.driver_name }}</td>
-        </tr> -->
+        </tr>
       </table>
     </b-card>
   </div>

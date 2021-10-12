@@ -58,6 +58,12 @@ export default {
         case `sebastian_vettel`:
           colorName = `aston-martin`
           break
+        case `lotus`:
+            colorName = `lotus`
+            break
+        case `brawn`:
+          colorName = `brawn`
+          break            
         default:
           colorName = ``
       }
