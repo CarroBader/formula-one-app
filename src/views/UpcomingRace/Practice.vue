@@ -124,6 +124,8 @@ export default {
     this.practiceOneData = responsePOne.data
     this.practiceOneDataLoaded = responsePOne.data
 
+    if (this.practiceOneData.length > 0) this.practiceDataExists = true
+    
     const responsePTwo = this.addDriverNumberAndColorCode(this.practiceResponse.Practice2)
     this.practiceTwoData = responsePTwo.data
     this.practiceTwoDataLoaded = responsePTwo.data
@@ -132,13 +134,13 @@ export default {
     this.practiceThreeData = responsePThree.data
     this.practiceThreeDataLoaded = responsePThree.data
 
-    if (this.practiceOneData.length > 0) this.practiceDataExists = true
   },
   methods: {
     getNextSessionIds() {
     /*
      Get the session ids for all practice sessions.
     */
+      console.log('getNextSessionIds')
       this.nextRace.sessions.forEach((session) => {
         if (session.session_name.includes(`Practice`)) {
           this.sessionIds.push(session.id)
@@ -146,6 +148,7 @@ export default {
       })
     },
     addDriverNumberAndColorCode(practice) {
+      console.log('addDriverNumberAndColorCode - practice', practice)
       practice.forEach((driver) => {
         const driverId = driver.name.replace(` `, `_`).toLowerCase()
         if (driverId in driverNum) {

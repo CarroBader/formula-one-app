@@ -95,7 +95,7 @@ td {
 
 .scroll-table {
 	overflow: hidden;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 /* Colors */
