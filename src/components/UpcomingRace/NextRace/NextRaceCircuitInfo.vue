@@ -61,6 +61,10 @@ export default {
     color: #a9a9a9 !important;
   }
 
+  td {
+    color: white !important;
+  }
+
   tr:last-child {
     border: none;
   }
