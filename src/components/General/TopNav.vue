@@ -53,11 +53,6 @@ export default {
       this.$router.replace(`/grand-prix/${this.currentRound}/next-race`)
     }
   },
-  methods: {
-    activate(a) {
-      console.log(a, `a`)
-    },
-  },
 }
 </script>
 

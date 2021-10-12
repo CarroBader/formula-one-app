@@ -29,7 +29,7 @@ import {
 import axios from 'axios'
 import L from 'leaflet'
 import {
-  baseUrl, baseUrlWeather, host, apiKey,
+  baseUrlErgast, baseUrlWeather, host, apiKey,
 } from '../vars'
 import 'leaflet/dist/leaflet.css'
 
@@ -55,21 +55,7 @@ export default {
     'v-tooltip': LTooltip,
   },
   created() {
-    axios
-      .get(`${baseUrl}current.json`)
-      .then((response) => {
-        this.allRaces = response.data.MRData.RaceTable.Races
-
-        this.getCoordinates(this.allRaces)
-      })
-      .catch((error) => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => {
-        this.loading = false
-        return this.loading
-      })
+    this.getMapData()
   },
   data() {
     return {
@@ -83,6 +69,23 @@ export default {
     }
   },
   methods: {
+    getMapData () {
+      axios
+      .get(`${baseUrlErgast}/current.json`)
+      .then((response) => {
+        this.allRaces = response.data.MRData.RaceTable.Races
+
+        this.getCoordinates(this.allRaces)
+      })
+      .catch((error) => {
+        console.log(error)
+        this.errored = true
+      })
+      .finally(() => {
+        this.loading = false
+        return this.loading
+      })
+    },
     getCoordinates(allRaces) {
       allRaces.forEach((race) => {
         trackLocation.push({
