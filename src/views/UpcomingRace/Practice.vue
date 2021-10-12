@@ -120,19 +120,25 @@ export default {
       this.practiceResponse = await this.getSessionById(this.sessionIds)
     }
     // Detta går att lägga i en loop för att få färre kod rader.
-    const responsePOne = this.addDriverNumberAndColorCode(this.practiceResponse.Practice1)
-    this.practiceOneData = responsePOne.data
-    this.practiceOneDataLoaded = responsePOne.data
+    if (this.practiceResponse.Practice1) {
+      const responsePOne = this.addDriverNumberAndColorCode(this.practiceResponse.Practice1)
+      this.practiceOneData = responsePOne.data
+      this.practiceOneDataLoaded = responsePOne.data
+      this.practiceDataExists = true
+    }
 
-    if (this.practiceOneData.length > 0) this.practiceDataExists = true
+    if (this.practiceResponse.Practice2) {
+      const responsePTwo = this.addDriverNumberAndColorCode(this.practiceResponse.Practice2)
+      this.practiceTwoData = responsePTwo.data
+      this.practiceTwoDataLoaded = responsePTwo.data
+    }
 
-    const responsePTwo = this.addDriverNumberAndColorCode(this.practiceResponse.Practice2)
-    this.practiceTwoData = responsePTwo.data
-    this.practiceTwoDataLoaded = responsePTwo.data
+    if (this.practiceResponse.Practice3) {
+      const responsePThree = this.addDriverNumberAndColorCode(this.practiceResponse.Practice3)
+      this.practiceThreeData = responsePThree.data
+      this.practiceThreeDataLoaded = responsePThree.data
+    }
 
-    const responsePThree = this.addDriverNumberAndColorCode(this.practiceResponse.Practice3)
-    this.practiceThreeData = responsePThree.data
-    this.practiceThreeDataLoaded = responsePThree.data
   },
   methods: {
     getNextSessionIds() {
