@@ -1,6 +1,6 @@
 <template>
     <div class="bot-nav">
-        <router-link
+        <!-- <router-link
           v-for="route in routes"
           :key="route.path"
           :to="route.path"
@@ -9,16 +9,47 @@
           <div class="text-icon">
             <font-awesome-icon :icon="['fas', route.icon]" />
           </div>
+        </router-link> -->
+        <router-link class="nav-link nav-link-top" :to="{name: raceNav, params: { id: currentRound }}">
+          <div class="text-icon">
+            <font-awesome-icon :icon="['fas', `flag-checkered`]" />
+          </div>
+        </router-link>
+        <router-link class="nav-link nav-link-top" :to="{name: standingsNav }">
+          <div class="text-icon">
+            <font-awesome-icon :icon="['fas', `table`]" />
+          </div>
+        </router-link>
+        <router-link class="nav-link nav-link-top" :to="{name: 'Race Map'}">
+          <div class="text-icon">
+            <font-awesome-icon :icon="['fas', `globe-europe`]" />
+          </div>
         </router-link>
     </div>
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex'
+
 export default {
   name: `BotNav`,
   data() {
     return {
-      routes: this.$router.options.routes,
+    }
+  },
+  watch: {
+    currentRound(newValue) {
+      this.$router.replace({ name: this.raceNav, params: { id: newValue } })
+    },
+  },
+  computed: {
+    ...mapGetters([`nextRace`, `nextSession`]),
+    ...mapState([`currentRound`, `raceNav`, `standingsNav`]),
+  },
+  created() {
+    this.$store.commit(`SET_NAV_NAME`, this.nextSession)
+    if (this.$router.history.current.path === `/`) {
+      this.$router.replace(`/grand-prix/${this.currentRound}/next-race`)
     }
   },
 }
