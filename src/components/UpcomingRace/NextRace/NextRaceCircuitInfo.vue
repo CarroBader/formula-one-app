@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card class="next-race-circuit-info-card-margin">
+    <b-card>
       <h5 class="next-race-circuit-info-name">{{ nextTrack.track_name }}</h5>
       <h5 class="next-race-circuit-info-location extra-dark-grey">
         {{ nextTrack.location.locality }},

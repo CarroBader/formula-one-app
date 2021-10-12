@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card class="next-race-time-table-card-margin">
+    <b-card>
       <h5 class="next-race-time-table-title">Time Table</h5>
       <h5 class="next-race-time-table-date red">{{ timeTableData.date }}</h5>
       <b-row>
@@ -30,7 +30,7 @@
           <!-- Table Two -->
           <table>
             <tbody
-              v-for="session, index in timeTableData.sessions .slice(3)"
+              v-for="session, index in timeTableData.sessions.slice(3)"
               :key="index"
               class="next-race-time-table-border">
               <td class="next-race-time-table-td">

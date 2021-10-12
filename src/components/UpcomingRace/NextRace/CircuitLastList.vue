@@ -1,7 +1,7 @@
 <template>
   <div
     class="circuit-last-list-div">
-    <b-card class="circuit-last-list-card-margin">
+    <b-card>
       <div class="circuit-last-list-title-div">
         <h1 class="circuit-last-list-title">{{ this.title }}</h1>
       </div>

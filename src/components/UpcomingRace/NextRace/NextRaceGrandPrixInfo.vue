@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card class="next-race-circuit-info-card-margin">
+    <b-card>
       <h5 class="next-race-circuit-info-name">{{ nextGrandPrix.grand_prix_name }}</h5>
       <h5 class="next-race-circuit-info-location extra-dark-grey">Info</h5>
       <table>
@@ -68,4 +68,6 @@ export default {
   tr:last-child {
     border: none;
   }
+
+  tr:nth-child(odd) {background: aquamarine}
 </style>

@@ -7,6 +7,7 @@
 .card {
 	background-color: #161616;
 	box-shadow: rgb(0 0 0 / 35%) 0px 3px 9px;
+	margin-top: 1.5em;
 }
 
 .view-container {
@@ -354,7 +355,7 @@ td {
 	}
 
 	.next-race-time-table-border {
-		border-bottom: 1px solid #fff !important;
+		border-top: 1px solid #fff !important;
 	}
 
 	/* CircuitLastList */
@@ -406,8 +407,8 @@ td {
 
 	/* NextRaceCountryFlag */
 	.next-race-country-flag-div {
-    height: 2.5em;
-    margin: 1.2em 0.2em 0.15em 0.2em;
+    height: 3em;
+		margin-top: 1.5em;
   }
 
 	/* PracticeSession  x-small */
@@ -1105,10 +1106,9 @@ td {
 	}
 
 	/* NextRaceCountryFlag */
-	.next-race-country-flag-div {
+	/* .next-race-country-flag-div {
 		height: 3em;
-		margin: 1.2em 0.3em 0.15em 0.3em;
-	}
+	} */
 
 	/* PracticeSession  Medium */
 	.nav-tabs .nav-link {
@@ -1423,7 +1423,6 @@ td {
 	/* NextRaceCountryFlag */
 	.next-race-country-flag-div {
 		height: 3.5em;
-		margin: 1.2em 1em 0.15em 0;
 	}
 
 	/* PracticeSession  Large */

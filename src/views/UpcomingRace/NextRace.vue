@@ -7,20 +7,24 @@
     <h1 class="next-race-headline">{{ nextRaceName }}</h1>
     <b-row class="next-race-row">
       <b-col>
-        <NextRaceCircuitInfo
-          v-if="trackDataLoded"
-          :nextTrack="this.trackData"
-        />
-        <NextRaceGrandPrixInfo
-          v-if="grandPrixDataLoded"
-          :nextGrandPrix="this.grandPrixData"
-        />
-      </b-col>
-      <b-col>
         <NextRaceTimeTable
           v-if="timeTableDataLoaded"
           :timeTableData="timeTableData"
         />
+
+        <NextRaceCircuitInfo
+          v-if="trackDataLoded"
+          :nextTrack="this.trackData"
+        />
+
+
+      </b-col>
+      <b-col>
+        <NextRaceGrandPrixInfo
+          v-if="grandPrixDataLoded"
+          :nextGrandPrix="this.grandPrixData"
+        />
+
         <NextRaceCountryFlag
           :country="nextRaceCountry"
         />
