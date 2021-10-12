@@ -59,11 +59,11 @@ export default {
           colorName = `aston-martin`
           break
         case `lotus`:
-            colorName = `lotus`
-            break
+          colorName = `lotus`
+          break
         case `brawn`:
           colorName = `brawn`
-          break            
+          break
         default:
           colorName = ``
       }

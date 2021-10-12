@@ -69,22 +69,22 @@ export default {
     }
   },
   methods: {
-    getMapData () {
+    getMapData() {
       axios
-      .get(`${baseUrlErgast}/current.json`)
-      .then((response) => {
-        this.allRaces = response.data.MRData.RaceTable.Races
+        .get(`${baseUrlErgast}/current.json`)
+        .then((response) => {
+          this.allRaces = response.data.MRData.RaceTable.Races
 
-        this.getCoordinates(this.allRaces)
-      })
-      .catch((error) => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => {
-        this.loading = false
-        return this.loading
-      })
+          this.getCoordinates(this.allRaces)
+        })
+        .catch((error) => {
+          console.log(error)
+          this.errored = true
+        })
+        .finally(() => {
+          this.loading = false
+          return this.loading
+        })
     },
     getCoordinates(allRaces) {
       allRaces.forEach((race) => {

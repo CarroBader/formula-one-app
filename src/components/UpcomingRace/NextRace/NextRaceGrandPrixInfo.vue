@@ -28,7 +28,7 @@
           <th class="next-race-circuit-info-th"></th>
           <td class="next-race-circuit-info-td">{{ tWins.wins }} - &ensp; <span :class="getConstructorColor(tWins.team_id)">{{ tWins.team_name }}</span></td>
         </tr>
-        <tr> 
+        <tr>
           <th class="next-race-circuit-info-th">Most wins drivers:</th>
           <td class="next-race-circuit-info-th"></td>
         </tr>
@@ -70,7 +70,7 @@ export default {
   td {
     color: white !important;
   }
-  
+
   tr:last-child {
     border: none;
   }

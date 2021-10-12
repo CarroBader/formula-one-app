@@ -17,7 +17,6 @@
           :nextTrack="this.trackData"
         />
 
-
       </b-col>
       <b-col>
         <NextRaceGrandPrixInfo

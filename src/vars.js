@@ -1,6 +1,6 @@
 const baseUrl = `https://f1-light-api.herokuapp.com/api/v1`
 
-const baseUrlErgast = "http://ergast.com/api/f1"
+const baseUrlErgast = `http://ergast.com/api/f1`
 
 const baseUrlWeather = `https://weatherapi-com.p.rapidapi.com`
 const host = `weatherapi-com.p.rapidapi.com`
