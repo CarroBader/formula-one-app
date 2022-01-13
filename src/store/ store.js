@@ -156,7 +156,7 @@ export default new Vuex.Store({
       */
 
 			const todaysDate = new Date()
-			const season = todaysDate.getFullYear()
+			const season = todaysDate.getFullYear() - 1
 			const confirmedRaces = []
 
 			try {
