@@ -106,6 +106,12 @@ export default new Vuex.Store({
 					if (race.country in changeCountryName) {
 						race.country = changeCountryName[race.country]
 					}
+
+					race.sessions.forEach((session) => {
+						if (session.session_name === "Sprint Qualifying") {
+							race.sprint_race = true
+						}
+					})
 				})
 
 				console.log("Fetching allRaces from database")
