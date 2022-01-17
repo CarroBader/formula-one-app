@@ -1,8 +1,17 @@
 <template>
 	<footer>
-		<p style="margin-top: 1.5em">Copyright &copy; 2021</p>
+		<p class="footer-text">Copyright &copy; {{ this.year }}</p>
 	</footer>
 </template>
+
+<script>
+import generalVarsMixin from "../../mixins/generalVarsMixin"
+
+export default {
+	name: "Footer",
+	mixins: [generalVarsMixin],
+}
+</script>
 
 <style scoped>
 footer {
@@ -13,5 +22,9 @@ footer {
 	position: fixed;
 	width: 100%;
 	color: #fff;
+}
+
+.footer-text {
+	margin-top: 1.5em;
 }
 </style>

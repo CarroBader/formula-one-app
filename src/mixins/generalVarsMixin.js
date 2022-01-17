@@ -20,13 +20,14 @@ export default {
 			// Variables used in Standings
 			divsTopThree: ["first", "second", "third"],
 			// Time and Date
-			season: this.getYear(),
+			season: this.getYear() - 1,
+			year: this.getYear(),
 		}
 	},
 	methods: {
 		getYear() {
 			const todaysDate = new Date()
-			const year = todaysDate.getFullYear() - 1
+			const year = todaysDate.getFullYear()
 			return year
 		},
 	},
