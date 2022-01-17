@@ -1,169 +1,185 @@
 <template>
-  <b-container class="default-background-center">
-    <div class="row last-race-row">
-      <div class="col">
-        <ResultLastRace
-          v-if="dataDone"
-          :lastRaceName="lastRaceName"
-          :raceResult="raceSessionData"
-          :statusCompleted="statusCompleted"
-          />
-      </div>
-    </div>
-  </b-container>
+	<b-container class="default-background-center">
+		<div class="row last-race-row">
+			<div class="col">
+				<ResultLastRace
+					v-if="dataDone"
+					:lastRaceName="lastRaceName"
+					:raceResult="raceSessionData"
+					:statusCompleted="statusCompleted"
+				/>
+			</div>
+		</div>
+	</b-container>
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+import { mapGetters, mapState } from "vuex"
 
-import ResultLastRace from '../../components/UpcomingRace/LastRace/ResultLastRace.vue'
+import ResultLastRace from "../../components/UpcomingRace/LastRace/ResultLastRace.vue"
 
-import helpersMixin from '../../mixins/helpersMixin'
-import apiCallsMixin from '../../mixins/apiCallsMixin'
+import helpersMixin from "../../mixins/helpersMixin"
+import apiCallsMixin from "../../mixins/apiCallsMixin"
 
 const points = {
-  1: 25,
-  2: 18,
-  3: 15,
-  4: 12,
-  5: 10,
-  6: 8,
-  7: 6,
-  8: 4,
-  9: 2,
-  10: 1,
+	1: 25,
+	2: 18,
+	3: 15,
+	4: 12,
+	5: 10,
+	6: 8,
+	7: 6,
+	8: 4,
+	9: 2,
+	10: 1,
 }
 
 let responseStartingGrid = []
 let leaderLapCompleted = 0
 
 export default {
-  name: `LastRace`,
-  components: {
-    ResultLastRace,
-  },
-  props: [`id`],
-  data() {
-    return {
-      allRaces: null,
-      round: null,
-      drivers: null,
-      lastRace: null,
-      lastRaceName: null,
-      lastRaceLaps: 0,
-      sessionIds: [],
-      raceSessionData: null,
-      fastestLapSessionData: null,
-      startingGrid: null,
-      dataDone: false,
-      statusCompleted: false,
-    }
-  },
-  computed: {
-    ...mapGetters([`allConfirmedRaces`, `allDrivers`]),
-    ...mapState([`currentRound`]),
-  },
-  async created() {
-    this.allRaces = this.allConfirmedRaces
-    this.round = this.currentRound - 1
-    this.drivers = this.allDrivers
+	name: "LastRace",
+	components: {
+		ResultLastRace,
+	},
+	props: ["id"],
+	data() {
+		return {
+			allRaces: null,
+			round: null,
+			drivers: null,
+			lastRace: null,
+			lastRaceName: null,
+			lastRaceLaps: 0,
+			sessionIds: [],
+			raceSessionData: null,
+			fastestLapSessionData: null,
+			startingGrid: null,
+			dataDone: false,
+			statusCompleted: false,
+		}
+	},
+	computed: {
+		...mapGetters(["allConfirmedRaces", "allDrivers"]),
+		...mapState(["currentRound"]),
+	},
+	async created() {
+		this.allRaces = this.allConfirmedRaces
+		this.round = this.currentRound - 1
+		this.drivers = this.allDrivers
 
-    this.lastRace = this.getRace(this.allRaces, this.round)
-    this.lastRaceName = this.lastRace.name
+		this.lastRace = this.getRace(this.allRaces, this.round)
+		this.lastRaceName = this.lastRace.name
 
-    if (this.lastRace.status === `Complete`) {
-      if (this.lastRace !== null) responseStartingGrid = await this.getGridStartingForRace(this.lastRace.grand_prix_id)
-      this.startingGrid = responseStartingGrid.data
+		if (this.lastRace.status === "Complete") {
+			if (this.lastRace !== null)
+				responseStartingGrid = await this.getGridStartingForRace(
+					this.lastRace.grand_prix_id
+				)
+			this.startingGrid = responseStartingGrid.data
 
-      this.getLastSessionIds()
+			this.getLastSessionIds()
 
-      if (this.sessionIds && this.sessionIds.length > 0) {
-        this.raceResponse = await this.getSessionById(this.sessionIds)
-      }
+			if (this.sessionIds && this.sessionIds.length > 0) {
+				this.raceResponse = await this.getSessionById(this.sessionIds)
+			}
 
-      this.raceSessionData = this.raceResponse.Race
-      this.lastRaceLaps = this.raceResponse.Race[0].current_lap
-      this.fastestLapSessionData = this.raceResponse.FastestLap
+			this.raceSessionData = this.raceResponse.Race
+			this.lastRaceLaps = this.raceResponse.Race[0].current_lap
+			this.fastestLapSessionData = this.raceResponse.FastestLap
 
-      if (this.raceSessionData && this.raceSessionData.length > 0) this.createRaceResult()
-    } else {
-      this.dataDone = true
-    }
-  },
-  methods: {
-    getLastSessionIds() {
-    /*
+			if (this.raceSessionData && this.raceSessionData.length > 0)
+				this.createRaceResult()
+		} else {
+			this.dataDone = true
+		}
+	},
+	methods: {
+		getLastSessionIds() {
+			/*
      Get the session ids for all qualifying sessions.
     */
-      this.lastRace.sessions.forEach((session) => {
-        if (session.session_name.includes(`Race`)) {
-          this.sessionIds.push(session.id)
-        }
+			this.lastRace.sessions.forEach((session) => {
+				if (session.session_name.includes("Race")) {
+					this.sessionIds.push(session.id)
+				}
 
-        if (session.session_name.includes(`FastestLap`)) {
-          this.sessionIds.push(session.id)
-        }
-      })
-    },
-    createRaceResult() {
-      this.addGridPosition()
-      this.addDriverInfo()
-      this.addfastestLap()
-      this.addPoints()
+				if (session.session_name.includes("FastestLap")) {
+					this.sessionIds.push(session.id)
+				}
+			})
+		},
+		createRaceResult() {
+			this.addGridPosition()
+			this.addDriverInfo()
+			this.addfastestLap()
+			this.addPoints()
 
-      this.statusCompleted = true
-      this.dataDone = true
-    },
-    addGridPosition() {
-      for (let i = 0; i < this.raceSessionData.length; i++) {
-        for (let j = 0; j < this.startingGrid.length; j++) {
-          if (this.raceSessionData[i].name === this.startingGrid[j].driver_name) {
-            this.raceSessionData[i].grid_position = this.startingGrid[j].grid_position
-          } else if (!this.raceSessionData[i].grid_position) {
-            this.raceSessionData[i].grid_position = 20
-          }
-        }
-      }
-    },
-    addDriverInfo() {
-      for (let i = 0; i < this.raceSessionData.length; i++) {
-        for (let j = 0; j < this.drivers.length; j++) {
-          const driverId = this.raceSessionData[i].name.replace(` `, `_`).toLowerCase()
-          if (driverId === this.drivers[j].driver_id) {
-            this.raceSessionData[i].nationality = this.drivers[j].origin.nationality
-            this.raceSessionData[i].color_code = this.drivers[j].team.team_id
-            this.raceSessionData[i].team_name = this.drivers[j].team.team_name
-          }
-        }
-      }
-    },
-    addfastestLap() {
-      for (let i = 0; i < this.raceSessionData.length; i++) {
-        for (let j = 0; j < this.fastestLapSessionData.length; j++) {
-          if (this.raceSessionData[i].id === this.fastestLapSessionData[j].id && this.fastestLapSessionData[j].position === 1) {
-            this.raceSessionData[i].fastest_lap = true
-          }
-        }
-      }
-    },
-    addPoints() {
-      this.raceSessionData.forEach((driver) => {
-        if (driver.position === 1) leaderLapCompleted = driver.current_lap
+			this.statusCompleted = true
+			this.dataDone = true
+		},
+		addGridPosition() {
+			for (let i = 0; i < this.raceSessionData.length; i++) {
+				for (let j = 0; j < this.startingGrid.length; j++) {
+					if (
+						this.raceSessionData[i].name === this.startingGrid[j].driver_name
+					) {
+						this.raceSessionData[i].grid_position = this.startingGrid[
+							j
+						].grid_position
+					} else if (!this.raceSessionData[i].grid_position) {
+						this.raceSessionData[i].grid_position = 20
+					}
+				}
+			}
+		},
+		addDriverInfo() {
+			for (let i = 0; i < this.raceSessionData.length; i++) {
+				for (let j = 0; j < this.drivers.length; j++) {
+					const driverId = this.raceSessionData[i].name
+						.replace(" ", "_")
+						.toLowerCase()
+					if (driverId === this.drivers[j].driver_id) {
+						this.raceSessionData[i].nationality = this.drivers[
+							j
+						].origin.nationality
+						this.raceSessionData[i].color_code = this.drivers[j].team.team_id
+						this.raceSessionData[i].team_name = this.drivers[j].team.team_name
+					}
+				}
+			}
+		},
+		addfastestLap() {
+			for (let i = 0; i < this.raceSessionData.length; i++) {
+				for (let j = 0; j < this.fastestLapSessionData.length; j++) {
+					if (
+						this.raceSessionData[i].id === this.fastestLapSessionData[j].id &&
+						this.fastestLapSessionData[j].position === 1
+					) {
+						this.raceSessionData[i].fastest_lap = true
+					}
+				}
+			}
+		},
+		addPoints() {
+			this.raceSessionData.forEach((driver) => {
+				if (driver.position === 1) leaderLapCompleted = driver.current_lap
 
-        if (leaderLapCompleted > (this.lastRaceLaps * 0.75)) {
-          if (driver.position in points) driver.points = points[driver.position]
-        } else if (driver.position in points) driver.points = (points[driver.position] / 2)
+				if (leaderLapCompleted > this.lastRaceLaps * 0.75) {
+					if (driver.position in points) driver.points = points[driver.position]
+				} else if (driver.position in points)
+					driver.points = points[driver.position] / 2
 
-        if (driver.fastest_lap) driver.points += 1
-      })
-    },
-  },
-  mixins: [helpersMixin, apiCallsMixin],
+				if (driver.fastest_lap) driver.points += 1
+			})
+		},
+	},
+	mixins: [helpersMixin, apiCallsMixin],
 }
 </script>
 
 <style scoped>
-  .last-race-row {
-    display: inline-block;
-  }
+.last-race-row {
+	display: inline-block;
+}
 </style>
