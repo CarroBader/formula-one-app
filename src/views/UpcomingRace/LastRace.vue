@@ -57,7 +57,7 @@ export default {
 		this.round = this.currentRound - 1
 		this.drivers = this.allDrivers
 
-		this.lastRace = this.getRace(this.allRaces, this.round)
+		this.lastRace = this.getNextRace(this.allRaces, this.round)
 		this.lastRaceName = this.lastRace.name
 
 		if (this.lastRace.status === "Complete") {
