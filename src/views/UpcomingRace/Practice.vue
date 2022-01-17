@@ -38,51 +38,7 @@ import PracticeSession from "../../components/UpcomingRace/Practice/PracticeSess
 import helpersMixin from "../../mixins/helpersMixin"
 import apiCallsMixin from "../../mixins/apiCallsMixin"
 
-const driverNum = {
-	max_verstappen: `33`,
-	lando_norris: `4`,
-	esteban_ocon: `31`,
-	daniel_ricciardo: `3`,
-	kimi_raikkonen: `7`,
-	lewis_hamilton: `44`,
-	sergio_perez: `11`,
-	valtteri_bottas: `77`,
-	nicholas_latifi: `6`,
-	george_russell: `63`,
-	antonio_giovinazzi: `99`,
-	fernando_alonso: `14`,
-	lance_stroll: `18`,
-	sebastian_vettel: `5`,
-	charles_leclerc: `16`,
-	carlos_sainz: `55`,
-	pierre_gasly: `10`,
-	yuki_tsunoda: `22`,
-	mick_schumacher: `47`,
-	nikita_mazepin: `9`,
-}
-
-const teamColorCode = {
-	max_verstappen: `red_bull`,
-	lando_norris: `mclaren`,
-	esteban_ocon: `alpine`,
-	daniel_ricciardo: `mclaren`,
-	kimi_raikkonen: `alfa_romeo`,
-	lewis_hamilton: `mercedes`,
-	sergio_perez: `red_bull`,
-	valtteri_bottas: `mercedes`,
-	nicholas_latifi: `williams`,
-	george_russell: `williams`,
-	antonio_giovinazzi: `alfa_romeo`,
-	fernando_alonso: `alpine`,
-	lance_stroll: `aston_martin`,
-	sebastian_vettel: `aston_martin`,
-	charles_leclerc: `ferrari`,
-	carlos_sainz: `ferrari`,
-	pierre_gasly: `alphatauri`,
-	yuki_tsunoda: `alphatauri`,
-	mick_schumacher: `haas`,
-	nikita_mazepin: `haas`,
-}
+import { driverNum, teamColorCode } from "../../variables/replaceVars"
 
 export default {
 	name: `Practice`,
