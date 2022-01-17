@@ -37,7 +37,7 @@ export default {
 			"allConfirmedRaces",
 			"allDrivers",
 			"allTeams",
-			"nextRace",
+			"upcomingRace",
 			"nextSession",
 		]),
 		...mapState(["raceDataLoaded", "currentRound", "allDataLoaded", "raceNav"]),
@@ -47,14 +47,14 @@ export default {
 			if (val) {
 				this.allRaces = this.allConfirmedRaces
 
-				if (this.nextRace && this.nextRace.length > 0) return
-				store.dispatch("getNextRace", this.allRaces)
+				if (this.upcomingRace && this.upcomingRace.length > 0) return
+				store.dispatch("getUpcomingRace", this.allRaces)
 
 				if (this.currentRound && this.currentRound !== 0) return
-				store.dispatch("getNextRaceRound", this.nextRace)
+				store.dispatch("getNextRaceRound", this.upcomingRace)
 
 				if (this.nextSession && this.nextSession.length > 0) return
-				store.dispatch("getNextSession", this.nextRace)
+				store.dispatch("getNextSession", this.upcomingRace)
 			}
 		},
 		$route(to, from) {
@@ -71,7 +71,7 @@ export default {
 		console.log("App - allTeams", this.allTeams)
 		console.log("App - raceDataLoaded", this.raceDataLoaded)
 
-		console.log("App - nextRace", this.nextRace)
+		console.log("App - upcomingRace", this.upcomingRace)
 		console.log("App - currentRound", this.currentRound)
 		console.log("App - nextSession", this.nextSession)
 		console.log("App - allDataLoaded", this.allDataLoaded)

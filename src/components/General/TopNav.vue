@@ -25,7 +25,7 @@
 						class="nav-link nav-link-top"
 						:to="{ name: raceNav, params: { id: currentRound } }"
 					>
-						{{ nextRace.name }}</router-link
+						{{ upcomingRace.name }}</router-link
 					>
 					<router-link
 						class="nav-link nav-link-top"
@@ -55,13 +55,13 @@ export default {
 		},
 	},
 	computed: {
-		...mapGetters(["nextRace", "nextSession"]),
+		...mapGetters(["upcomingRace", "nextSession"]),
 		...mapState(["currentRound", "raceNav", "standingsNav"]),
 	},
 	created() {
 		this.$store.commit("SET_NAV_NAME", this.nextSession)
 		if (this.$router.history.current.path === "/") {
-			this.$router.replace("/grand-prix/${this.currentRound}/next-race")
+			this.$router.replace(`/grand-prix/${this.currentRound}/next-race`)
 		}
 	},
 }

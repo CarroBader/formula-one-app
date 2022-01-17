@@ -28,7 +28,7 @@ export default new Vuex.Store({
 		allConfirmedRaces: [],
 		allDrivers: [],
 		allTeams: [],
-		nextRace: {},
+		upcomingRace: {},
 		currentRound: 0,
 		nextSession: {},
 	},
@@ -36,7 +36,7 @@ export default new Vuex.Store({
 		allConfirmedRaces: (state) => state.allConfirmedRaces,
 		allDrivers: (state) => state.allDrivers,
 		allTeams: (state) => state.allTeams,
-		nextRace: (state) => state.nextRace,
+		upcomingRace: (state) => state.upcomingRace,
 		currentRound: (state) => state.currentRound,
 		nextSession: (state) => state.nextSession,
 	},
@@ -58,10 +58,9 @@ export default new Vuex.Store({
 			state.allTeams.push(...teams)
 			// state.allTeams = []
 		},
-		SET_NEXT_RACE: (state, nextRaceObj) => {
+		SET_UPCOMING_RACE: (state, upcomingRaceObj) => {
 			console.log("SET_NEXT_RACE mutations")
-			state.nextRace = nextRaceObj
-			// state.allTeams = []
+			state.upcomingRace = upcomingRaceObj
 		},
 		SET_CURRENT_ROUND: (state, round) => {
 			console.log("SET_CURRENT_ROUND mutations")
@@ -165,13 +164,13 @@ export default new Vuex.Store({
 				console.error(e)
 			}
 		},
-		getNextRace({ commit }, allRaces) {
+		getUpcomingRace({ commit }, allRaces) {
 			/*
         Return - the next race obj
       */
 			// const nextRaceObj = {}
 			// const nextRaceObj = allRaces.find((race) => race.date_in_milli >= todaysDate)
-			const nextRaceObj = allRaces.find(
+			const upcomingRaceObj = allRaces.find(
 				(race) => race.date_in_milli === 1616889600000
 			)
 			// console.log("jbjjjbjbni")
@@ -181,19 +180,20 @@ export default new Vuex.Store({
 			// 	if (race.date_in_milli === 1616889600000)
 			// })
 
-			console.log("Set nextRace")
-			commit("SET_NEXT_RACE", nextRaceObj)
+			console.log("Set upcomingRace")
+			commit("SET_UPCOMING_RACE", upcomingRaceObj)
 		},
-		getNextRaceRound({ commit }, nextRace) {
+		getNextRaceRound({ commit }, upcomingRace) {
 			/*
         Return - the current round number
       */
-			const round = nextRace.race_round
+			// const round = upcomingRace.race_round
+			const round = 1
 
 			console.log("Set current round number")
 			commit("SET_CURRENT_ROUND", round)
 		},
-		getNextSession({ commit }, nextRace) {
+		getNextSession({ commit }, upcomingRace) {
 			/*
         Return - the active session
         If: the active session don't have live data: sessionType, nextSessionName, nextSessionDate
@@ -202,7 +202,7 @@ export default new Vuex.Store({
 			const relevantSessions = []
 			// let nextSession = {}
 
-			nextRace.sessions.forEach((session) => {
+			upcomingRace.sessions.forEach((session) => {
 				if (!notWantedSessions.includes(session.session_name)) {
 					session.session_type = newSessionType[session.session_name]
 					relevantSessions.push(session)

@@ -41,7 +41,7 @@ export default {
 	data() {
 		return {
 			allRaces: null,
-			upcomingRace: null,
+			nextUpcomingRace: null,
 			swiperOptions: {
 				slidesPerView: "auto",
 				initialSlide: 0,
@@ -58,19 +58,20 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters(["allConfirmedRaces", "nextRace"]),
+		...mapGetters(["allConfirmedRaces", "upcomingRace"]),
 		...mapState(["currentRound"]),
 	},
 	async created() {
 		console.log("create")
 
 		this.allRaces = this.allConfirmedRaces
-		this.upcomingRace = this.nextRace
+		this.nextUpcomingRace = this.upcomingRace
 
-		this.swiperOptions.initialSlide = Number(this.upcomingRace.race_round) - 1 // Titta över detta
+		this.swiperOptions.initialSlide =
+			Number(this.nextUpcomingRace.race_round) - 1 // Titta över detta
 		this.$store.commit(
 			"SET_CURRENT_ROUND",
-			Number(this.upcomingRace.race_round)
+			Number(this.nextUpcomingRace.race_round)
 		) // Titta över detta
 
 		this.getNameOfMonth()

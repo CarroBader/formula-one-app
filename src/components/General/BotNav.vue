@@ -45,7 +45,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapGetters(["nextRace", "nextSession"]),
+		...mapGetters(["nextSession"]),
 		...mapState(["currentRound", "raceNav", "standingsNav"]),
 	},
 	created() {
