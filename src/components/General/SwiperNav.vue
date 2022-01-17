@@ -62,8 +62,6 @@ export default {
 		...mapState(["currentRound"]),
 	},
 	async created() {
-		console.log("create")
-
 		this.allRaces = this.allConfirmedRaces
 		this.nextUpcomingRace = this.upcomingRace
 
@@ -104,7 +102,6 @@ export default {
 			/*
       Change race_round according to wish race is clicked
     */
-			console.log("SET_CURRENT_ROUND", race.race_round)
 			this.$store.commit("SET_CURRENT_ROUND", race.race_round)
 		},
 	},

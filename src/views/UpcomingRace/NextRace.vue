@@ -110,14 +110,6 @@ export default {
 		const nextTimeTable = this.getTimeTableData()
 		this.timeTableData = nextTimeTable.data
 		this.timeTableDataLoaded = nextTimeTable.dataLoaded
-
-		console.log("this.timeTableData", this.timeTableData)
-
-		console.log("Next Race - updating")
-		// console.log("this.lastWinners", this.lastWinners)
-		console.log("this.nextRace", this.nextRace)
-		console.log("this.currentRound", this.currentRound)
-		// this.lastWinners.map((lw) => lw.winner = true)
 	},
 	methods: {
 		getNextRace() {
@@ -127,7 +119,6 @@ export default {
 			/*
       Returns an object with time table data.
     */
-			console.log("getTimeTableData")
 			const raceSessions = []
 			const dateString = this.getDateString(
 				this.nextRace.start_date,

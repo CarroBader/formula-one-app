@@ -42,46 +42,32 @@ export default new Vuex.Store({
 	},
 	mutations: {
 		SET_RACES: (state, confirmedRaces) => {
-			console.log("SET_RACES mutations")
 			state.allConfirmedRaces.push(...confirmedRaces)
 
 			state.raceDataLoaded = true
-			// state.allConfirmedRaces = []
 		},
 		SET_DRIVERS: (state, drivers) => {
-			console.log("SET_DRIVERS mutations")
 			state.allDrivers.push(...drivers)
-			// state.allDrivers = []
 		},
 		SET_TEAMS: (state, teams) => {
-			console.log("SET_TEAMS mutations")
 			state.allTeams.push(...teams)
-			// state.allTeams = []
 		},
 		SET_UPCOMING_RACE: (state, upcomingRaceObj) => {
-			console.log("SET_NEXT_RACE mutations")
 			state.upcomingRace = upcomingRaceObj
 		},
 		SET_CURRENT_ROUND: (state, round) => {
-			console.log("SET_CURRENT_ROUND mutations")
-			console.log("här", round)
 			state.currentRound = round
-			// state.allTeams = []
 		},
 		SET_SESSION: (state, currentSession) => {
-			console.log("SET_SESSION mutations")
 			state.nextSession = currentSession
-			// state.allTeams = []
 			state.allDataLoaded = true
 		},
 		SET_NAV_NAME: (state, raceNavValue) => {
 			// Varible used for routing of race.
-			console.log("SET_NAV_NAME mutations")
 			state.raceNav = raceNavValue
 		},
 		SET_STANDINGS_NAME: (state, standingsNavValue) => {
 			// Varible used for routing of standings.
-			console.log("SET_STANDINGS_NAME mutations")
 			state.standingsNav = standingsNavValue
 		},
 	},
@@ -140,7 +126,7 @@ export default new Vuex.Store({
 
 				drivers = response.data.data
 
-				console.log("Fetching drivers from database")
+				console.log("Fetching DRIVERS from database")
 				commit("SET_DRIVERS", drivers)
 			} catch (e) {
 				console.error(e)
@@ -158,7 +144,7 @@ export default new Vuex.Store({
 
 				teams = response.data.data
 
-				console.log("Fetching teams from database")
+				console.log("Fetching TEAMS from database")
 				commit("SET_TEAMS", teams)
 			} catch (e) {
 				console.error(e)
@@ -180,7 +166,8 @@ export default new Vuex.Store({
 			// 	if (race.date_in_milli === 1616889600000)
 			// })
 
-			console.log("Set upcomingRace")
+			console.log("Set UPCOMING_RACE")
+
 			commit("SET_UPCOMING_RACE", upcomingRaceObj)
 		},
 		getNextRaceRound({ commit }, upcomingRace) {
@@ -190,7 +177,7 @@ export default new Vuex.Store({
 			// const round = upcomingRace.race_round
 			const round = 1
 
-			console.log("Set current round number")
+			console.log("Set CURRENT_ROUND")
 			commit("SET_CURRENT_ROUND", round)
 		},
 		getNextSession({ commit }, upcomingRace) {
@@ -232,7 +219,7 @@ export default new Vuex.Store({
 
 			// this.currentSession = nextSession
 			this.currentSession = "Next Race"
-			console.log("Set current session")
+			console.log("Set CURRENT_SESSION")
 			commit("SET_SESSION", this.currentSession)
 		},
 	},
