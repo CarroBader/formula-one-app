@@ -41,11 +41,11 @@ import apiCallsMixin from "../../mixins/apiCallsMixin"
 import { driverNum, teamColorCode } from "../../variables/replaceVars"
 
 export default {
-	name: `Practice`,
+	name: "Practice",
 	components: {
 		PracticeSession,
 	},
-	props: [`id`],
+	props: ["id"],
 	data() {
 		return {
 			allRaces: null,
@@ -64,8 +64,8 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters([`allConfirmedRaces`]),
-		...mapState([`currentRound`]),
+		...mapGetters(["allConfirmedRaces"]),
+		...mapState(["currentRound"]),
 	},
 	async created() {
 		this.allRaces = this.allConfirmedRaces
@@ -109,17 +109,17 @@ export default {
 			/*
      Get the session ids for all practice sessions.
     */
-			console.log(`getNextSessionIds`)
+			console.log("getNextSessionIds")
 			this.nextRace.sessions.forEach((session) => {
-				if (session.session_name.includes(`Practice`)) {
+				if (session.session_name.includes("Practice")) {
 					this.sessionIds.push(session.id)
 				}
 			})
 		},
 		addDriverNumberAndColorCode(practice) {
-			console.log(`addDriverNumberAndColorCode - practice`, practice)
+			console.log("addDriverNumberAndColorCode - practice", practice)
 			practice.forEach((driver) => {
-				const driverId = driver.name.replace(` `, `_`).toLowerCase()
+				const driverId = driver.name.replace(" ", "_").toLowerCase()
 				if (driverId in driverNum) {
 					driver.permanent_number = driverNum[driverId]
 				}

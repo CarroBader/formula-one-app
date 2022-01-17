@@ -45,7 +45,7 @@
 import { mapGetters, mapState } from "vuex"
 
 export default {
-	name: `TopNav`,
+	name: "TopNav",
 	data() {
 		return {}
 	},
@@ -55,13 +55,13 @@ export default {
 		},
 	},
 	computed: {
-		...mapGetters([`nextRace`, `nextSession`]),
-		...mapState([`currentRound`, `raceNav`, `standingsNav`]),
+		...mapGetters(["nextRace", "nextSession"]),
+		...mapState(["currentRound", "raceNav", "standingsNav"]),
 	},
 	created() {
-		this.$store.commit(`SET_NAV_NAME`, this.nextSession)
-		if (this.$router.history.current.path === `/`) {
-			this.$router.replace(`/grand-prix/${this.currentRound}/next-race`)
+		this.$store.commit("SET_NAV_NAME", this.nextSession)
+		if (this.$router.history.current.path === "/") {
+			this.$router.replace("/grand-prix/${this.currentRound}/next-race")
 		}
 	},
 }

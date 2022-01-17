@@ -22,11 +22,11 @@ import helpersMixin from "../../mixins/helpersMixin"
 import apiCallsMixin from "../../mixins/apiCallsMixin"
 
 export default {
-	name: `Qualifying`,
+	name: "Qualifying",
 	components: {
 		QualifyingSession,
 	},
-	props: [`id`],
+	props: ["id"],
 	data() {
 		return {
 			allRaces: null,
@@ -41,8 +41,8 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters([`allConfirmedRaces`]),
-		...mapState([`currentRound`]),
+		...mapGetters(["allConfirmedRaces"]),
+		...mapState(["currentRound"]),
 	},
 	async created() {
 		this.allRaces = this.allConfirmedRaces
@@ -68,7 +68,7 @@ export default {
      Get the session ids for all qualifying sessions.
     */
 			this.nextRace.sessions.forEach((session) => {
-				if (session.session_name.includes(`Qualifying`)) {
+				if (session.session_name.includes("Qualifying")) {
 					this.sessionIds.push(session.id)
 				}
 			})
@@ -84,7 +84,7 @@ export default {
 				driver.id = qualiOne[i].id
 				driver.driver_name = qualiOne[i].name
 				driver.team_name = qualiOne[i].team_name
-				driver.team_id = qualiOne[i].team_name.toLowerCase().replace(` `, `_`)
+				driver.team_id = qualiOne[i].team_name.toLowerCase().replace(" ", "_")
 				driver.q1Time = qualiOne[i].time
 				for (let j = 0; j < qualiTwo.length; j++) {
 					if (
@@ -98,11 +98,11 @@ export default {
 			}
 
 			for (let k = 0; k < combinedQuali.length; k++) {
-				if (combinedQuali[k].team_name === `Alfa Romeo Racing`) {
-					combinedQuali[k].team_name = `Alfa Romeo`
-					combinedQuali[k].team_id = `Alfa Romeo`
+				if (combinedQuali[k].team_name === "Alfa Romeo Racing") {
+					combinedQuali[k].team_name = "Alfa Romeo"
+					combinedQuali[k].team_id = "Alfa Romeo"
 						.toLowerCase()
-						.replace(` `, `_`)
+						.replace(" ", "_")
 				}
 				for (let l = 0; l < qualiThree.length; l++) {
 					if (combinedQuali[k].id === qualiThree[l].id) {

@@ -27,11 +27,11 @@ let responseStartingGrid = []
 let leaderLapCompleted = 0
 
 export default {
-	name: `Race`,
+	name: "Race",
 	components: {
 		RaceSession,
 	},
-	props: [`id`],
+	props: ["id"],
 	data() {
 		return {
 			allRaces: null,
@@ -49,8 +49,8 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters([`allConfirmedRaces`, `allDrivers`]),
-		...mapState([`currentRound`]),
+		...mapGetters(["allConfirmedRaces", "allDrivers"]),
+		...mapState(["currentRound"]),
 	},
 	async created() {
 		this.allRaces = this.allConfirmedRaces
@@ -60,7 +60,7 @@ export default {
 		this.nextRace = this.getNextRace(this.allRaces, this.round)
 		this.nextRaceName = this.nextRace.name
 
-		if (this.nextRace.status === `Complete`) {
+		if (this.nextRace.status === "Complete") {
 			if (this.nextRace !== null)
 				responseStartingGrid = await this.getGridStartingForRace(
 					this.nextRace.grand_prix_id
@@ -89,11 +89,11 @@ export default {
      Get the session ids for all qualifying sessions.
     */
 			this.nextRace.sessions.forEach((session) => {
-				if (session.session_name.includes(`Race`)) {
+				if (session.session_name.includes("Race")) {
 					this.sessionIds.push(session.id)
 				}
 
-				if (session.session_name.includes(`FastestLap`)) {
+				if (session.session_name.includes("FastestLap")) {
 					this.sessionIds.push(session.id)
 				}
 			})
@@ -126,7 +126,7 @@ export default {
 			for (let i = 0; i < this.raceSessionData.length; i++) {
 				for (let j = 0; j < this.drivers.length; j++) {
 					const driverId = this.raceSessionData[i].name
-						.replace(` `, `_`)
+						.replace(" ", "_")
 						.toLowerCase()
 					if (driverId === this.drivers[j].driver_id) {
 						this.raceSessionData[i].nationality = this.drivers[
