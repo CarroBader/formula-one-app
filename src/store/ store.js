@@ -23,8 +23,8 @@ export default new Vuex.Store({
 	state: {
 		allDataLoaded: false,
 		raceDataLoaded: false,
-		raceNav: `Last Race`,
-		standingsNav: `Driver Standings`,
+		raceNav: "Last Race",
+		standingsNav: "Driver Standings",
 		allConfirmedRaces: [],
 		allDrivers: [],
 		allTeams: [],
@@ -42,47 +42,47 @@ export default new Vuex.Store({
 	},
 	mutations: {
 		SET_RACES: (state, confirmedRaces) => {
-			console.log(`SET_RACES mutations`)
+			console.log("SET_RACES mutations")
 			state.allConfirmedRaces.push(...confirmedRaces)
 
 			state.raceDataLoaded = true
 			// state.allConfirmedRaces = []
 		},
 		SET_DRIVERS: (state, drivers) => {
-			console.log(`SET_DRIVERS mutations`)
+			console.log("SET_DRIVERS mutations")
 			state.allDrivers.push(...drivers)
 			// state.allDrivers = []
 		},
 		SET_TEAMS: (state, teams) => {
-			console.log(`SET_TEAMS mutations`)
+			console.log("SET_TEAMS mutations")
 			state.allTeams.push(...teams)
 			// state.allTeams = []
 		},
 		SET_NEXT_RACE: (state, nextRaceObj) => {
-			console.log(`SET_NEXT_RACE mutations`)
+			console.log("SET_NEXT_RACE mutations")
 			state.nextRace = nextRaceObj
 			// state.allTeams = []
 		},
 		SET_CURRENT_ROUND: (state, round) => {
-			console.log(`SET_CURRENT_ROUND mutations`)
-			console.log(`här`, round)
+			console.log("SET_CURRENT_ROUND mutations")
+			console.log("här", round)
 			state.currentRound = round
 			// state.allTeams = []
 		},
 		SET_SESSION: (state, currentSession) => {
-			console.log(`SET_SESSION mutations`)
+			console.log("SET_SESSION mutations")
 			state.nextSession = currentSession
 			// state.allTeams = []
 			state.allDataLoaded = true
 		},
 		SET_NAV_NAME: (state, raceNavValue) => {
 			// Varible used for routing of race.
-			console.log(`SET_NAV_NAME mutations`)
+			console.log("SET_NAV_NAME mutations")
 			state.raceNav = raceNavValue
 		},
 		SET_STANDINGS_NAME: (state, standingsNavValue) => {
 			// Varible used for routing of standings.
-			console.log(`SET_STANDINGS_NAME mutations`)
+			console.log("SET_STANDINGS_NAME mutations")
 			state.standingsNav = standingsNavValue
 		},
 	},
@@ -108,7 +108,7 @@ export default new Vuex.Store({
 				})
 
 				response.data.results.forEach((race) => {
-					if (race.status !== `Cancelled`) {
+					if (race.status !== "Cancelled") {
 						race.date_in_milli = Date.parse(race.end_date)
 						confirmedRaces.push(race)
 					}
@@ -123,8 +123,8 @@ export default new Vuex.Store({
 					}
 				})
 
-				console.log(`Fetching allRaces from database`)
-				commit(`SET_RACES`, confirmedRaces)
+				console.log("Fetching allRaces from database")
+				commit("SET_RACES", confirmedRaces)
 			} catch (e) {
 				console.error(e)
 			}
@@ -141,8 +141,8 @@ export default new Vuex.Store({
 
 				drivers = response.data.data
 
-				console.log(`Fetching drivers from database`)
-				commit(`SET_DRIVERS`, drivers)
+				console.log("Fetching drivers from database")
+				commit("SET_DRIVERS", drivers)
 			} catch (e) {
 				console.error(e)
 			}
@@ -159,8 +159,8 @@ export default new Vuex.Store({
 
 				teams = response.data.data
 
-				console.log(`Fetching teams from database`)
-				commit(`SET_TEAMS`, teams)
+				console.log("Fetching teams from database")
+				commit("SET_TEAMS", teams)
 			} catch (e) {
 				console.error(e)
 			}
@@ -181,8 +181,8 @@ export default new Vuex.Store({
 			// 	if (race.date_in_milli === 1616889600000)
 			// })
 
-			console.log(`Set nextRace`)
-			commit(`SET_NEXT_RACE`, nextRaceObj)
+			console.log("Set nextRace")
+			commit("SET_NEXT_RACE", nextRaceObj)
 		},
 		getNextRaceRound({ commit }, nextRace) {
 			/*
@@ -190,8 +190,8 @@ export default new Vuex.Store({
       */
 			const round = nextRace.race_round
 
-			console.log(`Set current round number`)
-			commit(`SET_CURRENT_ROUND`, round)
+			console.log("Set current round number")
+			commit("SET_CURRENT_ROUND", round)
 		},
 		getNextSession({ commit }, nextRace) {
 			/*
@@ -222,7 +222,7 @@ export default new Vuex.Store({
 
 			//   if (dateInMilli >= todaysDate) {
 			//     nextSession = {
-			//       sessionType: `Next Race`,
+			//       sessionType: "Next Race",
 			//       sessionName: relSession.session_name,
 			//       startTime: relSession.date,
 			//     }
@@ -231,9 +231,9 @@ export default new Vuex.Store({
 			// })
 
 			// this.currentSession = nextSession
-			this.currentSession = `Next Race`
-			console.log(`Set current session`)
-			commit(`SET_SESSION`, this.currentSession)
+			this.currentSession = "Next Race"
+			console.log("Set current session")
+			commit("SET_SESSION", this.currentSession)
 		},
 	},
 })

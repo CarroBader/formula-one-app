@@ -43,16 +43,16 @@ delete L.Icon.Default.prototype._getIconUrl
 
 /* eslint-disable global-require */
 L.Icon.Default.mergeOptions({
-	iconRetinaUrl: require(`../assets/img/mapMarkers/position.png`),
-	iconUrl: require(`../assets/img/mapMarkers/position.png`),
-	shadowUrl: require(`leaflet/dist/images/marker-shadow.png`),
+	iconRetinaUrl: require("../assets/img/mapMarkers/position.png"),
+	iconUrl: require("../assets/img/mapMarkers/position.png"),
+	shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
 })
 const trackLocation = []
 const weather = []
 const locationAndweather = []
 
 export default {
-	name: `RaceMapView`,
+	name: "RaceMapView",
 	components: {
 		"v-map": LMap,
 		"v-tilelayer": LTileLayer,
@@ -66,7 +66,7 @@ export default {
 		return {
 			zoom: 3,
 			center: [47.15561817215472, 21.992011024609532],
-			url: `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`,
+			url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
 			attribution: `&copy;
       <a href="https://www.openstreetmap.org/copyright">
       OpenStreetMap</a> contributors`,
@@ -107,7 +107,7 @@ export default {
 						headers: {
 							"x-rapidapi-key": apiKey,
 							"x-rapidapi-host": host,
-							"Access-Control-Allow-Origin": `*`,
+							"Access-Control-Allow-Origin": "*",
 						},
 					})
 					.then((response) => {
