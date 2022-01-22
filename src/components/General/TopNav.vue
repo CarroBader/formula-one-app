@@ -51,7 +51,9 @@ export default {
 	},
 	watch: {
 		currentRound(newValue) {
-			this.$router.replace({ name: this.raceNav, params: { id: newValue } })
+			if (this.$route.path !== `/grand-prix/${this.currentRound}/next-race`) {
+				this.$router.replace({ name: this.raceNav, params: { id: newValue } })
+			}
 		},
 	},
 	computed: {
@@ -60,7 +62,10 @@ export default {
 	},
 	created() {
 		this.$store.commit("SET_NAV_NAME", this.nextSession)
-		if (this.$router.history.current.path === "/") {
+		if (
+			this.$router.history.current.path === "/" &&
+			this.$route.path !== `/grand-prix/${this.currentRound}/next-race`
+		) {
 			this.$router.replace(`/grand-prix/${this.currentRound}/next-race`)
 		}
 	},
