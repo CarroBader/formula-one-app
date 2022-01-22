@@ -10,15 +10,12 @@
 					:timeTableData="timeTableData"
 				/>
 
-				<NextRaceCircuitInfo
-					v-if="trackDataLoded"
-					:nextTrack="this.trackData"
-				/>
+				<NextRaceCircuitInfo v-if="trackDataLoaded" :nextTrack="trackData" />
 			</b-col>
 			<b-col>
 				<NextRaceGrandPrixInfo
-					v-if="grandPrixDataLoded"
-					:nextGrandPrix="this.grandPrixData"
+					v-if="grandPrixDataLoaded"
+					:nextGrandPrix="grandPrixData"
 				/>
 
 				<NextRaceCountryFlag :country="nextRaceCountry" />
@@ -71,9 +68,9 @@ export default {
 			timeTableData: null,
 			timeTableDataLoaded: false,
 			grandPrixData: null,
-			grandPrixDataLoded: false,
+			grandPrixDataLoaded: false,
 			trackData: null,
-			trackDataLoded: false,
+			trackDataLoaded: false,
 		}
 	},
 	computed: {
@@ -97,12 +94,12 @@ export default {
 		// Next Track
 		const nextTrack = await this.getOneTrack(trackId)
 		this.trackData = nextTrack.data
-		this.trackDataLoded = nextTrack.dataLoaded
+		this.trackDataLoaded = nextTrack.dataLoaded
 
 		// Next Grand Prix
 		const nextGrandPrix = await this.getOneGrandPrix(grandPrixId)
 		this.grandPrixData = nextGrandPrix.data
-		this.grandPrixDataLoded = nextGrandPrix.dataLoaded
+		this.grandPrixDataLoaded = nextGrandPrix.dataLoaded
 		this.lastWinners = this.grandPrixData.winners.slice(-5)
 		this.lastPoles = this.grandPrixData.poles.slice(-5)
 

@@ -1,9 +1,9 @@
 const addTrackId = {
 	Sakhir: "bahrain",
 	Imola: "imola",
-	"Algarve International": "algrave",
+	"Algarve International": "algarve",
 	Catalunya: "catalunya",
-	Monaco: "monaco",
+	"Monte Carlo": "monaco",
 	Baku: "baku",
 	"Circuit Paul Ricard": "paul_ricard",
 	"Red Bull Ring": "red_bull_ring",
