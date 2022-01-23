@@ -29,8 +29,8 @@
 import { Swiper, SwiperSlide } from "vue-awesome-swiper"
 import { mapGetters, mapState } from "vuex"
 
-import getCountryFlagMixin from "../../mixins/getCountryFlagMixin"
-import convertRaceTimeMixin from "../../mixins/convertRaceTimeMixin"
+import getCountryFlagMixin from "../mixins/getCountryFlagMixin"
+import convertRaceTimeMixin from "../mixins/convertRaceTimeMixin"
 
 export default {
 	name: "SwiperNav",

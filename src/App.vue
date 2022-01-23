@@ -11,11 +11,11 @@
 <script>
 import { mapGetters, mapActions, mapState } from "vuex"
 import store from "./store/ store"
-import SwiperNav from "./components/General/SwiperNav.vue"
+import SwiperNav from "./layout/SwiperNav.vue"
 
-import TopNav from "./components/General/TopNav.vue"
-import Footer from "./components/General/Footer.vue"
-import BotNav from "./components/General/BotNav.vue"
+import TopNav from "./layout/TopNav.vue"
+import Footer from "./layout/Footer.vue"
+import BotNav from "./layout/BotNav.vue"
 
 export default {
 	name: "App",

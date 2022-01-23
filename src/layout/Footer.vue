@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import generalVarsMixin from "../../mixins/generalVarsMixin"
+import generalVarsMixin from "../mixins/generalVarsMixin"
 
 export default {
 	name: "Footer",

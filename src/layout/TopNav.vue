@@ -2,7 +2,7 @@
 	<div>
 		<div class="lol"></div>
 		<b-navbar toggleable="md navbar-top figure.blur5">
-			<img src="../../assets/logo.png" class="nav-logo-top" alt="F1 logo" />
+			<img src="../assets/logo.png" class="nav-logo-top" alt="F1 logo" />
 			<b-navbar-brand class="nav-title-top">Formula One</b-navbar-brand>
 
 			<b-navbar-toggle
