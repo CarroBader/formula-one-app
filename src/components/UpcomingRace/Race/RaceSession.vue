@@ -1,5 +1,11 @@
 <template>
 	<div>
+		<DriverModal
+			v-if="showDriverModal"
+			:driverObject="driverObject"
+			:id="driverId"
+			@clicked="setShowToFalseModal"
+		/>
 		<div class="result-last-race-headline-div">
 			<h1 class="result-last-race-headline">{{ nextRaceName }}</h1>
 		</div>
@@ -40,7 +46,9 @@
 								}}
 							</span>
 						</td>
-						<td class="result-last-race-td">{{ race.name }}</td>
+						<td class="result-last-race-td">
+							<a v-on:click="getDriverObject(race.id)">{{ race.name }}</a>
+						</td>
 						<td
 							class="result-last-race-td"
 							:style="returnAltBySize(small, revert, none)"
@@ -72,11 +80,16 @@
 </template>
 
 <script>
+import DriverModal from "../../General/DriverModal.vue"
+
 import getCountryFlagMixin from "../../../mixins/getCountryFlagMixin"
 import getConstructorColorMixin from "../../../mixins/getConstructorColorMixin"
 import getImageMixin from "../../../mixins/getImageMixin"
 import getWindowSizeMixin from "../../../mixins/getWindowSizeMixin"
 import generalVarsMixin from "../../../mixins/generalVarsMixin"
+import apiCallsMixin from "../../../mixins/apiCallsMixin"
+
+import { changeDriverId } from "../../../variables/replaceVars"
 
 export default {
 	name: "RaceSession",
@@ -85,10 +98,19 @@ export default {
 		nextRaceName: String,
 		statusCompleted: Boolean,
 	},
-	data() {
-		return {}
+	components: {
+		DriverModal,
 	},
-	created() {},
+	data() {
+		return {
+			showDriverModal: false,
+			driverObject: {},
+			driverId: "",
+		}
+	},
+	created() {
+		console.log("HÄÄÄR", this.raceResult)
+	},
 	methods: {
 		getSymbolImage(grid, position) {
 			/*
@@ -119,6 +141,18 @@ export default {
     */
 			return !!(fastestLap !== undefined && fastestLap.rank === "1")
 		},
+		async getDriverObject(driverId) {
+			const driver = await this.getOneDriver(changeDriverId[driverId])
+			this.driverObject = driver.data
+			this.driverId = driver.data.driver_id
+
+			if (driver.dataLoaded) {
+				this.showDriverModal = true
+			}
+		},
+		setShowToFalseModal(value) {
+			this.showDriverModal = value
+		},
 	},
 	mixins: [
 		getCountryFlagMixin,
@@ -126,6 +160,7 @@ export default {
 		getImageMixin,
 		getWindowSizeMixin,
 		generalVarsMixin,
+		apiCallsMixin,
 	],
 }
 </script>

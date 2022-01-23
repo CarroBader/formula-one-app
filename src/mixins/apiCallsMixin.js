@@ -220,6 +220,23 @@ export default {
 				console.error(e)
 			}
 		},
+		async getOneDriver(driverId) {
+			/*
+        Return - One driver
+        Params: driver_id
+      */
+			try {
+				const response = await axios.get(`${baseUrl}/drivers/${driverId}`)
+				// console.log("Fetching driver from database")
+
+				return {
+					data: response.data.data,
+					dataLoaded: true,
+				}
+			} catch (e) {
+				console.error(e)
+			}
+		},
 	},
 	mixins: [generalVarsMixin],
 }

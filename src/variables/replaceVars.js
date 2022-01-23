@@ -174,6 +174,29 @@ const teamColorCode = {
 	nikita_mazepin: "haas",
 }
 
+const changeDriverId = {
+	262348: "max_verstappen",
+	65527: "lewis_hamilton",
+	278857: "valtteri_bottas",
+	2975914: "pierre_gasly",
+	986827: "charles_leclerc",
+	63379: "fernando_alonso",
+	261679: "carlos_sainz",
+	78274: "sergio_perez",
+	307612: "esteban_ocon",
+	1619431: "lando_norris",
+	175030: "daniel_ricciardo",
+	2262088: "lance_stroll",
+	96004: "sebastian_vettel",
+	1054273: "antonio_giovinazzi",
+	194182: "kimi_raikkonen",
+	1641904: "nicholas_latifi",
+	2293954: "george_russell",
+	2113831: "mick_schumacher",
+	152605: "yuki_tsunoda",
+	841828: "nikita_mazepin",
+}
+
 export {
 	addTrackId,
 	addGrandPrixId,
@@ -187,4 +210,5 @@ export {
 	points,
 	driverNum,
 	teamColorCode,
+	changeDriverId,
 }
