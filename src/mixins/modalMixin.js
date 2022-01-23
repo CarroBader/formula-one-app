@@ -30,5 +30,22 @@ export default {
 				return nowYear - driverYear - 1
 			}
 		},
+		getPositionColor(position) {
+			console.log("position", position)
+			switch (position) {
+				case "1st":
+					return "gold"
+					break
+				case "2nd":
+					return "silver"
+					break
+				case "3rd":
+					return "bronze"
+					break
+
+				default:
+					break
+			}
+		},
 	},
 }

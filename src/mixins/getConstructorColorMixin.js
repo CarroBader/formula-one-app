@@ -83,7 +83,6 @@ export default {
 		},
 		convertConstructorName(teamName) {
 			const teamId = teamName.replace(" ", "_").toLowerCase()
-			console.log("teamId", teamId)
 			return this.getConstructorColor(teamId)
 		},
 	},

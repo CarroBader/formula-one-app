@@ -56,13 +56,6 @@
 										{{ driverObject.permanent_number }}
 									</td>
 								</tr>
-
-								<!-- <tr>
-									<th class="modal-th">Position Last Season:</th>
-									<td class="modal-td">
-										{{ driverObject.position_last_seasons[season] }}
-									</td>
-								</tr> -->
 							</table>
 						</div>
 					</b-card></b-col
@@ -166,7 +159,14 @@
 								</tr>
 								<tr>
 									<th class="modal-th">Position Last Season:</th>
-									<td class="modal-td">
+									<td
+										class="modal-td"
+										:class="
+											getPositionColor(
+												driverObject.position_last_seasons[season]
+											)
+										"
+									>
 										{{ driverObject.position_last_seasons[season] }}
 									</td>
 								</tr>
