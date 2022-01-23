@@ -1,3 +1,81 @@
 .modal-header .close {
 	display: none;
 }
+
+.modal-title {
+	color: $white !important;
+}
+.modal-header {
+	background-color: $sub-background;
+}
+
+.modal-footer {
+	background-color: $sub-background;
+}
+
+.modal-th {
+	color: $dark-grey;
+
+	@include breakpoint(xx-large) {
+		font-size: 0.8em;
+	}
+}
+
+.modal-td {
+	text-align: end;
+	@include breakpoint(xx-large) {
+		font-size: 0.9em;
+		padding: 0.4em 0;
+	}
+}
+
+.modal-table {
+	width: 100%;
+}
+
+.modal-row-one {
+	@include breakpoint(xx-large) {
+		height: 15em;
+	}
+}
+
+.modal-row-two {
+	@include breakpoint(xx-large) {
+		height: 21em;
+	}
+}
+
+.modal-driver-img-col {
+	@include breakpoint(xx-large) {
+		text-align: center;
+		margin-top: 1em;
+	}
+}
+
+.modal-driver-img {
+	border: 1px solid #fff;
+	padding: 1em;
+
+	@include breakpoint(xx-large) {
+		// height: 12em;
+		height: 14em;
+	}
+}
+
+.modal-country-flag-img {
+	@include breakpoint(xx-large) {
+		height: 1em;
+		margin-left: 0.5em;
+	}
+}
+
+.driver-modal-content {
+	background-color: $sub-background;
+	// width: 40em;
+	// width: 60em;
+
+	@include breakpoint(xx-large) {
+		position: absolute;
+		top: 10em;
+	}
+}

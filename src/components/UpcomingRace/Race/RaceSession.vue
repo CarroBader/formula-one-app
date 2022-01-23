@@ -108,9 +108,7 @@ export default {
 			driverId: "",
 		}
 	},
-	created() {
-		console.log("HÄÄÄR", this.raceResult)
-	},
+	created() {},
 	methods: {
 		getSymbolImage(grid, position) {
 			/*

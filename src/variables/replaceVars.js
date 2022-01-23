@@ -197,6 +197,24 @@ const changeDriverId = {
 	841828: "nikita_mazepin",
 }
 
+const getNationality = {
+	Netherlands: "Dutch",
+	Finland: "Finnish",
+	"United Kingdom": "British",
+	Mexico: "Mexican",
+	Monaco: "Monégasque",
+	Australia: "Australian",
+	Spain: "Spanish",
+	Japan: "Japanese",
+	Canada: "Canadian",
+	Italy: "Italian",
+	France: "French",
+	Germany: "German",
+	Russia: "Russian",
+	China: "Chinese",
+	Thailand: "Thai",
+}
+
 export {
 	addTrackId,
 	addGrandPrixId,
@@ -211,4 +229,5 @@ export {
 	driverNum,
 	teamColorCode,
 	changeDriverId,
+	getNationality,
 }
