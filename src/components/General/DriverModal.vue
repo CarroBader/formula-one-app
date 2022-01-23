@@ -10,6 +10,7 @@
 		visible="visible"
 		class="modal-title"
 		content-class="driver-modal-content"
+		no-close-on-backdrop
 	>
 		<b-container>
 			<b-row class="modal-row-one">
@@ -28,8 +29,8 @@
 									<td class="modal-td">{{ driverObject.driver_name }}</td>
 								</tr>
 								<tr>
-									<th class="modal-th">Birthday:</th>
-									<td class="modal-td">{{ driverObject.birthday }}</td>
+									<th class="modal-th">Age:</th>
+									<td class="modal-td">{{ getAge(driverObject.birthday) }}</td>
 								</tr>
 								<tr>
 									<th class="modal-th">Origin:</th>
@@ -74,7 +75,8 @@
 							<table class="modal-table">
 								<tr>
 									<th class="modal-th">
-										Starts <span style="font-size: 0.78em">(Entries)</span>:
+										Starts
+										<span style="font-size: 0.78em; color:">(Entries)</span>:
 									</th>
 									<td class="modal-td">
 										{{ driverObject.starts }}
@@ -196,6 +198,7 @@ import generalVarsMixin from "../../mixins/generalVarsMixin"
 import getCountryFlagMixin from "../../mixins/getCountryFlagMixin"
 import getConstructorColorMixin from "../../mixins/getConstructorColorMixin"
 import getImageMixin from "../../mixins/getImageMixin"
+import modalMixin from "../../mixins/modalMixin"
 
 import { getNationality } from "../../variables/replaceVars"
 
@@ -228,6 +231,7 @@ export default {
 		getCountryFlagMixin,
 		getConstructorColorMixin,
 		getImageMixin,
+		modalMixin,
 	],
 }
 </script>
