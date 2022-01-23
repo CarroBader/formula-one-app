@@ -145,13 +145,17 @@
 									</td>
 								</tr>
 								<tr>
-									<th class="modal-th">Previous Team(s):</th>
+									<th class="modal-th">Previous Team:</th>
+
 									<td
 										class="modal-td"
-										v-for="(team, index) in driverObject.team.previous_teams"
-										:key="index"
+										:class="
+											convertConstructorName(
+												driverObject.team.previous_teams.slice(-1)[0]
+											)
+										"
 									>
-										<span>{{ team }},</span>
+										{{ driverObject.team.previous_teams.slice(-1)[0] }}
 									</td>
 								</tr>
 								<tr>

@@ -64,10 +64,27 @@ export default {
 				case "brawn":
 					colorName = "brawn"
 					break
+				case "renault":
+					colorName = "renault"
+					break
+				case "toro_rosso":
+					colorName = "torro-rosso"
+					break
+				case "sauber":
+					colorName = "sauber"
+					break
+				case "racing_point":
+					colorName = "racing-point"
+					break
 				default:
 					colorName = ""
 			}
 			return colorName
+		},
+		convertConstructorName(teamName) {
+			const teamId = teamName.replace(" ", "_").toLowerCase()
+			console.log("teamId", teamId)
+			return this.getConstructorColor(teamId)
 		},
 	},
 }
