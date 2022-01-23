@@ -76,11 +76,11 @@
 								<tr>
 									<th class="modal-th">
 										Starts
-										<span style="font-size: 0.78em; color:">(Entries)</span>:
+										<span class="modal-span-text">(Entries)</span>:
 									</th>
 									<td class="modal-td">
 										{{ driverObject.starts }}
-										<span style="font-size: 0.88em"
+										<span class="modal-span-text"
 											>({{ driverObject.entries }})</span
 										>
 									</td>
