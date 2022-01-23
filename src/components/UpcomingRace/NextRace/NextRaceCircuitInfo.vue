@@ -2,7 +2,7 @@
 	<div>
 		<b-card>
 			<h5 class="next-race-circuit-info-name">{{ nextTrack.track_name }}</h5>
-			<h5 class="next-race-circuit-info-location extra-dark-grey">
+			<h5 class="next-race-circuit-info-location">
 				{{ nextTrack.location.locality }}, {{ nextTrack.location.country }}
 			</h5>
 			<img
@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 table {
 	width: 100%;
 }

@@ -32,8 +32,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.sprint-qualifying-row {
-	display: inline-block;
-}
-</style>
+<style scoped></style>

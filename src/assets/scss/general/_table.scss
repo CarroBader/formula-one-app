@@ -1,0 +1,25 @@
+th {
+	font-family: $orbitron;
+	color: $white;
+}
+
+tr {
+	border-bottom: 1px solid $white;
+}
+
+td {
+	font-family: $orbitron;
+	color: $white;
+}
+
+.scroll-table {
+	overflow: hidden;
+	overflow-y: auto;
+
+	@include breakpoint(x-small) {
+		height: 700px;
+	}
+	@include breakpoint(small) {
+		height: auto;
+	}
+}

@@ -51,7 +51,7 @@
 					:key="index"
 					class="constructor-table-tbody"
 				>
-					<td class="constructor-table-td extra-dark-grey">
+					<td class="constructor-table-td constructor-table-position">
 						{{ constructor.position }}
 					</td>
 					<td
@@ -64,7 +64,7 @@
 						<img
 							:src="getFlag(constructor.nationality)"
 							:alt="`${constructor.nationality}`"
-							class="constructor-table-td constructor-table-flag-img"
+							class="constructor-table-flag-img"
 						/>
 					</td>
 					<td class="constructor-table-td">{{ constructor.points }}</td>
@@ -99,7 +99,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 table {
 	width: 100%;
 }
@@ -110,38 +110,5 @@ tbody {
 
 tbody:last-child {
 	border-bottom: none;
-}
-
-.constructor-table-headline-div {
-	margin: 0.5em 0 2em;
-}
-
-.leader-constructor-div {
-	display: flex;
-	display: -webkit-flex;
-	justify-content: space-between;
-}
-
-.leader-constructor-div > .first {
-	order: 2;
-}
-.leader-constructor-div > .second {
-	order: 1;
-}
-.leader-constructor-div > .third {
-	order: 3;
-}
-
-.second {
-	margin: 2em 0.5em 0 0.5em !important;
-}
-
-.third {
-	margin: 3em 0.5em 0 0.5em !important;
-}
-
-.leader-div {
-	flex: 1;
-	margin: 0 0.5em;
 }
 </style>

@@ -110,7 +110,7 @@ export default {
 </script>
 
 <style scoped>
-.swiper-nav {
+/* .swiper-nav {
 	overflow-x: hidden;
 }
 
@@ -128,12 +128,11 @@ export default {
 }
 
 .active-race {
-	/* width: 15em !important; */
 	background-color: #232323;
 }
 
 .swiper-slide {
 	display: table-cell;
 	border-right: solid 1px #5f5555;
-}
+} */
 </style>

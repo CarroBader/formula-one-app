@@ -1,0 +1,22 @@
+.map {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	@include breakpoint(x-small) {
+		top: 3.4em;
+	}
+	@include breakpoint(medium) {
+		top: 4.1em;
+	}
+	@include breakpoint(large) {
+		top: 4.25em;
+	}
+	@include breakpoint(x-large) {
+		top: 4.2em;
+	}
+	@include breakpoint(xx-large) {
+		top: 4.7em;
+	}
+}

@@ -1,0 +1,36 @@
+.bot-nav {
+	text-align: center;
+	background-color: $main-background;
+	border-top: 1px solid $navbar-background;
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+	height: auto;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-evenly;
+	margin-top: 3em;
+
+	@include breakpoint(x-small) {
+		// display: block;
+	}
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
+
+.bot-nav-link {
+	font-size: 1.2em;
+	color: #666;
+	text-decoration: none;
+}
+
+.text-icon {
+	display: grid;
+	text-align: -webkit-center;
+	padding: 0.5em;
+}
+
+.router-link-active {
+	color: $white;
+}

@@ -1,0 +1,113 @@
+.qualifying-session-headline {
+	background: $headline-background;
+	border-radius: 8px;
+	border: $headline-border 2px solid;
+	display: inline;
+	padding: 0 0.3em 0.3em 0.3em;
+
+	@include breakpoint(x-small) {
+		font-size: 1.1em;
+	}
+	@include breakpoint(medium) {
+		font-size: 1.2em;
+	}
+	@include breakpoint(large) {
+		font-size: 1.4em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1.6em;
+	}
+	@include breakpoint(xx-large) {
+		font-size: 1.7em;
+	}
+}
+
+.qualifying-session-tr {
+	@include breakpoint(x-small) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.9em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.95em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1em;
+	}
+}
+
+.qualifying-session-tbody {
+	@include breakpoint(x-small) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.9em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.95em;
+	}
+}
+
+.qualifying-session-td {
+	@include breakpoint(x-small) {
+		padding: 1em 0.3em;
+	}
+	@include breakpoint(medium) {
+		padding: 1em 0.8em;
+	}
+	@include breakpoint(large) {
+		padding: 1em 1.5em;
+	}
+	@include breakpoint(x-large) {
+		padding: 1em 1.55em;
+	}
+	@include breakpoint(xx-large) {
+		padding: 1em 2.5em;
+	}
+}
+
+.elimination-line {
+	@include breakpoint(x-small) {
+		border-bottom: 3px solid $white !important;
+	}
+	@include breakpoint(large) {
+		border-bottom: 5px solid $white !important;
+	}
+}
+
+.qualifying-session-headline-div {
+	margin: 0.5em 0 2em;
+}
+
+.q1Time {
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+
+.q2Time {
+	border-right: 1px solid #fff;
+}
+
+.q1Color {
+	color: $light-grey;
+}
+
+.q2Color {
+	color: $medium-grey;
+}
+
+.q3Color {
+	color: $dark-grey;
+}
+
+.noDataMessage {
+	color: #fff;
+}
+
+.qualifying-session-position {
+	color: $extra-dark-grey;
+}

@@ -1,0 +1,135 @@
+.circuit-last-list-div {
+	text-align: -webkit-center;
+
+	@include breakpoint(x-small) {
+		width: 100%;
+	}
+	@include breakpoint(xx-large) {
+		width: 50%;
+	}
+}
+
+.circuit-last-list-card-margin {
+	@include breakpoint(x-small) {
+		margin: 1.2em 0.5em;
+	}
+	@include breakpoint(medium) {
+		margin: 1.2em 0.2em;
+	}
+	@include breakpoint(large) {
+		margin: 1.2em 0.5em;
+	}
+	@include breakpoint(x-large) {
+		margin: 1.2em 1em 0 0;
+	}
+}
+
+.circuit-last-list-title {
+	background: $headline-background;
+	border-radius: 8px;
+	border: $headline-border 2px solid;
+	padding: 0 0.3em 0.3em 0.3em;
+	margin-top: 0.5em;
+	width: fit-content;
+
+	@include breakpoint(x-small) {
+		font-size: 0.85em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.9em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.95em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1em;
+	}
+}
+
+.circuit-last-list-table-div {
+	@include breakpoint(x-small) {
+		display: flex;
+		display: -webkit-inline-box;
+		justify-content: center;
+		align-items: baseline;
+		text-align: -webkit-right;
+	}
+}
+
+.circuit-last-list-td {
+	color: $dark-grey;
+
+	@include breakpoint(x-small) {
+		padding: 0.5em;
+	}
+	@include breakpoint(x-large) {
+		padding: 0.5em 1em;
+	}
+	@include breakpoint(xx-large) {
+		padding: 0.5em 0.3em;
+	}
+}
+
+.circuit-last-list-year {
+	color: $extra-dark-grey;
+
+	@include breakpoint(x-small) {
+		font-size: 0.65em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.75em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.8em;
+	}
+}
+
+.circuit-last-list-name {
+	color: $white;
+
+	@include breakpoint(x-small) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.75em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.85em;
+	}
+}
+
+.circuit-last-list-constructor {
+	@include breakpoint(x-small) {
+		font-size: 0.65em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.75em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.8em;
+	}
+}
+
+.circuit-last-list-fastest-lap {
+	@include breakpoint(x-small) {
+		font-size: 0.65em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.75em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.8em;
+	}
+}

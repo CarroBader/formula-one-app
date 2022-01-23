@@ -1,0 +1,133 @@
+// Formula One
+
+$main-background: #121212;
+$sub-background: #161616;
+$navbar-background: #bb0707f2;
+$navbar-sub-background: #232323;
+$headline-background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+$headline-border: #ffffff7d;
+
+// Normal colors
+
+$white: #fff;
+$black: #000;
+
+$red: #e10600;
+$medium-red: #c60500;
+$dark-red: #9f0000;
+
+$light-grey: #d3d3d3;
+$medium-grey: #c0c0c0;
+$dark-grey: #a9a9a9;
+$extra-dark-grey: #5f5555;
+
+$green: #008000;
+
+// Other
+
+$card-shadow: rgba(0, 0, 0, 35%) 0px 3px 9px;
+$card-border: rgba(0, 0, 0, 0.125);
+
+// Function picks class
+.medium-red {
+	color: $medium-red;
+}
+
+.dark-grey {
+	color: $dark-grey;
+}
+
+.green {
+	color: $green !important;
+}
+
+/* Driver and Team Colors */
+.mclaren {
+	/* Real color
+  color: #e0610e !important; 
+  */
+	color: #f77018 !important;
+}
+
+.red-bull {
+	/* Real color
+  color: #0600ef !important; 
+  */
+
+	/* Fake, alternative
+	color: #2b26ff !important; */
+
+	color: #3b38da !important;
+}
+
+.mercedes {
+	/* Real color 
+  color: #00d2be !important; 
+  */
+	color: #03e8d3 !important;
+}
+
+.alpha-romeo {
+	/* Real color
+  color: #900000 !important; 
+  */
+	color: #ad0505 !important;
+}
+
+.alpha-tauri {
+	/* Real color
+  color: #2b4562 !important; 
+  */
+	color: #5a84b3 !important;
+}
+
+.haas {
+	color: #fff !important;
+}
+
+.alpine {
+	color: #0090ff !important;
+}
+
+.ferrari {
+	color: #dc0000 !important;
+}
+
+.williams {
+	color: #005aff !important;
+}
+
+.aston-martin {
+	/* Real color
+  color: #006f62 !important; 
+  */
+	color: #00b19c !important;
+}
+
+.brawn {
+	color: #dafd5c !important;
+}
+
+.lotus {
+	color: #ffb800 !important;
+}
+
+/* .renault {
+	color: #ffd800 !important;
+}
+
+.brabham {
+	color: #0C2f48 !important;
+}
+
+.brm {
+	color: #004225 !important;
+}
+
+.vanwall {
+	color: #004225 !important;
+}
+
+.reg-parnell {
+	color: #3268aa;
+} */

@@ -167,8 +167,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.race-row {
-	display: inline-block;
-}
-</style>
+<style scoped></style>

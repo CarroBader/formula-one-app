@@ -137,8 +137,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.practice-row {
-	display: inline-block;
-}
-</style>
+<style scoped></style>

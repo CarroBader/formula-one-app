@@ -1,0 +1,23 @@
+/*
+  This file is used to contain all component imports.
+  Files inside this folder should contain all styles relating to a reusable component.
+*/
+
+/*
+  EXAMPLE:
+  buttons.scss      # Buttons
+  carousel.scss     # Carousel
+  cover.scss        # Cover
+  dropdown.scss     # Dropdown
+*/
+
+@import "_result-last-race";
+@import "_next-race-circuit-info";
+@import "_next-race-time-table";
+@import "_next-race-country-flag";
+@import "_practice-session";
+@import "_qualifying-session";
+@import "_driver-table";
+@import "_constructor-table";
+@import "_race-session";
+@import "_circuit-last-list";

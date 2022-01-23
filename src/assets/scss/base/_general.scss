@@ -1,0 +1,20 @@
+.center {
+	text-align: center;
+	text-align: -webkit-center;
+}
+
+.default-background-center {
+	background-color: $main-background;
+	text-align: center;
+	overflow: auto;
+}
+
+.view-container {
+	padding: 0;
+}
+
+.container {
+	@include breakpoint(xx-large) {
+		max-width: 1500px;
+	}
+}

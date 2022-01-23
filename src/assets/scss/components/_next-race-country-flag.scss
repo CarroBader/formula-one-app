@@ -1,0 +1,22 @@
+.next-race-country-flag-div {
+	@include breakpoint(x-small) {
+		height: 3em;
+		margin-top: 1.5em;
+	}
+	@include breakpoint(x-large) {
+		height: 3.5em;
+	}
+	@include breakpoint(xx-large) {
+		height: 4em;
+	}
+}
+
+.next-race-country-flag-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+	border-radius: 10px;
+	border: 5px solid #161616;
+	box-shadow: rgba(0, 0, 0, 35%) 0px 3px 9px;
+}

@@ -1,0 +1,144 @@
+.next-race-time-table-td {
+	@include breakpoint(x-small) {
+		padding: 0.5em;
+	}
+	@include breakpoint(large) {
+		padding: 0.2em 0.5em;
+	}
+	@include breakpoint(x-large) {
+		padding: 0;
+	}
+}
+
+.next-race-time-table-card-margin {
+	@include breakpoint(x-small) {
+		margin: 1.2em 0.5em;
+	}
+	@include breakpoint(medium) {
+		margin: 1.2em 0.2em;
+	}
+	@include breakpoint(large) {
+		margin: 1.2em 0.5em;
+	}
+	@include breakpoint(x-large) {
+		margin: 1.2em 1em 0 0;
+	}
+}
+
+.next-race-time-table-title {
+	@include breakpoint(x-small) {
+		font-size: 1em;
+	}
+	@include breakpoint(medium) {
+		font-size: 1.1em;
+	}
+	@include breakpoint(large) {
+		font-size: 1.2em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1.3em;
+	}
+}
+
+.next-race-time-table-date {
+	color: $red;
+
+	@include breakpoint(x-small) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(large) {
+		font-size: 1em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1.1em;
+	}
+}
+
+.next-race-time-table-event {
+	padding-right: 1em;
+
+	@include breakpoint(x-small) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.75em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.85em;
+	}
+}
+
+.next-race-time-table-day {
+	padding-right: 1em;
+	color: $dark-grey;
+	text-transform: uppercase;
+
+	@include breakpoint(x-small) {
+		font-size: 0.6em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.65em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.75em;
+	}
+}
+
+.next-race-time-table-time {
+	background: $headline-background;
+	border-radius: 8px;
+	border: $headline-border 2px solid;
+	padding: 0 0.3em 0.3em 0.3em;
+	display: -webkit-inline-box;
+	margin-top: 0.5em;
+
+	@include breakpoint(x-small) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.75em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.85em;
+	}
+}
+
+.next-race-time-table-border {
+	@include breakpoint(x-small) {
+		border-top: 1px solid $white !important;
+	}
+	@include breakpoint(large) {
+		border-bottom: 1px solid $white;
+	}
+	@include breakpoint(x-large) {
+		border: none !important;
+	}
+}
+
+.next-race-time-table-col-left {
+	@include breakpoint(medium) {
+		border-right: 1px solid $white;
+	}
+	@include breakpoint(large) {
+		border: none;
+	}
+	@include breakpoint(x-large) {
+		border-right: 1px solid $white;
+	}
+}
+
+.next-race-time-table-col {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	align-items: baseline;
+}

@@ -23,7 +23,7 @@
 						:key="index"
 						class="result-last-race-tbody"
 					>
-						<td class="result-last-race-td extra-dark-grey">
+						<td class="result-last-race-td result-last-race-position">
 							{{ race.position }}
 						</td>
 						<td class="result-last-race-td">
@@ -130,51 +130,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 tbody {
 	border-bottom: 1px solid #fff;
 }
 
 tbody:last-child {
 	border-bottom: none;
-}
-
-.result-last-race-headline-div {
-	margin: 0.5em 0 2em;
-}
-
-.noDataMessage {
-	color: #fff;
-}
-
-.fastest-lap-img {
-	height: 1em;
-	width: 1.5em;
-}
-
-.same-position {
-	height: 1em;
-	width: 1em;
-	-webkit-filter: invert(100%) sepia() saturate(100%) hue-rotate(0deg);
-	filter: invert(100%) sepia() saturate(100%) hue-rotate(0deg);
-}
-
-.lost-position {
-	height: 1em;
-	width: 1em;
-	-webkit-filter: invert(40%) grayscale(100%) brightness(55%) sepia(100%)
-		hue-rotate(-50deg) saturate(400%) contrast(2);
-	filter: invert(40%) grayscale(100%) brightness(55%) sepia(100%)
-		hue-rotate(-50deg) saturate(400%) contrast(2);
-}
-
-.gained-position {
-	height: 1em;
-	width: 1em;
-	transform: scaleY(-1);
-	-webkit-filter: invert(40%) grayscale(100%) brightness(70%) sepia(100%)
-		hue-rotate(50deg) saturate(400%) contrast(2);
-	filter: invert(40%) grayscale(100%) brightness(70%) sepia(100%)
-		hue-rotate(50deg) saturate(400%) contrast(2);
 }
 </style>

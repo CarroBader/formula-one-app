@@ -39,8 +39,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.driver-standings-row {
-	display: inline-block;
-}
-</style>
+<style scoped></style>

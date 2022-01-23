@@ -1,0 +1,275 @@
+.leader-driver-div {
+	@include breakpoint(x-small) {
+		margin: 0 0 1em 0;
+	}
+	@include breakpoint(medium) {
+		margin: 0 0 2em 0;
+	}
+}
+
+.leader-driver-img {
+	position: relative;
+	top: 0;
+	left: 0;
+
+	@include breakpoint(x-small) {
+		height: 5em;
+	}
+	@include breakpoint(medium) {
+		height: 7em;
+	}
+	@include breakpoint(large) {
+		height: 9em;
+	}
+	@include breakpoint(x-large) {
+		height: 10em;
+	}
+	@include breakpoint(xx-large) {
+		height: 12em;
+	}
+}
+
+.leader-driver-info {
+	border-radius: 0 0 15px 15px;
+	padding: 0.2em;
+	background-color: #e10600e6;
+
+	@include breakpoint(x-small) {
+		border-top: 2px solid $white;
+	}
+	@include breakpoint(medium) {
+		border-top: 3px solid $white;
+		width: 9em;
+	}
+	@include breakpoint(large) {
+		border-top: 4px solid $white;
+		width: 10em;
+		margin: 0 1em;
+	}
+	@include breakpoint(x-large) {
+		width: 11em;
+		margin: 0 2em;
+	}
+	@include breakpoint(xx-large) {
+		width: 12em;
+		margin: 0 3em;
+	}
+}
+
+.leader-driver-flag-img {
+	@include breakpoint(x-small) {
+		height: 0.6em;
+		width: 1.2em;
+	}
+	@include breakpoint(medium) {
+		height: 1em;
+		width: 1.6em;
+	}
+	@include breakpoint(large) {
+		height: 1.2em;
+		width: 2em;
+	}
+	@include breakpoint(x-large) {
+		height: 1.4em;
+		width: 2.2em;
+	}
+}
+
+.leader-driver-points {
+	-webkit-text-stroke-color: $black;
+
+	@include breakpoint(x-small) {
+		font-size: 0.8em;
+		-webkit-text-stroke-width: 0.5px;
+		margin: 0.3em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.9em;
+		-webkit-text-stroke-width: 0.8px;
+		margin: 0 0 8px 0;
+	}
+	@include breakpoint(large) {
+		font-size: 1.1em;
+		-webkit-text-stroke-width: 1px;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1.2em;
+		-webkit-text-stroke-width: 1.1px;
+	}
+	@include breakpoint(xx-large) {
+		font-size: 1.3em;
+		-webkit-text-stroke-width: 1.2px;
+	}
+}
+
+.leader-driver-name-team {
+	background-color: $black;
+	border-radius: 0 15px;
+	border: 1px solid $white;
+
+	@include breakpoint(x-small) {
+		padding: 0.1em;
+		font-size: 0.7em;
+		margin: 0.3em;
+	}
+	@include breakpoint(medium) {
+		padding: 0.2em;
+		font-size: 0.8em;
+		margin: 0 0 8px 0;
+	}
+	@include breakpoint(large) {
+		font-size: 0.9em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1em;
+	}
+}
+
+.leader-driver-name {
+	@include breakpoint(x-small) {
+		word-spacing: 9999px;
+	}
+	@include breakpoint(medium) {
+		word-spacing: 5px;
+	}
+}
+
+.driver-table-headline {
+	background: $headline-background;
+	border-radius: 8px;
+	border: $headline-border 2px solid;
+	display: inline;
+	padding: 0 0.3em 0.3em 0.3em;
+
+	@include breakpoint(x-small) {
+		font-size: 1.1em;
+	}
+	@include breakpoint(medium) {
+		font-size: 1.3em;
+	}
+	@include breakpoint(large) {
+		font-size: 1.5em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1.7em;
+	}
+	@include breakpoint(xx-large) {
+		font-size: 1.9em;
+	}
+}
+
+.driver-table-tr {
+	@include breakpoint(x-small) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.9em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.95em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1em;
+	}
+}
+
+.driver-table-tbody {
+	@include breakpoint(x-small) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.9em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.95em;
+	}
+}
+
+.driver-table-td {
+	@include breakpoint(x-small) {
+		padding: 1em 0.3em;
+	}
+	@include breakpoint(medium) {
+		padding: 1em;
+	}
+	@include breakpoint(large) {
+		padding: 1em 2em;
+	}
+	@include breakpoint(x-large) {
+		padding: 1em 3em;
+	}
+	@include breakpoint(xx-large) {
+		padding: 1em 3.5em;
+	}
+}
+
+.driver-table-flag-img {
+	@include breakpoint(x-small) {
+		height: 1em;
+		width: 1.6em;
+	}
+	@include breakpoint(medium) {
+		height: 1.2em;
+		width: 1.8em;
+	}
+	@include breakpoint(large) {
+		height: 1.1em;
+		width: 1.7em;
+	}
+	@include breakpoint(x-large) {
+		height: 1.2em;
+		width: 2em;
+	}
+}
+
+.driver-table-headline-div {
+	margin: 0.5em 0 2em;
+}
+
+.leader-driver-div {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+}
+
+.leader-driver-div > .first {
+	order: 2;
+}
+.leader-driver-div > .second {
+	order: 1;
+}
+.leader-driver-div > .third {
+	order: 3;
+}
+
+.second {
+	margin: 2em 0.5em 0 0.5em !important;
+}
+
+.third {
+	margin: 3em 0.5em 0 0.5em !important;
+}
+
+.leader-div {
+	flex: 1;
+	margin: 0 0.5em;
+}
+
+.parent {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.leader-driver-flag-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.driver-table-position {
+	color: $extra-dark-grey;
+}

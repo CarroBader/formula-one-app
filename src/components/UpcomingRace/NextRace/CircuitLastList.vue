@@ -8,9 +8,7 @@
 				<table>
 					<tbody v-for="(driver, index) in this.drivers" :key="index">
 						<td class="circuit-last-list-td">
-							<span class="circuit-last-list-year extra-dark-grey">{{
-								driver.year
-							}}</span>
+							<span class="circuit-last-list-year">{{ driver.year }}</span>
 						</td>
 						<td class="circuit-last-list-td">
 							<span class="circuit-last-list-name">{{
@@ -25,7 +23,7 @@
 								{{ driver.team_name }}
 							</span>
 						</td>
-						<td v-else class="circuit-last-list-td dark-grey">
+						<td v-else class="circuit-last-list-td">
 							<span class="circuit-last-list-fastest-lap">
 								{{ driver.time }}
 							</span>
@@ -50,16 +48,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 tbody {
 	border-bottom: 1px solid #fff;
 }
 
 tbody:last-child {
 	border-bottom: none;
-}
-
-.circuit-last-list-title-div {
-	text-align: -webkit-center;
 }
 </style>

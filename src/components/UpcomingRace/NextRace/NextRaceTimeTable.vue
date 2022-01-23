@@ -2,7 +2,7 @@
 	<div>
 		<b-card>
 			<h5 class="next-race-time-table-title">Time Table</h5>
-			<h5 class="next-race-time-table-date red">{{ timeTableData.date }}</h5>
+			<h5 class="next-race-time-table-date">{{ timeTableData.date }}</h5>
 			<b-row>
 				<b-col
 					class="
@@ -74,19 +74,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 table {
 	text-align: start;
 }
 
 tbody {
 	border-bottom: none;
-}
-
-.next-race-time-table-col {
-	display: flex;
-	display: -webkit-flex;
-	justify-content: center;
-	align-items: baseline;
 }
 </style>

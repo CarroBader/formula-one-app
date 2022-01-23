@@ -1,0 +1,29 @@
+.footer {
+	text-align: center;
+	background-color: $main-background;
+	border-top: 1px solid $navbar-background;
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+	color: $white;
+
+	@include breakpoint(x-small) {
+		display: none;
+	}
+	@include breakpoint(medium) {
+		display: revert;
+	}
+}
+
+.bot-nav {
+	@include breakpoint(x-small) {
+		display: block;
+	}
+	@include breakpoint(medium) {
+		display: none !important;
+	}
+}
+
+.footer-text {
+	margin-top: 1.5em;
+}

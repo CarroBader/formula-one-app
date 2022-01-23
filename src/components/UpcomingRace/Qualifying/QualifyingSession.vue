@@ -23,7 +23,7 @@
 						:class="[index == 9 || index == 14 ? 'elimination-line' : '']"
 						class="qualifying-session-tbody"
 					>
-						<td class="qualifying-session-td extra-dark-grey">
+						<td class="qualifying-session-td qualifying-session-position">
 							{{ quali.position }}
 						</td>
 						<td
@@ -42,19 +42,19 @@
 							{{ quali.team_name }}
 						</td>
 						<td
-							class="qualifying-session-td q1Time light-grey"
+							class="qualifying-session-td q1Time q1Color"
 							:class="qualiOne(index)"
 						>
 							{{ quali.q1Time }}
 						</td>
 						<td
-							class="qualifying-session-td q2Time medium-grey"
+							class="qualifying-session-td q2Time q2Color"
 							:class="qualiTwo(index)"
 						>
 							{{ quali.q2Time }}
 						</td>
 						<td
-							class="qualifying-session-td dark-grey"
+							class="qualifying-session-td q3Color"
 							:class="qualiThree(index)"
 						>
 							{{ quali.q3Time }}
@@ -138,29 +138,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 tbody {
 	border-bottom: 1px solid #fff;
 }
 
 tbody:last-child {
 	border-bottom: none;
-}
-
-.qualifying-session-headline-div {
-	margin: 0.5em 0 2em;
-}
-
-.q1Time {
-	border-right: 1px solid #fff;
-	border-left: 1px solid #fff;
-}
-
-.q2Time {
-	border-right: 1px solid #fff;
-}
-
-.noDataMessage {
-	color: #fff;
 }
 </style>

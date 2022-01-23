@@ -1,0 +1,23 @@
+.card {
+	background-color: #161616;
+	box-shadow: rgba(0, 0, 0, 35%) 0px 3px 9px;
+	margin-top: 1.5em;
+}
+
+.card-body {
+	@include breakpoint(x-small) {
+		padding: 0.5em 0.5em;
+	}
+	@include breakpoint(x-large) {
+		padding: 1em;
+	}
+}
+
+.card-margin {
+	@include breakpoint(x-small) {
+		margin: 1em 0 4em;
+	}
+	@include breakpoint(medium) {
+		margin: 2em 0 6em;
+	}
+}

@@ -19,7 +19,7 @@
 						:key="index"
 						class="practice-session-tbody"
 					>
-						<td class="practice-session-td extra-dark-grey">
+						<td class="practice-session-td practice-session-position">
 							{{ result.position }}
 						</td>
 						<td
@@ -43,7 +43,7 @@
 							{{ result.name }}
 						</td>
 
-						<td class="practice-session-td extra-dark-grey">
+						<td class="practice-session-td practice-session-laps">
 							{{ result.current_lap }}
 						</td>
 						<td class="practice-session-td practice-session-border-left">
@@ -82,20 +82,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 tbody {
 	border-bottom: 1px solid #fff;
 }
 
 tbody:last-child {
 	border-bottom: none;
-}
-
-.practice-session-border-left {
-	border-left: 1px solid #fff;
-}
-
-.noDataMessage {
-	color: #fff;
 }
 </style>

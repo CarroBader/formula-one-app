@@ -62,8 +62,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.constructor-standings-row {
-	display: inline-block;
-}
-</style>
+<style scoped></style>

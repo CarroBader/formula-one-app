@@ -131,8 +131,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.qualifying-row {
-	display: inline-block;
-}
-</style>
+<style scoped></style>

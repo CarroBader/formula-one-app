@@ -1,0 +1,67 @@
+.swiper-nav-div {
+	display: table;
+
+	@include breakpoint(x-small) {
+		width: 4em;
+	}
+	@include breakpoint(medium) {
+		width: 5.5em;
+	}
+	@include breakpoint(large) {
+		width: 6em;
+	}
+	@include breakpoint(x-large) {
+		width: 8em;
+	}
+}
+
+.swiper-nav-flag-img {
+	pointer-events: none;
+	margin: 0.5em 0;
+
+	@include breakpoint(x-small) {
+		height: 0.9em;
+	}
+	@include breakpoint(medium) {
+		height: 1.1em;
+	}
+	@include breakpoint(large) {
+		height: 1.3em;
+	}
+	@include breakpoint(x-large) {
+		height: 1.5em;
+	}
+}
+
+.swiper-nav-info-text {
+	@include breakpoint(x-small) {
+		font-size: 0.55em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.9em;
+	}
+}
+
+.swiper-nav {
+	overflow-x: hidden;
+}
+
+.swiper-nav-info {
+	pointer-events: none;
+}
+
+.active-race {
+	/* width: 15em !important; */
+	background-color: #232323;
+}
+
+.swiper-slide {
+	display: table-cell;
+	border-right: solid 1px #5f5555;
+}

@@ -52,7 +52,7 @@
 						:key="index"
 						class="driver-table-tbody"
 					>
-						<td class="driver-table-td extra-dark-grey">
+						<td class="driver-table-td driver-table-position">
 							{{ driver.position }}
 						</td>
 						<td class="driver-table-td">{{ driver.driver_name }}</td>
@@ -99,7 +99,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 table {
 	width: 100%;
 }
@@ -110,50 +110,5 @@ tbody {
 
 tbody:last-child {
 	border-bottom: none;
-}
-
-.driver-table-headline-div {
-	margin: 0.5em 0 2em;
-}
-
-.leader-driver-div {
-	display: flex;
-	display: -webkit-flex;
-	justify-content: space-between;
-}
-
-.leader-driver-div > .first {
-	order: 2;
-}
-.leader-driver-div > .second {
-	order: 1;
-}
-.leader-driver-div > .third {
-	order: 3;
-}
-
-.second {
-	margin: 2em 0.5em 0 0.5em !important;
-}
-
-.third {
-	margin: 3em 0.5em 0 0.5em !important;
-}
-
-.leader-div {
-	flex: 1;
-	margin: 0 0.5em;
-}
-
-.parent {
-	position: relative;
-	top: 0;
-	left: 0;
-}
-
-.leader-driver-flag-img {
-	position: absolute;
-	top: 0;
-	left: 0;
 }
 </style>

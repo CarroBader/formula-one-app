@@ -4,7 +4,7 @@
 			<h5 class="next-race-circuit-info-name">
 				{{ nextGrandPrix.grand_prix_name }}
 			</h5>
-			<h5 class="next-race-circuit-info-location extra-dark-grey">Info</h5>
+			<h5 class="next-race-circuit-info-location">Info</h5>
 			<table>
 				<tr>
 					<th class="next-race-circuit-info-th">First held:</th>
@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 table {
 	width: 100%;
 }
