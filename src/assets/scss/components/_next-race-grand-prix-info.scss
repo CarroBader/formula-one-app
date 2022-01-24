@@ -1,0 +1,68 @@
+.next-race-grand-prix-info-name {
+	@include breakpoint(x-small) {
+		font-size: 1em;
+	}
+	@include breakpoint(medium) {
+		font-size: 1.1em;
+	}
+	@include breakpoint(large) {
+		font-size: 1.2em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1.3em;
+	}
+}
+
+.next-race-grand-prix-info-location {
+	color: $extra-dark-grey;
+
+	@include breakpoint(x-small) {
+		font-size: 0.9em;
+	}
+	@include breakpoint(medium) {
+		font-size: 1em;
+	}
+	@include breakpoint(large) {
+		font-size: 1.1em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 1.2em;
+	}
+}
+
+.next-race-grand-prix-info-th {
+	text-align: initial;
+	padding: 0.5em 0 0 0.5em;
+
+	@include breakpoint(x-small) {
+		font-size: 0.7em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.75em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(x-large) {
+		font-size: 0.85em;
+	}
+}
+
+.next-race-grand-prix-info-td {
+	text-align: end;
+	padding: 0.5em 0.5em 0;
+
+	@include breakpoint(x-small) {
+		font-size: 0.8em;
+	}
+	@include breakpoint(medium) {
+		font-size: 0.85em;
+	}
+	@include breakpoint(large) {
+		font-size: 0.9em;
+	}
+}
+
+.next-race-grand-prix-info-span {
+	color: $extra-dark-grey;
+}
