@@ -88,5 +88,44 @@ export default {
 			const teamId = teamName.replace(" ", "_").toLowerCase()
 			return this.getConstructorColor(teamId)
 		},
+		getConstructorColorAndLink(teamId) {
+			let className = ""
+
+			switch (teamId) {
+				case "mclaren":
+					className = "mclaren-link"
+					break
+				case "red_bull":
+					className = "red-bull-link"
+					break
+				case "mercedes":
+					className = "mercedes-link"
+					break
+				case "alfa_romeo":
+					className = "alpha-romeo-link"
+					break
+				case "alphatauri":
+					className = "alpha-tauri-link"
+					break
+				case "haas":
+					className = "haas-link"
+					break
+				case "alpine":
+					className = "alpine-link"
+					break
+				case "ferrari":
+					className = "ferrari-link"
+					break
+				case "williams":
+					className = "williams-link"
+					break
+				case "aston_martin":
+					className = "aston-martin-link"
+					break
+				default:
+					className = ""
+			}
+			return className
+		},
 	},
 }

@@ -54,8 +54,12 @@
 								}}
 							</span>
 						</td>
-						<td class="result-last-race-td">
-							<a v-on:click="getDriverObject(race.id)">{{ race.name }}</a>
+						<td class="result-last-race-td pointer">
+							<a
+								v-on:click="getDriverObject(race.id)"
+								class="table-link-name"
+								>{{ race.name }}</a
+							>
 						</td>
 						<td
 							class="result-last-race-td"
@@ -67,13 +71,12 @@
 								class="result-last-race-flag-img"
 							/>
 						</td>
-						<td
-							class="result-last-race-td"
-							:class="getConstructorColor(race.color_code)"
-						>
-							<a v-on:click="getConstructorObject(race.team_id)">{{
-								race.team_name
-							}}</a>
+						<td class="result-last-race-td pointer">
+							<a
+								v-on:click="getConstructorObject(race.team_id)"
+								:class="getConstructorColorAndLink(race.color_code)"
+								>{{ race.team_name }}</a
+							>
 						</td>
 						<td class="result-last-race-td">{{ race.points }}</td>
 						<td v-if="race.fastest_lap">
