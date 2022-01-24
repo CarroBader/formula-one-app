@@ -101,8 +101,6 @@ import generalVarsMixin from "../../../mixins/generalVarsMixin"
 import modalMixin from "../../../mixins/modalMixin"
 import apiCallsMixin from "../../../mixins/apiCallsMixin"
 
-import { changeDriverIdStanding } from "../../../variables/replaceVars"
-
 export default {
 	name: "DriverTable",
 	components: {

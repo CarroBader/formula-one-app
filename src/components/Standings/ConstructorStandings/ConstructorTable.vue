@@ -1,5 +1,12 @@
 <template>
 	<div>
+		<!-- Constructor Modal -->
+		<ConstructorModal
+			v-if="showConstructorModal"
+			:constructorObject="constructorObject"
+			:id="constructorId"
+			@clicked="setShowToFalseModal"
+		/>
 		<div class="constructor-table-headline-div">
 			<h1 class="constructor-table-headline">
 				{{ season }} Constructor Championship
@@ -29,11 +36,13 @@
 								class="leader-constructor-flag-img"
 							/>
 						</div>
-						<h5
-							class="leader-constructor-name-team"
-							:class="getConstructorColor(topConstructor.team_id)"
-						>
-							{{ topConstructor.team_name }}
+						<h5 class="leader-constructor-name-team pointer">
+							<a
+								v-on:click="getConstructorObject(topConstructor.team_id)"
+								:class="getConstructorColorAndLink(topConstructor.team_id)"
+							>
+								{{ topConstructor.team_name }}
+							</a>
 						</h5>
 					</div>
 				</div>
@@ -54,11 +63,13 @@
 					<td class="constructor-table-td constructor-table-position">
 						{{ constructor.position }}
 					</td>
-					<td
-						class="constructor-table-td"
-						:class="getConstructorColor(constructor.team_id)"
-					>
-						{{ constructor.team_name }}
+					<td class="constructor-table-td pointer">
+						<a
+							v-on:click="getConstructorObject(constructor.team_id)"
+							:class="getConstructorColorAndLink(constructor.team_id)"
+						>
+							{{ constructor.team_name }}
+						</a>
 					</td>
 					<td>
 						<img
@@ -75,19 +86,42 @@
 </template>
 
 <script>
+import ConstructorModal from "../../General/ConstructorModal.vue"
+
 import getCountryFlagMixin from "../../../mixins/getCountryFlagMixin"
 import getConstructorColorMixin from "../../../mixins/getConstructorColorMixin"
 import getImageMixin from "../../../mixins/getImageMixin"
 import getWindowSizeMixin from "../../../mixins/getWindowSizeMixin"
 import generalVarsMixin from "../../../mixins/generalVarsMixin"
+import modalMixin from "../../../mixins/modalMixin"
+import apiCallsMixin from "../../../mixins/apiCallsMixin"
 
 export default {
 	name: "ConstructorTable",
 	props: {
 		teamStandings: Array,
 	},
-	async created() {
-		console.log("ConstructorTable - teamStandings", this.teamStandings)
+	components: {
+		ConstructorModal,
+	},
+	data() {
+		return {
+			showConstructorModal: false,
+			constructorObject: {},
+			constructorId: "",
+		}
+	},
+	methods: {
+		async getConstructorObject(teamId) {
+			const team = await this.getOneConstructor(teamId)
+
+			this.constructorObject = team.data
+			this.constructorId = team.data.team_id
+
+			if (team.dataLoaded) {
+				this.showConstructorModal = true
+			}
+		},
 	},
 	mixins: [
 		getCountryFlagMixin,
@@ -95,6 +129,8 @@ export default {
 		getImageMixin,
 		getWindowSizeMixin,
 		generalVarsMixin,
+		modalMixin,
+		apiCallsMixin,
 	],
 }
 </script>
