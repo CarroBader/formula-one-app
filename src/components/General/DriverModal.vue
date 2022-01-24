@@ -19,6 +19,7 @@
 						:src="getImageMixin('drivers', driverObject.picture_id)"
 						:alt="`${driverObject.driver_name}`"
 						class="modal-driver-img"
+						:class="getBorderColor(driverObject.team.team_id)"
 				/></b-col>
 				<b-col
 					><b-card class="card-margin">

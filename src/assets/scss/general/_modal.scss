@@ -53,8 +53,11 @@
 }
 
 .modal-driver-img {
-	border: 1px solid #fff;
+	// border: 1px solid #fff;
 	padding: 1em;
+	border-width: 3px;
+	border-style: solid;
+	// border-image: linear-gradient(to bottom, #9f0000, rgba(0, 0, 0, 0)) 1 100%;
 
 	@include breakpoint(xx-large) {
 		// height: 12em;

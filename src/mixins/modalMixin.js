@@ -47,5 +47,43 @@ export default {
 					break
 			}
 		},
+		getBorderColor(teamId) {
+			console.log("teamId", teamId)
+
+			switch (teamId) {
+				case "red_bull":
+					return "red-bull-border"
+					break
+				case "mclaren":
+					return "mclaren-border"
+					break
+				case "mercedes":
+					return "mercedes-border"
+					break
+				case "alfa_romeo":
+					return "alpha-romeo-border"
+					break
+				case "alphatauri":
+					return "alpha-tauri-border"
+					break
+				case "haas":
+					return "haas-border"
+					break
+				case "alpine":
+					return "alpine-border"
+					break
+				case "ferrari":
+					return "ferrari-border"
+					break
+				case "williams":
+					return "williams-border"
+					break
+				case "aston_martin":
+					return "aston-martin-border"
+					break
+				default:
+					break
+			}
+		},
 	},
 }

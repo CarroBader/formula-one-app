@@ -72,36 +72,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.navbar-top {
-	/* background-color: #e10600; */
-	box-shadow: inset 0 0 5px #000000;
-	background-color: rgb(255 13 13 / 79%);
-	border-bottom: 1px solid #fff;
-	z-index: 10000;
-}
-
-.nav-collapse-top {
-	justify-content: flex-end;
-}
-
-.nav-title-top {
-	font-family: "Orbitron", "sans-serif";
-	color: #fff !important;
-	text-shadow: 2px 2px #000;
-}
-
-.nav-logo-top {
-	margin: 0 0.5em;
-}
-
-.items-far-right {
-	justify-content: flex-end;
-}
-
-.place-toggle-button {
-	position: absolute;
-	right: 5px;
-	top: 2.5px;
-}
-</style>
+<style scoped></style>

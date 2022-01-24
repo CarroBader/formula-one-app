@@ -8,7 +8,8 @@
 
 .navbar-top {
 	box-shadow: inset 0 0 5px $black;
-	background-color: $navbar-background;
+	background: $navbar-background;
+	// background-color: $navbar-background;
 	border-bottom: 1px solid $white;
 	z-index: 10000;
 	padding: 0;
