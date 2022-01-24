@@ -1,5 +1,12 @@
 <template>
 	<div>
+		<!-- Driver Modal -->
+		<DriverModal
+			v-if="showDriverModal"
+			:driverObject="driverObject"
+			:id="driverId"
+			@clicked="setShowToFalseModal"
+		/>
 		<div class="driver-table-headline-div">
 			<h1 class="driver-table-headline">{{ season }} World Championship</h1>
 		</div>
@@ -25,8 +32,10 @@
 					</div>
 					<div class="leader-driver-info">
 						<h3 class="leader-driver-points">{{ topDriver.points }} pts</h3>
-						<h5 class="leader-driver-name-team leader-driver-name">
-							{{ topDriver.driver_name }}
+						<h5 class="leader-driver-name-team leader-driver-name pointer">
+							<a v-on:click="getDriverObject(topDriver.driver_id)">
+								{{ topDriver.driver_name }}
+							</a>
 						</h5>
 						<h6
 							class="leader-driver-name-team"
@@ -55,7 +64,11 @@
 						<td class="driver-table-td driver-table-position">
 							{{ driver.position }}
 						</td>
-						<td class="driver-table-td">{{ driver.driver_name }}</td>
+						<td class="driver-table-td pointer">
+							<a v-on:click="getDriverObject(driver.driver_id)">
+								{{ driver.driver_name }}
+							</a>
+						</td>
 						<td class="driver-table-td">
 							<img
 								:src="getFlag(driver.nationality)"
@@ -78,16 +91,44 @@
 </template>
 
 <script>
+import DriverModal from "../../General/DriverModal.vue"
+
 import getCountryFlagMixin from "../../../mixins/getCountryFlagMixin"
 import getConstructorColorMixin from "../../../mixins/getConstructorColorMixin"
 import getImageMixin from "../../../mixins/getImageMixin"
 import getWindowSizeMixin from "../../../mixins/getWindowSizeMixin"
 import generalVarsMixin from "../../../mixins/generalVarsMixin"
+import modalMixin from "../../../mixins/modalMixin"
+import apiCallsMixin from "../../../mixins/apiCallsMixin"
+
+import { changeDriverIdStanding } from "../../../variables/replaceVars"
 
 export default {
 	name: "DriverTable",
+	components: {
+		DriverModal,
+	},
 	props: {
 		driverStandings: Array,
+	},
+	data() {
+		return {
+			showDriverModal: false,
+			driverObject: {},
+			driverId: "",
+		}
+	},
+	created() {},
+	methods: {
+		async getDriverObject(driverId) {
+			const driver = await this.getOneDriver(driverId)
+			this.driverObject = driver.data
+			this.driverId = driver.data.driver_id
+
+			if (driver.dataLoaded) {
+				this.showDriverModal = true
+			}
+		},
 	},
 	mixins: [
 		getCountryFlagMixin,
@@ -95,6 +136,8 @@ export default {
 		getImageMixin,
 		getWindowSizeMixin,
 		generalVarsMixin,
+		modalMixin,
+		apiCallsMixin,
 	],
 }
 </script>

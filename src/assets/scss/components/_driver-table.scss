@@ -32,7 +32,8 @@
 .leader-driver-info {
 	border-radius: 0 0 15px 15px;
 	padding: 0.2em;
-	background-color: #e10600e6;
+	// background-color: #e10600e6;
+	background: $navbar-background;
 
 	@include breakpoint(x-small) {
 		border-top: 2px solid $white;

@@ -197,6 +197,29 @@ const changeDriverId = {
 	841828: "nikita_mazepin",
 }
 
+const changeDriverIdStanding = {
+	87445: "max_verstappen",
+	21838: "lewis_hamilton",
+	92948: "valtteri_bottas",
+	991967: "pierre_gasly",
+	328938: "charles_leclerc",
+	21122: "fernando_alonso",
+	87222: "carlos_sainz",
+	26087: "sergio_perez",
+	102533: "esteban_ocon",
+	539806: "lando_norris",
+	58339: "daniel_ricciardo",
+	754025: "lance_stroll",
+	31997: "sebastian_vettel",
+	351420: "antonio_giovinazzi",
+	64723: "kimi_raikkonen",
+	547297: "nicholas_latifi",
+	764647: "george_russell",
+	704606: "mick_schumacher",
+	50864: "yuki_tsunoda",
+	280605: "nikita_mazepin",
+}
+
 const getNationality = {
 	Netherlands: "Dutch",
 	Finland: "Finnish",
@@ -260,4 +283,5 @@ export {
 	getNationality,
 	month,
 	changeConstructorId,
+	changeDriverIdStanding,
 }

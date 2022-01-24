@@ -85,7 +85,6 @@ export default {
 		},
 		setShowToFalse(kind) {
 			// Returns a value to the parent component.
-			console.log("kind", kind)
 			this.$emit("clicked", { status: false, kind: kind })
 		},
 		setShowToFalseModal(value) {
