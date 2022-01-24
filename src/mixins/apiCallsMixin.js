@@ -237,6 +237,23 @@ export default {
 				console.error(e)
 			}
 		},
+		async getOneConstructor(teamId) {
+			/*
+        Return - One constructor
+        Params: driver_id
+      */
+			try {
+				const response = await axios.get(`${baseUrl}/teams/${teamId}`)
+				// console.log("Fetching driver from database")
+
+				return {
+					data: response.data.data,
+					dataLoaded: true,
+				}
+			} catch (e) {
+				console.error(e)
+			}
+		},
 	},
 	mixins: [generalVarsMixin],
 }

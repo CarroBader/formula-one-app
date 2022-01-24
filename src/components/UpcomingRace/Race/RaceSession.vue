@@ -1,9 +1,17 @@
 <template>
 	<div>
+		<!-- Driver Modal -->
 		<DriverModal
 			v-if="showDriverModal"
 			:driverObject="driverObject"
 			:id="driverId"
+			@clicked="setShowToFalseModal"
+		/>
+		<!-- Constructor Modal -->
+		<ConstructorModal
+			v-if="showConstructorModal"
+			:constructorObject="constructorObject"
+			:id="constructorId"
 			@clicked="setShowToFalseModal"
 		/>
 		<div class="result-last-race-headline-div">
@@ -63,7 +71,9 @@
 							class="result-last-race-td"
 							:class="getConstructorColor(race.color_code)"
 						>
-							{{ race.team_name }}
+							<a v-on:click="getConstructorObject(race.team_id)">{{
+								race.team_name
+							}}</a>
 						</td>
 						<td class="result-last-race-td">{{ race.points }}</td>
 						<td v-if="race.fastest_lap">
@@ -81,6 +91,7 @@
 
 <script>
 import DriverModal from "../../General/DriverModal.vue"
+import ConstructorModal from "../../General/ConstructorModal.vue"
 
 import getCountryFlagMixin from "../../../mixins/getCountryFlagMixin"
 import getConstructorColorMixin from "../../../mixins/getConstructorColorMixin"
@@ -88,8 +99,12 @@ import getImageMixin from "../../../mixins/getImageMixin"
 import getWindowSizeMixin from "../../../mixins/getWindowSizeMixin"
 import generalVarsMixin from "../../../mixins/generalVarsMixin"
 import apiCallsMixin from "../../../mixins/apiCallsMixin"
+import modalMixin from "../../../mixins/modalMixin"
 
-import { changeDriverId } from "../../../variables/replaceVars"
+import {
+	changeDriverId,
+	changeConstructorId,
+} from "../../../variables/replaceVars"
 
 export default {
 	name: "RaceSession",
@@ -100,12 +115,16 @@ export default {
 	},
 	components: {
 		DriverModal,
+		ConstructorModal,
 	},
 	data() {
 		return {
 			showDriverModal: false,
+			showConstructorModal: false,
 			driverObject: {},
+			constructorObject: {},
 			driverId: "",
+			constructorId: "",
 		}
 	},
 	created() {},
@@ -148,8 +167,15 @@ export default {
 				this.showDriverModal = true
 			}
 		},
-		setShowToFalseModal(value) {
-			this.showDriverModal = value
+		async getConstructorObject(teamId) {
+			const team = await this.getOneConstructor(changeConstructorId[teamId])
+
+			this.constructorObject = team.data
+			this.constructorId = team.data.team_id
+
+			if (team.dataLoaded) {
+				this.showConstructorModal = true
+			}
 		},
 	},
 	mixins: [
@@ -159,6 +185,7 @@ export default {
 		getWindowSizeMixin,
 		generalVarsMixin,
 		apiCallsMixin,
+		modalMixin,
 	],
 }
 </script>

@@ -48,8 +48,6 @@ export default {
 			}
 		},
 		getBorderColor(teamId) {
-			console.log("teamId", teamId)
-
 			switch (teamId) {
 				case "red_bull":
 					return "red-bull-border"
@@ -82,6 +80,23 @@ export default {
 					return "aston-martin-border"
 					break
 				default:
+					break
+			}
+		},
+		setShowToFalse(kind) {
+			// Returns a value to the parent component.
+			console.log("kind", kind)
+			this.$emit("clicked", { status: false, kind: kind })
+		},
+		setShowToFalseModal(value) {
+			// Sets chosen modal to returned value.
+
+			switch (value.kind) {
+				case "driver":
+					this.showDriverModal = value.status
+					break
+				case "constructor":
+					this.showConstructorModal = value.status
 					break
 			}
 		},

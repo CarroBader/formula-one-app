@@ -45,26 +45,6 @@
 	}
 }
 
-.modal-driver-img-col {
-	@include breakpoint(xx-large) {
-		text-align: center;
-		margin-top: 1em;
-	}
-}
-
-.modal-driver-img {
-	// border: 1px solid #fff;
-	padding: 1em;
-	border-width: 3px;
-	border-style: solid;
-	// border-image: linear-gradient(to bottom, #9f0000, rgba(0, 0, 0, 0)) 1 100%;
-
-	@include breakpoint(xx-large) {
-		// height: 12em;
-		height: 14em;
-	}
-}
-
 .modal-country-flag-img {
 	@include breakpoint(xx-large) {
 		height: 1em;
@@ -72,7 +52,7 @@
 	}
 }
 
-.driver-modal-content {
+.custom-modal-content {
 	background-color: $sub-background;
 	// width: 40em;
 	// width: 60em;
@@ -90,4 +70,67 @@
 .modal-span-text {
 	font-size: 0.88em;
 	color: $extra-dark-grey;
+}
+
+.modal-headline {
+	color: $dark-grey;
+
+	@include breakpoint(xx-large) {
+		font-size: 0.8em;
+	}
+}
+
+.modal-body-text {
+	color: $white;
+
+	@include breakpoint(xx-large) {
+		font-size: 1em;
+	}
+}
+
+// Driver Modal
+
+.modal-driver-img-col {
+	text-align: center;
+
+	@include breakpoint(xx-large) {
+		margin-top: 1em;
+	}
+}
+
+.modal-driver-img {
+	// border: 1px solid #fff;
+	padding: 1em;
+	border-width: 3px;
+	border-style: solid;
+
+	// border-image: linear-gradient(to bottom, #9f0000, rgba(0, 0, 0, 0)) 1 100%;
+
+	@include breakpoint(xx-large) {
+		// height: 12em;
+		height: 14em;
+	}
+}
+
+// Constructor Modal
+
+.modal-constructor-img-col {
+	text-align: center;
+
+	@include breakpoint(xx-large) {
+		margin-top: 4em;
+	}
+}
+
+.modal-constructor-img {
+	// border: 1px solid #fff;
+	padding: 1em;
+	border-width: 3px;
+	border-style: solid;
+	// border-image: linear-gradient(to bottom, #9f0000, rgba(0, 0, 0, 0)) 1 100%;
+
+	@include breakpoint(xx-large) {
+		// height: 12em;
+		width: 20em;
+	}
 }

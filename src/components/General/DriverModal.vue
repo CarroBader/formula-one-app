@@ -6,17 +6,17 @@
 		ok-only
 		ok-title="Back"
 		ok-variant="dark"
-		@ok="setShowToFalse()"
+		@ok="setShowToFalse('driver')"
 		visible="visible"
 		class="modal-title"
-		content-class="driver-modal-content"
+		content-class="custom-modal-content"
 		no-close-on-backdrop
 	>
 		<b-container>
 			<b-row class="modal-row-one">
 				<b-col class="modal-driver-img-col">
 					<img
-						:src="getImageMixin('drivers', driverObject.picture_id)"
+						:src="getImageMixin(`${driversFolder}`, driverObject.picture_id)"
 						:alt="`${driverObject.driver_name}`"
 						class="modal-driver-img"
 						:class="getBorderColor(driverObject.team.team_id)"
@@ -218,14 +218,9 @@ export default {
 		return {}
 	},
 	created() {
-		console.log("DRIVER", this.driverObject)
-		console.log("id", this.id)
 		this.changeNationality()
 	},
 	methods: {
-		setShowToFalse() {
-			this.$emit("clicked", false)
-		},
 		changeNationality() {
 			this.driverObject.origin.nationality_name =
 				getNationality[this.driverObject.origin.nationality]

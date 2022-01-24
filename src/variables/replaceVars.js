@@ -230,6 +230,19 @@ const month = {
 	December: 12,
 }
 
+const changeConstructorId = {
+	71583: "alfa_romeo",
+	33121: "red_bull",
+	199493: "alphatauri",
+	31205: "alpine",
+	65311: "aston_martin",
+	143585: "haas",
+	56525: "mclaren",
+	58685: "mercedes",
+	183197: "ferrari",
+	163637: "williams",
+}
+
 export {
 	addTrackId,
 	addGrandPrixId,
@@ -246,4 +259,5 @@ export {
 	changeDriverId,
 	getNationality,
 	month,
+	changeConstructorId,
 }

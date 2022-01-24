@@ -76,6 +76,9 @@ export default {
 				case "racing_point":
 					colorName = "racing-point"
 					break
+				case "honda":
+					colorName = "honda"
+					break
 				default:
 					colorName = ""
 			}
