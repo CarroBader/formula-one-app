@@ -32,7 +32,6 @@
 .leader-driver-info {
 	border-radius: 0 0 15px 15px;
 	padding: 0.2em;
-	// background-color: #e10600e6;
 	background: $navbar-background;
 
 	@include breakpoint(x-small) {
@@ -78,6 +77,7 @@
 
 .leader-driver-points {
 	-webkit-text-stroke-color: $black;
+	text-shadow: 2px 2px #000;
 
 	@include breakpoint(x-small) {
 		font-size: 0.8em;
@@ -86,25 +86,23 @@
 	}
 	@include breakpoint(medium) {
 		font-size: 0.9em;
-		-webkit-text-stroke-width: 0.8px;
+		-webkit-text-stroke-width: 0.7px;
 		margin: 0 0 8px 0;
 	}
 	@include breakpoint(large) {
 		font-size: 1.1em;
-		-webkit-text-stroke-width: 1px;
 	}
 	@include breakpoint(x-large) {
 		font-size: 1.2em;
-		-webkit-text-stroke-width: 1.1px;
+		-webkit-text-stroke-width: 0.9px;
 	}
 	@include breakpoint(xx-large) {
-		font-size: 1.3em;
-		-webkit-text-stroke-width: 1.2px;
 	}
 }
 
 .leader-driver-name-team {
-	background-color: $black;
+	// background-color: $black;
+	background: linear-gradient(to bottom, #000000, #201f1e, #000);
 	border-radius: 0 15px;
 	border: 1px solid $white;
 
