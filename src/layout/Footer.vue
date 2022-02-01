@@ -1,6 +1,6 @@
 <template>
 	<footer>
-		<p class="footer-text">Copyright &copy; {{ this.year }}</p>
+		<p class="footer-text footer">Copyright &copy; {{ this.year }}</p>
 	</footer>
 </template>
 

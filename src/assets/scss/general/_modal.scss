@@ -175,8 +175,14 @@
 }
 
 #row-two {
-	display: flex;
-	flex-wrap: wrap;
+	@include breakpoint(x-small) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	@include breakpoint(medium) {
+		display: flex;
+		flex-wrap: inherit;
+	}
 }
 
 #row-two > div {
@@ -191,9 +197,15 @@
 	@include breakpoint(x-small) {
 		order: 2;
 	}
+	@include breakpoint(medium) {
+		order: 1;
+	}
 }
 #second-col {
 	@include breakpoint(x-small) {
 		order: 1;
+	}
+	@include breakpoint(medium) {
+		order: 2;
 	}
 }

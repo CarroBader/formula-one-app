@@ -1,11 +1,12 @@
-footer {
+.footer {
 	text-align: center;
 	background-color: $main-background;
 	border-top: 1px solid $medium-red;
 	bottom: 0;
-	position: fixed;
+	position: inherit;
 	width: 100%;
 	color: $white;
+	padding: 1em 0 0.3em 0;
 
 	@include breakpoint(x-small) {
 		display: none;
