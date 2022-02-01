@@ -31,8 +31,9 @@
 				</b-col>
 
 				<b-col
-					><b-card class="card-margin">
-						<div class="scroll-table">
+					><b-card class="card-margin-modal">
+						<div>
+							<!-- class="scroll-table" -->
 							<table class="modal-table">
 								<tr>
 									<th class="modal-th">
@@ -92,8 +93,9 @@
 			</b-row>
 			<b-row class="modal-row-two">
 				<b-col
-					><b-card class="card-margin">
-						<div class="scroll-table">
+					><b-card class="card-margin-modal">
+						<div>
+							<!-- class="scroll-table" -->
 							<table class="modal-table">
 								<tr>
 									<th class="modal-th">
@@ -150,8 +152,9 @@
 					</b-card></b-col
 				>
 				<b-col
-					><b-card class="card-margin">
-						<div class="scroll-table">
+					><b-card class="card-margin-modal">
+						<div>
+							<!-- class="scroll-table" -->
 							<table class="modal-table">
 								<tr>
 									<th class="modal-th">First Entry:</th>

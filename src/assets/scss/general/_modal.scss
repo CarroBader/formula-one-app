@@ -4,6 +4,10 @@
 
 .modal-title {
 	color: $white !important;
+
+	@include breakpoint(x-small) {
+		font-size: 1.2em;
+	}
 }
 .modal-header {
 	background-color: $sub-background;
@@ -16,6 +20,10 @@
 .modal-th {
 	color: $dark-grey;
 
+	@include breakpoint(x-small) {
+		font-size: 0.7em;
+	}
+
 	@include breakpoint(xx-large) {
 		font-size: 0.8em;
 	}
@@ -23,6 +31,11 @@
 
 .modal-td {
 	text-align: end;
+
+	@include breakpoint(x-small) {
+		font-size: 0.8em;
+		// padding: 0.4em 0;
+	}
 	@include breakpoint(xx-large) {
 		font-size: 0.9em;
 		padding: 0.4em 0;
@@ -40,12 +53,19 @@
 }
 
 .modal-row-two {
+	@include breakpoint(x-small) {
+		display: block;
+	}
 	@include breakpoint(xx-large) {
 		height: 21em;
 	}
 }
 
 .modal-country-flag-img {
+	@include breakpoint(x-small) {
+		height: 1em;
+		margin-left: 0.5em;
+	}
 	@include breakpoint(xx-large) {
 		height: 1em;
 		margin-left: 0.5em;
@@ -75,6 +95,9 @@
 .modal-headline {
 	color: $dark-grey;
 
+	@include breakpoint(x-small) {
+		font-size: 1em;
+	}
 	@include breakpoint(xx-large) {
 		font-size: 0.8em;
 	}
@@ -83,6 +106,9 @@
 .modal-body-text {
 	color: $white;
 
+	@include breakpoint(x-small) {
+		font-size: 0.9em;
+	}
 	@include breakpoint(xx-large) {
 		font-size: 1em;
 	}
@@ -106,9 +132,19 @@
 
 	// border-image: linear-gradient(to bottom, #9f0000, rgba(0, 0, 0, 0)) 1 100%;
 
+	@include breakpoint(x-small) {
+		// height: 12em;
+		height: 14em;
+	}
 	@include breakpoint(xx-large) {
 		// height: 12em;
 		height: 14em;
+	}
+}
+
+.card-margin-modal {
+	@include breakpoint(x-small) {
+		padding: auto;
 	}
 }
 
@@ -129,8 +165,35 @@
 	border-style: solid;
 	// border-image: linear-gradient(to bottom, #9f0000, rgba(0, 0, 0, 0)) 1 100%;
 
+	@include breakpoint(x-small) {
+		width: 18em;
+	}
 	@include breakpoint(xx-large) {
 		// height: 12em;
 		width: 20em;
+	}
+}
+
+#row-two {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#row-two > div {
+	flex: 1 1 40%;
+
+	@include breakpoint(x-small) {
+		flex: 1 1 100%;
+	}
+}
+
+#first-col {
+	@include breakpoint(x-small) {
+		order: 2;
+	}
+}
+#second-col {
+	@include breakpoint(x-small) {
+		order: 1;
 	}
 }

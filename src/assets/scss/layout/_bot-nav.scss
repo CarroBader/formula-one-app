@@ -12,10 +12,11 @@
 	margin-top: 3em;
 
 	@include breakpoint(x-small) {
-		// display: block;
+		display: block;
+		padding: 0.4em 0;
 	}
 	@include breakpoint(medium) {
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -29,6 +30,10 @@
 	display: grid;
 	text-align: -webkit-center;
 	padding: 0.5em;
+
+	@include breakpoint(x-small) {
+		font-size: 1em;
+	}
 }
 
 .router-link-active {

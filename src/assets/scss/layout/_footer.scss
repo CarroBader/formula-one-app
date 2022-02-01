@@ -15,15 +15,13 @@
 	}
 }
 
-.bot-nav {
-	@include breakpoint(x-small) {
-		display: block;
-	}
-	@include breakpoint(medium) {
-		display: none !important;
-	}
-}
-
 .footer-text {
 	margin-top: 1.5em;
+
+	@include breakpoint(x-small) {
+		display: none;
+	}
+	@include breakpoint(medium) {
+		display: revert;
+	}
 }

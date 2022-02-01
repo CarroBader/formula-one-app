@@ -22,8 +22,9 @@
 						:class="getBorderColor(driverObject.team.team_id)"
 				/></b-col>
 				<b-col
-					><b-card class="card-margin">
-						<div class="scroll-table">
+					><b-card class="card-margin-modal">
+						<div>
+							<!-- class="scroll-table" -->
 							<table class="modal-table">
 								<tr>
 									<th class="modal-th">Name:</th>
@@ -62,10 +63,12 @@
 					</b-card></b-col
 				>
 			</b-row>
-			<b-row class="modal-row-two">
-				<b-col
-					><b-card class="card-margin">
-						<div class="scroll-table">
+			<b-row class="modal-row-two" id="row-two">
+				<!-- First Column -->
+				<b-col id="first-col"
+					><b-card class="card-margin-modal">
+						<div>
+							<!-- class="scroll-table" -->
 							<table class="modal-table">
 								<tr>
 									<th class="modal-th">
@@ -79,12 +82,6 @@
 										>
 									</td>
 								</tr>
-								<!-- <tr>
-									<th class="modal-th">Entries:</th>
-									<td class="modal-td">
-										{{ driverObject.entries }}
-									</td>
-								</tr> -->
 								<tr>
 									<th class="modal-th">Podiums:</th>
 									<td class="modal-td">
@@ -125,9 +122,11 @@
 						</div>
 					</b-card></b-col
 				>
-				<b-col
-					><b-card class="card-margin">
-						<div class="scroll-table">
+				<!-- Second Column -->
+				<b-col id="second-col"
+					><b-card class="card-margin-modal">
+						<div>
+							<!-- class="scroll-table" -->
 							<table class="modal-table">
 								<tr>
 									<th class="modal-th">Team:</th>
