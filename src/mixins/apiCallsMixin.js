@@ -242,7 +242,7 @@ export default {
     },
     async getPractice(grandPrixId, practice) {
       /*
-        Return - Practice One
+        Return - Practice <str>
         Params: grand_prix_id
       */
       try {
@@ -252,6 +252,22 @@ export default {
 
         return {
           data: response.data.data[practice],
+          dataLoaded: true,
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    },
+    async getQualifying(grandPrixId) {
+      /*
+        Return - Qualifying
+        Params: grand_prix_id
+      */
+      try {
+        const response = await axios.get(`${baseUrl}/qualifying/${grandPrixId}`)
+
+        return {
+          data: response.data.data['qualifying'],
           dataLoaded: true,
         }
       } catch (e) {
