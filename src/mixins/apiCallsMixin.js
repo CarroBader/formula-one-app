@@ -47,7 +47,7 @@ export default {
         console.error(e)
       }
     },
-    async getconstructorStandings() {
+    async getConstructorStandings() {
       /*
         Return team standings
       */
@@ -64,42 +64,20 @@ export default {
     },
     async getDriverStandings() {
       /*
-      Return driver standings for a season
-      Param: season
+      Return driver standings
     */
       try {
-        const response = await axios.get(
-          `${baseURLF1}/drivers/standings/${this.season}`,
-          {
-            headers: {
-              'x-rapidapi-key': apiKeyF1,
-              'x-rapidapi-host': hostF1,
-            },
-          }
-        )
-
-        const drivers = response.data.results
+        const response = await axios.get(`${baseUrl}/driver-standings`)
+        let drivers = response.data.data[0]['standings']
 
         drivers.forEach((driver) => {
-          if (driver.driver_id in newDriverIds) {
-            driver.driver_id = newDriverIds[driver.driver_id]
-          }
-
-          if (driver.team_id in newTeamIdsDriverStandings) {
-            driver.team_id = newTeamIdsDriverStandings[driver.team_id]
-          }
-
-          if (driver.nationality in changeCountryName) {
-            driver.nationality = changeCountryName[driver.nationality]
-          }
-
-          if (driver.team_name === 'Alfa Romeo Racing') {
-            driver.team_name = 'Alfa Romeo'
+          if (driver.country in changeCountryName) {
+            driver.country = changeCountryName[driver.country]
           }
         })
 
         return {
-          allDrivers: drivers,
+          alldrivers: drivers,
           driverDataLoaded: true,
         }
       } catch (e) {

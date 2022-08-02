@@ -25,8 +25,8 @@
               class="leader-driver-img"
             />
             <img
-              :src="getFlag(topDriver.nationality)"
-              :alt="`${topDriver.nationality}`"
+              :src="getFlag(topDriver.country)"
+              :alt="`${topDriver.country}`"
               class="leader-driver-flag-img"
             />
           </div>
@@ -34,14 +34,14 @@
             <h3 class="leader-driver-points">{{ topDriver.points }} pts</h3>
             <h5 class="leader-driver-name-team leader-driver-name pointer">
               <a v-on:click="getDriverObject(topDriver.driver_id)">
-                {{ topDriver.driver_name }}
+                {{ topDriver.first_name }} {{ topDriver.last_name }}
               </a>
             </h5>
             <h6
               class="leader-driver-name-team"
               :class="getConstructorColor(topDriver.team_id)"
             >
-              {{ topDriver.team_name }}
+              {{ topDriver.team }}
             </h6>
           </div>
         </div>
@@ -66,13 +66,13 @@
             </td>
             <td class="driver-table-td pointer">
               <a v-on:click="getDriverObject(driver.driver_id)">
-                {{ driver.driver_name }}
+                {{ driver.first_name }} {{ driver.last_name }}
               </a>
             </td>
             <td class="driver-table-td">
               <img
-                :src="getFlag(driver.nationality)"
-                :alt="`${driver.nationality}`"
+                :src="getFlag(driver.country)"
+                :alt="`${driver.country}`"
                 class="driver-table-flag-img"
               />
             </td>
@@ -80,7 +80,7 @@
               class="driver-table-td"
               :class="getConstructorColor(driver.team_id)"
             >
-              {{ driver.team_name }}
+              {{ driver.team }}
             </td>
             <td class="driver-table-td">{{ driver.points }}</td>
           </tbody>
@@ -103,11 +103,11 @@ import apiCallsMixin from '../../../mixins/apiCallsMixin'
 
 export default {
   name: 'DriverTable',
-  components: {
-    DriverModal,
-  },
   props: {
     driverStandings: Array,
+  },
+  components: {
+    DriverModal,
   },
   data() {
     return {
@@ -116,7 +116,9 @@ export default {
       driverId: '',
     }
   },
-  created() {},
+  created() {
+    console.log('2 driverStandings', this.driverStandings)
+  },
   methods: {
     async getDriverObject(driverId) {
       const driver = await this.getOneDriver(driverId)

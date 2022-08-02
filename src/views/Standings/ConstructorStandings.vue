@@ -4,7 +4,7 @@
       <div class="col">
         <ConstructorTable
           v-if="constructorStandingsDataLoaded"
-          :teamStandings="constructorStandings"
+          :constructorStandings="constructorStandings"
         />
       </div>
     </div>
@@ -37,9 +37,10 @@ export default {
     if (this.constructorStandings && this.constructorStandings.length > 0)
       return
     console.log('ConstructorStandings - No data in constructorStandings yet')
-    const constructorStandingsData = await this.getconstructorStandings()
+    const constructorStandingsData = await this.getConstructorStandings()
 
     this.constructorStandings = constructorStandingsData.allConstructors
+
     this.allConstructorStore = this.allConstructors
 
     this.getTeamsNationality()

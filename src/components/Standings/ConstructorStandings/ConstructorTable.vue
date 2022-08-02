@@ -16,7 +16,7 @@
       <!-- Constructors placed 1-3 -->
       <div class="leader-constructor-div">
         <div
-          v-for="(topConstructor, index) in teamStandings.slice(0, 3)"
+          v-for="(topConstructor, index) in constructorStandings.slice(0, 3)"
           :key="index"
           :class="divsTopThree[index]"
           class="leader-div"
@@ -56,7 +56,7 @@
           <th>{{ returnAltBySize(small, pointsLong, pointsShort) }}</th>
         </tr>
         <tbody
-          v-for="(constructor, index) in teamStandings.slice(3)"
+          v-for="(constructor, index) in constructorStandings.slice(3)"
           :key="index"
           class="constructor-table-tbody"
         >
@@ -99,7 +99,7 @@ import apiCallsMixin from '../../../mixins/apiCallsMixin'
 export default {
   name: 'ConstructorTable',
   props: {
-    teamStandings: Array,
+    constructorStandings: Array,
   },
   components: {
     ConstructorModal,
@@ -111,9 +111,7 @@ export default {
       constructorId: '',
     }
   },
-  created() {
-    console.log('teamStandings', this.teamStandings)
-  },
+  created() {},
   methods: {
     async getConstructorObject(teamId) {
       const team = await this.getOneConstructor(teamId)
