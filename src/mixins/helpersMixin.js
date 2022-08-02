@@ -7,5 +7,14 @@ export default {
     */
       return allRaces.find((race) => race.round === round)
     },
+    createId(name) {
+      /*
+      Convert name to id
+    */
+      return name
+        .toLowerCase()
+        .replace('-', '_')
+        .replace(' ', '_')
+    },
   },
 }

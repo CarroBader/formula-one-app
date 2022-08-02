@@ -240,6 +240,24 @@ export default {
         console.error(e)
       }
     },
+    async getPractice(grandPrixId, practice) {
+      /*
+        Return - Practice One
+        Params: grand_prix_id
+      */
+      try {
+        const response = await axios.get(
+          `${baseUrl}/${practice}/${grandPrixId}`
+        )
+
+        return {
+          data: response.data.data[practice],
+          dataLoaded: true,
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    },
   },
   mixins: [generalVarsMixin],
 }
