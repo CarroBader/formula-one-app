@@ -58,76 +58,6 @@
                     {{ driverObject.car_number }}
                   </td>
                 </tr>
-              </table>
-            </div>
-          </b-card></b-col
-        >
-      </b-row>
-      <b-row class="modal-row-two" id="row-two">
-        <!-- First Column -->
-        <b-col id="first-col"
-          ><b-card class="card-margin-modal">
-            <div>
-              <!-- class="scroll-table" -->
-              <table class="modal-table">
-                <tr>
-                  <th class="modal-th">
-                    Starts
-                    <span class="modal-span-text">(Entries)</span>:
-                  </th>
-                  <td class="modal-td">
-                    {{ driverObject.starts }}
-                    <span class="modal-span-text"
-                      >({{ driverObject.entries }})</span
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <th class="modal-th">Podiums:</th>
-                  <td class="modal-td">
-                    {{ driverObject.podiums }}
-                  </td>
-                </tr>
-                <tr>
-                  <th class="modal-th">Wins:</th>
-                  <td class="modal-td">
-                    {{ driverObject.wins }}
-                  </td>
-                </tr>
-                <tr>
-                  <th class="modal-th">Pole Positions:</th>
-                  <td class="modal-td">
-                    {{ driverObject.poles }}
-                  </td>
-                </tr>
-                <tr>
-                  <th class="modal-th">Front Row Starts:</th>
-                  <td class="modal-td">
-                    {{ driverObject.front_row_starts }}
-                  </td>
-                </tr>
-                <tr>
-                  <th class="modal-th">Fastest Lap:</th>
-                  <td class="modal-td">
-                    {{ driverObject.fastest_laps }}
-                  </td>
-                </tr>
-                <tr>
-                  <th class="modal-th">Championship Wins:</th>
-                  <td class="modal-td">
-                    {{ driverObject.championship_wins }}
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </b-card></b-col
-        >
-        <!-- Second Column -->
-        <b-col id="second-col"
-          ><b-card class="card-margin-modal">
-            <div>
-              <!-- class="scroll-table" -->
-              <table class="modal-table">
                 <tr>
                   <th class="modal-th">Team:</th>
                   <td
@@ -164,6 +94,66 @@
                     {{ driverObject.first_entry }}
                   </td>
                 </tr>
+              </table>
+            </div>
+          </b-card></b-col
+        >
+      </b-row>
+      <b-row class="modal-row-two" id="row-two">
+        <!-- First Column -->
+        <b-col id="first-col"
+          ><b-card class="card-margin-modal">
+            <div>
+              <!-- class="scroll-table" -->
+              <table class="modal-table">
+                <tr>
+                  <th class="modal-th">
+                    Starts
+                    <span class="modal-span-text">(Entries)</span>:
+                  </th>
+                  <td class="modal-td">
+                    {{ driverObject.starts }}
+                    <span class="modal-span-text"
+                      >({{ driverObject.entries }})</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th class="modal-th">Wins:</th>
+                  <td class="modal-td">
+                    {{ driverObject.wins }}
+                  </td>
+                </tr>
+                <tr>
+                  <th class="modal-th">Podiums:</th>
+                  <td class="modal-td">
+                    {{ driverObject.podiums }}
+                  </td>
+                </tr>
+
+                <tr>
+                  <th class="modal-th">Pole Positions:</th>
+                  <td class="modal-td">
+                    {{ driverObject.poles }}
+                  </td>
+                </tr>
+
+                <tr>
+                  <th class="modal-th">Fastest Lap:</th>
+                  <td class="modal-td">
+                    {{ driverObject.fastest_laps }}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </b-card></b-col
+        >
+        <!-- Second Column -->
+        <b-col id="second-col"
+          ><b-card class="card-margin-modal">
+            <div>
+              <!-- class="scroll-table" -->
+              <table class="modal-table">
                 <!-- <tr>
                   <th class="modal-th">Position Last Season:</th>
                   <td
@@ -177,6 +167,12 @@
                     {{ driverObject.position_last_seasons[lastSeason] }}
                   </td>
                 </tr> -->
+                <tr>
+                  <th class="modal-th">Front Row Starts:</th>
+                  <td class="modal-td">
+                    {{ driverObject.front_row_starts }}
+                  </td>
+                </tr>
                 <tr>
                   <th class="modal-th">Doubles:</th>
                   <td class="modal-td">
@@ -193,6 +189,12 @@
                   <th class="modal-th">Grand Chelems:</th>
                   <td class="modal-td">
                     {{ driverObject.grand_chelems }}
+                  </td>
+                </tr>
+                <tr>
+                  <th class="modal-th">Championship Wins:</th>
+                  <td class="modal-td">
+                    {{ driverObject.championship_wins }}
                   </td>
                 </tr>
               </table>
