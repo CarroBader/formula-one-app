@@ -23,7 +23,7 @@ const addTrackId = {
 
 const addGrandPrixId = {
   'Bahrain Grand Prix': 'bahrain_grand_prix',
-  'Imola Grand Prix': 'emilia-romagna_grand_prix',
+  'Imola Grand Prix': 'emilia_romagna_grand_prix',
   'Portuguese Grand Prix': 'portuguese_grand_prix',
   'Spanish Grand Prix': 'spanish_grand_prix',
   'Monaco Grand Prix': 'monaco_grand_prix',
@@ -42,6 +42,11 @@ const addGrandPrixId = {
   'Mexican Grand Prix': 'mexican_grand_prix',
   'Brazilian Grand Prix': 'brazilian_grand_prix',
   'Grand Prix of Saudi Arabia': 'saudi_arabian_grand_prix',
+  'Australian Grand Prix': 'australian_grand_prix',
+  'Miami Grand Prix': 'miami_grand_prix',
+  'Canadian Grand Prix': 'canadian_grand_prix',
+  'Singapore Grand Prix': 'singapore_grand_prix',
+  'Japanese Grand Prix': 'japanese_grand_prix',
   'Abu Dhabi Grand Prix': 'abu_dhabi_grand_prix',
 }
 
