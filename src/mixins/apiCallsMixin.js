@@ -154,6 +154,22 @@ export default {
       )
       return qualifyingSessions
     },
+    async getRaceResult(grandPrixId) {
+      /*
+        Return - Race result
+        Params: grand_prix_id
+      */
+      try {
+        const response = await axios.get(`${baseUrl}/race/${grandPrixId}`)
+
+        return {
+          data: response.data.data['race'],
+          dataLoaded: true,
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    },
     async getGridStartingForRace(grandPrixId) {
       /*
         Return - Starting for race
@@ -165,7 +181,25 @@ export default {
         )
 
         return {
-          data: response.data.data.grid,
+          data: response.data.data['starting-grid'],
+          dataLoaded: true,
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    },
+    async getFastestLap(grandPrixId) {
+      /*
+        Return - Fastest lap
+        Params: grand_prix_id
+      */
+      try {
+        const response = await axios.get(
+          `${baseUrl}/fastest-lap/${grandPrixId}`
+        )
+
+        return {
+          data: response.data.data['fastest_lap'],
           dataLoaded: true,
         }
       } catch (e) {

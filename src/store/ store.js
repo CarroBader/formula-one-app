@@ -24,7 +24,6 @@ export default new Vuex.Store({
   ],
   state: {
     allDataLoaded: false,
-    raceDataLoaded: false,
     raceNav: 'Last Race',
     standingsNav: 'Driver Standings',
     allConfirmedRaces: [],
@@ -32,7 +31,7 @@ export default new Vuex.Store({
     allConstructors: [],
     upcomingRace: {},
     currentRound: 0,
-    nextSession: {},
+    nextSession: 'Next Race',
   },
   getters: {
     allConfirmedRaces: (state) => state.allConfirmedRaces,
@@ -40,13 +39,10 @@ export default new Vuex.Store({
     allConstructors: (state) => state.allConstructors,
     upcomingRace: (state) => state.upcomingRace,
     currentRound: (state) => state.currentRound,
-    nextSession: (state) => state.nextSession,
   },
   mutations: {
     SET_RACES: (state, confirmedRaces) => {
       state.allConfirmedRaces.push(...confirmedRaces)
-
-      state.raceDataLoaded = true
     },
     SET_DRIVERS: (state, drivers) => {
       state.allDrivers.push(...drivers)
@@ -58,10 +54,9 @@ export default new Vuex.Store({
       state.upcomingRace = upcomingRaceObj
     },
     SET_CURRENT_ROUND: (state, round) => {
+      console.log('SET_CURRENT_ROUND', round)
       state.currentRound = round
-    },
-    SET_SESSION: (state, currentSession) => {
-      state.nextSession = currentSession
+
       state.allDataLoaded = true
     },
     SET_NAV_NAME: (state, raceNavValue) => {
@@ -79,8 +74,6 @@ export default new Vuex.Store({
         Return all races
       */
 
-      const confirmedRaces = []
-
       try {
         const response = await axios.get(`${baseUrl}/races`)
         console.log(' Store - Fetching races from database')
@@ -88,13 +81,11 @@ export default new Vuex.Store({
         let races = response.data.data[0]['allRaces']
 
         races.forEach((race) => {
-          if (race.status !== 'Cancelled') {
-            race.date_in_milli = Date.parse(race.end_date)
-            confirmedRaces.push(race)
+          if (Date.parse(race.end_date) < todaysDate) {
+            race.status = 'Complete'
+          } else race.status = 'Unfinished'
+          {
           }
-        })
-
-        confirmedRaces.forEach((race) => {
           race.track_id = addTrackId[race.track]
           race.grand_prix_id = addGrandPrixId[race.name]
           if (race.country in changeCountryName) {
@@ -108,13 +99,26 @@ export default new Vuex.Store({
           })
         })
 
-        const sortedArray = races.sort(function(a, b) {
+        let sortedArray = races.sort(function(a, b) {
           return new Date(a.end_date) - new Date(b.end_date)
         })
 
         console.log('sortedArray', sortedArray)
 
         commit('SET_RACES', sortedArray)
+
+        // Get and Set Upcoming Race
+        const upcomingRaceObj = sortedArray.find(
+          (race) => Date.parse(race.end_date) >= todaysDate
+        )
+        console.log('STORE SET_UPCOMING_RACE', upcomingRaceObj)
+
+        commit('SET_UPCOMING_RACE', upcomingRaceObj)
+
+        // Get and Set Round
+        console.log('STORE SET_CURRENT_ROUND', upcomingRaceObj.round)
+
+        commit('SET_CURRENT_ROUND', upcomingRaceObj.round)
       } catch (e) {
         console.error(e)
       }
@@ -156,71 +160,6 @@ export default new Vuex.Store({
       } catch (e) {
         console.error(e)
       }
-    },
-    getUpcomingRace({ commit }, allRaces) {
-      /*
-        Return - the next race obj
-      */
-
-      const upcomingRaceObj = allRaces.find(
-        (race) => race.date_in_milli >= todaysDate
-      )
-
-      console.log('SET_UPCOMING_RACE', upcomingRaceObj)
-
-      commit('SET_UPCOMING_RACE', upcomingRaceObj)
-    },
-    getNextRaceRound({ commit }, upcomingRace) {
-      /*
-        Return - the current round number
-      */
-      // const round = upcomingRace.race_round
-      const round = upcomingRace.round
-
-      console.log('Set CURRENT_ROUND', round)
-      commit('SET_CURRENT_ROUND', round)
-    },
-    getNextSession({ commit }, upcomingRace) {
-      /*
-        Return - the active session
-        If: the active session don't have live data: sessionType, nextSessionName, nextSessionDate
-        Else: sessionType and sessionId
-      */
-      const relevantSessions = []
-      // let nextSession = {}
-
-      upcomingRace.sessions.forEach((session) => {
-        if (!notWantedSessions.includes(session.session_name)) {
-          session.session_type = newSessionType[session.session_name]
-          relevantSessions.push(session)
-        }
-      })
-
-      // relevantSessions.find((relSession) => {
-      //   console.log('relSession', )
-      //   const dateInMilli = Date.parse(relSession.date)
-
-      //   if (dateInMilli === todaysDate) {
-      //     nextSession = {
-      //       sessionType: relSession.session_type,
-      //       sessionId: relSession.id,
-      //     }
-      //   }
-
-      //   if (dateInMilli >= todaysDate) {
-      //     nextSession = {
-      //       sessionType: "Next Race",
-      //       sessionName: relSession.session_name,
-      //       startTime: relSession.date,
-      //     }
-      //   }
-      //   return nextSession
-      // })
-
-      // this.currentSession = nextSession
-      this.currentSession = 'Next Race'
-      console.log('Set CURRENT_SESSION', this.currentSession)
-      commit('SET_SESSION', this.currentSession)
     },
   },
 })

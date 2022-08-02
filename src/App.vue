@@ -33,30 +33,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
-      'allConfirmedRaces',
-      'allDrivers',
-      'allConstructors',
+    ...mapGetters(['allConfirmedRaces', 'allDrivers', 'allConstructors']),
+    ...mapState([
+      'allDataLoaded',
       'upcomingRace',
+      'currentRound',
       'nextSession',
+      'raceNav',
     ]),
-    ...mapState(['raceDataLoaded', 'currentRound', 'allDataLoaded', 'raceNav']),
   },
   watch: {
-    raceDataLoaded(val) {
-      if (val) {
-        this.allRaces = this.allConfirmedRaces
-
-        if (this.upcomingRace && this.upcomingRace.length > 0) return
-        store.dispatch('getUpcomingRace', this.allRaces)
-
-        if (this.currentRound && this.currentRound !== 0) return
-        store.dispatch('getNextRaceRound', this.upcomingRace)
-
-        if (this.nextSession && this.nextSession.length > 0) return
-        store.dispatch('getNextSession', this.upcomingRace)
-      }
-    },
     $route(to, from) {
       if (from.name === 'Race Map') {
         this.forceRerender()
@@ -69,7 +55,6 @@ export default {
     console.log('App - allConfirmedRaces', this.allConfirmedRaces)
     console.log('App - allDrivers', this.allDrivers)
     console.log('App - allConstructors', this.allConstructors)
-    console.log('App - raceDataLoaded', this.raceDataLoaded)
 
     console.log('App - upcomingRace', this.upcomingRace)
     console.log('App - currentRound', this.currentRound)
