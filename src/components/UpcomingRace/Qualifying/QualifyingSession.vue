@@ -78,17 +78,10 @@ export default {
     nextRaceName: String,
     qualifyingDataExists: Boolean,
   },
-  created() {
-    console.log('qualifyingResults', this.qualifyingResults)
-  },
+  created() {},
 
   methods: {
     qualiOne(index) {
-      console.log('index', index)
-      console.log(
-        'this.qualifyingResults[index]',
-        this.qualifyingResults[index]
-      )
       /*
       Checks if q1Time contains a drivers fastest time.
       Returns a class that matches the result.

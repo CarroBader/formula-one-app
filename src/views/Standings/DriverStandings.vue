@@ -29,7 +29,7 @@ export default {
   },
   async created() {
     if (this.driverStandings && this.driverStandings.length > 0) return
-    console.log('DriverStandings - No data in driverStandings yet')
+
     const driverStandingsData = await this.getDriverStandings()
 
     this.driverStandings = driverStandingsData.alldrivers

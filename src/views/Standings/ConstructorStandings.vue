@@ -36,7 +36,7 @@ export default {
   async created() {
     if (this.constructorStandings && this.constructorStandings.length > 0)
       return
-    console.log('ConstructorStandings - No data in constructorStandings yet')
+
     const constructorStandingsData = await this.getConstructorStandings()
 
     this.constructorStandings = constructorStandingsData.allConstructors

@@ -157,7 +157,6 @@ export default {
   },
 
   created() {
-    console.log('raceResult', this.raceResult)
   },
   methods: {
     getSymbolImage(grid, position) {
@@ -190,11 +189,8 @@ export default {
       return !!(fastestLap !== undefined && fastestLap.rank === '1')
     },
     async getDriverObject(driverId) {
-      console.log('driverId', driverId)
-
       const driver = await this.getOneDriver(driverId)
       this.driverObject = driver.data
-      console.log(' this.driverObject', this.driverObject)
       this.driverId = driver.data.driver_id
 
       if (driver.dataLoaded) {
