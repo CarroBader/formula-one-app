@@ -54,7 +54,7 @@
 
 .modal-row-two {
   @include breakpoint(x-small) {
-    display: block;
+    display: flex;
   }
   @include breakpoint(xx-large) {
     height: 21em;
