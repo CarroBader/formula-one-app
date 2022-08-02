@@ -35,8 +35,8 @@ export default {
   computed: {
     ...mapGetters([
       'allConfirmedRaces',
-      // "allDrivers",
-      // "allTeams",
+      'allDrivers',
+      'allConstructors',
       'upcomingRace',
       'nextSession',
     ]),
@@ -68,7 +68,7 @@ export default {
     console.log('Time', new Date())
     console.log('App - allConfirmedRaces', this.allConfirmedRaces)
     console.log('App - allDrivers', this.allDrivers)
-    console.log('App - allTeams', this.allTeams)
+    console.log('App - allConstructors', this.allConstructors)
     console.log('App - raceDataLoaded', this.raceDataLoaded)
 
     console.log('App - upcomingRace', this.upcomingRace)
@@ -84,16 +84,16 @@ export default {
     console.log('App - No data getAllRaces yet')
     this.getAllRaces()
 
-    //   if (this.allDrivers && this.allDrivers.length > 0) return
-    //   console.log('App - No data getAllDrivers yet')
-    //   this.getAllDrivers()
+    if (this.allDrivers && this.allDrivers.length > 0) return
+    console.log('App - No data getAllDrivers yet')
+    this.getAllDrivers()
 
-    //   if (this.allTeams && this.allTeams.length > 0) return
-    //   console.log('App - No data getAllTeams yet')
-    //   this.getAllTeams()
+    if (this.allConstructors && this.allConstructors.length > 0) return
+    console.log('App - No data getAllConstructors yet')
+    this.getAllConstructors()
   },
   methods: {
-    ...mapActions(['getAllRaces']), //  'getAllDrivers', 'getAllTeams'
+    ...mapActions(['getAllRaces', 'getAllDrivers', 'getAllConstructors']),
     forceRerender() {
       this.renderKey += 1
     },

@@ -29,7 +29,7 @@ export default new Vuex.Store({
     standingsNav: 'Driver Standings',
     allConfirmedRaces: [],
     allDrivers: [],
-    allTeams: [],
+    allConstructors: [],
     upcomingRace: {},
     currentRound: 0,
     nextSession: {},
@@ -37,7 +37,7 @@ export default new Vuex.Store({
   getters: {
     allConfirmedRaces: (state) => state.allConfirmedRaces,
     allDrivers: (state) => state.allDrivers,
-    allTeams: (state) => state.allTeams,
+    allConstructors: (state) => state.allConstructors,
     upcomingRace: (state) => state.upcomingRace,
     currentRound: (state) => state.currentRound,
     nextSession: (state) => state.nextSession,
@@ -51,8 +51,8 @@ export default new Vuex.Store({
     SET_DRIVERS: (state, drivers) => {
       state.allDrivers.push(...drivers)
     },
-    SET_TEAMS: (state, teams) => {
-      state.allTeams.push(...teams)
+    SET_CONSTRUCTORS: (state, constructors) => {
+      state.allConstructors.push(...constructors)
     },
     SET_UPCOMING_RACE: (state, upcomingRaceObj) => {
       state.upcomingRace = upcomingRaceObj
@@ -128,29 +128,31 @@ export default new Vuex.Store({
 
       try {
         const response = await axios.get(`${baseUrl}/drivers`)
+        console.log(' Store - Fetching drivers from database')
 
         drivers = response.data.data
 
-        console.log('Fetching DRIVERS from database')
+        console.log('Fetching drivers from database', drivers)
         commit('SET_DRIVERS', drivers)
       } catch (e) {
         console.error(e)
       }
     },
-    async getAllTeams({ commit }) {
+    async getAllConstructors({ commit }) {
       /*
-        Return - [], with all current teams
+        Return - [], with all current constructors
       */
 
-      let teams = []
+      let constructors = []
 
       try {
-        const response = await axios.get(`${baseUrl}/teams`)
+        const response = await axios.get(`${baseUrl}/constructors`)
+        console.log(' Store - Fetching constructors from database')
 
-        teams = response.data.data
+        constructors = response.data.data
 
-        console.log('Fetching TEAMS from database')
-        commit('SET_TEAMS', teams)
+        console.log('Fetching constructors from database', constructors)
+        commit('SET_CONSTRUCTORS', constructors)
       } catch (e) {
         console.error(e)
       }
