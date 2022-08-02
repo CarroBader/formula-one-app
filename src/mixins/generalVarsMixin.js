@@ -20,8 +20,9 @@ export default {
       // Variables used in Standings
       divsTopThree: ['first', 'second', 'third'],
       // Time and Date
-      season: this.getYear(),
       year: this.getYear(),
+      thisSeason: this.getYear(),
+      lastSeason: this.getYear() - 1,
     }
   },
   methods: {

@@ -8,7 +8,7 @@
       @clicked="setShowToFalseModal"
     />
     <div class="driver-table-headline-div">
-      <h1 class="driver-table-headline">{{ season }} World Championship</h1>
+      <h1 class="driver-table-headline">{{ thisSeason }} World Championship</h1>
     </div>
     <b-card class="card-margin">
       <!-- Drivers placed 1-3 -->
@@ -116,13 +116,12 @@ export default {
       driverId: '',
     }
   },
-  created() {
-    console.log('2 driverStandings', this.driverStandings)
-  },
+  created() {},
   methods: {
     async getDriverObject(driverId) {
       const driver = await this.getOneDriver(driverId)
       this.driverObject = driver.data
+
       this.driverId = driver.data.driver_id
 
       if (driver.dataLoaded) {

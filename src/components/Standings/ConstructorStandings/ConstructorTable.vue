@@ -9,7 +9,7 @@
     />
     <div class="constructor-table-headline-div">
       <h1 class="constructor-table-headline">
-        {{ season }} Constructor Championship
+        {{ thisSeason }} Constructor Championship
       </h1>
     </div>
     <b-card class="card-margin">
