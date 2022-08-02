@@ -127,7 +127,7 @@ export default {
         Input - An array with session Ids.
         Return - An object with session name and array with drivers
       */
-      console.log('Entering - API - getSessionById')
+      // console.log('Entering - API - getSessionById')
       const qualifyingSessions = {}
       await Promise.all(
         sessionIds.map(async (session) => {

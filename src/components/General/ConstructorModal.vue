@@ -231,10 +231,7 @@ export default {
   data() {
     return {}
   },
-  created() {
-    console.log('constructorObject', this.constructorObject)
-    console.log('id', this.id)
-  },
+  created() {},
   methods: {},
   mixins: [
     generalVarsMixin,

@@ -5,7 +5,6 @@ export default {
       Get constructor color from an id.
       Return a color name that macthes a class in main.css.
     */
-      console.log('id', id)
       let colorName
 
       switch (id) {
