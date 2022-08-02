@@ -195,7 +195,7 @@ export default {
         Params: driver_id
       */
       try {
-        const response = await axios.get(`${baseUrl}/teams/${teamId}`)
+        const response = await axios.get(`${baseUrl}/constructors/${teamId}`)
         // console.log("Fetching driver from database")
 
         return {

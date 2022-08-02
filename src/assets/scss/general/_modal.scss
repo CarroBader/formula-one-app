@@ -1,211 +1,212 @@
 .modal-header .close {
-	display: none;
+  display: none;
 }
 
 .modal-title {
-	color: $white !important;
+  color: $white !important;
 
-	@include breakpoint(x-small) {
-		font-size: 1.2em;
-	}
+  @include breakpoint(x-small) {
+    font-size: 1.2em;
+  }
 }
 .modal-header {
-	background-color: $sub-background;
+  background-color: $sub-background;
 }
 
 .modal-footer {
-	background-color: $sub-background;
+  background-color: $sub-background;
 }
 
 .modal-th {
-	color: $dark-grey;
+  color: $dark-grey;
 
-	@include breakpoint(x-small) {
-		font-size: 0.7em;
-	}
+  @include breakpoint(x-small) {
+    font-size: 0.7em;
+  }
 
-	@include breakpoint(xx-large) {
-		font-size: 0.8em;
-	}
+  @include breakpoint(xx-large) {
+    font-size: 0.8em;
+  }
 }
 
 .modal-td {
-	text-align: end;
+  text-align: end;
 
-	@include breakpoint(x-small) {
-		font-size: 0.8em;
-		// padding: 0.4em 0;
-	}
-	@include breakpoint(xx-large) {
-		font-size: 0.9em;
-		padding: 0.4em 0;
-	}
+  @include breakpoint(x-small) {
+    font-size: 0.8em;
+    // padding: 0.4em 0;
+  }
+  @include breakpoint(xx-large) {
+    font-size: 0.9em;
+    padding: 0.4em 0;
+  }
 }
 
 .modal-table {
-	width: 100%;
+  width: 100%;
 }
 
 .modal-row-one {
-	@include breakpoint(xx-large) {
-		height: 15em;
-	}
+  @include breakpoint(xx-large) {
+    height: 15em;
+  }
 }
 
 .modal-row-two {
-	@include breakpoint(x-small) {
-		display: block;
-	}
-	@include breakpoint(xx-large) {
-		height: 21em;
-	}
+  @include breakpoint(x-small) {
+    display: block;
+  }
+  @include breakpoint(xx-large) {
+    height: 21em;
+  }
 }
 
 .modal-country-flag-img {
-	@include breakpoint(x-small) {
-		height: 1em;
-		margin-left: 0.5em;
-	}
-	@include breakpoint(xx-large) {
-		height: 1em;
-		margin-left: 0.5em;
-	}
+  @include breakpoint(x-small) {
+    height: 1em;
+    margin-left: 0.5em;
+  }
+  @include breakpoint(xx-large) {
+    height: 1em;
+    margin-left: 0.5em;
+  }
 }
 
 .custom-modal-content {
-	background-color: $sub-background;
-	// width: 40em;
-	// width: 60em;
+  background-color: $sub-background;
+  margin-top: 5em;
+  // width: 40em;
+  // width: 60em;
 
-	@include breakpoint(xx-large) {
-		position: absolute;
-		top: 10em;
-	}
+  @include breakpoint(xx-large) {
+    position: absolute;
+    top: 10em;
+  }
 }
 
 .btn-dark {
-	z-index: 1;
+  z-index: 1;
 }
 
 .modal-span-text {
-	font-size: 0.88em;
-	color: $extra-dark-grey;
+  font-size: 0.88em;
+  color: $extra-dark-grey;
 }
 
 .modal-headline {
-	color: $dark-grey;
+  color: $dark-grey;
 
-	@include breakpoint(x-small) {
-		font-size: 1em;
-	}
-	@include breakpoint(xx-large) {
-		font-size: 0.8em;
-	}
+  @include breakpoint(x-small) {
+    font-size: 1em;
+  }
+  @include breakpoint(xx-large) {
+    font-size: 0.8em;
+  }
 }
 
 .modal-body-text {
-	color: $white;
+  color: $white;
 
-	@include breakpoint(x-small) {
-		font-size: 0.9em;
-	}
-	@include breakpoint(xx-large) {
-		font-size: 1em;
-	}
+  @include breakpoint(x-small) {
+    font-size: 0.9em;
+  }
+  @include breakpoint(xx-large) {
+    font-size: 1em;
+  }
 }
 
 // Driver Modal
 
 .modal-driver-img-col {
-	text-align: center;
+  text-align: center;
 
-	@include breakpoint(xx-large) {
-		margin-top: 1em;
-	}
+  @include breakpoint(xx-large) {
+    margin-top: 1em;
+  }
 }
 
 .modal-driver-img {
-	// border: 1px solid #fff;
-	padding: 1em;
-	border-width: 3px;
-	border-style: solid;
+  // border: 1px solid #fff;
+  padding: 1em;
+  border-width: 3px;
+  border-style: solid;
 
-	// border-image: linear-gradient(to bottom, #9f0000, rgba(0, 0, 0, 0)) 1 100%;
+  // border-image: linear-gradient(to bottom, #9f0000, rgba(0, 0, 0, 0)) 1 100%;
 
-	@include breakpoint(x-small) {
-		// height: 12em;
-		height: 14em;
-	}
-	@include breakpoint(xx-large) {
-		// height: 12em;
-		height: 14em;
-	}
+  @include breakpoint(x-small) {
+    // height: 12em;
+    height: 14em;
+  }
+  @include breakpoint(xx-large) {
+    // height: 12em;
+    height: 14em;
+  }
 }
 
 .card-margin-modal {
-	@include breakpoint(x-small) {
-		padding: auto;
-	}
+  @include breakpoint(x-small) {
+    padding: auto;
+  }
 }
 
 // Constructor Modal
 
 .modal-constructor-img-col {
-	text-align: center;
+  text-align: center;
 
-	@include breakpoint(xx-large) {
-		margin-top: 4em;
-	}
+  @include breakpoint(xx-large) {
+    margin-top: 4em;
+  }
 }
 
 .modal-constructor-img {
-	// border: 1px solid #fff;
-	padding: 1em;
-	border-width: 3px;
-	border-style: solid;
-	// border-image: linear-gradient(to bottom, #9f0000, rgba(0, 0, 0, 0)) 1 100%;
+  // border: 1px solid #fff;
+  padding: 1em;
+  border-width: 3px;
+  border-style: solid;
+  // border-image: linear-gradient(to bottom, #9f0000, rgba(0, 0, 0, 0)) 1 100%;
 
-	@include breakpoint(x-small) {
-		width: 18em;
-	}
-	@include breakpoint(xx-large) {
-		// height: 12em;
-		width: 20em;
-	}
+  @include breakpoint(x-small) {
+    width: 18em;
+  }
+  @include breakpoint(xx-large) {
+    // height: 12em;
+    width: 20em;
+  }
 }
 
 #row-two {
-	@include breakpoint(x-small) {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	@include breakpoint(medium) {
-		display: flex;
-		flex-wrap: inherit;
-	}
+  @include breakpoint(x-small) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include breakpoint(medium) {
+    display: flex;
+    flex-wrap: inherit;
+  }
 }
 
 #row-two > div {
-	flex: 1 1 40%;
+  flex: 1 1 40%;
 
-	@include breakpoint(x-small) {
-		flex: 1 1 100%;
-	}
+  @include breakpoint(x-small) {
+    flex: 1 1 100%;
+  }
 }
 
 #first-col {
-	@include breakpoint(x-small) {
-		order: 2;
-	}
-	@include breakpoint(medium) {
-		order: 1;
-	}
+  @include breakpoint(x-small) {
+    order: 2;
+  }
+  @include breakpoint(medium) {
+    order: 1;
+  }
 }
 #second-col {
-	@include breakpoint(x-small) {
-		order: 1;
-	}
-	@include breakpoint(medium) {
-		order: 2;
-	}
+  @include breakpoint(x-small) {
+    order: 1;
+  }
+  @include breakpoint(medium) {
+    order: 2;
+  }
 }
