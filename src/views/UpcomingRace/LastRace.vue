@@ -21,12 +21,9 @@ import ResultLastRace from '../../components/UpcomingRace/LastRace/ResultLastRac
 import helpersMixin from '../../mixins/helpersMixin'
 import apiCallsMixin from '../../mixins/apiCallsMixin'
 
-import { points } from '../../variables/replaceVars'
-
 let responseRaceResult = []
 let responseStartingGrid = []
 let responseFastestLap = {}
-let leaderLapCompleted = 0
 
 export default {
   name: 'LastRace',
@@ -122,18 +119,18 @@ export default {
         }
       }
     },
-    addPoints() {
-      this.raceSessionData.forEach((driver) => {
-        if (driver.position === 1) leaderLapCompleted = driver.current_lap
+    // addPoints() {
+    //   this.raceSessionData.forEach((driver) => {
+    //     if (driver.position === 1) leaderLapCompleted = driver.current_lap
 
-        if (leaderLapCompleted > this.lastRaceLaps * 0.75) {
-          if (driver.position in points) driver.points = points[driver.position]
-        } else if (driver.position in points)
-          driver.points = points[driver.position] / 2
+    //     if (leaderLapCompleted > this.lastRaceLaps * 0.75) {
+    //       if (driver.position in points) driver.points = points[driver.position]
+    //     } else if (driver.position in points)
+    //       driver.points = points[driver.position] / 2
 
-        if (driver.fastest_lap) driver.points += 1
-      })
-    },
+    //     if (driver.fastest_lap) driver.points += 1
+    //   })
+    // },
   },
   mixins: [helpersMixin, apiCallsMixin],
 }

@@ -125,6 +125,7 @@ export default {
         default:
           className = ''
       }
+
       return className
     },
   },

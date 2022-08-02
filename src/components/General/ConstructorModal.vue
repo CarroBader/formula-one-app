@@ -136,7 +136,7 @@
                 <tr>
                   <th class="modal-th">Position Last Season:</th>
 
-                  <td
+                  <!-- <td
                     class="modal-td"
                     :class="
                       getPositionColor(
@@ -145,7 +145,7 @@
                     "
                   >
                     {{ constructorObject.position_last_seasons[season] }}
-                  </td>
+                  </td> -->
                 </tr>
               </table>
             </div>

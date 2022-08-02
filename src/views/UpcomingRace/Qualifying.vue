@@ -51,11 +51,8 @@ export default {
     this.nextRace = this.getNextRace(this.allRaces, this.round)
     this.nextRaceName = this.nextRace.name
 
-    console.log('    this.nextRace', this.nextRace)
-
     let qualifying = await this.getQualifying(this.nextRace.grand_prix_id)
     this.qualifyingData = qualifying.data
-    console.log('qualifyingData', this.qualifyingData)
 
     // this.getNextSessionIds()
 
@@ -73,7 +70,6 @@ export default {
       const combinedQuali = []
 
       this.qualifyingData.forEach((driver) => {
-        console.log('driver', driver)
         const driverData = {}
         driverData.id = this.createId(
           `${driver.first_name} ${driver.last_name}`
@@ -85,7 +81,6 @@ export default {
         driverData.q1Time = driver.q1
         driverData.q2Time = driver.q2
         driverData.q3Time = driver.q3
-        console.log('driverData', driverData)
 
         combinedQuali.push(driverData)
       })
@@ -93,7 +88,7 @@ export default {
       combinedQuali.sort((a, b) => {
         return a.position - b.position
       })
-      console.log('combinedQuali', combinedQuali)
+
       return {
         data: combinedQuali,
         dataLoaded: true,
