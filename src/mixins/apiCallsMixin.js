@@ -91,7 +91,6 @@ export default {
       */
       try {
         const response = await axios.get(`${baseUrl}/circuits/${trackId}`)
-        // console.log("Fetching track from database")
 
         return {
           data: response.data.data,

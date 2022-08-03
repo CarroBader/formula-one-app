@@ -68,6 +68,10 @@ export default {
       grandPrixDataLoaded: false,
       trackData: null,
       trackDataLoaded: false,
+      trackId: null,
+      nextTrack: null,
+      nextGrandPrix: null,
+      nextTimeTable: null,
     }
   },
   computed: {
@@ -80,29 +84,35 @@ export default {
 
     // Assign data by using veux datan
     this.nextRace = this.getNextRace(this.allRaces, this.currentRound)
+    console.log('nextRace', this.nextRace)
+
     this.nextRaceName = this.nextRace.name
-    const trackId = this.nextRace.track_id
-    const grandPrixId = this.nextRace.grand_prix_id
+    this.trackId = this.nextRace.track_id
+    this.grandPrixId = this.nextRace.grand_prix_id
     this.nextRaceCountry = this.nextRace.country
 
     // Get data from database
 
     // Next Track
-    const nextTrack = await this.getOneTrack(trackId)
-    this.trackData = nextTrack.data
-    this.trackDataLoaded = nextTrack.dataLoaded
+    console.log('trackId', this.trackId)
+
+    this.nextTrack = await this.getOneTrack(this.trackId)
+    console.log('nextTrack', this.nextTrack)
+    this.trackData = this.nextTrack.data
+    console.log('trackData', this.trackData)
+    this.trackDataLoaded = this.nextTrack.dataLoaded
 
     // Next Grand Prix
-    const nextGrandPrix = await this.getOneGrandPrix(grandPrixId)
-    this.grandPrixData = nextGrandPrix.data
-    this.grandPrixDataLoaded = nextGrandPrix.dataLoaded
+    this.nextGrandPrix = await this.getOneGrandPrix(this.grandPrixId)
+    this.grandPrixData = this.nextGrandPrix.data
+    this.grandPrixDataLoaded = this.nextGrandPrix.dataLoaded
     this.lastWinners = this.grandPrixData.winners.slice(0, 5)
     this.lastPoles = this.grandPrixData.poles.slice(0, 5)
 
     // Time Table
-    const nextTimeTable = this.getTimeTableData()
-    this.timeTableData = nextTimeTable.datax
-    this.timeTableDataLoaded = nextTimeTable.dataLoaded
+    this.nextTimeTable = this.getTimeTableData()
+    this.timeTableData = this.nextTimeTable.data
+    this.timeTableDataLoaded = this.nextTimeTable.dataLoaded
   },
   methods: {
     getTimeTableData() {

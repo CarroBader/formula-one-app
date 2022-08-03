@@ -48,6 +48,7 @@ const addGrandPrixId = {
   'Singapore Grand Prix': 'singapore_grand_prix',
   'Japanese Grand Prix': 'japanese_grand_prix',
   'Abu Dhabi Grand Prix': 'abu_dhabi_grand_prix',
+  'Circuit de Spa-Francorchamps': 'circuit_de_spa-francorchamps',
 }
 
 const changeCountryName = {

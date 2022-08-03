@@ -86,7 +86,6 @@ export default new Vuex.Store({
           } else race.status = 'Unfinished'
           {
           }
-          race.track_id = addTrackId[race.track]
           race.grand_prix_id = addGrandPrixId[race.name]
           if (race.country in changeCountryName) {
             race.country = changeCountryName[race.country]
