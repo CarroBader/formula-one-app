@@ -156,8 +156,7 @@ export default {
     }
   },
 
-  created() {
-  },
+  created() {},
   methods: {
     getSymbolImage(grid, position) {
       /*

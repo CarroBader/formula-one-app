@@ -1,8 +1,6 @@
 <template>
   <b-container class="default-background-center">
     <div class="row practice-row">
-      <!-- Angående när vi ska komma till den aktuella session, kan vi skicka in ett props som är någon av
-        practice 1,2,3 dessa kan vi sen använda för att sätta active på rätt b-tab. -->
       <b-tabs content-class="mt-3">
         <b-tab title="Practice 1" active>
           <PracticeSession
@@ -26,6 +24,9 @@
           />
         </b-tab>
       </b-tabs>
+      <div class="noDataMessage" v-if="!practiceDataExists">
+        <p>No practice have been completed yet.</p>
+      </div>
     </div>
   </b-container>
 </template>
@@ -85,20 +86,20 @@ export default {
       'practice-three'
     )
 
-    if (practiceOne.data.length > 0) {
+    if (practiceOne.dataLoaded) {
       const responsePOne = this.addDriverNumberAndColorCode(practiceOne.data)
       this.practiceOneData = responsePOne.data
       this.practiceOneDataLoaded = responsePOne.data
       this.practiceDataExists = true
     }
 
-    if (practiceTwo.data.length > 0) {
+    if (practiceTwo.dataLoaded) {
       const responsePTwo = this.addDriverNumberAndColorCode(practiceTwo.data)
       this.practiceTwoData = responsePTwo.data
       this.practiceTwoDataLoaded = responsePTwo.data
     }
 
-    if (practiceThree.data.length > 0) {
+    if (practiceThree.dataLoaded) {
       const responsePThree = this.addDriverNumberAndColorCode(
         practiceThree.data
       )

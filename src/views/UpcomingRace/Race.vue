@@ -54,7 +54,7 @@ export default {
     this.allRaces = this.allConfirmedRaces
     this.drivers = this.allDrivers
 
-    this.lastRace = this.getNextRace(this.allRaces, this.currentRound - 1)
+    this.lastRace = this.getNextRace(this.allRaces, this.currentRound)
 
     this.nextRaceName = this.lastRace.name
 

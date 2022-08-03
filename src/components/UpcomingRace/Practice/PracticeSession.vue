@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="noDataMessage" v-if="!practiceDataExists">
-      <p>No practice have been completed yet.</p>
-    </div>
     <b-card class="card-margin" v-if="practiceDataExists">
       <div class="scroll-table">
         <table>

@@ -249,9 +249,16 @@ export default {
           `${baseUrl}/${practice}/${grandPrixId}`
         )
 
-        return {
-          data: response.data.data[practice],
-          dataLoaded: true,
+        if (response.length > 0) {
+          return {
+            data: response.data.data[practice],
+            dataLoaded: true,
+          }
+        } else {
+          return {
+            data: [],
+            dataLoaded: false,
+          }
         }
       } catch (e) {
         console.error(e)
