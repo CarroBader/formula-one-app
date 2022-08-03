@@ -5,6 +5,7 @@ export default {
       Get constructor color from an id.
       Return a color name that macthes a class in main.css.
     */
+
       let colorName
 
       switch (id) {
@@ -78,6 +79,9 @@ export default {
           break
         case 'honda':
           colorName = 'honda'
+          break
+        case 'brabham':
+          colorName = 'brabham'
           break
         default:
           colorName = ''

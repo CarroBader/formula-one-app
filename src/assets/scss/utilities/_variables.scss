@@ -51,141 +51,145 @@ $aston-martin: #00b19c;
 
 // Function picks class
 .medium-red {
-	color: $medium-red;
+  color: $medium-red;
 }
 
 .dark-grey {
-	color: $dark-grey;
+  color: $dark-grey;
 }
 
 .green {
-	color: $green !important;
+  color: $green !important;
 }
 
 .gold {
-	color: #daa520 !important;
+  color: #daa520 !important;
 }
 
 .silver {
-	color: #9b9b9b !important;
+  color: #9b9b9b !important;
 }
 
 .bronze {
-	color: #8b4513 !important;
+  color: #8b4513 !important;
 }
 
 /* Driver and Team Colors */
 .mclaren {
-	color: $mclaren !important;
+  color: $mclaren !important;
 }
 
 .mclaren-border {
-	border-image: linear-gradient(to bottom, $mclaren, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, $mclaren, rgba(0, 0, 0, 0)) 1 100%;
 }
 
 .red-bull {
-	color: $red-bull !important;
+  color: $red-bull !important;
 }
 
 .red-bull-border {
-	border-image: linear-gradient(to bottom, $red-bull, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, $red-bull, rgba(0, 0, 0, 0)) 1 100%;
 }
 
 .mercedes {
-	color: $mercedes !important;
+  color: $mercedes !important;
 }
 
 .mercedes-border {
-	border-image: linear-gradient(to bottom, $mercedes, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, $mercedes, rgba(0, 0, 0, 0)) 1 100%;
 }
 
 .alpha-romeo {
-	color: $alpha-romeo !important;
+  color: $alpha-romeo !important;
 }
 
 .alpha-romeo-border {
-	border-image: linear-gradient(to bottom, $alpha-romeo, rgba(0, 0, 0, 0)) 1
-		100%;
+  border-image: linear-gradient(to bottom, $alpha-romeo, rgba(0, 0, 0, 0)) 1
+    100%;
 }
 
 .alpha-tauri {
-	color: $alpha-tauri !important;
+  color: $alpha-tauri !important;
 }
 
 .alpha-tauri-border {
-	border-image: linear-gradient(to bottom, $alpha-tauri, rgba(0, 0, 0, 0)) 1
-		100%;
+  border-image: linear-gradient(to bottom, $alpha-tauri, rgba(0, 0, 0, 0)) 1
+    100%;
 }
 
 .haas {
-	color: $haas !important;
+  color: $haas !important;
 }
 
 .haas-border {
-	border-image: linear-gradient(to bottom, $haas, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, $haas, rgba(0, 0, 0, 0)) 1 100%;
 }
 
 .alpine {
-	color: $alpine !important;
+  color: $alpine !important;
 }
 
 .alpine-border {
-	border-image: linear-gradient(to bottom, $alpine, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, $alpine, rgba(0, 0, 0, 0)) 1 100%;
 }
 
 .ferrari {
-	color: $ferrari !important;
+  color: $ferrari !important;
 }
 
 .ferrari-border {
-	border-image: linear-gradient(to bottom, $ferrari, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, $ferrari, rgba(0, 0, 0, 0)) 1 100%;
 }
 
 .williams {
-	color: $williams !important;
+  color: $williams !important;
 }
 
 .williams-border {
-	border-image: linear-gradient(to bottom, $williams, rgba(0, 0, 0, 0)) 1 100%;
+  border-image: linear-gradient(to bottom, $williams, rgba(0, 0, 0, 0)) 1 100%;
 }
 
 .aston-martin {
-	color: $aston-martin !important;
+  color: $aston-martin !important;
 }
 
 .aston-martin-border {
-	border-image: linear-gradient(to bottom, $aston-martin, rgba(0, 0, 0, 0)) 1
-		100%;
+  border-image: linear-gradient(to bottom, $aston-martin, rgba(0, 0, 0, 0)) 1
+    100%;
 }
 
 // Old Teams
 
 .brawn {
-	color: #dafd5c !important;
+  color: #dafd5c !important;
 }
 
 .lotus {
-	color: #ffb800 !important;
+  color: #ffb800 !important;
 }
 
 .renault {
-	color: #ffd800 !important;
+  color: #ffd800 !important;
 }
 
 .torro-rosso {
-	color: #0032ff !important;
+  color: #0032ff !important;
 }
 
 .sauber {
-	color: #9b0000 !important;
+  color: #9b0000 !important;
 }
 
 .racing-point {
-	color: #f596c8 !important;
+  color: #f596c8 !important;
 }
 
 .honda {
-	color: #cc0000 !important;
+  color: #cc0000 !important;
+}
+
+.brabham {
+  color: #d4af37 !important;
 }
 
 /* 
