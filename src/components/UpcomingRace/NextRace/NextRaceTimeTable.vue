@@ -72,7 +72,6 @@ export default {
     timeTableData: Object,
   },
   created() {
-    console.log('timeTableData', this.timeTableData)
   },
 }
 </script>

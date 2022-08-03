@@ -49,9 +49,7 @@ export default {
       imgFolder,
     }
   },
-  created() {
-    console.log('nextTrack', this.nextTrack)
-  },
+  created() {},
   mixins: [getImageMixin],
 }
 </script>

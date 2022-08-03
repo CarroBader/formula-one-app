@@ -54,7 +54,6 @@ export default new Vuex.Store({
       state.upcomingRace = upcomingRaceObj
     },
     SET_CURRENT_ROUND: (state, round) => {
-      console.log('SET_CURRENT_ROUND', round)
       state.currentRound = round
 
       state.allDataLoaded = true
@@ -76,7 +75,6 @@ export default new Vuex.Store({
 
       try {
         const response = await axios.get(`${baseUrl}/races`)
-        console.log(' Store - Fetching races from database')
 
         let races = response.data.data[0]['allRaces']
 
@@ -102,20 +100,14 @@ export default new Vuex.Store({
           return new Date(a.end_date) - new Date(b.end_date)
         })
 
-        console.log('sortedArray', sortedArray)
-
         commit('SET_RACES', sortedArray)
 
         // Get and Set Upcoming Race
         const upcomingRaceObj = sortedArray.find(
           (race) => Date.parse(race.end_date) >= todaysDate
         )
-        console.log('STORE SET_UPCOMING_RACE', upcomingRaceObj)
 
         commit('SET_UPCOMING_RACE', upcomingRaceObj)
-
-        // Get and Set Round
-        console.log('STORE SET_CURRENT_ROUND', upcomingRaceObj.round)
 
         commit('SET_CURRENT_ROUND', upcomingRaceObj.round)
       } catch (e) {
@@ -131,11 +123,9 @@ export default new Vuex.Store({
 
       try {
         const response = await axios.get(`${baseUrl}/drivers`)
-        console.log(' Store - Fetching drivers from database')
 
         drivers = response.data.data
 
-        console.log('Fetching drivers from database', drivers)
         commit('SET_DRIVERS', drivers)
       } catch (e) {
         console.error(e)
@@ -150,11 +140,9 @@ export default new Vuex.Store({
 
       try {
         const response = await axios.get(`${baseUrl}/constructors`)
-        console.log(' Store - Fetching constructors from database')
 
         constructors = response.data.data
 
-        console.log('Fetching constructors from database', constructors)
         commit('SET_CONSTRUCTORS', constructors)
       } catch (e) {
         console.error(e)

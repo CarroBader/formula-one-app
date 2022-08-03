@@ -84,7 +84,6 @@ export default {
 
     // Assign data by using veux datan
     this.nextRace = this.getNextRace(this.allRaces, this.currentRound)
-    console.log('nextRace', this.nextRace)
 
     this.nextRaceName = this.nextRace.name
     this.trackId = this.nextRace.track_id
@@ -94,12 +93,8 @@ export default {
     // Get data from database
 
     // Next Track
-    console.log('trackId', this.trackId)
-
     this.nextTrack = await this.getOneTrack(this.trackId)
-    console.log('nextTrack', this.nextTrack)
     this.trackData = this.nextTrack.data
-    console.log('trackData', this.trackData)
     this.trackDataLoaded = this.nextTrack.dataLoaded
 
     // Next Grand Prix

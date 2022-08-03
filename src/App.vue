@@ -50,31 +50,13 @@ export default {
     },
   },
   created() {
-    console.log('App - created')
-    console.log('Time', new Date())
-    console.log('App - allConfirmedRaces', this.allConfirmedRaces)
-    console.log('App - allDrivers', this.allDrivers)
-    console.log('App - allConstructors', this.allConstructors)
-
-    console.log('App - upcomingRace', this.upcomingRace)
-    console.log('App - currentRound', this.currentRound)
-    console.log('App - nextSession', this.nextSession)
-    console.log('App - allDataLoaded', this.allDataLoaded)
-    console.log(
-      'App ------------------------------------------ raceNav',
-      this.raceNav
-    )
-
     if (this.allConfirmedRaces && this.allConfirmedRaces.length > 0) return
-    console.log('App - No data getAllRaces yet')
     this.getAllRaces()
 
     if (this.allDrivers && this.allDrivers.length > 0) return
-    console.log('App - No data getAllDrivers yet')
     this.getAllDrivers()
 
     if (this.allConstructors && this.allConstructors.length > 0) return
-    console.log('App - No data getAllConstructors yet')
     this.getAllConstructors()
   },
   methods: {
