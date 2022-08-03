@@ -8,13 +8,16 @@
           :nextRaceName="nextRaceName"
           :qualifyingDataExists="qualifyingDataExists"
         />
+        <div class="noDataMessage" v-if="!qualifyingDataExists">
+          <p>Qualifying have been completed yet.</p>
+        </div>
       </div>
     </div>
   </b-container>
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 import QualifyingSession from '../../components/UpcomingRace/Qualifying/QualifyingSession.vue'
 
@@ -52,13 +55,8 @@ export default {
     this.nextRaceName = this.nextRace.name
 
     let qualifying = await this.getQualifying(this.nextRace.grand_prix_id)
+
     this.qualifyingData = qualifying.data
-
-    // this.getNextSessionIds()
-
-    // if (this.sessionIds && this.sessionIds.length > 0) {
-    //   this.qualifyingResponse = await this.getSessionById(this.sessionIds)
-    // }
     const qualifyingResultObj = this.createQualifyingResult()
     this.qualifyingResults = qualifyingResultObj.data
     this.qualifyingDataLoaded = qualifyingResultObj.dataLoaded

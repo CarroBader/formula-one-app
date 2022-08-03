@@ -3,9 +3,6 @@
     <div class="qualifying-session-headline-div">
       <h1 class="qualifying-session-headline">{{ this.nextRaceName }}</h1>
     </div>
-    <div class="noDataMessage" v-if="!qualifyingDataExists">
-      <p>Qualifying have been completed yet.</p>
-    </div>
     <b-card class="card-margin" v-if="qualifyingDataExists">
       <div class="scroll-table">
         <table>

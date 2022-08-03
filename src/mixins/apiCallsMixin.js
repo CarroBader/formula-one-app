@@ -249,7 +249,7 @@ export default {
           `${baseUrl}/${practice}/${grandPrixId}`
         )
 
-        if (response.length > 0) {
+        if (response.data.data != null) {
           return {
             data: response.data.data[practice],
             dataLoaded: true,
@@ -272,9 +272,16 @@ export default {
       try {
         const response = await axios.get(`${baseUrl}/qualifying/${grandPrixId}`)
 
-        return {
-          data: response.data.data['qualifying'],
-          dataLoaded: true,
+        if (response.data.data != null) {
+          return {
+            data: response.data.data['qualifying'],
+            dataLoaded: true,
+          }
+        } else {
+          return {
+            data: [],
+            dataLoaded: false,
+          }
         }
       } catch (e) {
         console.error(e)
