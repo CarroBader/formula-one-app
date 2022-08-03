@@ -5,24 +5,28 @@
     <h1 class="next-race-headline">{{ nextRaceName }}</h1>
     <b-row class="next-race-row">
       <b-col>
-        <NextRaceTimeTable
-          v-if="timeTableDataLoaded"
-          :timeTableData="timeTableData"
-        />
-
         <NextRaceCircuitInfo v-if="trackDataLoaded" :nextTrack="trackData" />
       </b-col>
+
       <b-col>
         <NextRaceGrandPrixInfo
           v-if="grandPrixDataLoaded"
           :nextGrandPrix="grandPrixData"
         />
-
         <NextRaceCountryFlag :country="nextRaceCountry" />
-        <b-row class="next-race-last-top">
-          <CircuitLastList :title="winnersTitle" :drivers="lastWinners" />
-          <CircuitLastList :title="polesTitle" :drivers="lastPoles" />
-        </b-row>
+
+        <NextRaceTimeTable
+          v-if="timeTableDataLoaded"
+          :timeTableData="timeTableData"
+        />
+      </b-col>
+    </b-row>
+    <b-row class="next-race-last-top">
+      <b-col>
+        <CircuitLastList :title="winnersTitle" :drivers="lastWinners" />
+      </b-col>
+      <b-col>
+        <CircuitLastList :title="polesTitle" :drivers="lastPoles" />
       </b-col>
     </b-row>
   </b-container>
@@ -101,8 +105,8 @@ export default {
     this.nextGrandPrix = await this.getOneGrandPrix(this.grandPrixId)
     this.grandPrixData = this.nextGrandPrix.data
     this.grandPrixDataLoaded = this.nextGrandPrix.dataLoaded
-    this.lastWinners = this.grandPrixData.winners.slice(0, 5)
-    this.lastPoles = this.grandPrixData.poles.slice(0, 5)
+    this.lastWinners = this.grandPrixData.winners.slice(-5).reverse()
+    this.lastPoles = this.grandPrixData.poles.slice(-5).reverse()
 
     // Time Table
     this.nextTimeTable = this.getTimeTableData()

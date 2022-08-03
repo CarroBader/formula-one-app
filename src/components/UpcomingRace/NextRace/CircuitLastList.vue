@@ -10,12 +10,19 @@
             <td class="circuit-last-list-td">
               <span class="circuit-last-list-year">{{ driver.year }}</span>
             </td>
-            <td class="circuit-last-list-td">
+            <td v-if="driver.winner" class="circuit-last-list-td">
               <span class="circuit-last-list-name">{{
                 driver.driver_name
               }}</span>
             </td>
-            <td class="circuit-last-list-td" v-if="driver.winner === 'true'">
+            <td v-else class="circuit-last-list-td">
+              <span
+                class="circuit-last-list-name"
+                :class="getConstructorColor(driver.team_id)"
+                >{{ driver.driver_name }}</span
+              >
+            </td>
+            <td v-if="driver.winner" class="circuit-last-list-td">
               <span
                 class="circuit-last-list-constructor"
                 :class="getConstructorColor(driver.team_id)"
@@ -25,7 +32,7 @@
             </td>
             <td v-else class="circuit-last-list-td">
               <span class="circuit-last-list-fastest-lap">
-                {{ driver.time }}
+                {{ driver.pole_time }}
               </span>
             </td>
           </tbody>

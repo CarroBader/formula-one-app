@@ -1,42 +1,42 @@
 .next-race-headline {
-	background: $headline-background;
-	border-radius: 8px;
-	border: $headline-border 2px solid;
-	padding: 0 0.3em 0.3em 0.3em;
-	display: -webkit-inline-box;
-	margin-top: 0.5em;
+  background: $headline-background;
+  border-radius: 8px;
+  border: $headline-border 2px solid;
+  padding: 0 0.3em 0.3em 0.3em;
+  display: -webkit-inline-box;
+  margin-top: 0.5em;
 
-	@include breakpoint(x-small) {
-		font-size: 1.4em;
-	}
-	@include breakpoint(medium) {
-		font-size: 1.6em;
-	}
-	@include breakpoint(large) {
-		font-size: 1.7em;
-	}
-	@include breakpoint(x-large) {
-		font-size: 1.9em;
-	}
-	@include breakpoint(xx-large) {
-		font-size: 2em;
-	}
+  @include breakpoint(x-small) {
+    font-size: 1.4em;
+  }
+  @include breakpoint(medium) {
+    font-size: 1.6em;
+  }
+  @include breakpoint(large) {
+    font-size: 1.7em;
+  }
+  @include breakpoint(x-large) {
+    font-size: 1.9em;
+  }
+  @include breakpoint(xx-large) {
+    font-size: 2em;
+  }
 }
 
 .next-race-last-top {
-	@include breakpoint(x-small) {
-		display: block;
-	}
-	@include breakpoint(xx-large) {
-		display: flex;
-	}
+  @include breakpoint(x-small) {
+    display: flex;
+  }
+  @include breakpoint(xx-large) {
+    display: flex;
+  }
 }
 
 .next-race-row {
-	@include breakpoint(x-small) {
-		margin-bottom: 3em;
-	}
-	@include breakpoint(medium) {
-		margin-bottom: 6em;
-	}
+  @include breakpoint(x-small) {
+    // margin-bottom: 3em;
+  }
+  @include breakpoint(medium) {
+    // margin-bottom: 6em;
+  }
 }

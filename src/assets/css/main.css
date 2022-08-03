@@ -1,21 +1,21 @@
 .default-background-center {
-	background-color: #121212;
-	text-align: center;
-	overflow: auto;
+  background-color: #121212;
+  text-align: center;
+  overflow: auto;
 }
 
 .card {
-	background-color: #161616;
-	box-shadow: rgb(0 0 0 / 35%) 0px 3px 9px;
-	margin-top: 1.5em;
+  background-color: #161616;
+  box-shadow: rgb(0 0 0 / 35%) 0px 3px 9px;
+  margin-top: 1.5em;
 }
 
 .view-container {
-	padding: 0;
+  padding: 0;
 }
 
 .modal-header .close {
-	display: none;
+  display: none;
 }
 
 /* Font and size */
@@ -25,114 +25,114 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Orbitron", "sans-serif";
-	color: #fff;
+  font-family: 'Orbitron', 'sans-serif';
+  color: #fff;
 }
 
 html {
-	font-size: 100%;
-	background-color: #121212;
+  font-size: 100%;
+  background-color: #121212;
 }
 
 p {
-	font-size: 1rem;
-	font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-	font-size: 2.4rem;
+  font-size: 2.4rem;
 }
 
 h2 {
-	font-size: 2rem;
+  font-size: 2rem;
 }
 
 h4 {
-	font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 /* NavBar */
 .nav-link {
-	color: #fff !important;
-	padding: 0;
-	font-family: "Orbitron", "sans-serif";
-	text-shadow: 2px 2px #000;
+  color: #fff !important;
+  padding: 0;
+  font-family: 'Orbitron', 'sans-serif';
+  text-shadow: 2px 2px #000;
 }
 
 .nav-tabs .nav-link {
-	border: none;
-	background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-	border-radius: 8px;
-	border: #ffffff7d 2px solid;
-	display: inline;
-	padding: 0 0.3em 0.3em 0.3em;
+  border: none;
+  background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+  border-radius: 8px;
+  border: #ffffff7d 2px solid;
+  display: inline;
+  padding: 0 0.3em 0.3em 0.3em;
 }
 
 .nav-tabs {
-	border: none;
+  border: none;
 }
 
 .nav {
-	display: -webkit-inline-box;
+  display: -webkit-inline-box;
 }
 
 .router-link-active {
-	background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-	border-radius: 8px;
-	border: #ffffff7d 2px solid;
+  background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+  border-radius: 8px;
+  border: #ffffff7d 2px solid;
 }
 
 /* Table */
 th {
-	font-family: "Orbitron", "sans-serif";
-	color: #fff;
+  font-family: 'Orbitron', 'sans-serif';
+  color: #fff;
 }
 
 tr {
-	border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 td {
-	font-family: "Orbitron", "sans-serif";
-	color: #fff;
+  font-family: 'Orbitron', 'sans-serif';
+  color: #fff;
 }
 
 .scroll-table {
-	overflow: hidden;
-	overflow-y: auto;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 /* Colors */
 .red {
-	color: #e10600 !important;
+  color: #e10600 !important;
 }
 
 .medium-red {
-	color: #c60500 !important;
+  color: #c60500 !important;
 }
 
 .dark-red {
-	color: #9f0000 !important;
+  color: #9f0000 !important;
 }
 
 .light-grey {
-	color: #d3d3d3 !important;
+  color: #d3d3d3 !important;
 }
 
 .medium-grey {
-	color: #c0c0c0 !important;
+  color: #c0c0c0 !important;
 }
 
 .dark-grey {
-	color: #a9a9a9 !important;
+  color: #a9a9a9 !important;
 }
 
 .extra-dark-grey {
-	color: #5f5555 !important;
+  color: #5f5555 !important;
 }
 
 .green {
-	color: #008000 !important;
+  color: #008000 !important;
 }
 
 /* MEDIA START*/
@@ -140,1416 +140,1416 @@ td {
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* X-Small devices (0px and up) */
 @media (min-width: 0px) {
-	.container {
-		max-width: 544px;
-	}
-
-	/*------------------------ NAVBARS ------------------------*/
-	/* Navbar */
-	.navbar {
-		padding: 0;
-	}
-
-	.navbar-toggler {
-		display: none;
-	}
-
-	.nav-link {
-		margin: 0 0.5em;
-	}
-
-	.nav-link-sub {
-		font-size: 0.65em;
-	}
-
-	.navbar-sub {
-		background-color: #232323;
-		padding: 2px 0;
-		margin-bottom: 1em;
-		justify-content: space-evenly;
-	}
-
-	.navbar-nav-sub {
-		flex-direction: row;
-	}
-
-	.router-link-active {
-		padding: 0 0.3em !important;
-	}
-
-	/* Navbar Top */
-	.nav-title-top {
-		font-size: 1.7rem;
-		padding: 0;
-	}
-
-	.nav-logo-top {
-		height: 2em;
-	}
-
-	.nav-link-top {
-		font-size: 0.9em;
-	}
-
-	.navbar-top {
-		justify-content: center;
-	}
-
-	/*------------------------ SWIPERNAV ------------------------*/
-	.swiper-nav-div {
-		width: 4em;
-	}
-
-	.swiper-nav-flag-img {
-		height: 0.9em;
-	}
-
-	.swiper-nav-info-text {
-		font-size: 0.55em;
-	}
-
-	/*------------------------ FOOTER ------------------------*/
-	.bot-nav {
-		display: block;
-	}
-
-	footer {
-		display: none;
-	}
-
-	/*------------------------ MAP ------------------------*/
-	.map {
-		position: fixed;
-		top: 3.4em;
-		left: 0;
-		bottom: 0;
-		right: 0;
-	}
-
-	/*------------------------ CARD ------------------------*/
-	.card-body {
-		padding: 0.5em 0.5em;
-	}
-
-	.card-margin {
-		margin: 1em 0 4em;
-	}
-
-	/*------------------------ GENERAL ------------------------*/
-	.scroll-table {
-		height: 700px;
-	}
-
-	/*------------------------ UPCOMING RACE ------------------------*/
-	/* ResultLastRace */
-	.result-last-race-headline {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		display: inline;
-		padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.1em;
-	}
-
-	.result-last-race-tr {
-		font-size: 0.8em;
-	}
-
-	.result-last-race-tbody {
-		font-size: 0.7em;
-	}
-
-	.result-last-race-td {
-		padding: 1em 0.3em;
-	}
-
-	.position-difference {
-		font-size: 0.7em;
-		padding-left: 0.3em;
-	}
-
-	/* NextRace  - View */
-	.next-race-headline {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		padding: 0 0.3em 0.3em 0.3em;
-		display: -webkit-inline-box;
-		margin-top: 0.5em;
-		font-size: 1.4em;
-	}
-
-	.next-race-last-top {
-		display: block;
-	}
-
-	.next-race-row {
-		margin-bottom: 3em;
-	}
-
-	/* NextRaceCircuitInfo */
-	.next-race-circuit-info-card-margin {
-		margin: 1.2em 0.5em;
-	}
-
-	.next-race-circuit-info-name {
-		font-size: 1em;
-	}
-
-	.next-race-circuit-info-location {
-		font-size: 0.9em;
-	}
-
-	.next-race-circuit-info-circuit-img {
-		margin: 1em 0;
-		max-width: 100%;
-		max-height: 100%;
-	}
-
-	.next-race-circuit-info-th {
-		text-align: initial;
-		padding: 0.5em 0 0 0.5em;
-		font-size: 0.7em;
-	}
-
-	.next-race-circuit-info-td {
-		text-align: end;
-		padding: 0.5em 0.5em 0;
-		font-size: 0.8em;
-	}
-
-	/* NextRaceTimeTable */
-	.next-race-time-table-td {
-		padding: 0.5em;
-	}
-
-	.next-race-time-table-card-margin {
-		margin: 1.2em 0.5em;
-	}
-
-	.next-race-time-table-title {
-		font-size: 1em;
-	}
-
-	.next-race-time-table-date {
-		font-size: 0.8em;
-	}
-
-	.next-race-time-table-event {
-		padding-right: 1em;
-		font-size: 0.7em;
-	}
-
-	.next-race-time-table-day {
-		padding-right: 1em;
-		color: #a9a9a9;
-		text-transform: uppercase;
-		font-size: 0.6em;
-	}
-
-	.next-race-time-table-time {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		padding: 0 0.3em 0.3em 0.3em;
-		display: -webkit-inline-box;
-		margin-top: 0.5em;
-		font-size: 0.7em;
-	}
-
-	.next-race-time-table-border {
-		border-top: 1px solid #fff !important;
-	}
-
-	/* CircuitLastList */
-	.circuit-last-list-div {
-		width: 100%;
-	}
-
-	.circuit-last-list-card-margin {
-		margin: 1.2em 0.5em;
-	}
-
-	.circuit-last-list-title {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		padding: 0 0.3em 0.3em 0.3em;
-		margin-top: 0.5em;
-		font-size: 0.85em;
-		width: fit-content;
-	}
-
-	.circuit-last-list-table-div {
-		display: flex;
-		display: -webkit-inline-box;
-		justify-content: center;
-		align-items: baseline;
-		text-align: -webkit-right;
-	}
-
-	.circuit-last-list-td {
-		padding: 0.5em;
-	}
-
-	.circuit-last-list-year {
-		font-size: 0.65em;
-	}
-
-	.circuit-last-list-name {
-		font-size: 0.7em;
-	}
-
-	.circuit-last-list-constructor {
-		font-size: 0.65em;
-	}
-
-	.circuit-last-list-fastest-lap {
-		font-size: 0.65em;
-	}
-
-	/* NextRaceCountryFlag */
-	.next-race-country-flag-div {
-		height: 3em;
-		margin-top: 1.5em;
-	}
-
-	/* PracticeSession  x-small */
-	.nav-tabs .nav-link {
-		font-size: 0.7em;
-	}
-
-	.practice-session-tr {
-		font-size: 0.8em;
-	}
-
-	.practice-session-tbody {
-		font-size: 0.7em;
-	}
-
-	.practice-session-td {
-		padding: 1em 0.3em;
-	}
-
-	.practice-session-seconds {
-		font-size: 0.7em;
-	}
-
-	.nav-link.active {
-		font-size: 0.9em;
-	}
-
-	/* QualifyingSession */
-	.qualifying-session-headline {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		display: inline;
-		padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.1em;
-	}
-
-	.qualifying-session-tr {
-		font-size: 0.8em;
-	}
-
-	.qualifying-session-tbody {
-		font-size: 0.7em;
-	}
-
-	.qualifying-session-td {
-		padding: 1em 0.3em;
-	}
-
-	.elimination-line {
-		border-bottom: 3px solid #fff !important;
-	}
-
-	/*------------------------ STANDINGS ------------------------*/
-	/* DriverTable */
-	.leader-driver-div {
-		margin: 0 0 1em 0;
-	}
-
-	.leader-driver-img {
-		height: 5em;
-		position: relative;
-		top: 0;
-		left: 0;
-	}
-
-	.leader-driver-info {
-		background-color: #e10600e6;
-		border-top: 2px solid #fff;
-		border-radius: 0 0 15px 15px;
-		padding: 0.2em;
-	}
-
-	.leader-driver-flag-img {
-		height: 0.6em;
-		width: 1.2em;
-	}
-
-	.leader-driver-points {
-		font-size: 0.8em;
-		-webkit-text-stroke-width: 0.5px;
-		-webkit-text-stroke-color: #000;
-		margin: 0.3em;
-	}
-
-	.leader-driver-name-team {
-		background-color: #000;
-		padding: 0.1em;
-		border-radius: 0 15px;
-		border: 1px solid #fff;
-		font-size: 0.7em;
-		margin: 0.3em;
-	}
-
-	.leader-driver-name {
-		word-spacing: 9999px;
-	}
-
-	.driver-table-headline {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		display: inline;
-		padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.1em;
-	}
-
-	.driver-table-tr {
-		font-size: 0.8em;
-	}
-
-	.driver-table-tbody {
-		font-size: 0.7em;
-	}
-
-	.driver-table-td {
-		padding: 1em 0.3em;
-	}
-
-	.driver-table-flag-img {
-		height: 1em;
-		width: 1.6em;
-	}
-
-	/* ConstructorTable */
-	.leader-constructor-div {
-		margin: 0 0 1em 0;
-	}
-
-	.leader-constructor-img {
-		height: 1.8em;
-	}
-
-	.leaders-constructor-info {
-		background-color: #e10600;
-		border-top: 2px solid #fff;
-		border-radius: 0 0 15px 15px;
-		padding: 0.2em;
-	}
-
-	.leader-constructor-flag-img {
-		height: 1em;
-		width: 1.7em;
-		border: 0.1px solid #ce0d0d;
-		margin: 0.2em 0;
-	}
-
-	.leader-constructor-points {
-		font-size: 0.8em;
-		-webkit-text-stroke-width: 0.7px;
-		-webkit-text-stroke-color: #000;
-		margin: 0.1em;
-	}
-
-	.leader-constructor-name-team {
-		background-color: #000;
-		padding: 0.2em;
-		border-radius: 0 15px;
-		/* -webkit-text-stroke-width: 0.9px;
+  .container {
+    max-width: 544px;
+  }
+
+  /*------------------------ NAVBARS ------------------------*/
+  /* Navbar */
+  .navbar {
+    padding: 0;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  .nav-link {
+    margin: 0 0.5em;
+  }
+
+  .nav-link-sub {
+    font-size: 0.65em;
+  }
+
+  .navbar-sub {
+    background-color: #232323;
+    padding: 2px 0;
+    margin-bottom: 1em;
+    justify-content: space-evenly;
+  }
+
+  .navbar-nav-sub {
+    flex-direction: row;
+  }
+
+  .router-link-active {
+    padding: 0 0.3em !important;
+  }
+
+  /* Navbar Top */
+  .nav-title-top {
+    font-size: 1.7rem;
+    padding: 0;
+  }
+
+  .nav-logo-top {
+    height: 2em;
+  }
+
+  .nav-link-top {
+    font-size: 0.9em;
+  }
+
+  .navbar-top {
+    justify-content: center;
+  }
+
+  /*------------------------ SWIPERNAV ------------------------*/
+  .swiper-nav-div {
+    width: 4em;
+  }
+
+  .swiper-nav-flag-img {
+    height: 0.9em;
+  }
+
+  .swiper-nav-info-text {
+    font-size: 0.55em;
+  }
+
+  /*------------------------ FOOTER ------------------------*/
+  .bot-nav {
+    display: block;
+  }
+
+  footer {
+    display: none;
+  }
+
+  /*------------------------ MAP ------------------------*/
+  .map {
+    position: fixed;
+    top: 3.4em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  /*------------------------ CARD ------------------------*/
+  .card-body {
+    padding: 0.5em 0.5em;
+  }
+
+  .card-margin {
+    margin: 1em 0 4em;
+  }
+
+  /*------------------------ GENERAL ------------------------*/
+  .scroll-table {
+    height: 700px;
+  }
+
+  /*------------------------ UPCOMING RACE ------------------------*/
+  /* ResultLastRace */
+  .result-last-race-headline {
+    background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+    border-radius: 8px;
+    border: #ffffff7d 2px solid;
+    display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
+    font-size: 1.1em;
+  }
+
+  .result-last-race-tr {
+    font-size: 0.8em;
+  }
+
+  .result-last-race-tbody {
+    font-size: 0.7em;
+  }
+
+  .result-last-race-td {
+    padding: 1em 0.3em;
+  }
+
+  .position-difference {
+    font-size: 0.7em;
+    padding-left: 0.3em;
+  }
+
+  /* NextRace  - View */
+  .next-race-headline {
+    background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+    border-radius: 8px;
+    border: #ffffff7d 2px solid;
+    padding: 0 0.3em 0.3em 0.3em;
+    display: -webkit-inline-box;
+    margin-top: 0.5em;
+    font-size: 1.4em;
+  }
+
+  .next-race-last-top {
+    display: block;
+  }
+
+  .next-race-row {
+    margin-bottom: 3em;
+  }
+
+  /* NextRaceCircuitInfo */
+  .next-race-circuit-info-card-margin {
+    margin: 1.2em 0.5em;
+  }
+
+  .next-race-circuit-info-name {
+    font-size: 1em;
+  }
+
+  .next-race-circuit-info-location {
+    font-size: 0.9em;
+  }
+
+  .next-race-circuit-info-circuit-img {
+    margin: 1em 0;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .next-race-circuit-info-th {
+    text-align: initial;
+    padding: 0.5em 0 0 0.5em;
+    font-size: 0.7em;
+  }
+
+  .next-race-circuit-info-td {
+    text-align: end;
+    padding: 0.5em 0.5em 0;
+    font-size: 0.8em;
+  }
+
+  /* NextRaceTimeTable */
+  .next-race-time-table-td {
+    padding: 0.5em;
+  }
+
+  .next-race-time-table-card-margin {
+    margin: 1.2em 0.5em;
+  }
+
+  .next-race-time-table-title {
+    font-size: 1em;
+  }
+
+  .next-race-time-table-date {
+    font-size: 0.8em;
+  }
+
+  .next-race-time-table-event {
+    padding-right: 1em;
+    font-size: 0.7em;
+  }
+
+  .next-race-time-table-day {
+    padding-right: 1em;
+    color: #a9a9a9;
+    text-transform: uppercase;
+    font-size: 0.6em;
+  }
+
+  .next-race-time-table-time {
+    background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+    border-radius: 8px;
+    border: #ffffff7d 2px solid;
+    padding: 0 0.3em 0.3em 0.3em;
+    display: -webkit-inline-box;
+    margin-top: 0.5em;
+    font-size: 0.7em;
+  }
+
+  .next-race-time-table-border {
+    border-top: 1px solid #fff !important;
+  }
+
+  /* CircuitLastList */
+  .circuit-last-list-div {
+    width: 100%;
+  }
+
+  .circuit-last-list-card-margin {
+    margin: 1.2em 0.5em;
+  }
+
+  .circuit-last-list-title {
+    background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+    border-radius: 8px;
+    border: #ffffff7d 2px solid;
+    padding: 0 0.3em 0.3em 0.3em;
+    margin-top: 0.5em;
+    font-size: 0.85em;
+    width: fit-content;
+  }
+
+  .circuit-last-list-table-div {
+    display: flex;
+    display: -webkit-inline-box;
+    justify-content: center;
+    align-items: baseline;
+    text-align: center;
+  }
+
+  .circuit-last-list-td {
+    padding: 0.5em;
+  }
+
+  .circuit-last-list-year {
+    font-size: 0.65em;
+  }
+
+  .circuit-last-list-name {
+    font-size: 0.7em;
+  }
+
+  .circuit-last-list-constructor {
+    font-size: 0.65em;
+  }
+
+  .circuit-last-list-fastest-lap {
+    font-size: 0.65em;
+  }
+
+  /* NextRaceCountryFlag */
+  .next-race-country-flag-div {
+    height: 3em;
+    margin-top: 1.5em;
+  }
+
+  /* PracticeSession  x-small */
+  .nav-tabs .nav-link {
+    font-size: 0.7em;
+  }
+
+  .practice-session-tr {
+    font-size: 0.8em;
+  }
+
+  .practice-session-tbody {
+    font-size: 0.7em;
+  }
+
+  .practice-session-td {
+    padding: 1em 0.3em;
+  }
+
+  .practice-session-seconds {
+    font-size: 0.7em;
+  }
+
+  .nav-link.active {
+    font-size: 0.9em;
+  }
+
+  /* QualifyingSession */
+  .qualifying-session-headline {
+    background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+    border-radius: 8px;
+    border: #ffffff7d 2px solid;
+    display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
+    font-size: 1.1em;
+  }
+
+  .qualifying-session-tr {
+    font-size: 0.8em;
+  }
+
+  .qualifying-session-tbody {
+    font-size: 0.7em;
+  }
+
+  .qualifying-session-td {
+    padding: 1em 0.3em;
+  }
+
+  .elimination-line {
+    border-bottom: 3px solid #fff !important;
+  }
+
+  /*------------------------ STANDINGS ------------------------*/
+  /* DriverTable */
+  .leader-driver-div {
+    margin: 0 0 1em 0;
+  }
+
+  .leader-driver-img {
+    height: 5em;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .leader-driver-info {
+    background-color: #e10600e6;
+    border-top: 2px solid #fff;
+    border-radius: 0 0 15px 15px;
+    padding: 0.2em;
+  }
+
+  .leader-driver-flag-img {
+    height: 0.6em;
+    width: 1.2em;
+  }
+
+  .leader-driver-points {
+    font-size: 0.8em;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+    margin: 0.3em;
+  }
+
+  .leader-driver-name-team {
+    background-color: #000;
+    padding: 0.1em;
+    border-radius: 0 15px;
+    border: 1px solid #fff;
+    font-size: 0.7em;
+    margin: 0.3em;
+  }
+
+  .leader-driver-name {
+    word-spacing: 9999px;
+  }
+
+  .driver-table-headline {
+    background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+    border-radius: 8px;
+    border: #ffffff7d 2px solid;
+    display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
+    font-size: 1.1em;
+  }
+
+  .driver-table-tr {
+    font-size: 0.8em;
+  }
+
+  .driver-table-tbody {
+    font-size: 0.7em;
+  }
+
+  .driver-table-td {
+    padding: 1em 0.3em;
+  }
+
+  .driver-table-flag-img {
+    height: 1em;
+    width: 1.6em;
+  }
+
+  /* ConstructorTable */
+  .leader-constructor-div {
+    margin: 0 0 1em 0;
+  }
+
+  .leader-constructor-img {
+    height: 1.8em;
+  }
+
+  .leaders-constructor-info {
+    background-color: #e10600;
+    border-top: 2px solid #fff;
+    border-radius: 0 0 15px 15px;
+    padding: 0.2em;
+  }
+
+  .leader-constructor-flag-img {
+    height: 1em;
+    width: 1.7em;
+    border: 0.1px solid #ce0d0d;
+    margin: 0.2em 0;
+  }
+
+  .leader-constructor-points {
+    font-size: 0.8em;
+    -webkit-text-stroke-width: 0.7px;
+    -webkit-text-stroke-color: #000;
+    margin: 0.1em;
+  }
+
+  .leader-constructor-name-team {
+    background-color: #000;
+    padding: 0.2em;
+    border-radius: 0 15px;
+    /* -webkit-text-stroke-width: 0.9px;
 		-webkit-text-stroke-color: black; */
-		border: 1px solid #fff;
-		font-size: 0.7em;
-		margin: 0.3em;
-	}
+    border: 1px solid #fff;
+    font-size: 0.7em;
+    margin: 0.3em;
+  }
 
-	.constructor-table-headline {
-		background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
-		border-radius: 8px;
-		border: #ffffff7d 2px solid;
-		display: inline;
-		padding: 0 0.3em 0.3em 0.3em;
-		font-size: 1.1em;
-	}
+  .constructor-table-headline {
+    background: linear-gradient(180deg, #3a3a3a 50%, #000 50%);
+    border-radius: 8px;
+    border: #ffffff7d 2px solid;
+    display: inline;
+    padding: 0 0.3em 0.3em 0.3em;
+    font-size: 1.1em;
+  }
 
-	.constructor-table-tr {
-		font-size: 0.8em;
-	}
+  .constructor-table-tr {
+    font-size: 0.8em;
+  }
 
-	.constructor-table-tbody {
-		font-size: 0.7em;
-	}
+  .constructor-table-tbody {
+    font-size: 0.7em;
+  }
 
-	.constructor-table-td {
-		padding: 1em 0.3em;
-	}
+  .constructor-table-td {
+    padding: 1em 0.3em;
+  }
 
-	.constructor-table-flag-img {
-		height: 2.8em;
-		width: 2.3em;
-	}
+  .constructor-table-flag-img {
+    height: 2.8em;
+    width: 2.3em;
+  }
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Small devices (landscape phones, 544px and up) */
 @media (min-width: 544px) {
-	.container {
-		max-width: 768px;
-	}
-
-	/*------------------------ NAVBARS ------------------------*/
-	/* Navbar */
-	.navbar-toggler {
-		display: revert;
-	}
-
-	.nav-link-sub {
-		font-size: 0.8em;
-	}
-
-	/* Navbar Top */
-	.nav-title-top {
-		font-size: 2rem;
-	}
-	.nav-logo-top {
-		height: 2.3em;
-	}
-
-	.navbar-top {
-		justify-content: start;
-	}
-
-	.navbar-nav-top {
-		width: 30%;
-	}
-
-	.nav-collapse-top {
-		text-align: -webkit-center;
-	}
-
-	/*------------------------ SWIPERNAV ------------------------*/
-	.swiper-nav-div {
-		width: 5.5em;
-	}
-
-	.swiper-nav-flag-img {
-		height: 1.1em;
-	}
-
-	.swiper-nav-info-text {
-		font-size: 0.7em;
-	}
-
-	/*------------------------ FOOTER ------------------------*/
-	.bot-nav {
-		display: none !important;
-	}
-
-	footer {
-		display: revert;
-	}
-
-	/*------------------------ MAP ------------------------*/
-	.map {
-		top: 4.1em;
-	}
-
-	/*------------------------ GENERAL ------------------------*/
-	.scroll-table {
-		height: auto;
-	}
-
-	.card-margin {
-		margin: 2em 0 6em;
-	}
-
-	/*------------------------ UPCOMING RACE ------------------------*/
-	/* NextRace - View */
-	.next-race-headline {
-		font-size: 1.6em;
-	}
-
-	.next-race-row {
-		margin-bottom: 6em;
-	}
-
-	/* ResultLastRace */
-	.result-last-race-headline {
-		font-size: 1.2em;
-	}
-
-	.result-last-race-tr {
-		font-size: 0.9em;
-	}
-
-	.result-last-race-tbody {
-		font-size: 0.8em;
-	}
-
-	.result-last-race-td {
-		padding: 1em;
-	}
-
-	.position-difference {
-		font-size: 0.8em;
-		padding-left: 0.4em;
-	}
-
-	.result-last-race-flag-img {
-		height: 1em;
-		width: 1.6em;
-	}
-
-	/* NextRaceCircuitInfo */
-	.next-race-circuit-info-card-margin {
-		margin: 1.2em 0.2em;
-	}
-
-	.next-race-circuit-info-name {
-		font-size: 1.1em;
-	}
-
-	.next-race-circuit-info-location {
-		font-size: 1em;
-	}
-
-	.next-race-circuit-info-th {
-		font-size: 0.75em;
-	}
-
-	.next-race-circuit-info-td {
-		font-size: 0.85em;
-	}
-
-	/* NextRaceTimeTable */
-	.next-race-time-table-card-margin {
-		margin: 1.2em 0.2em;
-	}
-
-	.next-race-time-table-title {
-		font-size: 1.1em;
-	}
-
-	.next-race-time-table-event {
-		font-size: 0.75em;
-	}
-
-	.next-race-time-table-day {
-		font-size: 0.65em;
-	}
-
-	.next-race-time-table-time {
-		font-size: 0.75em;
-	}
-
-	.next-race-time-table-col-left {
-		border-right: 1px solid #fff;
-	}
-
-	/* CircuitLastList */
-	.circuit-last-list-card-margin {
-		margin: 1.2em 0.2em;
-	}
-
-	.circuit-last-list-title {
-		font-size: 0.9em;
-	}
-
-	.circuit-last-list-year {
-		font-size: 0.7em;
-	}
-
-	.circuit-last-list-name {
-		font-size: 0.75em;
-	}
-
-	.circuit-last-list-constructor {
-		font-size: 0.7em;
-	}
-
-	.circuit-last-list-fastest-lap {
-		font-size: 0.7em;
-	}
-
-	/* PracticeSession  Small */
-	.nav-tabs .nav-link {
-		font-size: 0.8em;
-	}
-
-	.practice-session-tr {
-		font-size: 0.9em;
-	}
-
-	.practice-session-tbody {
-		font-size: 0.8em;
-	}
-
-	.practice-session-td {
-		padding: 1em 1.3em;
-	}
-
-	.practice-session-seconds {
-		font-size: 0.8em;
-	}
-
-	.nav-link.active {
-		font-size: 1em;
-	}
-
-	/* QualifyingSession */
-	.qualifying-session-headline {
-		font-size: 1.2em;
-	}
-
-	.qualifying-session-tr {
-		font-size: 0.9em;
-	}
-
-	.qualifying-session-tbody {
-		font-size: 0.8em;
-	}
-
-	.qualifying-session-td {
-		padding: 1em 0.8em;
-	}
-
-	/*------------------------ STANDINGS ------------------------*/
-	/* DriverTable */
-	.leader-driver-div {
-		margin: 0 0 2em 0;
-	}
-
-	.leader-driver-img {
-		height: 7em;
-	}
-
-	.leader-driver-info {
-		border-top: 3px solid #fff;
-		width: 9em;
-	}
-
-	.leader-driver-flag-img {
-		height: 1em;
-		width: 1.6em;
-	}
-
-	.leader-driver-points {
-		font-size: 0.9em;
-		-webkit-text-stroke-width: 0.8px;
-		margin: 0 0 8px 0;
-	}
-
-	.leader-driver-name-team {
-		padding: 0.2em;
-		font-size: 0.8em;
-		margin: 0 0 8px 0;
-	}
-
-	.leader-driver-name {
-		word-spacing: 5px;
-	}
-
-	.driver-table-headline {
-		font-size: 1.3em;
-	}
-
-	.driver-table-tr {
-		font-size: 0.9em;
-	}
-
-	.driver-table-tbody {
-		font-size: 0.8em;
-	}
-
-	.driver-table-td {
-		padding: 1em;
-	}
-
-	.driver-table-flag-img {
-		height: 1.2em;
-		width: 1.8em;
-	}
-
-	/* ConstructorTable */
-	.leader-constructor-div {
-		margin: 0 0 2em 0;
-	}
-
-	.leader-constructor-img {
-		height: 3em;
-	}
-
-	.leader-constructor-flag-img {
-		height: 1.2em;
-		width: 1.9em;
-	}
-
-	.leaders-constructor-info {
-		border-top: 3px solid #fff;
-		width: 8em;
-		margin-left: 2em;
-	}
-
-	.leader-constructor-points {
-		font-size: 0.9em;
-		-webkit-text-stroke-width: 0.8px;
-	}
-
-	.leader-constructor-name-team {
-		font-size: 0.8em;
-	}
-
-	.constructor-table-headline {
-		font-size: 1.3em;
-	}
-
-	.constructor-table-tr {
-		font-size: 0.9em;
-	}
-
-	.constructor-table-tbody {
-		font-size: 0.8em;
-	}
-
-	.constructor-table-flag-img {
-		height: 3em;
-		width: 2.5em;
-	}
+  .container {
+    max-width: 768px;
+  }
+
+  /*------------------------ NAVBARS ------------------------*/
+  /* Navbar */
+  .navbar-toggler {
+    display: revert;
+  }
+
+  .nav-link-sub {
+    font-size: 0.8em;
+  }
+
+  /* Navbar Top */
+  .nav-title-top {
+    font-size: 2rem;
+  }
+  .nav-logo-top {
+    height: 2.3em;
+  }
+
+  .navbar-top {
+    justify-content: start;
+  }
+
+  .navbar-nav-top {
+    width: 30%;
+  }
+
+  .nav-collapse-top {
+    text-align: -webkit-center;
+  }
+
+  /*------------------------ SWIPERNAV ------------------------*/
+  .swiper-nav-div {
+    width: 5.5em;
+  }
+
+  .swiper-nav-flag-img {
+    height: 1.1em;
+  }
+
+  .swiper-nav-info-text {
+    font-size: 0.7em;
+  }
+
+  /*------------------------ FOOTER ------------------------*/
+  .bot-nav {
+    display: none !important;
+  }
+
+  footer {
+    display: revert;
+  }
+
+  /*------------------------ MAP ------------------------*/
+  .map {
+    top: 4.1em;
+  }
+
+  /*------------------------ GENERAL ------------------------*/
+  .scroll-table {
+    height: auto;
+  }
+
+  .card-margin {
+    margin: 2em 0 6em;
+  }
+
+  /*------------------------ UPCOMING RACE ------------------------*/
+  /* NextRace - View */
+  .next-race-headline {
+    font-size: 1.6em;
+  }
+
+  .next-race-row {
+    margin-bottom: 6em;
+  }
+
+  /* ResultLastRace */
+  .result-last-race-headline {
+    font-size: 1.2em;
+  }
+
+  .result-last-race-tr {
+    font-size: 0.9em;
+  }
+
+  .result-last-race-tbody {
+    font-size: 0.8em;
+  }
+
+  .result-last-race-td {
+    padding: 1em;
+  }
+
+  .position-difference {
+    font-size: 0.8em;
+    padding-left: 0.4em;
+  }
+
+  .result-last-race-flag-img {
+    height: 1em;
+    width: 1.6em;
+  }
+
+  /* NextRaceCircuitInfo */
+  .next-race-circuit-info-card-margin {
+    margin: 1.2em 0.2em;
+  }
+
+  .next-race-circuit-info-name {
+    font-size: 1.1em;
+  }
+
+  .next-race-circuit-info-location {
+    font-size: 1em;
+  }
+
+  .next-race-circuit-info-th {
+    font-size: 0.75em;
+  }
+
+  .next-race-circuit-info-td {
+    font-size: 0.85em;
+  }
+
+  /* NextRaceTimeTable */
+  .next-race-time-table-card-margin {
+    margin: 1.2em 0.2em;
+  }
+
+  .next-race-time-table-title {
+    font-size: 1.1em;
+  }
+
+  .next-race-time-table-event {
+    font-size: 0.75em;
+  }
+
+  .next-race-time-table-day {
+    font-size: 0.65em;
+  }
+
+  .next-race-time-table-time {
+    font-size: 0.75em;
+  }
+
+  .next-race-time-table-col-left {
+    border-right: 1px solid #fff;
+  }
+
+  /* CircuitLastList */
+  .circuit-last-list-card-margin {
+    margin: 1.2em 0.2em;
+  }
+
+  .circuit-last-list-title {
+    font-size: 0.9em;
+  }
+
+  .circuit-last-list-year {
+    font-size: 0.7em;
+  }
+
+  .circuit-last-list-name {
+    font-size: 0.75em;
+  }
+
+  .circuit-last-list-constructor {
+    font-size: 0.7em;
+  }
+
+  .circuit-last-list-fastest-lap {
+    font-size: 0.7em;
+  }
+
+  /* PracticeSession  Small */
+  .nav-tabs .nav-link {
+    font-size: 0.8em;
+  }
+
+  .practice-session-tr {
+    font-size: 0.9em;
+  }
+
+  .practice-session-tbody {
+    font-size: 0.8em;
+  }
+
+  .practice-session-td {
+    padding: 1em 1.3em;
+  }
+
+  .practice-session-seconds {
+    font-size: 0.8em;
+  }
+
+  .nav-link.active {
+    font-size: 1em;
+  }
+
+  /* QualifyingSession */
+  .qualifying-session-headline {
+    font-size: 1.2em;
+  }
+
+  .qualifying-session-tr {
+    font-size: 0.9em;
+  }
+
+  .qualifying-session-tbody {
+    font-size: 0.8em;
+  }
+
+  .qualifying-session-td {
+    padding: 1em 0.8em;
+  }
+
+  /*------------------------ STANDINGS ------------------------*/
+  /* DriverTable */
+  .leader-driver-div {
+    margin: 0 0 2em 0;
+  }
+
+  .leader-driver-img {
+    height: 7em;
+  }
+
+  .leader-driver-info {
+    border-top: 3px solid #fff;
+    width: 9em;
+  }
+
+  .leader-driver-flag-img {
+    height: 1em;
+    width: 1.6em;
+  }
+
+  .leader-driver-points {
+    font-size: 0.9em;
+    -webkit-text-stroke-width: 0.8px;
+    margin: 0 0 8px 0;
+  }
+
+  .leader-driver-name-team {
+    padding: 0.2em;
+    font-size: 0.8em;
+    margin: 0 0 8px 0;
+  }
+
+  .leader-driver-name {
+    word-spacing: 5px;
+  }
+
+  .driver-table-headline {
+    font-size: 1.3em;
+  }
+
+  .driver-table-tr {
+    font-size: 0.9em;
+  }
+
+  .driver-table-tbody {
+    font-size: 0.8em;
+  }
+
+  .driver-table-td {
+    padding: 1em;
+  }
+
+  .driver-table-flag-img {
+    height: 1.2em;
+    width: 1.8em;
+  }
+
+  /* ConstructorTable */
+  .leader-constructor-div {
+    margin: 0 0 2em 0;
+  }
+
+  .leader-constructor-img {
+    height: 3em;
+  }
+
+  .leader-constructor-flag-img {
+    height: 1.2em;
+    width: 1.9em;
+  }
+
+  .leaders-constructor-info {
+    border-top: 3px solid #fff;
+    width: 8em;
+    margin-left: 2em;
+  }
+
+  .leader-constructor-points {
+    font-size: 0.9em;
+    -webkit-text-stroke-width: 0.8px;
+  }
+
+  .leader-constructor-name-team {
+    font-size: 0.8em;
+  }
+
+  .constructor-table-headline {
+    font-size: 1.3em;
+  }
+
+  .constructor-table-tr {
+    font-size: 0.9em;
+  }
+
+  .constructor-table-tbody {
+    font-size: 0.8em;
+  }
+
+  .constructor-table-flag-img {
+    height: 3em;
+    width: 2.5em;
+  }
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {
-	.container {
-		max-width: 992px;
-	}
+  .container {
+    max-width: 992px;
+  }
 
-	/*------------------------ NAVBARS ------------------------*/
-	/* Navbar */
-	.navbar-toggler {
-		display: none;
-	}
+  /*------------------------ NAVBARS ------------------------*/
+  /* Navbar */
+  .navbar-toggler {
+    display: none;
+  }
 
-	.nav-link-sub {
-		font-size: 0.9em;
-	}
+  .nav-link-sub {
+    font-size: 0.9em;
+  }
 
-	.navbar-sub {
-		justify-content: start;
-	}
+  .navbar-sub {
+    justify-content: start;
+  }
 
-	/* Navbar Top */
-	.nav-title-top {
-		font-size: 2.1rem;
-	}
+  /* Navbar Top */
+  .nav-title-top {
+    font-size: 2.1rem;
+  }
 
-	.nav-logo-top {
-		height: 2.4em;
-	}
+  .nav-logo-top {
+    height: 2.4em;
+  }
 
-	.nav-link-top {
-		font-size: 1em;
-	}
+  .nav-link-top {
+    font-size: 1em;
+  }
 
-	.navbar-nav-top {
-		width: revert;
-	}
+  .navbar-nav-top {
+    width: revert;
+  }
 
-	.nav-collapse-top {
-		text-align: revert;
-	}
+  .nav-collapse-top {
+    text-align: revert;
+  }
 
-	/*------------------------ SWIPERNAV ------------------------*/
-	.swiper-nav-div {
-		width: 6em;
-	}
+  /*------------------------ SWIPERNAV ------------------------*/
+  .swiper-nav-div {
+    width: 6em;
+  }
 
-	.swiper-nav-flag-img {
-		height: 1.3em;
-	}
+  .swiper-nav-flag-img {
+    height: 1.3em;
+  }
 
-	.swiper-nav-info-text {
-		font-size: 0.8em;
-	}
+  .swiper-nav-info-text {
+    font-size: 0.8em;
+  }
 
-	/*------------------------ MAP ------------------------*/
-	.map {
-		top: 4.25em;
-	}
+  /*------------------------ MAP ------------------------*/
+  .map {
+    top: 4.25em;
+  }
 
-	/*------------------------ UPCOMING RACE ------------------------*/
-	/* NextRace - View */
-	.next-race-headline {
-		font-size: 1.7em;
-	}
+  /*------------------------ UPCOMING RACE ------------------------*/
+  /* NextRace - View */
+  .next-race-headline {
+    font-size: 1.7em;
+  }
 
-	/* ResultLastRace */
-	.result-last-race-headline {
-		font-size: 1.4em;
-	}
+  /* ResultLastRace */
+  .result-last-race-headline {
+    font-size: 1.4em;
+  }
 
-	.result-last-race-tr {
-		font-size: 0.95em;
-	}
+  .result-last-race-tr {
+    font-size: 0.95em;
+  }
 
-	.result-last-race-tbody {
-		font-size: 0.9em;
-	}
+  .result-last-race-tbody {
+    font-size: 0.9em;
+  }
 
-	.result-last-race-td {
-		padding: 1em 1.5em;
-	}
+  .result-last-race-td {
+    padding: 1em 1.5em;
+  }
 
-	.result-last-race-flag-img {
-		height: 1.1em;
-		width: 1.7em;
-	}
+  .result-last-race-flag-img {
+    height: 1.1em;
+    width: 1.7em;
+  }
 
-	/* NextRaceCircuitInfo */
-	.next-race-circuit-info-card-margin {
-		margin: 1.2em 0.5em;
-	}
+  /* NextRaceCircuitInfo */
+  .next-race-circuit-info-card-margin {
+    margin: 1.2em 0.5em;
+  }
 
-	.next-race-circuit-info-name {
-		font-size: 1.2em;
-	}
+  .next-race-circuit-info-name {
+    font-size: 1.2em;
+  }
 
-	.next-race-circuit-info-location {
-		font-size: 1.1em;
-	}
+  .next-race-circuit-info-location {
+    font-size: 1.1em;
+  }
 
-	.next-race-circuit-info-th {
-		font-size: 0.8em;
-	}
+  .next-race-circuit-info-th {
+    font-size: 0.8em;
+  }
 
-	.next-race-circuit-info-td {
-		font-size: 0.9em;
-	}
+  .next-race-circuit-info-td {
+    font-size: 0.9em;
+  }
 
-	/* NextRaceTimeTable */
-	.next-race-time-table-td {
-		padding: 0.2em 0.5em;
-	}
+  /* NextRaceTimeTable */
+  .next-race-time-table-td {
+    padding: 0.2em 0.5em;
+  }
 
-	.next-race-time-table-card-margin {
-		margin: 1.2em 0.5em;
-	}
+  .next-race-time-table-card-margin {
+    margin: 1.2em 0.5em;
+  }
 
-	.next-race-time-table-title {
-		font-size: 1.2em;
-	}
+  .next-race-time-table-title {
+    font-size: 1.2em;
+  }
 
-	.next-race-time-table-date {
-		font-size: 1em;
-	}
+  .next-race-time-table-date {
+    font-size: 1em;
+  }
 
-	.next-race-time-table-event {
-		font-size: 0.8em;
-	}
+  .next-race-time-table-event {
+    font-size: 0.8em;
+  }
 
-	.next-race-time-table-day {
-		font-size: 0.7em;
-	}
+  .next-race-time-table-day {
+    font-size: 0.7em;
+  }
 
-	.next-race-time-table-time {
-		font-size: 0.8em;
-	}
+  .next-race-time-table-time {
+    font-size: 0.8em;
+  }
 
-	.next-race-time-table-border {
-		border-bottom: 1px solid #fff;
-	}
+  .next-race-time-table-border {
+    border-bottom: 1px solid #fff;
+  }
 
-	.next-race-time-table-col-left {
-		border: none;
-	}
+  .next-race-time-table-col-left {
+    border: none;
+  }
 
-	/* CircuitLastList */
-	.circuit-last-list-div {
-		width: 100%;
-	}
+  /* CircuitLastList */
+  .circuit-last-list-div {
+    width: 100%;
+  }
 
-	.circuit-last-list-card-margin {
-		margin: 1.2em 0.5em;
-	}
+  .circuit-last-list-card-margin {
+    margin: 1.2em 0.5em;
+  }
 
-	.circuit-last-list-title {
-		font-size: 0.95em;
-	}
+  .circuit-last-list-title {
+    font-size: 0.95em;
+  }
 
-	.circuit-last-list-year {
-		font-size: 0.75em;
-	}
+  .circuit-last-list-year {
+    font-size: 0.75em;
+  }
 
-	.circuit-last-list-name {
-		font-size: 0.8em;
-	}
+  .circuit-last-list-name {
+    font-size: 0.8em;
+  }
 
-	.circuit-last-list-constructor {
-		font-size: 0.75em;
-	}
+  .circuit-last-list-constructor {
+    font-size: 0.75em;
+  }
 
-	.circuit-last-list-fastest-lap {
-		font-size: 0.75em;
-	}
+  .circuit-last-list-fastest-lap {
+    font-size: 0.75em;
+  }
 
-	/* NextRaceCountryFlag */
-	/* .next-race-country-flag-div {
+  /* NextRaceCountryFlag */
+  /* .next-race-country-flag-div {
 		height: 3em;
 	} */
 
-	/* PracticeSession  Medium */
-	.nav-tabs .nav-link {
-		font-size: 0.9em;
-	}
+  /* PracticeSession  Medium */
+  .nav-tabs .nav-link {
+    font-size: 0.9em;
+  }
 
-	.practice-session-tr {
-		font-size: 0.95em;
-	}
+  .practice-session-tr {
+    font-size: 0.95em;
+  }
 
-	.practice-session-tbody {
-		font-size: 0.9em;
-	}
+  .practice-session-tbody {
+    font-size: 0.9em;
+  }
 
-	.practice-session-td {
-		padding: 1em 2em;
-	}
+  .practice-session-td {
+    padding: 1em 2em;
+  }
 
-	.practice-session-seconds {
-		font-size: 0.7em;
-	}
+  .practice-session-seconds {
+    font-size: 0.7em;
+  }
 
-	.nav-link.active {
-		font-size: 1.1em;
-	}
+  .nav-link.active {
+    font-size: 1.1em;
+  }
 
-	/* QualifyingSession */
-	.qualifying-session-headline {
-		font-size: 1.4em;
-	}
+  /* QualifyingSession */
+  .qualifying-session-headline {
+    font-size: 1.4em;
+  }
 
-	.qualifying-session-tr {
-		font-size: 0.95em;
-	}
+  .qualifying-session-tr {
+    font-size: 0.95em;
+  }
 
-	.qualifying-session-tbody {
-		font-size: 0.9em;
-	}
+  .qualifying-session-tbody {
+    font-size: 0.9em;
+  }
 
-	.qualifying-session-td {
-		padding: 1em 1.5em;
-	}
+  .qualifying-session-td {
+    padding: 1em 1.5em;
+  }
 
-	.elimination-line {
-		border-bottom: 5px solid #fff !important;
-	}
+  .elimination-line {
+    border-bottom: 5px solid #fff !important;
+  }
 
-	/*------------------------ STANDINGS ------------------------*/
-	/* DriverTable */
-	.leader-driver-img {
-		height: 9em;
-	}
+  /*------------------------ STANDINGS ------------------------*/
+  /* DriverTable */
+  .leader-driver-img {
+    height: 9em;
+  }
 
-	.leader-driver-info {
-		border-top: 4px solid #fff;
-		width: 10em;
-		margin: 0 1em;
-	}
+  .leader-driver-info {
+    border-top: 4px solid #fff;
+    width: 10em;
+    margin: 0 1em;
+  }
 
-	.leader-driver-flag-img {
-		height: 1.2em;
-		width: 2em;
-	}
+  .leader-driver-flag-img {
+    height: 1.2em;
+    width: 2em;
+  }
 
-	.leader-driver-points {
-		font-size: 1.1em;
-		-webkit-text-stroke-width: 1px;
-	}
+  .leader-driver-points {
+    font-size: 1.1em;
+    -webkit-text-stroke-width: 1px;
+  }
 
-	.leader-driver-name-team {
-		font-size: 0.9em;
-	}
+  .leader-driver-name-team {
+    font-size: 0.9em;
+  }
 
-	.driver-table-headline {
-		font-size: 1.5em;
-	}
+  .driver-table-headline {
+    font-size: 1.5em;
+  }
 
-	.driver-table-tr {
-		font-size: 0.95em;
-	}
+  .driver-table-tr {
+    font-size: 0.95em;
+  }
 
-	.driver-table-tbody {
-		font-size: 0.9em;
-	}
+  .driver-table-tbody {
+    font-size: 0.9em;
+  }
 
-	.driver-table-td {
-		padding: 1em 2em;
-	}
+  .driver-table-td {
+    padding: 1em 2em;
+  }
 
-	.driver-table-flag-img {
-		height: 1.1em;
-		width: 1.7em;
-	}
+  .driver-table-flag-img {
+    height: 1.1em;
+    width: 1.7em;
+  }
 
-	/* ConstructorTable */
-	.leader-constructor-img {
-		height: 4em;
-	}
+  /* ConstructorTable */
+  .leader-constructor-img {
+    height: 4em;
+  }
 
-	.leader-constructor-flag-img {
-		height: 1.4em;
-		width: 2.1em;
-	}
+  .leader-constructor-flag-img {
+    height: 1.4em;
+    width: 2.1em;
+  }
 
-	.leaders-constructor-info {
-		border-top: 4px solid #fff;
-		width: 9em;
-		margin-left: 2em;
-	}
+  .leaders-constructor-info {
+    border-top: 4px solid #fff;
+    width: 9em;
+    margin-left: 2em;
+  }
 
-	.leader-constructor-points {
-		font-size: 1.1em;
-		-webkit-text-stroke-width: 1px;
-	}
+  .leader-constructor-points {
+    font-size: 1.1em;
+    -webkit-text-stroke-width: 1px;
+  }
 
-	.leader-constructor-name-team {
-		font-size: 0.9em;
-	}
+  .leader-constructor-name-team {
+    font-size: 0.9em;
+  }
 
-	.constructor-table-headline {
-		font-size: 1.5em;
-	}
+  .constructor-table-headline {
+    font-size: 1.5em;
+  }
 
-	.constructor-table-tr {
-		font-size: 0.95em;
-	}
+  .constructor-table-tr {
+    font-size: 0.95em;
+  }
 
-	.constructor-table-tbody {
-		font-size: 0.9em;
-	}
+  .constructor-table-tbody {
+    font-size: 0.9em;
+  }
 
-	.constructor-table-td {
-		padding: 1em 1.5em;
-	}
+  .constructor-table-td {
+    padding: 1em 1.5em;
+  }
 
-	.constructor-table-flag-img {
-		height: 3.2em;
-		width: 2.7em;
-	}
+  .constructor-table-flag-img {
+    height: 3.2em;
+    width: 2.7em;
+  }
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	.container {
-		max-width: 1200px;
-	}
-
-	/*------------------------ NAVBARS ------------------------*/
-	/* Navbar */
-	.nav-link-sub {
-		font-size: 1em;
-	}
-
-	/* Navbar Top */
-	.nav-link-top {
-		font-size: 1.1em;
-	}
-
-	/*------------------------ SWIPERNAV ------------------------*/
-	.swiper-nav-div {
-		width: 8em;
-	}
-
-	.swiper-nav-flag-img {
-		height: 1.5em;
-	}
-
-	.swiper-nav-info-text {
-		font-size: 0.9em;
-	}
-
-	/*------------------------ MAP ------------------------*/
-	.map {
-		top: 4.2em;
-	}
-
-	/*------------------------ GENERAL ------------------------*/
-	.card-body {
-		padding: 1em;
-	}
-
-	/*------------------------ UPCOMING RACE ------------------------*/
-	/* NextRace - View */
-	.next-race-headline {
-		font-size: 1.9em;
-	}
-
-	.next-race-last-top {
-		display: block;
-	}
-
-	/* ResultLastRace */
-	.result-last-race-headline {
-		font-size: 1.6em;
-	}
-
-	.result-last-race-tr {
-		font-size: 1em;
-	}
-
-	.result-last-race-tbody {
-		font-size: 0.95em;
-	}
-
-	.result-last-race-td {
-		padding: 1em 2em;
-	}
-
-	.position-difference {
-		font-size: 0.9em;
-		padding-left: 0.5em;
-	}
-
-	.result-last-race-flag-img {
-		height: 1.2em;
-		width: 2em;
-	}
-
-	/* NextRaceCircuitInfo */
-	.next-race-circuit-info-card-margin {
-		margin: 1.2em 0 0 1em;
-	}
-
-	.next-race-circuit-info-name {
-		font-size: 1.3em;
-	}
-
-	.next-race-circuit-info-location {
-		font-size: 1.2em;
-	}
-
-	.next-race-circuit-info-th {
-		font-size: 0.85em;
-	}
-
-	.next-race-circuit-info-td {
-		font-size: 0.9em;
-	}
-
-	/* NextRaceTimeTable */
-	.next-race-time-table-card-margin {
-		margin: 1.2em 1em 0 0;
-	}
-
-	.next-race-time-table-td {
-		padding: 0;
-	}
-
-	.next-race-time-table-title {
-		font-size: 1.3em;
-	}
-
-	.next-race-time-table-date {
-		font-size: 1.1em;
-	}
-
-	.next-race-time-table-event {
-		font-size: 0.85em;
-	}
-
-	.next-race-time-table-day {
-		font-size: 0.75em;
-	}
-
-	.next-race-time-table-time {
-		font-size: 0.85em;
-	}
-
-	.next-race-time-table-border {
-		border: none !important;
-	}
-
-	.next-race-time-table-col-left {
-		border-right: 1px solid #fff;
-	}
-
-	/* CircuitLastList */
-	.circuit-last-list-div {
-		width: 100%;
-	}
-
-	.circuit-last-list-card-margin {
-		margin: 1.2em 1em 0 0;
-	}
-
-	.circuit-last-list-td {
-		padding: 0.5em 1em;
-	}
-
-	.circuit-last-list-title {
-		font-size: 1em;
-	}
-
-	.circuit-last-list-year {
-		font-size: 0.8em;
-	}
-
-	.circuit-last-list-name {
-		font-size: 0.85em;
-	}
-
-	.circuit-last-list-constructor {
-		font-size: 0.8em;
-	}
-
-	.circuit-last-list-fastest-lap {
-		font-size: 0.8em;
-	}
-
-	/* NextRaceCountryFlag */
-	.next-race-country-flag-div {
-		height: 3.5em;
-	}
-
-	/* PracticeSession  Large */
-	.nav-tabs .nav-link {
-		font-size: 1.1em;
-	}
-
-	.practice-session-tr {
-		font-size: 1em;
-	}
-
-	.practice-session-tbody {
-		font-size: 0.95em;
-	}
-
-	.practice-session-td {
-		padding: 1em 2.5em;
-	}
-
-	.practice-session-seconds {
-		font-size: 0.9em;
-	}
-
-	.nav-link.active {
-		font-size: 1.3em;
-	}
-
-	/* QualifyingSession */
-	.qualifying-session-headline {
-		font-size: 1.6em;
-	}
-
-	.qualifying-session-tr {
-		font-size: 1em;
-	}
-
-	.qualifying-session-tbody {
-		font-size: 0.95em;
-	}
-
-	.qualifying-session-td {
-		padding: 1em 1.55em;
-	}
-
-	/*------------------------ STANDINGS ------------------------*/
-	/* DriverTable */
-	.leader-driver-img {
-		height: 10em;
-	}
-
-	.leader-driver-info {
-		width: 11em;
-		margin: 0 2em;
-	}
-
-	.leader-driver-flag-img {
-		height: 1.4em;
-		width: 2.2em;
-	}
-
-	.leader-driver-points {
-		font-size: 1.2em;
-		-webkit-text-stroke-width: 1.1px;
-	}
-
-	.leader-driver-name-team {
-		font-size: 1em;
-	}
-
-	.driver-table-headline {
-		font-size: 1.7em;
-	}
-
-	.driver-table-tr {
-		font-size: 1em;
-	}
-
-	.driver-table-tbody {
-		font-size: 0.95em;
-	}
-
-	.driver-table-td {
-		padding: 1em 3em;
-	}
-
-	.driver-table-flag-img {
-		height: 1.2em;
-		width: 2em;
-	}
-
-	/* ConstructorTable */
-	.leader-constructor-img {
-		height: 4.5em;
-	}
-
-	.leader-constructor-flag-img {
-		height: 1.6em;
-		width: 2.3em;
-	}
-
-	.leaders-constructor-info {
-		width: 10em;
-		margin-left: 2em;
-	}
-
-	.leader-constructor-points {
-		font-size: 1.2em;
-		-webkit-text-stroke-width: 1.1px;
-	}
-
-	.leader-constructor-name-team {
-		font-size: 1em;
-	}
-
-	.constructor-table-headline {
-		font-size: 1.7em;
-	}
-
-	.constructor-table-tr {
-		font-size: 1em;
-	}
-
-	.constructor-table-tbody {
-		font-size: 0.95em;
-	}
-
-	/* .constructor-table-td {
+  .container {
+    max-width: 1200px;
+  }
+
+  /*------------------------ NAVBARS ------------------------*/
+  /* Navbar */
+  .nav-link-sub {
+    font-size: 1em;
+  }
+
+  /* Navbar Top */
+  .nav-link-top {
+    font-size: 1.1em;
+  }
+
+  /*------------------------ SWIPERNAV ------------------------*/
+  .swiper-nav-div {
+    width: 8em;
+  }
+
+  .swiper-nav-flag-img {
+    height: 1.5em;
+  }
+
+  .swiper-nav-info-text {
+    font-size: 0.9em;
+  }
+
+  /*------------------------ MAP ------------------------*/
+  .map {
+    top: 4.2em;
+  }
+
+  /*------------------------ GENERAL ------------------------*/
+  .card-body {
+    padding: 1em;
+  }
+
+  /*------------------------ UPCOMING RACE ------------------------*/
+  /* NextRace - View */
+  .next-race-headline {
+    font-size: 1.9em;
+  }
+
+  .next-race-last-top {
+    display: block;
+  }
+
+  /* ResultLastRace */
+  .result-last-race-headline {
+    font-size: 1.6em;
+  }
+
+  .result-last-race-tr {
+    font-size: 1em;
+  }
+
+  .result-last-race-tbody {
+    font-size: 0.95em;
+  }
+
+  .result-last-race-td {
+    padding: 1em 2em;
+  }
+
+  .position-difference {
+    font-size: 0.9em;
+    padding-left: 0.5em;
+  }
+
+  .result-last-race-flag-img {
+    height: 1.2em;
+    width: 2em;
+  }
+
+  /* NextRaceCircuitInfo */
+  .next-race-circuit-info-card-margin {
+    margin: 1.2em 0 0 1em;
+  }
+
+  .next-race-circuit-info-name {
+    font-size: 1.3em;
+  }
+
+  .next-race-circuit-info-location {
+    font-size: 1.2em;
+  }
+
+  .next-race-circuit-info-th {
+    font-size: 0.85em;
+  }
+
+  .next-race-circuit-info-td {
+    font-size: 0.9em;
+  }
+
+  /* NextRaceTimeTable */
+  .next-race-time-table-card-margin {
+    margin: 1.2em 1em 0 0;
+  }
+
+  .next-race-time-table-td {
+    padding: 0;
+  }
+
+  .next-race-time-table-title {
+    font-size: 1.3em;
+  }
+
+  .next-race-time-table-date {
+    font-size: 1.1em;
+  }
+
+  .next-race-time-table-event {
+    font-size: 0.85em;
+  }
+
+  .next-race-time-table-day {
+    font-size: 0.75em;
+  }
+
+  .next-race-time-table-time {
+    font-size: 0.85em;
+  }
+
+  .next-race-time-table-border {
+    border: none !important;
+  }
+
+  .next-race-time-table-col-left {
+    border-right: 1px solid #fff;
+  }
+
+  /* CircuitLastList */
+  .circuit-last-list-div {
+    width: 100%;
+  }
+
+  .circuit-last-list-card-margin {
+    margin: 1.2em 1em 0 0;
+  }
+
+  .circuit-last-list-td {
+    padding: 0.5em 1em;
+  }
+
+  .circuit-last-list-title {
+    font-size: 1em;
+  }
+
+  .circuit-last-list-year {
+    font-size: 0.8em;
+  }
+
+  .circuit-last-list-name {
+    font-size: 0.85em;
+  }
+
+  .circuit-last-list-constructor {
+    font-size: 0.8em;
+  }
+
+  .circuit-last-list-fastest-lap {
+    font-size: 0.8em;
+  }
+
+  /* NextRaceCountryFlag */
+  .next-race-country-flag-div {
+    height: 3.5em;
+  }
+
+  /* PracticeSession  Large */
+  .nav-tabs .nav-link {
+    font-size: 1.1em;
+  }
+
+  .practice-session-tr {
+    font-size: 1em;
+  }
+
+  .practice-session-tbody {
+    font-size: 0.95em;
+  }
+
+  .practice-session-td {
+    padding: 1em 2.5em;
+  }
+
+  .practice-session-seconds {
+    font-size: 0.9em;
+  }
+
+  .nav-link.active {
+    font-size: 1.3em;
+  }
+
+  /* QualifyingSession */
+  .qualifying-session-headline {
+    font-size: 1.6em;
+  }
+
+  .qualifying-session-tr {
+    font-size: 1em;
+  }
+
+  .qualifying-session-tbody {
+    font-size: 0.95em;
+  }
+
+  .qualifying-session-td {
+    padding: 1em 1.55em;
+  }
+
+  /*------------------------ STANDINGS ------------------------*/
+  /* DriverTable */
+  .leader-driver-img {
+    height: 10em;
+  }
+
+  .leader-driver-info {
+    width: 11em;
+    margin: 0 2em;
+  }
+
+  .leader-driver-flag-img {
+    height: 1.4em;
+    width: 2.2em;
+  }
+
+  .leader-driver-points {
+    font-size: 1.2em;
+    -webkit-text-stroke-width: 1.1px;
+  }
+
+  .leader-driver-name-team {
+    font-size: 1em;
+  }
+
+  .driver-table-headline {
+    font-size: 1.7em;
+  }
+
+  .driver-table-tr {
+    font-size: 1em;
+  }
+
+  .driver-table-tbody {
+    font-size: 0.95em;
+  }
+
+  .driver-table-td {
+    padding: 1em 3em;
+  }
+
+  .driver-table-flag-img {
+    height: 1.2em;
+    width: 2em;
+  }
+
+  /* ConstructorTable */
+  .leader-constructor-img {
+    height: 4.5em;
+  }
+
+  .leader-constructor-flag-img {
+    height: 1.6em;
+    width: 2.3em;
+  }
+
+  .leaders-constructor-info {
+    width: 10em;
+    margin-left: 2em;
+  }
+
+  .leader-constructor-points {
+    font-size: 1.2em;
+    -webkit-text-stroke-width: 1.1px;
+  }
+
+  .leader-constructor-name-team {
+    font-size: 1em;
+  }
+
+  .constructor-table-headline {
+    font-size: 1.7em;
+  }
+
+  .constructor-table-tr {
+    font-size: 1em;
+  }
+
+  .constructor-table-tbody {
+    font-size: 0.95em;
+  }
+
+  /* .constructor-table-td {
 		padding: 1em 2em;
 	} */
 }
@@ -1557,229 +1557,229 @@ td {
 /* ---------------------------------------------------------------------------------------------------------------------------- */
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	.container {
-		max-width: 1500px;
-	}
+  .container {
+    max-width: 1500px;
+  }
 
-	/*------------------------ NAVBARS ------------------------*/
-	/* Navbar */
-	.nav-title-top {
-		font-size: 2.3rem;
-	}
+  /*------------------------ NAVBARS ------------------------*/
+  /* Navbar */
+  .nav-title-top {
+    font-size: 2.3rem;
+  }
 
-	/*------------------------ MAP ------------------------*/
-	.map {
-		top: 4.7em;
-	}
+  /*------------------------ MAP ------------------------*/
+  .map {
+    top: 4.7em;
+  }
 
-	/*------------------------ UPCOMING RACE ------------------------*/
-	/* NextRace - View */
-	.next-race-headline {
-		font-size: 2em;
-	}
+  /*------------------------ UPCOMING RACE ------------------------*/
+  /* NextRace - View */
+  .next-race-headline {
+    font-size: 2em;
+  }
 
-	.next-race-last-top {
-		display: flex;
-	}
+  .next-race-last-top {
+    display: flex;
+  }
 
-	/* ResultLastRace */
-	.result-last-race-headline {
-		font-size: 1.7em;
-	}
-	.result-last-race-td {
-		padding: 1em 3em;
-	}
+  /* ResultLastRace */
+  .result-last-race-headline {
+    font-size: 1.7em;
+  }
+  .result-last-race-td {
+    padding: 1em 3em;
+  }
 
-	.position-difference {
-		font-size: 0.9em;
-		padding-left: 0.6em;
-	}
+  .position-difference {
+    font-size: 0.9em;
+    padding-left: 0.6em;
+  }
 
-	/* NextRaceCircuitInfo */
-	.next-race-circuit-info-circuit-img {
-		height: 16.4em;
-	}
+  /* NextRaceCircuitInfo */
+  .next-race-circuit-info-circuit-img {
+    height: 16.4em;
+  }
 
-	/* NextRaceTimeTable */
-	.circuit-last-list-div {
-		width: 50%;
-	}
+  /* NextRaceTimeTable */
+  .circuit-last-list-div {
+    width: 50%;
+  }
 
-	.circuit-last-list-td {
-		padding: 0.5em 0.3em;
-	}
+  .circuit-last-list-td {
+    padding: 0.5em 0.3em;
+  }
 
-	/* NextRaceCountryFlag */
-	.next-race-country-flag-div {
-		height: 4em;
-	}
+  /* NextRaceCountryFlag */
+  .next-race-country-flag-div {
+    height: 4em;
+  }
 
-	/* PracticeSession  Large */
-	.nav-tabs .nav-link {
-		font-size: 1.2em;
-	}
+  /* PracticeSession  Large */
+  .nav-tabs .nav-link {
+    font-size: 1.2em;
+  }
 
-	.practice-session-tr {
-		font-size: 1em;
-	}
+  .practice-session-tr {
+    font-size: 1em;
+  }
 
-	.practice-session-tbody {
-		font-size: 0.95em;
-	}
+  .practice-session-tbody {
+    font-size: 0.95em;
+  }
 
-	.practice-session-td {
-		padding: 1em 3em;
-	}
+  .practice-session-td {
+    padding: 1em 3em;
+  }
 
-	.practice-session-seconds {
-		font-size: 0.9em;
-	}
+  .practice-session-seconds {
+    font-size: 0.9em;
+  }
 
-	.nav-link.active {
-		font-size: 1.4em;
-	}
+  .nav-link.active {
+    font-size: 1.4em;
+  }
 
-	/* QualifyingSession */
-	.qualifying-session-headline {
-		font-size: 1.7em;
-	}
+  /* QualifyingSession */
+  .qualifying-session-headline {
+    font-size: 1.7em;
+  }
 
-	.qualifying-session-td {
-		padding: 1em 2.5em;
-	}
+  .qualifying-session-td {
+    padding: 1em 2.5em;
+  }
 
-	/*------------------------ STANDINGS ------------------------*/
-	/* DriverTable */
-	.leader-driver-img {
-		height: 12em;
-	}
+  /*------------------------ STANDINGS ------------------------*/
+  /* DriverTable */
+  .leader-driver-img {
+    height: 12em;
+  }
 
-	.leader-driver-info {
-		width: 12em;
-	}
+  .leader-driver-info {
+    width: 12em;
+  }
 
-	.leader-driver-info {
-		margin: 0 3em;
-	}
+  .leader-driver-info {
+    margin: 0 3em;
+  }
 
-	.leader-driver-points {
-		font-size: 1.3em;
-		-webkit-text-stroke-width: 1.2px;
-	}
+  .leader-driver-points {
+    font-size: 1.3em;
+    -webkit-text-stroke-width: 1.2px;
+  }
 
-	.driver-table-headline {
-		font-size: 1.9em;
-	}
+  .driver-table-headline {
+    font-size: 1.9em;
+  }
 
-	.driver-table-td {
-		padding: 1em 3.5em;
-	}
+  .driver-table-td {
+    padding: 1em 3.5em;
+  }
 
-	/* ConstructorTable */
-	.leader-constructor-img {
-		height: 5em;
-	}
+  /* ConstructorTable */
+  .leader-constructor-img {
+    height: 5em;
+  }
 
-	.leader-constructor-flag-img {
-		height: 1.8em;
-		width: 2.5em;
-	}
+  .leader-constructor-flag-img {
+    height: 1.8em;
+    width: 2.5em;
+  }
 
-	.leaders-constructor-info {
-		width: 13em;
-		margin-left: 2em;
-	}
+  .leaders-constructor-info {
+    width: 13em;
+    margin-left: 2em;
+  }
 
-	.leader-constructor-points {
-		font-size: 1.3em;
-		-webkit-text-stroke-width: 1.2px;
-	}
+  .leader-constructor-points {
+    font-size: 1.3em;
+    -webkit-text-stroke-width: 1.2px;
+  }
 
-	.leader-constructor-name-team {
-		font-size: 1.1em;
-	}
+  .leader-constructor-name-team {
+    font-size: 1.1em;
+  }
 
-	.constructor-table-headline {
-		font-size: 1.9em;
-	}
+  .constructor-table-headline {
+    font-size: 1.9em;
+  }
 
-	.constructor-table-flag-img {
-		height: 3.4em;
-		width: 2.9em;
-	}
+  .constructor-table-flag-img {
+    height: 3.4em;
+    width: 2.9em;
+  }
 }
 
 /* MEDIA END*/
 
 /* Driver and Team Colors */
 .mclaren {
-	/* Real color
+  /* Real color
   color: #e0610e !important; 
   */
-	color: #f77018 !important;
+  color: #f77018 !important;
 }
 
 .red-bull {
-	/* Real color
+  /* Real color
   color: #0600ef !important; 
   */
 
-	/* Fake, alternative
+  /* Fake, alternative
 	color: #2b26ff !important; */
 
-	color: #3b38da !important;
+  color: #3b38da !important;
 }
 
 .mercedes {
-	/* Real color 
+  /* Real color 
   color: #00d2be !important; 
   */
-	color: #03e8d3 !important;
+  color: #03e8d3 !important;
 }
 
 .alpha-romeo {
-	/* Real color
+  /* Real color
   color: #900000 !important; 
   */
-	color: #ad0505 !important;
+  color: #ad0505 !important;
 }
 
 .alpha-tauri {
-	/* Real color
+  /* Real color
   color: #2b4562 !important; 
   */
-	color: #5a84b3 !important;
+  color: #5a84b3 !important;
 }
 
 .haas {
-	color: #fff !important;
+  color: #fff !important;
 }
 
 .alpine {
-	color: #0090ff !important;
+  color: #0090ff !important;
 }
 
 .ferrari {
-	color: #dc0000 !important;
+  color: #dc0000 !important;
 }
 
 .williams {
-	color: #005aff !important;
+  color: #005aff !important;
 }
 
 .aston-martin {
-	/* Real color
+  /* Real color
   color: #006f62 !important; 
   */
-	color: #00b19c !important;
+  color: #00b19c !important;
 }
 
 .brawn {
-	color: #dafd5c !important;
+  color: #dafd5c !important;
 }
 
 .lotus {
-	color: #ffb800 !important;
+  color: #ffb800 !important;
 }
 
 /* .renault {
