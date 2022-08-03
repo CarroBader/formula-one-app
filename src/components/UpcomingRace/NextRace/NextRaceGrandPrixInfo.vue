@@ -86,9 +86,7 @@ export default {
   props: {
     nextGrandPrix: Object,
   },
-  created() {
-    console.log('nextGrandPrix', this.nextGrandPrix)
-  },
+  created() {},
   data() {
     return {}
   },
