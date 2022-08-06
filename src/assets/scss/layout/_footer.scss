@@ -1,28 +1,41 @@
 .footer {
-	text-align: center;
-	background-color: $main-background;
-	border-top: 1px solid $medium-red;
-	bottom: 0;
-	position: inherit;
-	width: 100%;
-	color: $white;
-	padding: 1em 0 0.3em 0;
+  text-align: center;
+  background-color: $main-background;
+  border-top: 1px solid $medium-red;
+  bottom: 0;
+  position: inherit;
+  width: 100%;
+  color: $white;
+  padding: 1em 0 0.3em 0;
 
-	@include breakpoint(x-small) {
-		display: none;
-	}
-	@include breakpoint(medium) {
-		display: revert;
-	}
+  @include breakpoint(x-small) {
+    display: none;
+  }
+  @include breakpoint(medium) {
+    display: revert;
+  }
+}
+
+.footer-text-copy {
+  margin-top: 0.5em;
+  font-size: 0.8em;
+
+  @include breakpoint(x-small) {
+    display: none;
+  }
+  @include breakpoint(medium) {
+    display: revert;
+  }
 }
 
 .footer-text {
-	margin-top: 1.5em;
+  margin-top: 1em;
+  font-size: 0.7em;
 
-	@include breakpoint(x-small) {
-		display: none;
-	}
-	@include breakpoint(medium) {
-		display: revert;
-	}
+  @include breakpoint(x-small) {
+    display: none;
+  }
+  @include breakpoint(medium) {
+    display: revert;
+  }
 }

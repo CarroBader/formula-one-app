@@ -1,15 +1,23 @@
 <template>
-	<footer>
-		<p class="footer-text footer">Copyright &copy; {{ this.year }}</p>
-	</footer>
+  <footer class="footer">
+    <p class="footer-text">
+      Formula One Info is unofficial and is not associated in any way with the
+      Formula 1 companies. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE WORLD
+      CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of Formula One
+      Licensing B.V. The information provided in this website is for general
+      information purposes only. Formula One Info claims no rights to these
+      data.
+    </p>
+    <p class="footer-text-copy">Copyright &copy; {{ this.year }}</p>
+  </footer>
 </template>
 
 <script>
-import generalVarsMixin from "../mixins/generalVarsMixin"
+import generalVarsMixin from '../mixins/generalVarsMixin'
 
 export default {
-	name: "Footer",
-	mixins: [generalVarsMixin],
+  name: 'Footer',
+  mixins: [generalVarsMixin],
 }
 </script>
 

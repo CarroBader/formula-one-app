@@ -1,0 +1,22 @@
+#!/bin/bash
+[ $#  -ne 1 ] && echo "Add path to build directory" && exit
+
+rm -rf dist
+
+npm run build
+
+cd $1
+git pull
+cd -
+rm -rf backend/__pycache__
+cp backend/* $1 
+cp -r dist $1
+
+cd $1
+
+git add .
+git commit -m "new build"
+
+git push heroku master
+
+cd -
