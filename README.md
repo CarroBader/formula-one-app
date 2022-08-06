@@ -1,4 +1,4 @@
-# Formula One App
+# Formula One Application
 
 ## Link: [Formula One](https://forumula-one-app.herokuapp.com/home)
 
