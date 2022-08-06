@@ -32,9 +32,9 @@
             :to="{ name: standingsNav }"
             >Standings</router-link
           >
-          <router-link class="nav-link nav-link-top" :to="{ name: 'Race Map' }">
+          <!-- <router-link class="nav-link nav-link-top" :to="{ name: 'Race Map' }">
             Map</router-link
-          >
+          > -->
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
