@@ -7,6 +7,7 @@
   width: 100%;
   color: $white;
   padding: 1em 0 0.3em 0;
+  margin-top: 2em;
 
   @include breakpoint(x-small) {
     display: none;
