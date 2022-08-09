@@ -3,7 +3,9 @@
     <div></div>
     <b-navbar toggleable="md navbar-top figure.blur5">
       <img src="../assets/logo.png" class="nav-logo-top" alt="F1 logo" />
-      <b-navbar-brand class="nav-title-top">Formula One Info</b-navbar-brand>
+      <b-navbar-brand class="nav-title-top"
+        >Lights out and away we go</b-navbar-brand
+      >
 
       <b-navbar-toggle
         class="place-toggle-button"

@@ -1,6 +1,6 @@
-# Formula One Application
+# Lights Out Application
 
-## Link: [Formula One](https://forumula-one-app.herokuapp.com/home)
+## Link: [Lights Out](https://lights-out-and-away-we-go.herokuapp.com)
 
 ## Install
 
