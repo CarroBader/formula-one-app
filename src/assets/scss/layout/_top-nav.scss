@@ -1,84 +1,85 @@
 .nav {
-	display: -webkit-inline-box;
+  display: -webkit-inline-box;
 }
 
 .navbar {
-	padding: 0;
+  padding: 0;
 }
 
 .navbar-top {
-	box-shadow: inset 0 0 5px $black;
-	background: $navbar-background;
-	// background-color: $navbar-background;
-	border-bottom: 1px solid $white;
-	z-index: 10000;
-	padding: 0;
+  box-shadow: inset 0 0 5px $black;
+  background: $navbar-background;
+  // background-color: $navbar-background;
+  border-bottom: 1px solid $white;
+  z-index: 10000;
+  padding: 0;
 
-	@include breakpoint(x-small) {
-		justify-content: center !important;
-	}
-	@include breakpoint(medium) {
-		justify-content: start !important;
-	}
+  @include breakpoint(x-small) {
+    justify-content: center !important;
+  }
+  @include breakpoint(medium) {
+    justify-content: start !important;
+  }
 }
 
 .navbar-nav-top {
-	@include breakpoint(medium) {
-		// width: 30%;
-	}
-	// width: revert;
+  @include breakpoint(medium) {
+    // width: 30%;
+  }
+  // width: revert;
 }
 
 .nav-collapse-top {
-	@include breakpoint(x-small) {
-		justify-content: flex-end;
-	}
-	@include breakpoint(medium) {
-		text-align: -webkit-center;
-	}
-	@include breakpoint(medium) {
-		text-align: revert;
-	}
+  @include breakpoint(x-small) {
+    justify-content: flex-end;
+  }
+  @include breakpoint(medium) {
+    text-align: -webkit-center;
+  }
+  @include breakpoint(medium) {
+    text-align: revert;
+  }
 }
 
 .navbar-toggler {
-	@include breakpoint(x-small) {
-		display: none;
-	}
+  @include breakpoint(x-small) {
+    display: none;
+  }
 
-	@include breakpoint(large) {
-		display: revert;
-	}
+  @include breakpoint(large) {
+    display: revert;
+  }
 }
 
 .nav-title-top {
-	font-family: $orbitron;
-	color: $white !important;
-	text-shadow: 2px 2px $black;
+  font-family: $orbitron;
+  color: $white !important;
+  text-shadow: 2px 2px $black;
+  margin-left: 0.5em;
 
-	@include breakpoint(x-small) {
-		font-size: 1.2em;
-	}
-	@include breakpoint(medium) {
-		font-size: 1.5em;
-	}
-	@include breakpoint(large) {
-		font-size: 2.1em;
-	}
-	@include breakpoint(xx-large) {
-		font-size: 2.3em;
-	}
+  @include breakpoint(x-small) {
+    font-size: 1.2em;
+  }
+  @include breakpoint(medium) {
+    font-size: 1.5em;
+  }
+  @include breakpoint(large) {
+    font-size: 2.1em;
+  }
+  @include breakpoint(xx-large) {
+    font-size: 2.3em;
+  }
 }
 
 .nav-logo-top {
-	margin: 0 0.5em;
+  margin: 0 0.5em;
 
-	@include breakpoint(x-small) {
-		height: 2em;
-	}
-	@include breakpoint(medium) {
-		height: 2.4em;
-	}
+  @include breakpoint(x-small) {
+    height: 2em;
+  }
+  @include breakpoint(medium) {
+    height: 2.4em;
+  }
 }
 
 // .place-toggle-button {
@@ -90,18 +91,18 @@
 // Navbar Sub
 
 .navbar-sub {
-	background-color: $navbar-sub-background;
-	padding: 2px 0;
-	margin-bottom: 1em;
+  background-color: $navbar-sub-background;
+  padding: 2px 0;
+  margin-bottom: 1em;
 
-	@include breakpoint(x-small) {
-		justify-content: space-evenly;
-	}
-	@include breakpoint(medium) {
-		justify-content: start;
-	}
+  @include breakpoint(x-small) {
+    justify-content: space-evenly;
+  }
+  @include breakpoint(medium) {
+    justify-content: start;
+  }
 }
 
 .navbar-nav-sub {
-	flex-direction: row;
+  flex-direction: row;
 }
