@@ -80,3 +80,6 @@ dist/
 
 # Env
 .env
+
+# JS
+apiVars.js
