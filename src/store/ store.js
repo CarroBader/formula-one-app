@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import createPersistedState from 'vuex-persistedstate'
-import { baseUrl } from '../variables/apiVars'
+import { baseUrl } from '../../apiVars'
 import {
   addTrackId,
   addGrandPrixId,

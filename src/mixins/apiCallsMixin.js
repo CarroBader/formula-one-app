@@ -1,7 +1,7 @@
 /* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
 import axios from 'axios'
-import { baseUrl } from '../variables/apiVars'
+import { baseUrl } from '../../apiVars'
 import generalVarsMixin from './generalVarsMixin'
 import { changeCountryName, sessionsToRemove } from '../variables/replaceVars'
 
@@ -18,7 +18,6 @@ export default {
         sessions: [{id:1337, session_name: "Practice 1", date: "2021-09-10T12:30:00+00:00"}....],
         dataLoaded: true
       }
-    */
       const returnSessions = []
 
       try {
