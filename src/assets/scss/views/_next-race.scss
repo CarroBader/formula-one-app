@@ -1,3 +1,33 @@
+.small-screen {
+  @include breakpoint(x-small) {
+    display: revert;
+  }
+  @include breakpoint(medium) {
+  }
+  @include breakpoint(large) {
+    display: none;
+  }
+  @include breakpoint(x-large) {
+  }
+  @include breakpoint(xx-large) {
+  }
+}
+
+.large-screen {
+  @include breakpoint(x-small) {
+    display: none;
+  }
+  @include breakpoint(medium) {
+  }
+  @include breakpoint(large) {
+    display: revert;
+  }
+  @include breakpoint(x-large) {
+  }
+  @include breakpoint(xx-large) {
+  }
+}
+
 .next-race-headline {
   background: $headline-background;
   border-radius: 8px;

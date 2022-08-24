@@ -1,34 +1,55 @@
 <template>
   <b-container class="default-background-center">
-    <!-- <h1>Upcoming</h1>
-  <h1>{{ this.round}}</h1> -->
-    <h1 class="next-race-headline">{{ nextRaceName }}</h1>
-    <b-row class="next-race-row">
-      <b-col>
-        <NextRaceCircuitInfo v-if="trackDataLoaded" :nextTrack="trackData" />
-      </b-col>
+    <div class="large-screen">
+      <h1 class="next-race-headline">{{ nextRaceName }}</h1>
+      <b-row class="next-race-row">
+        <b-col>
+          <NextRaceCircuitInfo v-if="trackDataLoaded" :nextTrack="trackData" />
+        </b-col>
 
-      <b-col>
-        <NextRaceGrandPrixInfo
-          v-if="grandPrixDataLoaded"
-          :nextGrandPrix="grandPrixData"
-        />
-        <NextRaceCountryFlag :country="nextRaceCountry" />
+        <b-col>
+          <NextRaceGrandPrixInfo
+            v-if="grandPrixDataLoaded"
+            :nextGrandPrix="grandPrixData"
+          />
+          <NextRaceCountryFlag :country="nextRaceCountry" />
 
-        <NextRaceTimeTable
-          v-if="timeTableDataLoaded"
-          :timeTableData="timeTableData"
-        />
-      </b-col>
-    </b-row>
-    <b-row class="next-race-last-top">
-      <b-col>
-        <CircuitLastList :title="winnersTitle" :drivers="lastWinners" />
-      </b-col>
-      <b-col>
-        <CircuitLastList :title="polesTitle" :drivers="lastPoles" />
-      </b-col>
-    </b-row>
+          <NextRaceTimeTable
+            v-if="timeTableDataLoaded"
+            :timeTableData="timeTableData"
+          />
+        </b-col>
+      </b-row>
+      <b-row class="next-race-last-top">
+        <b-col>
+          <CircuitLastList :title="winnersTitle" :drivers="lastWinners" />
+        </b-col>
+        <b-col>
+          <CircuitLastList :title="polesTitle" :drivers="lastPoles" />
+        </b-col>
+      </b-row>
+    </div>
+    <div class="small-screen">
+      <h1 class="next-race-headline">{{ nextRaceName }}</h1>
+      <b-row class="next-race-row">
+        <b-col>
+          <NextRaceCircuitInfo v-if="trackDataLoaded" :nextTrack="trackData" />
+
+          <NextRaceGrandPrixInfo
+            v-if="grandPrixDataLoaded"
+            :nextGrandPrix="grandPrixData"
+          />
+          <NextRaceCountryFlag :country="nextRaceCountry" />
+
+          <NextRaceTimeTable
+            v-if="timeTableDataLoaded"
+            :timeTableData="timeTableData"
+          />
+          <CircuitLastList :title="winnersTitle" :drivers="lastWinners" />
+          <CircuitLastList :title="polesTitle" :drivers="lastPoles" />
+        </b-col>
+      </b-row>
+    </div>
   </b-container>
 </template>
 
