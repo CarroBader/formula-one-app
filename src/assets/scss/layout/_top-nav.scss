@@ -99,7 +99,7 @@
     justify-content: space-evenly;
   }
   @include breakpoint(medium) {
-    justify-content: start;
+    justify-content: center;
   }
 }
 
